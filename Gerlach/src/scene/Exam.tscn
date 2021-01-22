@@ -1,0 +1,186 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/UI Pack RPG/buttonLong_grey.png" type="Texture" id=1]
+[ext_resource path="res://assets/UI Pack RPG/buttonLong_beige.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI Pack RPG/panelInset_beigeLight.png" type="Texture" id=3]
+[ext_resource path="res://src/script/Exam.gd" type="Script" id=4]
+[ext_resource path="res://assets/hud/CountDown_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/hud/CountDown_1.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 190, 49 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 190, 49 )
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+font_data = SubResource( 4 )
+
+[node name="Mission1" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -30.0
+margin_top = -46.0
+margin_right = 1358.0
+margin_bottom = 788.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer1" type="Button" parent="."]
+margin_left = 41.0
+margin_top = 483.0
+margin_right = 541.0
+margin_bottom = 582.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="answer1"]
+margin_left = 20.0
+margin_top = 8.0
+margin_right = 499.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ABCDEFG"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer2" type="Button" parent="."]
+margin_left = 782.0
+margin_top = 483.0
+margin_right = 1282.0
+margin_bottom = 582.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="answer2"]
+margin_left = 12.1483
+margin_top = -0.475708
+margin_right = 491.148
+margin_bottom = 91.5243
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ABCDEFG"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer3" type="Button" parent="."]
+margin_left = 41.0
+margin_top = 607.0
+margin_right = 541.0
+margin_bottom = 706.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="answer3"]
+margin_left = 17.881
+margin_top = 6.89771
+margin_right = 496.881
+margin_bottom = 98.8977
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ABCDEFG"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer4" type="Button" parent="."]
+margin_left = 782.0
+margin_top = 607.0
+margin_right = 1282.0
+margin_bottom = 706.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="answer4"]
+margin_left = 5.79144
+margin_top = 0.540894
+margin_right = 484.791
+margin_bottom = 92.5409
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ABCDEFG"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="TextureRect" parent="."]
+margin_left = 112.0
+margin_top = 36.0
+margin_right = 205.0
+margin_bottom = 136.0
+rect_scale = Vector2( 12, 4 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label question" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 36.0
+margin_right = 1220.0
+margin_bottom = 411.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ABCDEFG"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = 176.0
+margin_right = 1176.0
+margin_bottom = 40.0
+max_value = 60.0
+value = 60.0
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="button_down" from="answer1" to="." method="_on_answer1_button_down"]
+[connection signal="button_down" from="answer2" to="." method="_on_answer2_button_down"]
+[connection signal="button_down" from="answer3" to="." method="_on_answer3_button_down"]
+[connection signal="button_down" from="answer4" to="." method="_on_answer4_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
