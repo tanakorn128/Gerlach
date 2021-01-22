@@ -1,0 +1,30 @@
+[gd_scene format=2]
+
+[node name="battle" type="Node2D"]
+
+[node name="battleColorRect" type="ColorRect" parent="."]
+margin_right = 1333.0
+margin_bottom = 768.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy" type="ColorRect" parent="."]
+margin_left = 1038.76
+margin_top = 211.893
+margin_right = 1201.76
+margin_bottom = 353.893
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" type="ColorRect" parent="."]
+margin_left = 122.898
+margin_top = 215.893
+margin_right = 293.898
+margin_bottom = 348.893
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

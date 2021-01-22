@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://src/script/Enemy.gd"
+}, {
+"base": "Resource",
+"class": "Enemys",
+"language": "GDScript",
+"path": "res://src/script/Enemys.gd"
+}, {
+"base": "Resource",
 "class": "Inventory",
 "language": "GDScript",
 "path": "res://src/script/Inventory.gd"
@@ -20,6 +30,8 @@ _global_script_classes=[ {
 "path": "res://src/script/Item.gd"
 } ]
 _global_script_class_icons={
+"Enemy": "",
+"Enemys": "",
 "Inventory": "",
 "Item": ""
 }
