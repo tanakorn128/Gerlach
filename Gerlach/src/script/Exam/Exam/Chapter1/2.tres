@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "ข้อใดเป็นจำนวนนับ"
+answer1 = "1"
+answer2 = "2"
+answer3 = "3"
+answer4 = "ถูกทุกข้อ"
+Correct = "ถูกทุกข้อ"

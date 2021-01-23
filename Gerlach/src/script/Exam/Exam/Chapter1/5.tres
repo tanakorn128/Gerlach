@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "จำนวนเต็มลบข้อใดมีค่าน้อยที่สุด"
+answer1 = "-2"
+answer2 = "-1"
+answer3 = "0"
+answer4 = "1"
+Correct = "-2"
