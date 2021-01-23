@@ -7,3 +7,5 @@
 script = ExtResource( 1 )
 name = "Tree"
 texture = ExtResource( 2 )
+damage = 20
+location = Vector2( 0, 0 )

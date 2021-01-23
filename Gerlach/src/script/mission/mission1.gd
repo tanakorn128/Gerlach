@@ -1,6 +1,7 @@
 extends Node2D
 var pos
 func _ready():
+	effect()
 	position.x = 438.103
 	position.y = 455.701
 	Events.connect("player_position",self,"player_position") #เชื่อมสัญญาณ player_position
@@ -36,3 +37,14 @@ func player_position(position):
 	pos = position # ตำแหน่งผู้เล่น
 	
 	pass
+
+func effect():
+	$Tree.play("kill")
+	#$Tree/Efect/Particles2D.emitting=true
+	print($Tree.frame)
+	pass
+
+var count = 0
+func _on_Timer_timeout():
+	$Tree.play(str(count))
+	pass # Replace with function body.

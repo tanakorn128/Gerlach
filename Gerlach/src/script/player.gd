@@ -1,29 +1,32 @@
 extends KinematicBody2D
 var velocity : Vector2
 export var speed = 1000
-
+var isAttacking = false
+var flip_h_isAttacking=false
 func _ready():
 	Events.connect("player_speed",self,"player_speed")
 	player_position()
 	pass
 
 func _process(delta):
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_left") && isAttacking == false:
 		player_position()
 		velocity.y = 0
 		velocity.x = -speed
+		flip_h_isAttacking = false
 		$AnimatedSprite.play("left")
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right") && isAttacking == false:
 		player_position()
 		velocity.y = 0
 		velocity.x = +speed
+		flip_h_isAttacking = true
 		$AnimatedSprite.play("right")
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down") && isAttacking == false:
 		player_position()
 		velocity.x = 0
 		velocity.y = +speed
 		$AnimatedSprite.play("down")
-	elif Input.is_action_pressed("ui_up"):
+	elif Input.is_action_pressed("ui_up") && isAttacking == false:
 		player_position()
 		velocity.x = 0
 		velocity.y = -speed
@@ -31,7 +34,15 @@ func _process(delta):
 	else:
 		velocity.x = 0
 		velocity.y = 0
-		$AnimatedSprite.play("idle")
+		if isAttacking == false:
+			$AnimatedSprite.play("idle")
+	
+	
+	if Input.is_action_pressed("attack"):
+		$AnimatedSprite.flip_h = flip_h_isAttacking
+		$AnimatedSprite.play("attack1")
+		$AnimationPlayer.play("attack")
+		isAttacking = true
 	move_and_slide(velocity*delta)
 	pass
 
@@ -42,3 +53,10 @@ func player_position():
 func player_speed(speed_player):
 	speed = speed_player
 	pass
+
+
+func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == "attack1":
+		$AnimatedSprite.flip_h = false
+		isAttacking = false
+	pass # Replace with function body.

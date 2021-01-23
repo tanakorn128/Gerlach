@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=7 format=2]
+[gd_resource type="Resource" load_steps=8 format=2]
 
 [ext_resource path="res://src/script/Exam/script/Exam_All.gd" type="Script" id=1]
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/3.tres" type="Resource" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/1.tres" type="Resource" id=4]
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/5.tres" type="Resource" id=5]
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/2.tres" type="Resource" id=6]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/6.tres" type="Resource" id=7]
 
 [resource]
 script = ExtResource( 1 )
-ExamAll = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ) ]
+ExamAll = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ) ]
