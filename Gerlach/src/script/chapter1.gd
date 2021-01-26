@@ -20,3 +20,5 @@ func player_position(position):
 	$HUD.position.x = position.x + hud.x
 	$HUD.position.y = position.y + hud.y
 	pass
+
+

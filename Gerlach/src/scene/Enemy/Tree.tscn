@@ -1,0 +1,100 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/reassets/Tree03.png" type="Texture" id=1]
+[ext_resource path="res://assets/reassets/Tree04.png" type="Texture" id=2]
+[ext_resource path="res://assets/reassets/Tree07.png" type="Texture" id=3]
+[ext_resource path="res://assets/reassets/Tree05.png" type="Texture" id=4]
+[ext_resource path="res://assets/reassets/Tree08.png" type="Texture" id=5]
+[ext_resource path="res://assets/reassets/Tree06.png" type="Texture" id=6]
+[ext_resource path="res://assets/reassets/Tree09.png" type="Texture" id=7]
+[ext_resource path="res://src/script/mission/mission1.gd" type="Script" id=8]
+[ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 54, 56 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 54, 56 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 54, 56 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 54, 56 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 54, 56 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 54, 56 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 54, 56 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "hit",
+"speed": 5.0
+} ]
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 2
+emission_box_extents = Vector3( 30, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+angular_velocity = -231.72
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = 55.17
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 36.7439
+height = 93.4546
+
+[node name="mission1" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Tree" type="AnimatedSprite" parent="."]
+scale = Vector2( 5, 5 )
+frames = SubResource( 7 )
+animation = "idle"
+speed_scale = 0.25
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Efect" type="Node2D" parent="Tree"]
+position = Vector2( -22.68, -28.1911 )
+scale = Vector2( 0.24, 0.191126 )
+
+[node name="Particles2D" type="Particles2D" parent="Tree/Efect"]
+position = Vector2( 97.7522, 172.109 )
+scale = Vector2( 4.16667, 5.23214 )
+emitting = false
+amount = 2
+process_material = SubResource( 8 )
+texture = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.69872, 93.3717 )
+rotation = -1.5708
+shape = SubResource( 9 )
+[connection signal="animation_finished" from="Tree" to="." method="_on_Tree_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
