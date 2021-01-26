@@ -1,11 +1,16 @@
 extends Node2D
 var temp
+var mission
 export (Array) var exam
 var ExamChapter1 = preload("res://src/script/Exam/Exam_All/Chapter1.tres")
 var correct
 func _ready():
+	Events.connect("answer1",self,"_Correct")
+	Events.connect("answer2",self,"_not_correct")
 	set_exam(ExamChapter1.ExamAll.size())
 	import_exam()
+	mission = $"/root/Global".mission
+	
 	pass
 
 func set_exam(size): #นำเข้าข้อสอบจากภายนอก
@@ -54,10 +59,10 @@ func _show(question,answer1,answer2,answer3,answer4):
 func _answer(correct,answer): #ตรวจคำตอบ
 	
 	if correct == answer:
-		print("true")
+		Events.emit_signal("answer1",true)
 		return true
 	else:
-		print("false")
+		Events.emit_signal("answer2",false)
 		import_exam()
 		return false
 
@@ -67,7 +72,10 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	_show(importexam[rng].Question,importexam[rng].answer1,importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	correct = importexam[rng].Correct
 	pass
-
+func _Correct(Correct):
+	pass
+func _not_correct(not_correct):
+	pass
 func _on_Timer_timeout():
 	if $TextureProgress.value > 0:
 		$TextureProgress.value -= 1

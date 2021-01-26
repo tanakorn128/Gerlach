@@ -1,18 +1,9 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=4 format=2]
 
 [ext_resource path="res://src/script/Enemys.gd" type="Script" id=1]
 [ext_resource path="res://assets/Enemys/Tree1.tres" type="Resource" id=2]
-[ext_resource path="res://src/script/Enemy.gd" type="Script" id=3]
-[ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=4]
-
-[sub_resource type="Resource" id=1]
-script = ExtResource( 3 )
-name = "Tree"
-Mission = "Tree2"
-texture = ExtResource( 4 )
-damage = 0
-location = Vector2( 100, 300 )
+[ext_resource path="res://assets/Enemys/Tree2.tres" type="Resource" id=3]
 
 [resource]
 script = ExtResource( 1 )
-Enemy = [ ExtResource( 2 ), SubResource( 1 ) ]
+Enemy = [ ExtResource( 2 ), ExtResource( 3 ) ]

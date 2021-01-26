@@ -1,34 +1,35 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://src/script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player.png" type="Texture" id=2]
+[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/player/ax_player1.png" type="Texture" id=4]
 [ext_resource path="res://assets/player/ax_player3.png" type="Texture" id=5]
 [ext_resource path="res://assets/player/ax_player2.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
@@ -86,12 +87,12 @@ region = Rect2( 0, 0, 35, 35 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
@@ -216,4 +217,7 @@ disabled = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/attack = SubResource( 24 )
 anims/attack2 = SubResource( 25 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+position = Vector2( -215.692, -121.09 )
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

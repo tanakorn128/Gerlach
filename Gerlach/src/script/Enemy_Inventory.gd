@@ -30,4 +30,6 @@ func Enemy(name,mission,position):
 		instree.Ename = name
 		instree.mission = mission
 		instree.position = position
+		print(instree.position)
 		add_child(instree)
+	

@@ -19,8 +19,14 @@ func set_mission():
 		Enemy_name.append(mission_Enemy[i].name)
 		damage.append(mission_Enemy[i].damage)
 		texture.append(mission_Enemy[i].texture)
+		
 		pass
 
+	pass
+func MissionSuccess():
+	var mission = $"/root/Global".mission
+	if $"/root/Global".mission_Success == true:
+		Events.emit_signal("hit",mission)
 	pass
 
 func get_mission():
