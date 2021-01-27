@@ -1,20 +1,24 @@
 extends Node2D
 var pos
-var mission
-var Ename
-var CollisioionPlayer = false
+var mission #ชื่อภารกิจ
+var Ename #ชื่อของสตรู
+var CollisioionPlayer = false #ผู้เล่นชนกับสตรู
+var damage #ความเสียหาย
+var missiom_hit = false #ภารกิจสำเร็จเป็น True
 func _ready():
 	$Tree.play("idle")
 	$Tree.frame = 0
-
 	Events.connect("player_position",self,"player_position") #เชื่อมสัญญาณ player_position
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
 	Events.connect("hit",self,"hit")
 	pass
-func hit(hit_mission):
+
+func hit(hit_mission): # ผู้เล่นชนะ Effect การตาย
 	if mission == hit_mission:
-		queue_free()
+		missiom_hit = true
+		$Tree.play("hit")
 	pass
+
 func _on_Area2D_body_entered(body):
 	if CollisioionPlayer:
 		exam()
@@ -24,17 +28,26 @@ func _on_Area2D_body_entered(body):
 func Collisioion(Collisioion):
 	CollisioionPlayer = Collisioion
 	pass
-func exam():
+func exam(): #เปลี่ยนฉากไปทำข้อสอย
 	speed_player()
-	$"/root/Global".mission = mission
+	#ส่งออกข้่อมูลของสตรู
+	$"/root/Global".mission = mission 
 	$"/root/Global".Enemy_Name = Ename
+	$"/root/Global".damage = damage
+	$"/root/Global".L_mission = mission
+	#เปลี่ยนฉาก
 	get_tree().change_scene("res://src/scene/Exam.tscn")
 
 
-func speed_player():
+func speed_player(): # ความเร็วผู้เล่นเป็น 0
 	Events.emit_signal("player_speed",0)
 	pass
 
 func player_position(position):
 
 	pass
+
+func _on_Tree_animation_finished():
+	if missiom_hit:
+		queue_free()
+	pass # Replace with function body.

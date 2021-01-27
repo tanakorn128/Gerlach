@@ -14,14 +14,14 @@ func _process(delta):
 		velocity.y = 0
 		velocity.x = -speed
 		flip_h_isAttacking = false
-		$AnimatedSprite.play("right")
+		$AnimatedSprite.play("left")
 		Events.emit_signal("player_Collisioion_mission",true)
 	elif Input.is_action_pressed("ui_right") && isAttacking == false:
 		player_position()
 		velocity.y = 0
 		velocity.x = +speed
 		flip_h_isAttacking = true
-		$AnimatedSprite.play("left")
+		$AnimatedSprite.play("right")
 		Events.emit_signal("player_Collisioion_mission",true)
 	elif Input.is_action_pressed("ui_down") && isAttacking == false:
 		player_position()

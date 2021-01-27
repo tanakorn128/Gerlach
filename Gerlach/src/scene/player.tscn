@@ -60,28 +60,28 @@ atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 35, 35 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 64, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 35, 35 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 35, 35 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 35, 35 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=20]
 animations = [ {
@@ -112,13 +112,13 @@ animations = [ {
 }, {
 "frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "down",
-"speed": 7.0
+"name": "ax",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
 "loop": true,
-"name": "ax",
-"speed": 5.0
+"name": "down",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=21]
@@ -180,7 +180,6 @@ speed = 10000
 frames = SubResource( 20 )
 animation = "attack1"
 frame = 1
-flip_h = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true

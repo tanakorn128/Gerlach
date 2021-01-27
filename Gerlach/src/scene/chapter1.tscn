@@ -358,7 +358,7 @@ format = 1
 tile_data = PoolIntArray( -3800896, 0, 0, -1966098, 0, 0, -65179, 0, 0, 131605, 1, 0, 3866816, 0, 0, 5898177, 0, 0, 11600024, 0, 0, 11796462, 0, 0, 11731346, 0, 0 )
 
 [node name="game" parent="." instance=ExtResource( 12 )]
-position = Vector2( 915.406, 828.853 )
+position = Vector2( 1003.79, 1145.85 )
 
 [node name="wall" type="TileMap" parent="."]
 position = Vector2( -7.62939e-06, 2.11888 )
@@ -428,10 +428,10 @@ format = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
-margin_left = -571.588
-margin_top = 3213.92
-margin_right = -517.588
-margin_bottom = 3269.92
+margin_left = 3225.48
+margin_top = 1588.42
+margin_right = 3279.48
+margin_bottom = 1644.42
 rect_scale = Vector2( 5, 5 )
 texture = ExtResource( 4 )
 __meta__ = {

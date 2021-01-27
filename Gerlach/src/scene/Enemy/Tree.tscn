@@ -66,6 +66,7 @@ radius = 36.7439
 height = 93.4546
 
 [node name="mission1" type="Node2D"]
+position = Vector2( 500, 500 )
 script = ExtResource( 8 )
 
 [node name="Tree" type="AnimatedSprite" parent="."]
@@ -73,6 +74,7 @@ scale = Vector2( 5, 5 )
 frames = SubResource( 8 )
 animation = "idle"
 speed_scale = 0.25
+playing = true
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
@@ -96,4 +98,5 @@ texture = ExtResource( 7 )
 position = Vector2( -1.69872, 93.3717 )
 rotation = -1.5708
 shape = SubResource( 10 )
+[connection signal="animation_finished" from="Tree" to="." method="_on_Tree_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
