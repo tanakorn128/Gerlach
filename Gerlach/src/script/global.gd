@@ -2,7 +2,9 @@ extends Node
 var player:Vector2
 var mission
 var mission_Success = false
+#ส่วนของ Mission เมื่อเริ่มต่อสู้
 var Enemy_Name
 var damage
-var L_mission 
-var mission_complete:Array
+var L_mission #ชื่อภารกิต
+######
+var mission_complete:Array #ภารกิจสำเร็จ

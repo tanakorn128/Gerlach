@@ -8,10 +8,10 @@
 script = ExtResource( 1 )
 
 [node name="Enemy" type="TextureRect" parent="."]
-margin_left = 77.5615
-margin_top = 57.2734
-margin_right = 134.562
-margin_bottom = 113.273
+margin_left = 189.688
+margin_top = 185.418
+margin_right = 246.689
+margin_bottom = 241.418
 rect_scale = Vector2( 4, 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,5 +34,5 @@ position = Vector2( 1078.26, 66.8909 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="HUDEnemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 141.968, 40.2596 )
+position = Vector2( 141.968, 37.59 )
 scale = Vector2( 0.1, 0.1 )

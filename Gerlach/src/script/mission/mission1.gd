@@ -10,10 +10,20 @@ func _ready():
 	$Tree.frame = 0
 	Events.connect("player_position",self,"player_position") #เชื่อมสัญญาณ player_position
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
-	Events.connect("hit",self,"hit")
+	Events.connect("hit",self,"hit_mission")
+	Events.connect("Test",self,"Test")
 	pass
-
+func Test():
+	#print("Test")
+	pass
+func hit_mission(hit_mission):
+	if mission == hit_mission:
+		missiom_hit = true
+		$Tree.play("hit")
+	pass
 func hit(hit_mission): # ผู้เล่นชนะ Effect การตาย
+	print(hit_mission)
+	print("hit_mission")
 	if mission == hit_mission:
 		missiom_hit = true
 		$Tree.play("hit")
@@ -50,4 +60,5 @@ func player_position(position):
 func _on_Tree_animation_finished():
 	if missiom_hit:
 		queue_free()
+		get_tree().change_scene("res://src/scene/chapter1.tscn")
 	pass # Replace with function body.
