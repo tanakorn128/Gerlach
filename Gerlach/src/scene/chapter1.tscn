@@ -427,11 +427,8 @@ format = 1
 [node name="Enemy_Inventory" parent="." instance=ExtResource( 15 )]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-margin_left = 3225.48
-margin_top = 1588.42
-margin_right = 3279.48
-margin_bottom = 1644.42
+margin_right = 54.0
+margin_bottom = 56.0001
 rect_scale = Vector2( 5, 5 )
 texture = ExtResource( 4 )
 __meta__ = {

@@ -11,10 +11,11 @@ func _ready():
 	Events.connect("player_position",self,"player_position") #เชื่อมสัญญาณ player_position
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
 	Events.connect("hit",self,"hit_mission")
-	Events.connect("Test",self,"Test")
+	Events.connect("answer1",self,"_Correct")
+
 	pass
-func Test():
-	#print("Test")
+func _Correct(Correct): #ตอบคำถามผิด
+	$Tree/Efect/Particles2D.emitting = true
 	pass
 func hit_mission(hit_mission):
 	if mission == hit_mission:
@@ -61,4 +62,9 @@ func _on_Tree_animation_finished():
 	if missiom_hit:
 		queue_free()
 		get_tree().change_scene("res://src/scene/chapter1.tscn")
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	$Tree/Efect/Particles2D.emitting = false
 	pass # Replace with function body.
