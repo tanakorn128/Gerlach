@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=8 format=2]
+[gd_resource type="Resource" load_steps=15 format=2]
 
 [ext_resource path="res://src/script/Exam/script/Exam_All.gd" type="Script" id=1]
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/3.tres" type="Resource" id=2]
@@ -7,7 +7,14 @@
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/5.tres" type="Resource" id=5]
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/2.tres" type="Resource" id=6]
 [ext_resource path="res://src/script/Exam/Exam/Chapter1/6.tres" type="Resource" id=7]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/8.tres" type="Resource" id=8]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/7.tres" type="Resource" id=9]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/9.tres" type="Resource" id=10]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/10.tres" type="Resource" id=11]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/11.tres" type="Resource" id=12]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/12.tres" type="Resource" id=13]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/13.tres" type="Resource" id=14]
 
 [resource]
 script = ExtResource( 1 )
-ExamAll = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ) ]
+ExamAll = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]

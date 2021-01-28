@@ -8,3 +8,5 @@ var damage
 var L_mission #ชื่อภารกิต
 ######
 var mission_complete:Array #ภารกิจสำเร็จ
+
+var save:Dictionary

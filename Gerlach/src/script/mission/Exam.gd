@@ -1,4 +1,5 @@
 extends Node2D
+var number
 var temp
 var mission
 export (Array) var exam
@@ -43,9 +44,14 @@ func _on_answer4_button_down():
 	pass # Replace with function body.
 
 func random_exam(value): #สุ่มตัวเลข
+	var temp_rng
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	var my_random_number : int = rng.randf_range(1, value)
+	number = my_random_number
+	if temp == number:
+		number+2
+	temp = number
 	return my_random_number
 
 func _show(question,answer1,answer2,answer3,answer4):
@@ -73,8 +79,10 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	correct = importexam[rng].Correct
 	pass
 func _Correct(Correct):
+	import_exam()
 	pass
 func _not_correct(not_correct):
+	import_exam()
 	pass
 func _on_Timer_timeout():
 	if $TextureProgress.value > 0:

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "ค่าของเลข 3 ใน 253,421 เท่ากับข้อใด"
+answer1 = "3"
+answer2 = "30"
+answer3 = "300"
+answer4 = "3,000"
+Correct = "3,000"
