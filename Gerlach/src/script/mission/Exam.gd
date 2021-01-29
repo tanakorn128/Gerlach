@@ -80,8 +80,10 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	pass
 func _Correct(Correct):
 	import_exam()
+	$TextureProgress.value = 60
 	pass
 func _not_correct(not_correct):
+	$TextureProgress.value = 60
 	import_exam()
 	pass
 func _on_Timer_timeout():
