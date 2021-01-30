@@ -16,6 +16,7 @@ func _process(delta):
 		flip_h_isAttacking = false
 		$AnimatedSprite.play("left")
 		Events.emit_signal("player_Collisioion_mission",true)
+		player_position()
 	elif Input.is_action_pressed("ui_right") && isAttacking == false:
 		player_position()
 		velocity.y = 0
@@ -23,17 +24,20 @@ func _process(delta):
 		flip_h_isAttacking = true
 		$AnimatedSprite.play("right")
 		Events.emit_signal("player_Collisioion_mission",true)
+		player_position()
 	elif Input.is_action_pressed("ui_down") && isAttacking == false:
 		player_position()
 		velocity.x = 0
 		velocity.y = +speed
 		$AnimatedSprite.play("down")
 		Events.emit_signal("player_Collisioion_mission",true)
+		player_position()
 	elif Input.is_action_pressed("ui_up") && isAttacking == false:
 		player_position()
 		velocity.x = 0
 		velocity.y = -speed
 		$AnimatedSprite.play("up")
+		player_position()
 		Events.emit_signal("player_Collisioion_mission",true)
 	else:
 		velocity.x = 0
@@ -67,4 +71,9 @@ func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "attack1":
 		$AnimatedSprite.flip_h = false
 		isAttacking = false
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	
 	pass # Replace with function body.

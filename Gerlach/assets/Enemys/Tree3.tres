@@ -9,4 +9,4 @@ name = "Tree"
 Mission = "ตัดต้นไม้..."
 texture = ExtResource( 2 )
 damage = 30
-location = Vector2( 865.614, 712.042 )
+location = Vector2( 3365.48, 1588.42 )
