@@ -18,7 +18,6 @@ func _ready():
 	$Trash1/AnimationPlayer_down3.play("swipe")
 	set_question()
 func _process(delta):
-	print(EventTrash1)
 	pass # Replace with function body.
 
 
@@ -125,9 +124,9 @@ func answer(trash,value):
 	pass
 
 func set_question():
-	correct_Trash1 = "up" #คำตอบTrash1 
-	correct_Trash2 = "down"  #คำตอบTrash2
-	correct_Trash3 = "up"  #คำตอบTrash3
+	correct_Trash1 = "down" #คำตอบTrash1 
+	correct_Trash2 = "up"  #คำตอบTrash2
+	correct_Trash3 = "down"  #คำตอบTrash3
 
 func correct(): #คำตอบถูก
 	print("T")
