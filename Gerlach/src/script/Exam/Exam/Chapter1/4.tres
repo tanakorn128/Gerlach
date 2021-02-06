@@ -10,3 +10,5 @@ answer2 = "1"
 answer3 = "2"
 answer4 = "3"
 Correct = "1"
+stage_type = 0
+stage_badges = [  ]

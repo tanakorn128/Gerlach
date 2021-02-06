@@ -363,7 +363,7 @@ tile_data = PoolIntArray( -3800896, 0, 0, -1966098, 0, 0, -65179, 0, 0, 131605, 
 position = Vector2( 1012, 1128 )
 
 [node name="Bat" parent="." instance=ExtResource( 13 )]
-position = Vector2( 460, 580 )
+position = Vector2( 496.367, 388.034 )
 
 [node name="wall" type="TileMap" parent="."]
 position = Vector2( -7.62939e-06, 2.11888 )

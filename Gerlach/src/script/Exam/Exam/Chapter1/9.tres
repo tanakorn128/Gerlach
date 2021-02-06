@@ -10,3 +10,5 @@ answer2 = "5,000"
 answer3 = "50,000"
 answer4 = "500,000"
 Correct = "50,000"
+stage_type = 0
+stage_badges = [  ]
