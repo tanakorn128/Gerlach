@@ -1,4 +1,4 @@
-extends Node2D
+xtends Node2D
 var x =0
 func _ready():
 	print(get_filename())

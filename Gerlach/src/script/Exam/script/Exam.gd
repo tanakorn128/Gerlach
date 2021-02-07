@@ -34,5 +34,6 @@ enum Badge {
 	MEDITATION # สมาธิ
 }
 
-export (StageType) var stage_type
-export (Array, Badge) var stage_badges
+#export (StageType) var stage_type
+#export (Array, Badge) var stage_badges
+

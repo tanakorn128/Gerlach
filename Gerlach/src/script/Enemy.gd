@@ -7,3 +7,9 @@ export (Texture) var texture
 export (int) var damage
 export (Vector2) var location
 
+enum EnemyType {
+	simple ,
+	Trash,
+}
+
+export (EnemyType) var Enemy_Type

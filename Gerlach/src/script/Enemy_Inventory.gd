@@ -18,21 +18,23 @@ func put_Enemy(): #นำ Enemy ใส่ใน Scene
 		var name = $"/root/MissionInventory".get_name()[i]
 		var position = $"/root/MissionInventory".get_position()[i]
 		var damage = $"/root/MissionInventory".get_damage()[i]
+		var EnemyType = $"/root/MissionInventory".get_EnemyType()[i]
 		if delete_mission(mission,enemys.size()):
-			Enemy(str(name),mission,position,damage)
+			Enemy(str(name),mission,position,damage,EnemyType)
 
 
 func mission_All():
 	var mission = $"/root/MissionInventory".get_mission()
 	return mission
 
-func Enemy(name,mission,position,damage):
+func Enemy(name,mission,position,damage,EnemyType):
 	if name == "Tree": #ชื่อของสตรูว่า Tree 
 		var instree = load("res://src/scene/Enemy/Tree.tscn").instance()
 		instree.Ename = name
 		instree.mission = mission
 		instree.position = position
 		instree.damage = damage
+		instree.EnemyType = EnemyType
 		add_child(instree)
 	
 func delete_mission(m,EnemyAll):

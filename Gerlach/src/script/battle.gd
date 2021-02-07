@@ -22,12 +22,11 @@ func _process(delta):
 	
 func set_enemy(): #ค้นหาสตรูและแสดงผล
 	for i in enemys.Enemy.size():
-		if enemys.Enemy[i].Mission == $"/root/Global".L_mission:
+		if enemys.Enemy[i].Mission == $"/root/Global".L_mission: #เปลี่ยบเทียบ
 			#$Enemy.texture = enemys.Enemy[i].texture
 			damage = enemys.Enemy[i].damage
 			Enemy($"/root/Global".Enemy_Name,$"/root/Global".L_mission,$Enemy.rect_position,damage)
 			
-			#print(damage)
 
 	pass
 func _Correct(Correct): #ตอบคำถามผิด
@@ -39,7 +38,6 @@ func _not_correct(not_correct): #ตอยคพถาทผิด
 	pass
 
 func Enemy(name,mission,position,damage):
-	print(name)
 	if name == "Tree": #ชื่อของสตรูว่า Tree 
 		var instree = load("res://src/scene/Enemy/Tree.tscn").instance()
 		instree.Ename = name

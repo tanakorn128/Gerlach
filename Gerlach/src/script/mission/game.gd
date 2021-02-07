@@ -1,1 +1,1 @@
-extends Node2D
+xtends Node2D

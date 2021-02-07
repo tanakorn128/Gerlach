@@ -5,6 +5,7 @@ var Ename #ชื่อของสตรู
 var CollisioionPlayer = false #ผู้เล่นชนกับสตรู
 var damage #ความเสียหาย
 var missiom_hit = false #ภารกิจสำเร็จเป็น True
+var EnemyType
 func _ready():
 	$Tree.play("idle")
 	$Tree.frame = 0
@@ -12,7 +13,6 @@ func _ready():
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
 	Events.connect("hit",self,"hit_mission")
 	Events.connect("answer1",self,"_Correct")
-
 	pass
 func _Correct(Correct): #ตอบคำถามผิด
 	$Tree/Efect/Particles2D.emitting = true
@@ -47,7 +47,10 @@ func exam(): #เปลี่ยนฉากไปทำข้อสอย
 	$"/root/Global".damage = damage
 	$"/root/Global".L_mission = mission
 	#เปลี่ยนฉาก
-	get_tree().change_scene("res://src/scene/Exam.tscn")
+	if EnemyType == 0:
+		get_tree().change_scene("res://src/scene/EnemyType/Simple.tscn")
+	if EnemyType == 1:
+		get_tree().change_scene("res://src/scene/EnemyType/Trash.tscn")
 
 
 func speed_player(): # ความเร็วผู้เล่นเป็น 0

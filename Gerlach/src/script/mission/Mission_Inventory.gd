@@ -6,6 +6,7 @@ export (Array) var Enemy_location
 export (Array) var Enemy_name
 export (Array) var damage
 export (Array) var texture
+export (Array) var EnemyType
 func _ready():
 	set_mission()
 	pass
@@ -13,13 +14,16 @@ func _ready():
 func set_mission():
 	var mission_size = Mission_Inventory.Mission.size()
 	var mission_Enemy =  Mission_Inventory.Mission[0].Enemy #มาที Enemys.gd
+	#ดึงข้อมูล Enemy รายตัวมาใช้ Mission ช่องที่ 0
+	
 	for i in mission_Enemy.size():
 		ListMission1.append(mission_Enemy[i].Mission) 
 		Enemy_location.append(mission_Enemy[i].location)
 		Enemy_name.append(mission_Enemy[i].name)
 		damage.append(mission_Enemy[i].damage)
 		texture.append(mission_Enemy[i].texture)
-		
+		EnemyType.append(mission_Enemy[i].Enemy_Type)
+
 		pass
 
 	pass
@@ -46,3 +50,7 @@ func get_damage():
 
 func get_texture():
 	return texture
+
+func get_EnemyType():
+	return EnemyType
+	pass
