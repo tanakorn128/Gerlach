@@ -1,13 +1,14 @@
 extends Node2D
-var Trash1 = false 
-var Trash2 = false 
-var Trash3 = false 
-var EventTrash1 = true #Event
-var EventTrash2 = true #Event
-var EventTrash3 = true #Event
+var Trash1 = false  #Event Mouse Zone ถังขยะ
+var Trash2 = false  #Event Mouse Zone ถังขยะ
+var Trash3 = false  #Event Mouse Zone ถังขยะ
+var EventTrash1 = true #Event  ขยับถังขยะตาม Mouse
+var EventTrash2 = true #Event  ขยับถังขยะตาม Mouse
+var EventTrash3 = true #Event  ขยับถังขยะตาม Mouse
 var correct_Trash1 #คำตอบTrash1 
 var correct_Trash2 #คำตอบTrash2
 var correct_Trash3 #คำตอบTrash3
+var ResetPosition = false
 func _ready():
 	$Trash1/AnimationPlayer.play("swipe")
 	$Trash2/AnimationPlayer.play("swipe")
@@ -15,8 +16,10 @@ func _ready():
 	$Trash3/AnimationPlayer_down.play("swipe")
 	$Trash2/AnimationPlayer_down2.play("swipe")
 	$Trash1/AnimationPlayer_down3.play("swipe")
-	set_question()
+	SetQuestion()
+	
 func _process(delta):
+	
 	pass # Replace with function body.
 
 
@@ -123,18 +126,79 @@ func answer(trash,value):
 	pass
 
 func set_question():
-	correct_Trash1 = "down" #คำตอบTrash1 
-	correct_Trash2 = "up"  #คำตอบTrash2
-	correct_Trash3 = "down"  #คำตอบTrash3
+	#correct_Trash1 = "down" #คำตอบTrash1 
+	#correct_Trash2 = "up"  #คำตอบTrash2
+	#correct_Trash3 = "down"  #คำตอบTrash3
+	pass
 
 func correct(): #คำตอบถูก
 	$battle._Correct(40)
 	$AudioCorrect.playing = true
-	print("T")
+	#print("T")
 	pass
 
 func not_correct(): #ตอบผิด
 	$battle._not_correct(40)
 	$AudioWrong.playing = true
-	print("F")
+	ResetPosition = true
+	$Timer.start()
+	#print("F")
 	pass
+
+func RandomNumber():
+	var rng = RandomNumberGenerator.new()
+	rng.randomize()
+	var my_random_number = rng.randf_range(0, 9)
+	return int(my_random_number)
+
+
+func reset():
+	var T1_Position = Vector2(430.052,503.016)
+	var T2_Position = Vector2(678.098,503.016)
+	var T3_Position = Vector2(678.098,503.016)
+	$Trash1.position.y = T1_Position.y
+	$Trash2.position.y = T2_Position.y
+	$Trash3.position.y = T3_Position.y
+	var Trash1 = false 
+	Trash2 = false 
+	Trash3 = false 
+	EventTrash1 = true #Event
+	EventTrash2 = true #Event
+	EventTrash3 = true #Event
+	$Trash1/TextureRect.show()
+	$Trash1/TextureRect_down3.show()
+	$Trash2/TextureRect.show()
+	$Trash2/TextureRect_down2.show()
+	$Trash3/TextureRect.show()
+	$Trash3/TextureRect_down.show()
+	
+func SetQuestion():
+	var valueTrash1_1 =  RandomNumber()
+	var valueTrash1_2 =  RandomNumber()
+	var valueTrash2_1 =  RandomNumber()
+	var valueTrash2_2 =  RandomNumber()
+	var valueTrash3_1 =  RandomNumber()
+	var valueTrash3_2 =  RandomNumber()
+	$Trash1/Label.text = str(valueTrash1_1,".",valueTrash1_2)
+	$Trash2/Label.text = str(valueTrash2_1,".",valueTrash2_2)
+	$Trash3/Label.text = str(valueTrash3_1,".",valueTrash3_2)
+	if valueTrash1_2 >= 5:
+		correct_Trash1 = "up"
+	else: 
+		correct_Trash1 = "down"
+	if valueTrash2_2 >= 5:
+		correct_Trash2 = "up"
+	else: 
+		correct_Trash2 = "down"
+	if valueTrash3_2 >= 5:
+		correct_Trash3 = "up"
+	else: 
+		correct_Trash3 = "down"
+
+
+func _on_Timer_timeout():
+	if ResetPosition:
+		reset()
+		SetQuestion()
+		ResetPosition = false
+	pass # Replace with function body.

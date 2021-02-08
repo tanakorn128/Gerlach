@@ -531,9 +531,12 @@ volume_db = 11.52
 [node name="AudioWrong" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
 volume_db = 11.52
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="mouse_entered" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_entered"]
 [connection signal="mouse_exited" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_exited"]
 [connection signal="mouse_entered" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_entered"]
 [connection signal="mouse_exited" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_exited"]
 [connection signal="mouse_entered" from="Trash3/ReferenceRect3" to="." method="_on_ReferenceRect3_mouse_entered"]
 [connection signal="mouse_exited" from="Trash3/ReferenceRect3" to="." method="_on_ReferenceRect3_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
