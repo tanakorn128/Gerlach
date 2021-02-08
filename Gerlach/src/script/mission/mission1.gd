@@ -13,6 +13,7 @@ func _ready():
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
 	Events.connect("hit",self,"hit_mission")
 	Events.connect("answer1",self,"_Correct")
+	#print($"/root/Global".player)
 	pass
 func _Correct(Correct): #ตอบคำถามผิด
 	$Tree/Efect/Particles2D.emitting = true
@@ -32,6 +33,7 @@ func hit(hit_mission): # ผู้เล่นชนะ Effect การตา�
 
 func _on_Area2D_body_entered(body):
 	if CollisioionPlayer:
+		$"/root/Global".player = self.position
 		exam()
 	#get_tree().change_scene("res://src/scene/Exam.tscn")
 	pass # Replace with function body.

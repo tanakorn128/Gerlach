@@ -8,6 +8,7 @@
 script = ExtResource( 1 )
 
 [node name="Enemy" type="TextureRect" parent="."]
+visible = false
 margin_left = 189.688
 margin_top = 185.418
 margin_right = 246.689

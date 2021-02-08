@@ -1,5 +1,5 @@
 extends Node
-var player:Vector2
+var player = Vector2(400,400)
 var mission
 var mission_Success = false
 #ส่วนของ Mission เมื่อเริ่มต่อสู้

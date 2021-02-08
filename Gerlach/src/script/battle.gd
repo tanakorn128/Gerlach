@@ -1,11 +1,10 @@
 extends Node2D
 var enemys = preload("res://assets/Enemys/Enemys.tres")
 var Enemy_index #ตำแน่งสตรูใน Array
+var player_damage
 var damage
 var C = false
 func _ready():
-	Events.connect("answer1",self,"_Correct")
-	Events.connect("answer2",self,"_not_correct")
 	set_enemy()
 	pass
 func _process(delta):
@@ -29,12 +28,12 @@ func set_enemy(): #ค้นหาสตรูและแสดงผล
 			
 
 	pass
-func _Correct(Correct): #ตอบคำถามผิด
-	$HUDEnemy/TextureProgress.value -= int(damage)
+func _Correct(damages): #ตอบคำถามผิด
+	$HUDEnemy/TextureProgress.value -= damages 
 	C = true
 	pass
-func _not_correct(not_correct): #ตอยคพถาทผิด
-	$HUDPlayer/TextureProgress.value -=10
+func _not_correct(damages): #ตอยคพถาทผิด
+	$HUDPlayer/TextureProgress.value -= damages
 	pass
 
 func Enemy(name,mission,position,damage):

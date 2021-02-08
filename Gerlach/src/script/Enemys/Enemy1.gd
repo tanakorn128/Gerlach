@@ -8,7 +8,6 @@ var EventTrash3 = true #Event
 var correct_Trash1 #คำตอบTrash1 
 var correct_Trash2 #คำตอบTrash2
 var correct_Trash3 #คำตอบTrash3
-
 func _ready():
 	$Trash1/AnimationPlayer.play("swipe")
 	$Trash2/AnimationPlayer.play("swipe")
@@ -129,9 +128,11 @@ func set_question():
 	correct_Trash3 = "down"  #คำตอบTrash3
 
 func correct(): #คำตอบถูก
+	$battle._Correct(40)
 	print("T")
 	pass
 
 func not_correct(): #ตอบผิด
+	$battle._not_correct(40)
 	print("F")
 	pass

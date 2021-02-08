@@ -1,10 +1,11 @@
 extends KinematicBody2D
 var velocity : Vector2
-export var speed = 1000
+const speed = 10000
 var isAttacking = false
 var flip_h_isAttacking=false
 func _ready():
 	Events.connect("player_speed",self,"player_speed")
+	set_player_position()
 	player_position()
 	pass
 
@@ -62,10 +63,11 @@ func player_position():
 	Events.emit_signal("player_position",self.position)
 	pass
 
-func player_speed(speed_player):
-	speed = speed_player
-	pass
 
+
+func set_player_position():
+	self.position = $"/root/Global".player
+	pass
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "attack1":
@@ -75,5 +77,5 @@ func _on_AnimatedSprite_animation_finished():
 
 
 func _on_Timer_timeout():
-	
+	$CollisionShape2D.disabled = false
 	pass # Replace with function body.

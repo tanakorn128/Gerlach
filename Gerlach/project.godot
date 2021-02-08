@@ -30,16 +30,6 @@ _global_script_classes=[ {
 "path": "res://src/script/Exam/script/Exam_All.gd"
 }, {
 "base": "Resource",
-"class": "Inventory",
-"language": "GDScript",
-"path": "res://src/script/Inventory.gd"
-}, {
-"base": "Resource",
-"class": "Item",
-"language": "GDScript",
-"path": "res://src/script/Item.gd"
-}, {
-"base": "Resource",
 "class": "mission",
 "language": "GDScript",
 "path": "res://src/script/mission/Mission_All.gd"
@@ -49,8 +39,6 @@ _global_script_class_icons={
 "Enemys": "",
 "Exam": "",
 "Exam_All": "",
-"Inventory": "",
-"Item": "",
 "mission": ""
 }
 
