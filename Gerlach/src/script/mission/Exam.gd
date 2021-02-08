@@ -63,10 +63,12 @@ func _answer(correct,answer): #ตรวจคำตอบ
 	
 	if correct == answer:
 		$battle._Correct(40)
+		$AudioCorrect.playing = true
 		import_exam()
 		return true
 	else:
 		$battle._not_correct(40)
+		$AudioWrong.playing = true
 		import_exam()
 		return false
 

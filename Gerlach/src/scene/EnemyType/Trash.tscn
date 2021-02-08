@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Enemys/png/Trash3.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://src/script/Enemys/Enemy1.gd" type="Script" id=9]
 [ext_resource path="res://assets/World/CliffTileset.tres" type="TileSet" id=10]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=11]
+[ext_resource path="res://assets/audio/Correct.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/Wrong.wav" type="AudioStream" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -521,6 +523,14 @@ text = "ปัดขยะ"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+volume_db = 11.52
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+volume_db = 11.52
 [connection signal="mouse_entered" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_entered"]
 [connection signal="mouse_exited" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_exited"]
 [connection signal="mouse_entered" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_entered"]

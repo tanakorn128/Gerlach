@@ -129,10 +129,12 @@ func set_question():
 
 func correct(): #คำตอบถูก
 	$battle._Correct(40)
+	$AudioCorrect.playing = true
 	print("T")
 	pass
 
 func not_correct(): #ตอบผิด
 	$battle._not_correct(40)
+	$AudioWrong.playing = true
 	print("F")
 	pass

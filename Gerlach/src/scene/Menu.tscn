@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/UI Pack RPG/buttonLong_brown.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI Pack RPG/panelInset_beige.png" type="Texture" id=2]
 [ext_resource path="res://src/script/Menu.gd" type="Script" id=3]
+[ext_resource path="res://assets/audio/ost.wav" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -71,6 +72,10 @@ text = "EXIT GAME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -6.656
 [connection signal="button_down" from="start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="SYSTEM" to="." method="_on_SYSTEM_button_down"]
 [connection signal="button_down" from="EXIT GAME" to="." method="_on_EXIT_GAME_button_down"]
