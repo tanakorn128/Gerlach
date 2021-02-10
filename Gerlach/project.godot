@@ -30,6 +30,11 @@ _global_script_classes=[ {
 "path": "res://src/script/Exam/script/Exam_All.gd"
 }, {
 "base": "Resource",
+"class": "Exam_Sort",
+"language": "GDScript",
+"path": "res://src/script/Exam/Exam/Sort/ExamSort.gd"
+}, {
+"base": "Resource",
 "class": "mission",
 "language": "GDScript",
 "path": "res://src/script/mission/Mission_All.gd"
@@ -39,6 +44,7 @@ _global_script_class_icons={
 "Enemys": "",
 "Exam": "",
 "Exam_All": "",
+"Exam_Sort": "",
 "mission": ""
 }
 

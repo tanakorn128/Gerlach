@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/Exam/Sort/ExamSort.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+answer1 = 3485
+answer2 = 2568
+answer3 = 23456
+answer4 = 2557

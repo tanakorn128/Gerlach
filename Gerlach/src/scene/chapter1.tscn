@@ -432,11 +432,9 @@ format = 1
 [node name="Enemy_Inventory" parent="." instance=ExtResource( 15 )]
 
 [node name="HUD" parent="." instance=ExtResource( 16 )]
-visible = false
 scale = Vector2( 0.15, 0.15 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 margin_right = 54.0
 margin_bottom = 56.0001
 rect_scale = Vector2( 5, 5 )

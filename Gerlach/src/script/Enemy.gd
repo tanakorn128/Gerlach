@@ -10,6 +10,7 @@ export (Vector2) var location
 enum EnemyType {
 	simple ,
 	Trash,
+	Sort,
 }
 
 export (EnemyType) var Enemy_Type
