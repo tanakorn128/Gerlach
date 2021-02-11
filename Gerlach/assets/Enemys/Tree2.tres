@@ -9,5 +9,5 @@ name = "Tree"
 Mission = "ตัดต้นไม้.."
 texture = ExtResource( 2 )
 damage = 50
-location = Vector2( -451.588, 3413.92 )
-Enemy_Type = 0
+location = Vector2( 965.614, 712.042 )
+Enemy_Type = 1

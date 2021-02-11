@@ -14,10 +14,18 @@ var number2
 var number3
 var number4
 var random:Array
+var time = int(60)
 func _ready():
 	set_answer()
+	$Timer.start()
+	$AnimationPlayer.play("idle")
 	pass
 
+func _process(delta):
+	if $battle/HUDEnemy/TextureProgress.value <= 0:
+		$Timer.stop()
+		$Label.hide()
+	pass
 func set_answer():
 	var rnd = RandomNumber()
 	#print(exam.ExamAll[1].answer1)
@@ -27,6 +35,7 @@ func set_answer():
 	exam.ExamAll[rnd].answer2,
 	exam.ExamAll[rnd].answer3,
 	exam.ExamAll[rnd].answer4)
+	time = 60
 
 
 func get_answer (answer0,answer1,answer2,answer3):
@@ -100,17 +109,18 @@ func Check_answer(index,stages):
 			not_correct()
 	if stages == 3:
 		if number4 == answer[index]:
+			$correct.playing = true
 			correct()
 			$battle._Correct(25)
 			remove_Setting()
 			set_answer()
 		else:
 			not_correct()
+			
 	pass
  
 func correct():
 	stage += 1
-	$correct.playing = true
 	pass
 func remove_Setting():
 	answer.remove(3)
@@ -124,8 +134,10 @@ func remove_Setting():
 	stage = 0
 	
 func not_correct():
+	$wrong.playing = true
 	remove_Setting()
 	set_answer()
+	$battle._not_correct(25)
 	pass
 
 
@@ -160,4 +172,14 @@ func _on_Button3_button_down():
 
 func _on_Button4_button_down():
 	Check_answer(3,stage)
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	$Label.text = str(time)
+	if (time <= 0):
+		not_correct()
+		$wrong.playing = true
+	time -= 1
+	
 	pass # Replace with function body.
