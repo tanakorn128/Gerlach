@@ -11,6 +11,7 @@ enum EnemyType {
 	simple ,
 	Trash,
 	Sort,
+	angle,
 }
 
 export (EnemyType) var Enemy_Type

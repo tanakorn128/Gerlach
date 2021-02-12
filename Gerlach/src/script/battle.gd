@@ -53,5 +53,8 @@ func Enemy(name,mission,position,damage):
 
 
 func _on_Timer_timeout():
+	$"/root/Global".chapter1_Start = false
 	get_tree().change_scene("res://src/scene/chapter1.tscn")
 	pass # Replace with function body.
+
+

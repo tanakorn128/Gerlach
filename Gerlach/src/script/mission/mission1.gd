@@ -54,7 +54,8 @@ func exam(): #เปลี่ยนฉากไปทำข้อสอย
 		get_tree().change_scene("res://src/scene/EnemyType/Trash.tscn")
 	if EnemyType == 2:
 		get_tree().change_scene("res://src/scene/EnemyType/Sort.tscn")
-
+	if EnemyType == 3:
+		get_tree().change_scene("res://src/scene/EnemyType/angle.tscn")
 
 func speed_player(): # ความเร็วผู้เล่นเป็น 0
 	Events.emit_signal("player_speed",0)
