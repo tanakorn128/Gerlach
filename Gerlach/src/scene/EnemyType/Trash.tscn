@@ -479,6 +479,7 @@ stream = ExtResource( 13 )
 volume_db = 11.52
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
 [connection signal="mouse_entered" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_entered"]
 [connection signal="mouse_exited" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_exited"]
 [connection signal="mouse_entered" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_entered"]

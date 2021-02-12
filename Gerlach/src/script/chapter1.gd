@@ -1,6 +1,7 @@
 extends Node2D
 const HUDPOSY = 350
 const HUDPOSX = 600
+var chapter2 = false
 func _ready():
 	Events.connect("player_position",self,"player_position")
 	$HUD.position.x = $"/root/Global".player.x - HUDPOSX
@@ -9,6 +10,7 @@ func _ready():
 	$HUD/Label.show()
 	$HUD/ColorRect.show()
 	Events.connect("HP",self,"HP")
+	Events.connect("player_Collisioion_mission",self,"player_Collisioion")
 	pass
 
 func player_position(position):
@@ -18,3 +20,5 @@ func player_position(position):
 
 func HP():
 	$HUD/TextureProgress.value = $"/root/Global".PlayerHP
+func player_Collisioion(Collisioion):
+	pass

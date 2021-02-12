@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/reassets/Tree01.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://src/scene/Enemy.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/heart.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/scene/dialogbox/chapter1_Start.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
@@ -343,6 +344,16 @@ points = PoolVector2Array( 2, 13, 12, 13, 12, 18, 2, 18 )
 [node name="chapter1" type="Node2D"]
 script = ExtResource( 14 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -7564.35
+margin_top = -6222.1
+margin_right = 17227.7
+margin_bottom = 10726.9
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
 tile_set = SubResource( 1 )
@@ -437,6 +448,8 @@ scale = Vector2( 0.15, 0.15 )
 
 [node name="heart" parent="." instance=ExtResource( 17 )]
 position = Vector2( 194.812, 338.731 )
+
+[node name="dialogbox1" parent="." instance=ExtResource( 18 )]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
