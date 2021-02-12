@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/reassets/Tree01.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://src/script/chapter1.gd" type="Script" id=14]
 [ext_resource path="res://src/scene/Enemy.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/scene/heart.tscn" type="PackedScene" id=17]
 
 [sub_resource type="TileSet" id=1]
 resource_local_to_scene = true
@@ -434,7 +435,11 @@ format = 1
 [node name="HUD" parent="." instance=ExtResource( 16 )]
 scale = Vector2( 0.15, 0.15 )
 
+[node name="heart" parent="." instance=ExtResource( 17 )]
+position = Vector2( 194.812, 338.731 )
+
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 margin_right = 54.0
 margin_bottom = 56.0001
 rect_scale = Vector2( 5, 5 )

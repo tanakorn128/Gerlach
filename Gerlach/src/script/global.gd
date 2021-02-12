@@ -1,5 +1,6 @@
 extends Node
 var player = Vector2(400,400)
+var PlayerHP = 100
 var mission
 var mission_Success = false
 #ส่วนของ Mission เมื่อเริ่มต่อสู้

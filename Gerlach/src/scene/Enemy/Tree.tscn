@@ -100,7 +100,6 @@ rotation = -1.5708
 shape = SubResource( 10 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 [connection signal="animation_finished" from="Tree" to="." method="_on_Tree_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

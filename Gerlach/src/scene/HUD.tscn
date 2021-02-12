@@ -1,12 +1,29 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/hud/6 Cell Red LB full.png" type="Texture" id=1]
 [ext_resource path="res://assets/hud/6 Cell Empty.png" type="Texture" id=2]
 [ext_resource path="res://src/script/HUD.gd" type="Script" id=3]
 
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+outline_size = 1
+font_data = SubResource( 1 )
+
 [node name="HUD" type="Node2D"]
 scale = Vector2( 0.05, 0.05 )
 script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 30.0
+margin_top = -118.0
+margin_right = 787.0
+margin_bottom = 85.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 margin_right = 40.0
@@ -15,5 +32,20 @@ value = 100.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 1 )
 __meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 63.6628
+margin_top = -133.045
+margin_right = 736.663
+margin_bottom = 16.9548
+custom_fonts/font = SubResource( 2 )
+text = "Gerlach"
+align = 1
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }

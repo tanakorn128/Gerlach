@@ -111,7 +111,7 @@ func Check_answer(index,stages):
 		if number4 == answer[index]:
 			$correct.playing = true
 			correct()
-			$battle._Correct(25)
+			$battle._Correct(100)
 			remove_Setting()
 			set_answer()
 		else:
@@ -137,7 +137,7 @@ func not_correct():
 	$wrong.playing = true
 	remove_Setting()
 	set_answer()
-	$battle._not_correct(25)
+	$battle._not_correct(100)
 	pass
 
 
@@ -183,3 +183,5 @@ func _on_Timer_timeout():
 	time -= 1
 	
 	pass # Replace with function body.
+
+

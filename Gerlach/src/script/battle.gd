@@ -3,9 +3,12 @@ var enemys = preload("res://assets/Enemys/Enemys.tres")
 var Enemy_index #ตำแน่งสตรูใน Array
 var player_damage
 var damage
+var timeend = true
 var C = false
 func _ready():
 	set_enemy()
+	$HUDPlayer/ColorRect.show()
+	$HUDPlayer/Label.show()
 	pass
 func _process(delta):
 	if $HUDEnemy/TextureProgress.value <= 0 && C:
@@ -17,7 +20,10 @@ func _process(delta):
 		#get_tree().change_scene("res://src/scene/chapter1.tscn")
 		
 	if $HUDPlayer/TextureProgress.value <= 0:
-		get_tree().change_scene("res://src/scene/chapter1.tscn")
+		if timeend:
+			$"/root/Global".PlayerHP -= 20
+			$Timer.start()
+			timeend = false
 	
 func set_enemy(): #ค้นหาสตรูและแสดงผล
 	for i in enemys.Enemy.size():
@@ -44,3 +50,8 @@ func Enemy(name,mission,position,damage):
 		instree.position = position
 		instree.damage = damage
 		add_child(instree)
+
+
+func _on_Timer_timeout():
+	get_tree().change_scene("res://src/scene/chapter1.tscn")
+	pass # Replace with function body.

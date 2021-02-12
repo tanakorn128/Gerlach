@@ -12,8 +12,7 @@ func _ready():
 	Events.connect("player_position",self,"player_position") #เชื่อมสัญญาณ player_position
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
 	Events.connect("hit",self,"hit_mission")
-	Events.connect("answer1",self,"_Correct")
-	#print($"/root/Global".player)
+	#Events.connect("answer1",self,"_Correct")
 	pass
 func _Correct(Correct): #ตอบคำถามผิด
 	$Tree/Efect/Particles2D.emitting = true
@@ -75,3 +74,5 @@ func _on_Tree_animation_finished():
 func _on_Timer_timeout():
 	$Tree/Efect/Particles2D.emitting = false
 	pass # Replace with function body.
+
+

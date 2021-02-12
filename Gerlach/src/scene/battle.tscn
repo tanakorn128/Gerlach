@@ -37,3 +37,7 @@ scale = Vector2( 0.1, 0.1 )
 [node name="HUDEnemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 141.968, 37.59 )
 scale = Vector2( 0.1, 0.1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

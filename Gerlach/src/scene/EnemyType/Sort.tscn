@@ -21,7 +21,7 @@ font_path = "res://assets/font/Kanit-Regular.ttf"
 size = 30
 font_data = SubResource( 3 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 resource_name = "idle"
 loop = true
 tracks/0/type = "value"
@@ -97,12 +97,12 @@ tracks/5/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ) ]
 }
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=6]
 font_path = "res://assets/font/Kanit-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 50
-font_data = SubResource( 7 )
+font_data = SubResource( 6 )
 
 [node name="Sort" type="Node2D"]
 script = ExtResource( 1 )
@@ -219,7 +219,6 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.25
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = 106.634
@@ -233,7 +232,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 9 )
+anims/idle = SubResource( 5 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 215.537
@@ -241,7 +240,7 @@ margin_top = 511.006
 margin_right = 277.537
 margin_bottom = 586.006
 rect_scale = Vector2( 1.1, 1.1 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 text = "60"
 align = 1
 __meta__ = {

@@ -4,8 +4,9 @@ const speed = 10000
 var isAttacking = false
 var flip_h_isAttacking=false
 func _ready():
-	Events.connect("player_speed",self,"player_speed")
+	#Events.connect("player_speed",self,"player_speed")
 	set_player_position()
+	$"/root/Global".player = self.position
 	player_position()
 	pass
 
@@ -46,6 +47,7 @@ func _process(delta):
 		if isAttacking == false:
 			$AnimatedSprite.play("idle")
 			Events.emit_signal("player_Collisioion_mission",false)
+			player_position()
 	
 	
 	if Input.is_action_pressed("attack"):
