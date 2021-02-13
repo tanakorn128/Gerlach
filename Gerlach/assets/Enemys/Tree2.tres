@@ -10,4 +10,4 @@ Mission = "ตัดต้นไม้.."
 texture = ExtResource( 2 )
 damage = 50
 location = Vector2( 965.614, 712.042 )
-Enemy_Type = 1
+Enemy_Type = 2

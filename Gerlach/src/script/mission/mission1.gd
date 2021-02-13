@@ -68,7 +68,8 @@ func player_position(position):
 func _on_Tree_animation_finished():
 	if missiom_hit:
 		queue_free()
-		get_tree().change_scene("res://src/scene/chapter1.tscn")
+		#get_tree().change_scene("res://src/scene/chapter1.tscn")
+		get_tree().change_scene("res://src/scene/chapter2.tscn")
 	pass # Replace with function body.
 
 

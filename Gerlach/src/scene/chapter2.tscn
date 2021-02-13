@@ -1,12 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/World/CliffTileset2.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/World/DirtTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scene/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/script/chapter2.gd" type="Script" id=5]
 
 [node name="chapter2" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1742.0
+margin_top = -1080.0
+margin_right = 2996.0
+margin_bottom = 1893.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DirtTileset" type="TileMap" parent="."]
+visible = false
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -20,3 +34,5 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 328.321, 454.705 )
+
+[node name="Enemy_Inventory" parent="." instance=ExtResource( 4 )]

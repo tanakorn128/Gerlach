@@ -60,6 +60,7 @@ Events="*res://src/script/Events.gd"
 Global="*res://src/script/global.gd"
 MissionInventory="*res://src/script/mission/Mission_Inventory.gd"
 Menu="*res://src/scene/Menu.tscn"
+ChangeScene="*res://src/scene/change_scene.tscn"
 
 [display]
 

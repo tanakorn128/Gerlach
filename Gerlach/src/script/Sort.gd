@@ -85,6 +85,7 @@ func get_answer (answer0,answer1,answer2,answer3):
 	answer[1] = answer1
 	answer[2] = answer2
 	answer[3] = answer3
+	
 	$Button1.text = str(answer[0])
 	$Button2.text = str(answer[1])
 	$Button3.text = str(answer[2])
@@ -123,10 +124,7 @@ func correct():
 	stage += 1
 	pass
 func remove_Setting():
-	answer.remove(3)
-	answer.remove(2)
-	answer.remove(1)
-	answer.remove(0)
+	answer.clear()
 	Num_min = 0
 	num3 = null
 	num4 = null
@@ -137,12 +135,9 @@ func not_correct():
 	$wrong.playing = true
 	remove_Setting()
 	set_answer()
-	$battle._not_correct(100)
+	$battle._not_correct(20)
 	pass
 
-
-var numbers 
-var pastLastIdx
 
 
 

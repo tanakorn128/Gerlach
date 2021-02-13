@@ -14,3 +14,4 @@ var save:Dictionary
 
 ##############dialogbox ##################
 var chapter1_Start = true
+var scene

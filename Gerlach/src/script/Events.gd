@@ -9,4 +9,4 @@ signal Enemy_Name(Name)
 signal hit(hit_mission)
 signal MissionEnd()
 signal Test()
-
+signal change(scene)

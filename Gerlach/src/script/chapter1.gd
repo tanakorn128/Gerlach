@@ -11,6 +11,7 @@ func _ready():
 	$HUD/ColorRect.show()
 	Events.connect("HP",self,"HP")
 	Events.connect("player_Collisioion_mission",self,"player_Collisioion")
+	get_node("/root/Global").scene = 1
 	pass
 
 func player_position(position):
