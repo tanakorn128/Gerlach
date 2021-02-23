@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/UI Pack RPG/panel_brown.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI Pack RPG/panel_beigeLight.png" type="Texture" id=3]
 [ext_resource path="res://src/script/angle.gd" type="Script" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemys/angle/180A.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemys/angle/180B.png" type="Texture" id=6]
+[ext_resource path="res://assets/audio/Wrong.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/audio/Correct.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/font/Kanit-Regular.ttf"
@@ -20,6 +23,297 @@ font_path = "res://assets/font/Kanit-Regular.ttf"
 size = 30
 font_data = SubResource( 3 )
 
+[sub_resource type="Animation" id=25]
+resource_name = "NotCorrect"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.0862745, 0.0862745, 1 ), Color( 1, 0.0862745, 0.0862745, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "card1_close"
+tracks/0/type = "value"
+tracks/0/path = NodePath("answer1_front:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("answer1_front:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "card1_open"
+tracks/0/type = "value"
+tracks/0/path = NodePath("answer1_front:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0627451, 1, 0.0980392, 1 ), Color( 0.0627451, 1, 0.0980392, 1 ) ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "card2_close"
+tracks/0/type = "value"
+tracks/0/path = NodePath("answer2_front:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("answer2_front:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "card2_open"
+tracks/0/type = "value"
+tracks/0/path = NodePath("answer2_front:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("answer2_front:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.360784, 1, 0.00392157, 1 ), Color( 0.360784, 1, 0.00392157, 1 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "card3_open"
+tracks/0/type = "value"
+tracks/0/path = NodePath("answer3_front:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("answer3_front:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0117647, 1, 0.0392157, 1 ), Color( 0.0117647, 1, 0.0392157, 1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "card4_open"
+tracks/0/type = "value"
+tracks/0/path = NodePath("answer4_front:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("answer4_front:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.054902, 1, 0, 1 ), Color( 0.054902, 1, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "correct"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0862745, 1, 0.121569, 1 ), Color( 0.0862745, 1, 0.121569, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("answer1_front:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("answer1_front:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("answer2_front:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("answer2_front:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("answer3_front:texture")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("answer3_front:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("answer4_front:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 3 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("answer4_front:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("ColorRect:color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.639216, 0.294118, 1 ), Color( 1, 0.639216, 0.294118, 1 ) ]
+}
+
 [node name="angle" type="Node2D"]
 script = ExtResource( 4 )
 
@@ -28,7 +322,7 @@ margin_left = -45.3574
 margin_top = -37.6787
 margin_right = 1390.64
 margin_bottom = 801.321
-color = Color( 1, 0.639216, 0.294118, 1 )
+color = Color( 1, 0.0862745, 0.0862745, 1 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
@@ -70,6 +364,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="answer1" type="TextureRect" parent="answer1_front"]
+margin_left = 4.64922
+margin_top = 10.1017
+margin_right = 163.649
+margin_bottom = 90.1017
+rect_scale = Vector2( 0.56, 1 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="answer1_front"]
 margin_left = 5.22065
 margin_top = 9.84833
@@ -78,13 +384,7 @@ margin_bottom = 109.848
 rect_scale = Vector2( 0.9, 0.8 )
 texture = ExtResource( 2 )
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ReferenceAnswer1" type="ReferenceRect" parent="answer1_front"]
-margin_right = 98.0
-margin_bottom = 101.0
-__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -99,6 +399,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="answer2" type="TextureRect" parent="answer2_front"]
+margin_left = 4.63927
+margin_top = 10.1017
+margin_right = 163.639
+margin_bottom = 90.1017
+rect_scale = Vector2( 0.56, 1 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="TextureRect" type="TextureRect" parent="answer2_front"]
 margin_left = 5.22065
 margin_top = 9.84833
@@ -107,21 +419,30 @@ margin_bottom = 109.848
 rect_scale = Vector2( 0.9, 0.8 )
 texture = ExtResource( 2 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ReferenceAnswer2" type="ReferenceRect" parent="answer2_front"]
-margin_right = 98.0
-margin_bottom = 105.0
-
 [node name="answer3_front" type="TextureRect" parent="."]
-margin_left = 323.085
+margin_left = 323.0
 margin_top = 560.0
-margin_right = 423.085
+margin_right = 423.0
 margin_bottom = 660.0
 rect_scale = Vector2( 3.5, 1.5 )
 texture = ExtResource( 3 )
 __meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer3" type="TextureRect" parent="answer3_front"]
+margin_left = 5.58331
+margin_top = 10.6522
+margin_right = 164.583
+margin_bottom = 90.6522
+rect_scale = Vector2( 0.56, 1 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -133,12 +454,9 @@ margin_bottom = 109.848
 rect_scale = Vector2( 0.9, 0.8 )
 texture = ExtResource( 2 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="ReferenceAnswer3" type="ReferenceRect" parent="answer3_front"]
-margin_right = 98.0
-margin_bottom = 101.0
 
 [node name="answer4_front" type="TextureRect" parent="."]
 margin_left = 680.0
@@ -147,6 +465,17 @@ margin_right = 780.0
 margin_bottom = 660.0
 rect_scale = Vector2( 3.5, 1.5 )
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer4" type="TextureRect" parent="answer4_front"]
+margin_left = 4.81839
+margin_top = 10.7315
+margin_right = 163.818
+margin_bottom = 90.7315
+rect_scale = Vector2( 0.56, 1 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,65 +491,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ReferenceAnswer4" type="ReferenceRect" parent="answer4_front"]
-margin_right = 98.0
-margin_bottom = 101.0
-
-[node name="answer1" type="TextureRect" parent="."]
-visible = false
-margin_left = 476.0
-margin_top = 460.0
-margin_right = 547.0
-margin_bottom = 524.0
-rect_scale = Vector2( 0.9, 0.8 )
-texture = ExtResource( 5 )
+[node name="Reference1" type="ReferenceRect" parent="."]
+margin_left = 323.0
+margin_top = 407.0
+margin_right = 651.0
+margin_bottom = 557.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="answer2" type="TextureRect" parent="."]
-visible = false
-margin_left = 828.0
-margin_top = 460.0
-margin_right = 899.0
-margin_bottom = 524.0
-rect_scale = Vector2( 0.9, 0.8 )
-texture = ExtResource( 5 )
+[node name="Reference2" type="ReferenceRect" parent="."]
+margin_left = 696.0
+margin_top = 407.0
+margin_right = 1030.0
+margin_bottom = 559.0
 __meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Reference3" type="ReferenceRect" parent="."]
+margin_left = 323.0
+margin_top = 576.0
+margin_right = 651.0
+margin_bottom = 712.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Reference4" type="ReferenceRect" parent="."]
+margin_left = 698.0
+margin_top = 576.0
+margin_right = 1030.0
+margin_bottom = 712.0
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="answer3" type="TextureRect" parent="."]
-visible = false
-margin_left = 474.0
-margin_top = 612.0
-margin_right = 545.0
-margin_bottom = 676.0
-rect_scale = Vector2( 0.9, 0.8 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Correct" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 698, 576 )
+stream = ExtResource( 8 )
 
-[node name="answer4" type="TextureRect" parent="."]
-visible = false
-margin_left = 824.0
-margin_top = 610.0
-margin_right = 895.0
-margin_bottom = 674.0
-rect_scale = Vector2( 0.9, 0.8 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Wrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="."]
-[connection signal="mouse_entered" from="answer1_front/ReferenceAnswer1" to="." method="_on_ReferenceAnswer1_mouse_entered"]
-[connection signal="mouse_exited" from="answer1_front/ReferenceAnswer1" to="." method="_on_ReferenceAnswer1_mouse_exited"]
-[connection signal="mouse_entered" from="answer2_front/ReferenceAnswer2" to="." method="_on_ReferenceAnswer2_mouse_entered"]
-[connection signal="mouse_exited" from="answer2_front/ReferenceAnswer2" to="." method="_on_ReferenceAnswer2_mouse_exited"]
-[connection signal="mouse_entered" from="answer3_front/ReferenceAnswer3" to="." method="_on_ReferenceAnswer3_mouse_entered"]
-[connection signal="mouse_exited" from="answer3_front/ReferenceAnswer3" to="." method="_on_ReferenceAnswer3_mouse_exited"]
-[connection signal="mouse_entered" from="answer4_front/ReferenceAnswer4" to="." method="_on_ReferenceAnswer4_mouse_entered"]
-[connection signal="mouse_exited" from="answer4_front/ReferenceAnswer4" to="." method="_on_ReferenceAnswer4_mouse_exited"]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/NotCorrect = SubResource( 25 )
+anims/card1_close = SubResource( 5 )
+anims/card1_open = SubResource( 6 )
+anims/card2_close = SubResource( 20 )
+anims/card2_open = SubResource( 21 )
+anims/card3_open = SubResource( 22 )
+anims/card4_open = SubResource( 23 )
+anims/correct = SubResource( 24 )
+anims/idle = SubResource( 7 )
+
+[node name="card" type="Timer" parent="."]
+wait_time = 0.7
+[connection signal="mouse_entered" from="Reference1" to="." method="_on_ReferenceAnswer1_mouse_entered"]
+[connection signal="mouse_exited" from="Reference1" to="." method="_on_ReferenceAnswer1_mouse_exited"]
+[connection signal="mouse_entered" from="Reference2" to="." method="_on_ReferenceAnswer2_mouse_entered"]
+[connection signal="mouse_exited" from="Reference2" to="." method="_on_ReferenceAnswer2_mouse_exited"]
+[connection signal="mouse_entered" from="Reference3" to="." method="_on_ReferenceAnswer3_mouse_entered"]
+[connection signal="mouse_exited" from="Reference3" to="." method="_on_ReferenceAnswer3_mouse_exited"]
+[connection signal="mouse_entered" from="Reference4" to="." method="_on_ReferenceAnswer4_mouse_entered"]
+[connection signal="mouse_exited" from="Reference4" to="." method="_on_ReferenceAnswer4_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="card" to="." method="_on_card_timeout"]

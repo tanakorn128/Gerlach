@@ -17,7 +17,9 @@ func _ready():
 	$Trash2/AnimationPlayer_down2.play("swipe")
 	$Trash1/AnimationPlayer_down3.play("swipe")
 	SetQuestion()
-	
+	$Trash1/ReferenceRect1.show()
+	$Trash2/ReferenceRect2.show()
+	$Trash3/ReferenceRect3.show()
 func _process(delta):
 	
 	pass # Replace with function body.

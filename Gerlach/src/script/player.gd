@@ -3,11 +3,14 @@ var velocity : Vector2
 const speed = 10000
 var isAttacking = false
 var flip_h_isAttacking=false
+onready var animation_tree = get_node("AnimationTree")
+onready var animation_node = animation_tree.get("parameters/playback")
 func _ready():
 	#Events.connect("player_speed",self,"player_speed")
 	set_player_position()
 	$"/root/Global".player = self.position
 	player_position()
+	animation_node.start("idle")
 	pass
 
 func _process(delta):
@@ -16,7 +19,7 @@ func _process(delta):
 		velocity.y = 0
 		velocity.x = -speed
 		flip_h_isAttacking = false
-		$AnimatedSprite.play("left")
+		animation_node.travel("left")
 		Events.emit_signal("player_Collisioion_mission",true)
 		player_position()
 	elif Input.is_action_pressed("ui_right") && isAttacking == false:
@@ -24,43 +27,37 @@ func _process(delta):
 		velocity.y = 0
 		velocity.x = +speed
 		flip_h_isAttacking = true
-		$AnimatedSprite.play("right")
+		animation_node.travel("right")
 		Events.emit_signal("player_Collisioion_mission",true)
 		player_position()
 	elif Input.is_action_pressed("ui_down") && isAttacking == false:
 		player_position()
 		velocity.x = 0
 		velocity.y = +speed
-		$AnimatedSprite.play("down")
+		animation_node.travel("down")
 		Events.emit_signal("player_Collisioion_mission",true)
 		player_position()
 	elif Input.is_action_pressed("ui_up") && isAttacking == false:
 		player_position()
 		velocity.x = 0
 		velocity.y = -speed
-		$AnimatedSprite.play("up")
+		animation_node.travel("up")
 		player_position()
 		Events.emit_signal("player_Collisioion_mission",true)
 	else:
 		velocity.x = 0
 		velocity.y = 0
 		if isAttacking == false:
-			$AnimatedSprite.play("idle")
+			animation_node.travel("idle")
 			Events.emit_signal("player_Collisioion_mission",false)
 			player_position()
-	
-	
-	if Input.is_action_pressed("attack"):
-		$AnimatedSprite.flip_h = flip_h_isAttacking
-		if isAttacking == false:
-			$AnimationPlayer.play("attack2")
-		if isAttacking == true:
-			$AnimationPlayer.play("attack")
-		$AnimatedSprite.play("attack1")
-		isAttacking = true
+
 	move_and_slide(velocity*delta)
 	pass
-
+func _input(event):
+	if event.is_action_pressed("attack"):
+		animation_node.travel("attack1")
+	pass
 func player_position():
 	Events.emit_signal("player_position",self.position)
 	pass

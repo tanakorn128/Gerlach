@@ -6,7 +6,6 @@ var count = 0
 func _ready():
 	#get_text(0)
 	$AnimationPlayer.play("idle")
-	$"/root/Menu".hide()
 	Events.connect("player_position",self,"player_position")
 
 func player_position(position):

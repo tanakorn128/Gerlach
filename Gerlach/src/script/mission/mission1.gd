@@ -6,28 +6,31 @@ var CollisioionPlayer = false #ผู้เล่นชนกับสตรู
 var damage #ความเสียหาย
 var missiom_hit = false #ภารกิจสำเร็จเป็น True
 var EnemyType
+onready var animation_tree = get_node("AnimationTree")
+onready var animation_node = animation_tree.get("parameters/playback")
+
 func _ready():
-	$Tree.play("idle")
-	$Tree.frame = 0
 	Events.connect("player_position",self,"player_position") #เชื่อมสัญญาณ player_position
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
 	Events.connect("hit",self,"hit_mission")
+	animation_node.start("start")
+	
 	#Events.connect("answer1",self,"_Correct")
 	pass
 func _Correct(Correct): #ตอบคำถามผิด
-	$Tree/Efect/Particles2D.emitting = true
+	#$Tree/Efect/Particles2D.emitting = true
 	pass
 func hit_mission(hit_mission):
 	if mission == hit_mission:
 		missiom_hit = true
-		$Tree.play("hit")
+		#$Tree.play("hit")
 	pass
 func hit(hit_mission): # ผู้เล่นชนะ Effect การตาย
 	print(hit_mission)
 	print("hit_mission")
 	if mission == hit_mission:
 		missiom_hit = true
-		$Tree.play("hit")
+		#$Tree.play("hit")
 	pass
 
 func _on_Area2D_body_entered(body):
@@ -74,7 +77,7 @@ func _on_Tree_animation_finished():
 
 
 func _on_Timer_timeout():
-	$Tree/Efect/Particles2D.emitting = false
+	animation_node.travel("Flashing")
 	pass # Replace with function body.
 
 

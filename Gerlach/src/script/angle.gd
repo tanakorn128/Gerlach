@@ -1,111 +1,198 @@
 extends Node2D
-var answer1_back:Array
-var answer1:Array
-var answer2:Array
 var zone1 = false
 var zone2 = false
 var zone3 = false
 var zone4 = false
-
+var NotCorrect = true
+var Corret = true
+var answer:Array
+var card:Array
+var card1 = true
+var card2 = true
+var card3 = true
+var card4 = true
+var resource = preload("res://src/script/Exam/Exam_All/Angle.tres")
 func _ready():
-	set_answer(1,2,3,4)
-	$answer1.hide()
-	$answer2.hide()
-	$answer3.hide()
-	$answer4.hide()
+	set_question()
+	
+	$AnimationPlayer.play("idle")
+	
+
+
+func set_question():
+	$answer1_front/answer1.texture = resource.ExamAll[0].image
+	$answer2_front/answer2.texture = resource.ExamAll[0].angle
+	$answer3_front/answer3.texture = resource.ExamAll[1].image
+	$answer4_front/answer4.texture = resource.ExamAll[1].angle
+	var question1 = resource.ExamAll[0].text
+	var question2 = resource.ExamAll[0].text
+	var question3 = resource.ExamAll[1].text
+	var question4 = resource.ExamAll[1].text
+	set_answer(question1,question2,question3,question4)
+	
+	pass
+func _process(delta):
+	if card.size() == 4:
+		answer(card[0],card[1],card[2],card[3])
+
+
+func cards():
+	$card.start()
+	pass
+func show():
+	$Timer.start()
+	pass
+
+func answer(image,numcard1,angle,numcard2):
+	if image == angle:
+		if numcard1 == 1:
+			card1 = false
+		if numcard1 == 2:
+			card2 = false
+		if numcard1 == 3:
+			card3 = false
+		if numcard1 == 4:
+			card4 = false
+		
+		if numcard2 == 1:
+			card1 = false
+		if numcard2 == 2:
+			card2 = false
+		if numcard2 == 3:
+			card3 = false
+		if numcard2 == 4:
+			card4 = false
+		$Correct.playing = true
+		print("Corret")
+		$AnimationPlayer.play("correct")
+		card.clear()
+		$card.start()
+		return true
+	elif NotCorrect:
+		print("NotCorrect")
+		show()
+		$Wrong.playing = true
+		NotCorrect = false
+		$AnimationPlayer.play("NotCorrect")
+		$card.start()
+		return false
+	pass
+func click():
+	if card1:
+		$answer1_front/TextureRect.show()
+	if card2:
+		$answer2_front/TextureRect.show()
+	if card3:
+		$answer3_front/TextureRect.show()
+	if card4:
+		$answer4_front/TextureRect.show()
+	pass
 func _input(event):
+	if event is InputEventMouseButton:
+		if event.doubleclick:
+			click()
+			print("doubleclick")
 	if event.is_action_pressed("mouse left"):
 		if zone1:
-			answer1_back.append(1)
 			$answer1_front/TextureRect.hide()
-			$answer1.show()
-			answer()
+			card.append(answer[0])
+			card.append(1)
+			cards()
 			pass
 		if zone2:
-			answer1_back.append(2)
 			$answer2_front/TextureRect.hide()
-			$answer2.show()
-			answer()
+			card.append(answer[1])
+			card.append(2)
+			cards()
 			pass
 		if zone3:
-			answer1_back.append(3)
 			$answer3_front/TextureRect.hide()
-			$answer3.show()
-			answer()
+			card.append(answer[2])
+			card.append(3)
+			cards()
 			pass
-			
 		if zone4:
-			answer1_back.append(4)
 			$answer4_front/TextureRect.hide()
-			$answer4.show()
-			answer()
+			card.append(answer[3])
+			card.append(4)
+			cards()
+			pass
 		pass
 
 func set_answer(value1,value2,value3,value4):
-	answer1.append(value1)
-	answer1.append(value2)
-	answer2.append(value3)
-	answer2.append(value4)
-
-
-
-func answer():
-	if answer1_back.size() == 2:
-		$Timer.start()
-		pass
-	elif answer1_back.size() >= 2:
-		$Timer.start()
-	
+	answer.append(value1)
+	answer.append(value2)
+	answer.append(value3)
+	answer.append(value4)
 	pass
+
+
+
+
 func _on_ReferenceAnswer1_mouse_entered():
 	zone1 = true
+	$AnimationPlayer.play("card1_open")
 	pass # Replace with function body.
 
 
 func _on_ReferenceAnswer2_mouse_entered():
 	zone2 = true
+	$AnimationPlayer.play("card2_open")
+	
 	pass # Replace with function body.
 
 
 func _on_ReferenceAnswer3_mouse_entered():
+	$AnimationPlayer.play("card3_open")
 	zone3 = true
+	
 	pass # Replace with function body.
 
 
 func _on_ReferenceAnswer4_mouse_entered():
+	$AnimationPlayer.play("card4_open")
 	zone4 = true
 	pass # Replace with function body.
 
 
 func _on_ReferenceAnswer1_mouse_exited():
 	zone1 = false
+	$AnimationPlayer.play("idle")
 	pass # Replace with function body.
 
 
 func _on_ReferenceAnswer2_mouse_exited():
 	zone2 = false
+	$AnimationPlayer.play("idle")
 	pass # Replace with function body.
 
 
 func _on_ReferenceAnswer3_mouse_exited():
 	zone3 = false
+	$AnimationPlayer.play("idle")
 	pass # Replace with function body.
 
 
 func _on_ReferenceAnswer4_mouse_exited():
 	zone4 = false
+	$AnimationPlayer.play("idle")
 	pass # Replace with function body.
 
 
 func _on_Timer_timeout():
-	$battle._not_correct(20)
-	answer1_back.clear()
 	$answer1_front/TextureRect.show()
 	$answer2_front/TextureRect.show()
 	$answer3_front/TextureRect.show()
 	$answer4_front/TextureRect.show()
-	$answer1.hide()
-	$answer2.hide()
-	$answer3.hide()
-	$answer4.hide()
+	card.clear()
+	NotCorrect = true
+	$Timer.stop()
+	pass # Replace with function body.
+
+
+func _on_card_timeout():
+	click()
+	card.clear()
+	$AnimationPlayer.play("idle")
+	$card.stop()
 	pass # Replace with function body.

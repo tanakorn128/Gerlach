@@ -1,0 +1,154 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://assets/image/ui/Arrow.png" type="Texture" id=4]
+[ext_resource path="res://assets/image/ui/Plus.png" type="Texture" id=5]
+[ext_resource path="res://assets/image/ui/BarChart.png" type="Texture" id=6]
+[ext_resource path="res://assets/image/ui/Angle.png" type="Texture" id=10]
+[ext_resource path="res://assets/image/ui/Ruler.png" type="Texture" id=12]
+[ext_resource path="res://assets/image/ui/Circle.png" type="Texture" id=13]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 2
+emission_box_extents = Vector3( 1024, 300, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 30.0
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.3
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 1024, 300, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 90, 0 )
+initial_velocity = 45.0
+initial_velocity_random = 1.0
+angular_velocity = 300.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.5
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 1024, 300, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 30.0
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.3
+
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 2
+emission_box_extents = Vector3( 1024, 300, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 30.0
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.3
+scale_random = 0.3
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 1024, 300, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 1.0
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.3
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( 1024, 300, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 30.0
+angular_velocity = 45.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="BackGround" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = -4.7569
+margin_right = 1366.0
+margin_bottom = 763.243
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angle" type="Particles2D" parent="ColorRect"]
+modulate = Color( 0.87451, 0.843137, 0.843137, 0.156863 )
+position = Vector2( 965.189, 111.508 )
+scale = Vector2( 1, 0.5 )
+amount = 4
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource( 1 )
+texture = ExtResource( 10 )
+
+[node name="Arrow" type="Particles2D" parent="ColorRect"]
+modulate = Color( 0.823529, 0.756863, 0.756863, 0.156863 )
+position = Vector2( 750.097, 234.821 )
+rotation = -1.5708
+scale = Vector2( 1, 1.5 )
+amount = 4
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource( 2 )
+texture = ExtResource( 4 )
+
+[node name="BarChart" type="Particles2D" parent="ColorRect"]
+modulate = Color( 0.823529, 0.756863, 0.756863, 0.156863 )
+position = Vector2( 284.061, 123.753 )
+scale = Vector2( 0.5, 0.5 )
+amount = 4
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource( 3 )
+texture = ExtResource( 6 )
+
+[node name="Plus" type="Particles2D" parent="ColorRect"]
+modulate = Color( 0.823529, 0.756863, 0.756863, 0.156863 )
+position = Vector2( 777.159, 432.505 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+amount = 4
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource( 4 )
+texture = ExtResource( 5 )
+
+[node name="Ruler" type="Particles2D" parent="ColorRect"]
+modulate = Color( 0.823529, 0.756863, 0.756863, 0.156863 )
+position = Vector2( 161.078, 145.58 )
+scale = Vector2( 0.5, 0.5 )
+amount = 4
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource( 5 )
+texture = ExtResource( 12 )
+
+[node name="Circle" type="Particles2D" parent="ColorRect"]
+modulate = Color( 1, 1, 1, 0.156863 )
+position = Vector2( 435.168, 211.886 )
+scale = Vector2( 0.2, 0.2 )
+amount = 4
+lifetime = 10.0
+preprocess = 10.0
+process_material = SubResource( 6 )
+texture = ExtResource( 13 )
