@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 name = "Tree"
-Mission = "ตัดต้นไม้..."
+Mission = "มุม"
 texture = ExtResource( 2 )
 damage = 30
 location = Vector2( 1265.61, 712.042 )

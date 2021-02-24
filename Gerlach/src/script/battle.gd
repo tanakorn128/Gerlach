@@ -15,8 +15,12 @@ func _process(delta):
 		#print($"/root/Global".mission)
 		Events.emit_signal("hit",$"/root/Global".mission)
 		Events.emit_signal("Test")
+		
 		$"/root/Global".mission_complete.append($"/root/Global".L_mission)
 		C = false
+		if timeend:
+			$Timer.start()
+			timeend = false
 		#get_tree().change_scene("res://src/scene/chapter1.tscn")
 		
 	if $HUDPlayer/TextureProgress.value <= 0:
@@ -55,6 +59,7 @@ func Enemy(name,mission,position,damage):
 func _on_Timer_timeout():
 	$"/root/Global".chapter1_Start = false
 	Events.emit_signal("change",$"/root/Global".scene)
+	print("Change")
 	#get_tree().change_scene("res://src/scene/chapter1.tscn")
 	#get_tree().change_scene("res://src/scene/chapter2.tscn")
 	pass # Replace with function body.

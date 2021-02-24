@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Enemys/png/Trash3.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://assets/hud/CountDown_1.png" type="Texture" id=8]
 [ext_resource path="res://src/script/Enemys/Enemy1.gd" type="Script" id=9]
 [ext_resource path="res://assets/World/CliffTileset2.tres" type="TileSet" id=10]
-[ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/audio/Correct.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/audio/Wrong.wav" type="AudioStream" id=13]
 
@@ -484,8 +483,6 @@ volume_db = 11.52
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
-
-[node name="BackGround" parent="." instance=ExtResource( 11 )]
 [connection signal="mouse_entered" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_entered"]
 [connection signal="mouse_exited" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_exited"]
 [connection signal="mouse_entered" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_entered"]

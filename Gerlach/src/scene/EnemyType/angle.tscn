@@ -23,7 +23,7 @@ font_path = "res://assets/font/Kanit-Regular.ttf"
 size = 30
 font_data = SubResource( 3 )
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=5]
 resource_name = "NotCorrect"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
@@ -38,8 +38,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.0862745, 0.0862745, 1 ), Color( 1, 0.0862745, 0.0862745, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "card1_close"
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("answer1_front:texture")
 tracks/0/interp = 1
@@ -65,8 +64,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "card1_open"
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("answer1_front:self_modulate")
 tracks/0/interp = 1
@@ -80,7 +78,7 @@ tracks/0/keys = {
 "values": [ Color( 0.0627451, 1, 0.0980392, 1 ), Color( 0.0627451, 1, 0.0980392, 1 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=8]
 resource_name = "card2_close"
 tracks/0/type = "value"
 tracks/0/path = NodePath("answer2_front:texture")
@@ -107,7 +105,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=9]
 resource_name = "card2_open"
 tracks/0/type = "value"
 tracks/0/path = NodePath("answer2_front:texture")
@@ -134,7 +132,7 @@ tracks/1/keys = {
 "values": [ Color( 0.360784, 1, 0.00392157, 1 ), Color( 0.360784, 1, 0.00392157, 1 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=10]
 resource_name = "card3_open"
 tracks/0/type = "value"
 tracks/0/path = NodePath("answer3_front:texture")
@@ -161,7 +159,7 @@ tracks/1/keys = {
 "values": [ Color( 0.0117647, 1, 0.0392157, 1 ), Color( 0.0117647, 1, 0.0392157, 1 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=11]
 resource_name = "card4_open"
 tracks/0/type = "value"
 tracks/0/path = NodePath("answer4_front:texture")
@@ -188,7 +186,7 @@ tracks/1/keys = {
 "values": [ Color( 0.054902, 1, 0, 1 ), Color( 0.054902, 1, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=12]
 resource_name = "correct"
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
@@ -203,8 +201,7 @@ tracks/0/keys = {
 "values": [ Color( 0.0862745, 1, 0.121569, 1 ), Color( 0.0862745, 1, 0.121569, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
-resource_name = "idle"
+[sub_resource type="Animation" id=13]
 tracks/0/type = "value"
 tracks/0/path = NodePath("answer1_front:texture")
 tracks/0/interp = 1
@@ -540,15 +537,15 @@ stream = ExtResource( 7 )
 autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/NotCorrect = SubResource( 25 )
-anims/card1_close = SubResource( 5 )
-anims/card1_open = SubResource( 6 )
-anims/card2_close = SubResource( 20 )
-anims/card2_open = SubResource( 21 )
-anims/card3_open = SubResource( 22 )
-anims/card4_open = SubResource( 23 )
-anims/correct = SubResource( 24 )
-anims/idle = SubResource( 7 )
+anims/NotCorrect = SubResource( 5 )
+anims/card1_close = SubResource( 6 )
+anims/card1_open = SubResource( 7 )
+anims/card2_close = SubResource( 8 )
+anims/card2_open = SubResource( 9 )
+anims/card3_open = SubResource( 10 )
+anims/card4_open = SubResource( 11 )
+anims/correct = SubResource( 12 )
+anims/idle = SubResource( 13 )
 
 [node name="card" type="Timer" parent="."]
 wait_time = 0.7

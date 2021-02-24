@@ -20,17 +20,63 @@ func _ready():
 
 
 func set_question():
-	$answer1_front/answer1.texture = resource.ExamAll[0].image
-	$answer2_front/answer2.texture = resource.ExamAll[0].angle
-	$answer3_front/answer3.texture = resource.ExamAll[1].image
-	$answer4_front/answer4.texture = resource.ExamAll[1].angle
-	var question1 = resource.ExamAll[0].text
-	var question2 = resource.ExamAll[0].text
-	var question3 = resource.ExamAll[1].text
-	var question4 = resource.ExamAll[1].text
-	set_answer(question1,question2,question3,question4)
-	
+	var angle1 = resource.ExamAll[0].angle
+	var image1 = resource.ExamAll[0].image
+	var text1 = resource.ExamAll[0].text
+	var angle2 = resource.ExamAll[1].angle
+	var image2 = resource.ExamAll[1].image
+	var text2 = resource.ExamAll[1].text
+	var question1
+	var question2
+	var question3
+	var question4
+	var rnd = random()
+	if rnd == 1:
+		$answer1_front/answer1.texture = image1
+		$answer2_front/answer2.texture = angle1
+		$answer3_front/answer3.texture = image2
+		$answer4_front/answer4.texture = angle2
+		question1 = text1
+		question2 = text1
+		question3 = text2
+		question4 = text2
+		set_answer(question1,question2,question3,question4)
+	elif rnd == 2:
+		$answer1_front/answer1.texture = image1
+		$answer2_front/answer2.texture = image2
+		$answer3_front/answer3.texture = angle1
+		$answer4_front/answer4.texture = angle2
+		question1 = text1
+		question2 = text2
+		question3 = text1
+		question4 = text2
+		set_answer(question1,question2,question3,question4)
+	elif rnd == 3:
+		$answer1_front/answer1.texture = image2
+		$answer2_front/answer2.texture = image1
+		$answer3_front/answer3.texture = angle2
+		$answer4_front/answer4.texture = angle1
+		question1 = text2
+		question2 = text1
+		question3 = text2
+		question4 = text1
+		set_answer(question1,question2,question3,question4)
+	elif rnd == 4:
+		$answer1_front/answer1.texture = image2
+		$answer2_front/answer2.texture = image1
+		$answer3_front/answer3.texture = angle1
+		$answer4_front/answer4.texture = angle2
+		question1 = text2
+		question2 = text1
+		question3 = text1
+		question4 = text2
+		set_answer(question1,question2,question3,question4)
 	pass
+
+func random():
+	return 4
+	pass
+
 func _process(delta):
 	if card.size() == 4:
 		answer(card[0],card[1],card[2],card[3])
@@ -67,6 +113,7 @@ func answer(image,numcard1,angle,numcard2):
 		$AnimationPlayer.play("correct")
 		card.clear()
 		$card.start()
+		$battle._Correct(51)
 		return true
 	elif NotCorrect:
 		print("NotCorrect")
@@ -75,6 +122,7 @@ func answer(image,numcard1,angle,numcard2):
 		NotCorrect = false
 		$AnimationPlayer.play("NotCorrect")
 		$card.start()
+		$battle._not_correct(51)
 		return false
 	pass
 func click():

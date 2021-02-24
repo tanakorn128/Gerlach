@@ -450,6 +450,7 @@ scale = Vector2( 0.15, 0.15 )
 position = Vector2( 194.812, 338.731 )
 
 [node name="dialogbox1" parent="." instance=ExtResource( 18 )]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false

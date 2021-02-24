@@ -3,11 +3,11 @@
 [ext_resource path="res://src/script/mission/mission1.gd" type="Script" id=8]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=9]
 
-[sub_resource type="CapsuleShape2D" id=10]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 36.7439
 height = 93.4546
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=2]
 resource_name = "Flashing"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.705882 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=3]
 resource_name = "start"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
@@ -49,35 +49,35 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "Flashing"
 
-[sub_resource type="AnimationNodeAnimation" id=16]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Flashing"
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "start"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
 switch_mode = 2
 auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
-[sub_resource type="AnimationNodeStateMachine" id=13]
-states/Flashing/node = SubResource( 16 )
+[sub_resource type="AnimationNodeStateMachine" id=10]
+states/Flashing/node = SubResource( 5 )
 states/Flashing/position = Vector2( 438, 78 )
-"states/Flashing 2/node" = SubResource( 18 )
+"states/Flashing 2/node" = SubResource( 4 )
 "states/Flashing 2/position" = Vector2( 433, 203 )
-states/start/node = SubResource( 17 )
+states/start/node = SubResource( 6 )
 states/start/position = Vector2( 155, 78 )
-transitions = [ "Flashing", "Flashing 2", SubResource( 19 ), "Flashing 2", "Flashing", SubResource( 20 ), "start", "Flashing", SubResource( 21 ) ]
+transitions = [ "Flashing", "Flashing 2", SubResource( 7 ), "Flashing 2", "Flashing", SubResource( 8 ), "start", "Flashing", SubResource( 9 ) ]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=14]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
 [node name="mission1" type="Node2D"]
 position = Vector2( 500, 500 )
@@ -88,7 +88,7 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -1.69872, 93.3717 )
 rotation = -1.5708
-shape = SubResource( 10 )
+shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
@@ -99,13 +99,13 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Flashing = SubResource( 15 )
-anims/start = SubResource( 11 )
+anims/Flashing = SubResource( 2 )
+anims/start = SubResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 13 )
+tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 14 )
+parameters/playback = SubResource( 11 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/script/Sort.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/Sort.tres" type="DynamicFont" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/audio/Correct.wav" type="AudioStream" id=4]
 [ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Enemys/png/TNT.png" type="Texture" id=6]
-[ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/font/Kanit-Regular.ttf"
@@ -247,8 +246,6 @@ align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="BackGround" parent="." instance=ExtResource( 7 )]
 [connection signal="button_down" from="Button1" to="." method="_on_Button1_button_down"]
 [connection signal="button_down" from="Button2" to="." method="_on_Button2_button_down"]
 [connection signal="button_down" from="Button3" to="." method="_on_Button3_button_down"]
