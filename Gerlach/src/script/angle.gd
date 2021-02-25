@@ -110,6 +110,7 @@ func answer(image,numcard1,angle,numcard2):
 			card4 = false
 		$Correct.playing = true
 		print("Corret")
+		$click.playing = true
 		$AnimationPlayer.play("correct")
 		card.clear()
 		$card.start()
@@ -117,6 +118,7 @@ func answer(image,numcard1,angle,numcard2):
 		return true
 	elif NotCorrect:
 		print("NotCorrect")
+		$click.playing = true
 		show()
 		$Wrong.playing = true
 		NotCorrect = false
@@ -142,24 +144,28 @@ func _input(event):
 			print("doubleclick")
 	if event.is_action_pressed("mouse left"):
 		if zone1:
+			$click.playing = true
 			$answer1_front/TextureRect.hide()
 			card.append(answer[0])
 			card.append(1)
 			cards()
 			pass
 		if zone2:
+			$click.playing = true
 			$answer2_front/TextureRect.hide()
 			card.append(answer[1])
 			card.append(2)
 			cards()
 			pass
 		if zone3:
+			$click.playing = true
 			$answer3_front/TextureRect.hide()
 			card.append(answer[2])
 			card.append(3)
 			cards()
 			pass
 		if zone4:
+			$click.playing = true
 			$answer4_front/TextureRect.hide()
 			card.append(answer[3])
 			card.append(4)

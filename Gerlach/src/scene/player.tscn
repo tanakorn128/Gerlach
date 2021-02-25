@@ -57,7 +57,7 @@ resource_name = "attack2"
 
 [sub_resource type="Animation" id=6]
 resource_name = "attack1"
-length = 0.2
+length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("skill:position")
 tracks/0/interp = 1
@@ -65,7 +65,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -9.37654, -1.00064 ), Vector2( -9.37654, -1.00064 ) ]
@@ -77,10 +77,22 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0.1, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.1, -62.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("skill:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 3 ), ExtResource( 3 ), null ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -215,7 +227,7 @@ states/right/position = Vector2( 575, -17 )
 states/up/node = SubResource( 17 )
 states/up/position = Vector2( 298, -24 )
 transitions = [ "idle", "right", SubResource( 18 ), "idle", "left", SubResource( 19 ), "left", "idle", SubResource( 20 ), "idle", "up", SubResource( 21 ), "up", "idle", SubResource( 22 ), "idle", "down", SubResource( 23 ), "down", "idle", SubResource( 24 ), "idle", "attack1", SubResource( 25 ), "attack1", "idle", SubResource( 26 ) ]
-graph_offset = Vector2( 0, -51.68 )
+graph_offset = Vector2( 195.405, -51.68 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=28]
 
@@ -269,10 +281,8 @@ wait_time = 3.0
 autostart = true
 
 [node name="skill" type="Sprite" parent="."]
-visible = false
 position = Vector2( -9.37654, -1.00064 )
 rotation = -1.0821
-texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

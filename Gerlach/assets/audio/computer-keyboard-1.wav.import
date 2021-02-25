@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/computer-keyboard-1.wav-a6749210c7a75f3b704ca52890172daf.sample"
+
+[deps]
+
+source_file="res://assets/audio/computer-keyboard-1.wav"
+dest_files=[ "res://.import/computer-keyboard-1.wav-a6749210c7a75f3b704ca52890172daf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

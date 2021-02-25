@@ -36,6 +36,10 @@ func set_answer():
 	exam.ExamAll[rnd].answer3,
 	exam.ExamAll[rnd].answer4)
 	time = 60
+	$Button1.disabled = false
+	$Button2.disabled = false
+	$Button3.disabled = false
+	$Button4.disabled = false
 
 
 func get_answer (answer0,answer1,answer2,answer3):
@@ -150,23 +154,31 @@ func RandomNumber():
 
 
 func _on_Button1_button_down():
+	$Button1.disabled = true
 	Check_answer(0,stage)
+	$Click.playing = true
 	pass # Replace with function body.
 
 
 
 func _on_Button2_button_down():
+	$Button2.disabled = true
 	Check_answer(1,stage)
+	$Click.playing = true
 	pass # Replace with function body.
 
 
 func _on_Button3_button_down():
+	$Button3.disabled = true
 	Check_answer(2,stage)
+	$Click.playing = true
 	pass # Replace with function body.
 
 
 func _on_Button4_button_down():
+	$Button4.disabled = true
 	Check_answer(3,stage)
+	$Click.playing = true
 	pass # Replace with function body.
 
 
