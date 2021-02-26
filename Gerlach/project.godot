@@ -66,6 +66,7 @@ Events="*res://src/script/Events.gd"
 Global="*res://src/script/global.gd"
 MissionInventory="*res://src/script/mission/Mission_Inventory.gd"
 ChangeScene="*res://src/scene/change_scene.tscn"
+DialogboxAll="*res://src/scene/dialogbox/dialogbox_all.tscn"
 
 [display]
 

@@ -3,6 +3,7 @@ var Text:Array
 var end = false
 var LableEnd = false
 var count = 0
+var audio = false
 func _ready():
 	#get_text(0)
 	$AnimationPlayer.play("idle")
@@ -26,12 +27,18 @@ func set_text(value):
 	pass
 
 func get_text(value):
+	if audio:
+		$AudioKeyboard.playing = true
 	$AnimationPlayer.play("idle")
 	$Label.text = Text[value]
 	pass
 
+func clear_text():
+	Text.clear()
+
 func _on_AnimationPlayer_animation_finished(anim_name):
 	end = true
+	$AudioKeyboard.playing = false
 	if count == Text.size()-1:
 		LableEnd = true
 	pass # Replace with function body.

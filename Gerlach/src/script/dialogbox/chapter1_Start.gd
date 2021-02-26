@@ -20,3 +20,4 @@ func text():
 	$dialogbox.set_text("chapter 1 ช่างตัดไม้ กับ ปีศาจ")
 	$dialogbox.set_text("ภารกิจ : ตัดต้นไม้ขนาดใหญ่ 4 ต้นที่กระจัดกระจายอยู่ภายในป่า (TIP สามารอ่านป้ายในป่าเพื่อนำทางไปสู่ต้นไม้ได้)")
 	$"/root/Global".chapter1_Start = false
+	$dialogbox.audio = true

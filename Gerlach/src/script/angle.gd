@@ -80,7 +80,9 @@ func random():
 func _process(delta):
 	if card.size() == 4:
 		answer(card[0],card[1],card[2],card[3])
-
+	if $countdown.value <= 0:
+		$Wrong.playing = true
+		$countdown.value = 60
 
 func cards():
 	$card.start()
@@ -143,28 +145,28 @@ func _input(event):
 			click()
 			print("doubleclick")
 	if event.is_action_pressed("mouse left"):
-		if zone1:
+		if zone1 && card1:
 			$click.playing = true
 			$answer1_front/TextureRect.hide()
 			card.append(answer[0])
 			card.append(1)
 			cards()
 			pass
-		if zone2:
+		if zone2 && card2:
 			$click.playing = true
 			$answer2_front/TextureRect.hide()
 			card.append(answer[1])
 			card.append(2)
 			cards()
 			pass
-		if zone3:
+		if zone3 && card3:
 			$click.playing = true
 			$answer3_front/TextureRect.hide()
 			card.append(answer[2])
 			card.append(3)
 			cards()
 			pass
-		if zone4:
+		if zone4 && card4:
 			$click.playing = true
 			$answer4_front/TextureRect.hide()
 			card.append(answer[3])
@@ -249,4 +251,9 @@ func _on_card_timeout():
 	card.clear()
 	$AnimationPlayer.play("idle")
 	$card.stop()
+	pass # Replace with function body.
+
+
+func _on_Timer_countdown_timeout():
+	$countdown.value -= 1
 	pass # Replace with function body.

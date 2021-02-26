@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/music_zapsplat.ogg-713eccdbbc79e3da821eb2c529d1a50e.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music_zapsplat.ogg"
+dest_files=[ "res://.import/music_zapsplat.ogg-713eccdbbc79e3da821eb2c529d1a50e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

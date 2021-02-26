@@ -6,7 +6,7 @@ func _ready():
 	var mission_all = $"/root/MissionInventory".get_mission()
 	mission_complete = $"/root/Global".mission_complete
 	for i in mission_all.size():
-		print(mission_all[i])
+		#print(mission_all[i])
 		if delete_mission(mission_all[i],mission_all.size()):
 			Labels(i,mission_all[i])
 	pass
