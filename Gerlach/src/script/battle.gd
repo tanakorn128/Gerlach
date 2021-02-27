@@ -27,6 +27,7 @@ func _process(delta):
 		if timeend:
 			$"/root/Global".PlayerHP -= 20
 			$Timer.start()
+			$AnimationPlayer.play("Death")
 			timeend = false
 	
 func set_enemy(): #ค้นหาสตรูและแสดงผล
@@ -40,6 +41,7 @@ func set_enemy(): #ค้นหาสตรูและแสดงผล
 	pass
 func _Correct(damages): #ตอบคำถามผิด
 	$HUDEnemy/TextureProgress.value -= damages 
+	print($HUDEnemy/TextureProgress.value)
 	C = true
 	pass
 func _not_correct(damages): #ตอยคพถาทผิด

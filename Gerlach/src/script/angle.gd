@@ -12,9 +12,10 @@ var card2 = true
 var card3 = true
 var card4 = true
 var resource = preload("res://src/script/Exam/Exam_All/Angle.tres")
+export var time = 30
 func _ready():
 	set_question()
-	
+	$countdown.value = time
 	$AnimationPlayer.play("idle")
 	
 
@@ -81,8 +82,10 @@ func _process(delta):
 	if card.size() == 4:
 		answer(card[0],card[1],card[2],card[3])
 	if $countdown.value <= 0:
+		$Timeout.shows()
+		$countdown.value = time
 		$Wrong.playing = true
-		$countdown.value = 60
+		$battle._not_correct(10)
 
 func cards():
 	$card.start()
@@ -111,12 +114,11 @@ func answer(image,numcard1,angle,numcard2):
 		if numcard2 == 4:
 			card4 = false
 		$Correct.playing = true
-		print("Corret")
 		$click.playing = true
 		$AnimationPlayer.play("correct")
 		card.clear()
 		$card.start()
-		$battle._Correct(51)
+		$battle._Correct(50)
 		return true
 	elif NotCorrect:
 		print("NotCorrect")
@@ -255,5 +257,6 @@ func _on_card_timeout():
 
 
 func _on_Timer_countdown_timeout():
+	$Timeout.hides()
 	$countdown.value -= 1
 	pass # Replace with function body.

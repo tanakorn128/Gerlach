@@ -5,6 +5,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
+	Events.emit_signal("heart")
 	if $"/root/Global".PlayerHP <= 80:
 		$"/root/Global".PlayerHP += 20
 		Events.emit_signal("HP")

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TallShield.png-7935b4b2c707c766a4d8b720b79376c3.stex"
+path="res://.import/Medkit.png-550206ae2eaa39da38f70f5372bcd923.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Items/TallShield.png"
-dest_files=[ "res://.import/TallShield.png-7935b4b2c707c766a4d8b720b79376c3.stex" ]
+source_file="res://assets/Items/Medkit.png"
+dest_files=[ "res://.import/Medkit.png-550206ae2eaa39da38f70f5372bcd923.stex" ]
 
 [params]
 

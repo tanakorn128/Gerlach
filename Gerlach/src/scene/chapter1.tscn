@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://assets/reassets/Tree01.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -342,6 +342,10 @@ points = PoolVector2Array( 2, 13, 12, 13, 12, 18, 2, 18 )
 } ]
 0/z_index = 0
 
+[sub_resource type="AnimationNodeStateMachine" id=23]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=24]
+
 [node name="chapter1" type="Node2D"]
 script = ExtResource( 14 )
 
@@ -376,6 +380,7 @@ tile_data = PoolIntArray( -3800896, 0, 0, -1966098, 0, 0, -65179, 0, 0, 131605, 
 position = Vector2( 1012, 1128 )
 
 [node name="Bat" parent="." instance=ExtResource( 13 )]
+visible = false
 position = Vector2( 496.367, 388.034 )
 
 [node name="wall" type="TileMap" parent="."]
@@ -451,6 +456,7 @@ scale = Vector2( 0.15, 0.15 )
 position = Vector2( 194.812, 338.731 )
 
 [node name="dialogbox1" parent="." instance=ExtResource( 18 )]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -465,3 +471,11 @@ __meta__ = {
 [node name="AudioBG" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
 autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 23 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 24 )

@@ -1,8 +1,9 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://src/script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player.png" type="Texture" id=2]
 [ext_resource path="res://assets/player/ax.png" type="Texture" id=3]
+[ext_resource path="res://assets/Items/heart.png" type="Texture" id=4]
 [ext_resource path="res://src/scene/Get_mission.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -58,48 +59,12 @@ resource_name = "attack2"
 [sub_resource type="Animation" id=6]
 resource_name = "attack1"
 length = 0.6
-tracks/0/type = "value"
-tracks/0/path = NodePath("skill:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -9.37654, -1.00064 ), Vector2( -9.37654, -1.00064 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("skill:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.1, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.1, -62.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("skill:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ null, ExtResource( 3 ), ExtResource( 3 ), null ]
-}
 
 [sub_resource type="Animation" id=7]
 length = 0.3
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("player:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -115,7 +80,7 @@ tracks/0/keys = {
 length = 0.2
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("player:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -131,7 +96,7 @@ tracks/0/keys = {
 length = 0.3
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("player:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -147,7 +112,7 @@ tracks/0/keys = {
 length = 0.3
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("player:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -163,7 +128,7 @@ tracks/0/keys = {
 length = 0.3
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("player:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -175,8 +140,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=12]
-animation = "attack1"
+[sub_resource type="AnimationNodeBlendSpace2D" id=12]
 
 [sub_resource type="AnimationNodeAnimation" id=13]
 animation = "down"
@@ -210,12 +174,10 @@ animation = "up"
 [sub_resource type="AnimationNodeStateMachineTransition" id=25]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=26]
-switch_mode = 2
-auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachine" id=27]
-states/attack1/node = SubResource( 12 )
-states/attack1/position = Vector2( 617, 131.32 )
+states/attack/node = SubResource( 12 )
+states/attack/position = Vector2( 614.863, 133.32 )
 states/down/node = SubResource( 13 )
 states/down/position = Vector2( 298, 175.32 )
 states/idle/node = SubResource( 14 )
@@ -226,10 +188,27 @@ states/right/node = SubResource( 16 )
 states/right/position = Vector2( 575, -17 )
 states/up/node = SubResource( 17 )
 states/up/position = Vector2( 298, -24 )
-transitions = [ "idle", "right", SubResource( 18 ), "idle", "left", SubResource( 19 ), "left", "idle", SubResource( 20 ), "idle", "up", SubResource( 21 ), "up", "idle", SubResource( 22 ), "idle", "down", SubResource( 23 ), "down", "idle", SubResource( 24 ), "idle", "attack1", SubResource( 25 ), "attack1", "idle", SubResource( 26 ) ]
-graph_offset = Vector2( 195.405, -51.68 )
+transitions = [ "idle", "right", SubResource( 18 ), "idle", "left", SubResource( 19 ), "left", "idle", SubResource( 20 ), "idle", "up", SubResource( 21 ), "up", "idle", SubResource( 22 ), "idle", "down", SubResource( 23 ), "down", "idle", SubResource( 24 ), "idle", "attack", SubResource( 25 ), "attack", "idle", SubResource( 26 ) ]
+graph_offset = Vector2( 43.2411, -51.68 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=28]
+
+[sub_resource type="Curve" id=29]
+_data = [ Vector2( 0, 0.1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.581818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=30]
+curve = SubResource( 29 )
+
+[sub_resource type="ParticlesMaterial" id=31]
+emission_shape = 2
+emission_box_extents = Vector3( 5, 18, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 100, 0 )
+initial_velocity = 25.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 25.0
+scale_curve = SubResource( 30 )
 
 [node name="player" type="KinematicBody2D"]
 scale = Vector2( 3, 3 )
@@ -281,10 +260,12 @@ wait_time = 3.0
 autostart = true
 
 [node name="skill" type="Sprite" parent="."]
+visible = false
 position = Vector2( -9.37654, -1.00064 )
-rotation = -1.0821
+rotation = 0.00174533
+texture = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="player" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 3
@@ -303,4 +284,17 @@ tree_root = SubResource( 27 )
 anim_player = NodePath("../animation")
 active = true
 parameters/playback = SubResource( 28 )
+parameters/attack/blend_position = Vector2( -0.99005, 0.969072 )
+
+[node name="Particles2D_heart" type="Particles2D" parent="."]
+position = Vector2( -3.31948, 1.95866 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+emitting = false
+amount = 2
+process_material = SubResource( 31 )
+texture = ExtResource( 4 )
+
+[node name="heart" type="Timer" parent="."]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="heart" to="." method="_on_heart_timeout"]

@@ -1,13 +1,52 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/script/battle.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/ax_player2.png" type="Texture" id=2]
 [ext_resource path="res://assets/player/player.png" type="Texture" id=3]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/player/ax.png" type="Texture" id=5]
+[ext_resource path="res://Effects/EnemyDeathEffect.png" type="Texture" id=6]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Left"
+[sub_resource type="Animation" id=17]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Death:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0 ), Vector2( 2, 0 ), Vector2( 3, 0 ), Vector2( 4, 0 ), Vector2( 8, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("player:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.6, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5, 5 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Death:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 6 ), null ]
+}
+
+[sub_resource type="Animation" id=18]
 tracks/0/type = "value"
 tracks/0/path = NodePath("player:position")
 tracks/0/interp = 1
@@ -21,8 +60,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1123.03, 146.206 ), Vector2( 351.669, 146.206 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "attack1"
+[sub_resource type="Animation" id=19]
 tracks/0/type = "value"
 tracks/0/path = NodePath("player:position")
 tracks/0/interp = 1
@@ -78,7 +116,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0.6 )
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=20]
 resource_name = "attack2"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("attack:rotation_degrees")
@@ -111,7 +149,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.7 )
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=21]
 resource_name = "idle"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("player:position:x")
@@ -134,8 +172,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "walk"
+[sub_resource type="Animation" id=22]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("player:position")
@@ -165,16 +202,20 @@ tracks/1/keys = {
 [sub_resource type="AnimationNodeAnimation" id=7]
 animation = "attack1"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=4]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 switch_mode = 2
 auto_advance = true
 
@@ -183,24 +224,20 @@ switch_mode = 2
 auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
-switch_mode = 2
-auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-
-[sub_resource type="AnimationNodeStateMachine" id=5]
+[sub_resource type="AnimationNodeStateMachine" id=15]
 states/attack1/node = SubResource( 7 )
 states/attack1/position = Vector2( 317, 203 )
-states/idle/node = SubResource( 12 )
+states/idle/node = SubResource( 9 )
 states/idle/position = Vector2( 122.426, 99.0628 )
-"states/idle 2/node" = SubResource( 11 )
+"states/idle 2/node" = SubResource( 8 )
 "states/idle 2/position" = Vector2( 288, 294 )
-states/walk/node = SubResource( 4 )
+states/walk/node = SubResource( 10 )
 states/walk/position = Vector2( 310, 99.0628 )
-transitions = [ "walk", "attack1", SubResource( 8 ), "idle", "walk", SubResource( 13 ), "attack1", "idle 2", SubResource( 14 ), "idle 2", "idle", SubResource( 15 ) ]
+transitions = [ "walk", "attack1", SubResource( 11 ), "idle", "walk", SubResource( 12 ), "attack1", "idle 2", SubResource( 13 ), "idle 2", "idle", SubResource( 14 ) ]
 graph_offset = Vector2( -18.5736, 25.4188 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
 [node name="battle" type="Node2D"]
 script = ExtResource( 1 )
@@ -248,23 +285,30 @@ region_rect = Rect2( 40, 40, 0, 0 )
 
 [node name="player" type="Sprite" parent="."]
 position = Vector2( 1123.03, 146.206 )
-scale = Vector2( 5, 5 )
+scale = Vector2( 3.75, 3.75 )
 texture = ExtResource( 3 )
 vframes = 4
 hframes = 3
 frame = 5
 
+[node name="Death" type="Sprite" parent="."]
+position = Vector2( 1129.64, 178.397 )
+scale = Vector2( 4, 4 )
+hframes = 10
+frame = 8
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/Left = SubResource( 1 )
-anims/attack1 = SubResource( 2 )
-anims/attack2 = SubResource( 9 )
-anims/idle = SubResource( 10 )
-anims/walk = SubResource( 3 )
+anims/Death = SubResource( 17 )
+anims/Left = SubResource( 18 )
+anims/attack1 = SubResource( 19 )
+anims/attack2 = SubResource( 20 )
+anims/idle = SubResource( 21 )
+anims/walk = SubResource( 22 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 5 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 6 )
+parameters/playback = SubResource( 16 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

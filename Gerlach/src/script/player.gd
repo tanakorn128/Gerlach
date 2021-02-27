@@ -7,6 +7,7 @@ onready var animation_tree = get_node("AnimationTree")
 onready var animation_node = animation_tree.get("parameters/playback")
 func _ready():
 	#Events.connect("player_speed",self,"player_speed")
+	Events.connect("heart",self,"heart")
 	set_player_position()
 	$"/root/Global".player = self.position
 	player_position()
@@ -74,7 +75,17 @@ func _on_AnimatedSprite_animation_finished():
 		isAttacking = false
 	pass # Replace with function body.
 
+func heart():
+	$Particles2D_heart.emitting = true
+	$heart.start()
+	pass
 
 func _on_Timer_timeout():
 	$CollisionShape2D.disabled = false
+	pass # Replace with function body.
+
+
+func _on_heart_timeout():
+	$Particles2D_heart.emitting = false
+	$heart.start()
 	pass # Replace with function body.

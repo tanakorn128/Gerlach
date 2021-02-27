@@ -3,6 +3,7 @@ const HUDPOSY = 350
 const HUDPOSX = 600
 var chapter2 = false
 func _ready():
+	$dialogbox1.show()
 	Events.connect("player_position",self,"player_position")
 	$HUD.position.x = $"/root/Global".player.x - HUDPOSX
 	$HUD.position.y = $"/root/Global".player.y - HUDPOSY
