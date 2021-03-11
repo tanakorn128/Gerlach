@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/player/ax.png" type="Texture" id=5]
 [ext_resource path="res://Effects/EnemyDeathEffect.png" type="Texture" id=6]
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=1]
 resource_name = "Death"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Death:frame_coords")
@@ -46,7 +46,7 @@ tracks/2/keys = {
 "values": [ null, ExtResource( 6 ), null ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("player:position")
 tracks/0/interp = 1
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1123.03, 146.206 ), Vector2( 351.669, 146.206 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("player:position")
 tracks/0/interp = 1
@@ -116,7 +116,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0.6 )
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=4]
 resource_name = "attack2"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("attack:rotation_degrees")
@@ -149,7 +149,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0.7 )
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=5]
 resource_name = "idle"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("player:position:x")
@@ -172,7 +172,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=6]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("player:position")
@@ -299,12 +299,12 @@ frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 method_call_mode = 1
-anims/Death = SubResource( 17 )
-anims/Left = SubResource( 18 )
-anims/attack1 = SubResource( 19 )
-anims/attack2 = SubResource( 20 )
-anims/idle = SubResource( 21 )
-anims/walk = SubResource( 22 )
+anims/Death = SubResource( 1 )
+anims/Left = SubResource( 2 )
+anims/attack1 = SubResource( 3 )
+anims/attack2 = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/walk = SubResource( 6 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 15 )

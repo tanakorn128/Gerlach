@@ -1,12 +1,11 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/Enemys/png/Trash3.png" type="Texture" id=2]
-[ext_resource path="res://assets/Enemys/png/Trash2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemys/png/Apple2.png" type="Texture" id=2]
+[ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=3]
 [ext_resource path="res://assets/Enemys/png/Arrow1.png" type="Texture" id=4]
 [ext_resource path="res://assets/hud/CountDown_2.png" type="Texture" id=5]
 [ext_resource path="res://assets/World/DirtTileset.tres" type="TileSet" id=6]
-[ext_resource path="res://assets/Enemys/png/Trash1.png" type="Texture" id=7]
 [ext_resource path="res://assets/hud/CountDown_1.png" type="Texture" id=8]
 [ext_resource path="res://src/script/Enemys/Enemy1.gd" type="Script" id=9]
 [ext_resource path="res://assets/World/CliffTileset2.tres" type="TileSet" id=10]
@@ -245,8 +244,8 @@ tile_data = PoolIntArray( 983038, 0, 196608, 983039, 0, 196609, 917504, 0, 19660
 
 [node name="Trash1" type="Sprite" parent="."]
 position = Vector2( 430.052, 503.016 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 7 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
 
 [node name="BG" type="ColorRect" parent="Trash1"]
 margin_left = -66.0395
@@ -312,8 +311,8 @@ __meta__ = {
 
 [node name="Trash2" type="Sprite" parent="."]
 position = Vector2( 678.098, 503.016 )
-scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 3 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Trash2"]
 margin_left = -66.1048
@@ -380,7 +379,7 @@ __meta__ = {
 
 [node name="Trash3" type="Sprite" parent="."]
 position = Vector2( 923.709, 503.016 )
-scale = Vector2( 0.7, 0.7 )
+scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="Trash3"]
@@ -488,6 +487,47 @@ wait_time = 0.7
 [node name="AudioBG" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
 autoplay = true
+
+[node name="Tree" type="Sprite" parent="."]
+position = Vector2( 214.057, 568.441 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="Tree2" type="Sprite" parent="."]
+position = Vector2( 1155.91, 568.441 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="apple" type="TextureRect" parent="."]
+margin_left = 237.221
+margin_top = 527.46
+margin_right = 365.221
+margin_bottom = 673.46
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="apple2" type="TextureRect" parent="apple"]
+margin_left = -400.904
+margin_top = 26.7268
+margin_right = -272.904
+margin_bottom = 172.727
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="apple3" type="TextureRect" parent="apple"]
+margin_left = 4425.68
+margin_top = -40.6211
+margin_right = 4553.68
+margin_bottom = 105.379
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="mouse_entered" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_entered"]
 [connection signal="mouse_exited" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_exited"]
 [connection signal="mouse_entered" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_entered"]

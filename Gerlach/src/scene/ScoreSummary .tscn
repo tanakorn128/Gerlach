@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/font/Overview.tres" type="DynamicFont" id=1]
+
+[node name="ScoreSummary " type="Node2D"]
+
+[node name="Chapter" type="Label" parent="."]
+margin_left = 64.1835
+margin_top = 101.938
+margin_right = 235.183
+margin_bottom = 161.938
+custom_fonts/font = ExtResource( 1 )
+text = "Chapter 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}

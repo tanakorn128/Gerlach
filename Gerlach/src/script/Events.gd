@@ -11,3 +11,5 @@ signal MissionEnd()
 signal Test()
 signal change(scene)
 signal heart()
+
+signal score(answer)

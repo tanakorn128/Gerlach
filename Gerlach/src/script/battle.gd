@@ -15,8 +15,8 @@ func _process(delta):
 		#print($"/root/Global".mission)
 		Events.emit_signal("hit",$"/root/Global".mission)
 		Events.emit_signal("Test")
-		
 		$"/root/Global".mission_complete.append($"/root/Global".L_mission)
+		Events.emit_signal("score","Correct")
 		C = false
 		if timeend:
 			$Timer.start()
@@ -27,8 +27,10 @@ func _process(delta):
 		if timeend:
 			$"/root/Global".PlayerHP -= 20
 			$Timer.start()
+			Events.emit_signal("score","Wrong")
 			$AnimationPlayer.play("Death")
 			timeend = false
+			
 	
 func set_enemy(): #ค้นหาสตรูและแสดงผล
 	for i in enemys.Enemy.size():
@@ -61,7 +63,6 @@ func Enemy(name,mission,position,damage):
 func _on_Timer_timeout():
 	$"/root/Global".chapter1_Start = false
 	Events.emit_signal("change",$"/root/Global".scene)
-	print("Change")
 	#get_tree().change_scene("res://src/scene/chapter1.tscn")
 	#get_tree().change_scene("res://src/scene/chapter2.tscn")
 	pass # Replace with function body.

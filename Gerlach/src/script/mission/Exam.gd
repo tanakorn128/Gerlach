@@ -85,3 +85,4 @@ func _on_Timer_timeout():#จับเวลา
 		$TextureProgress.value = 60
 		import_exam()
 	pass # Replace with function body.
+

@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="Pause" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1355.0
+margin_bottom = 781.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
