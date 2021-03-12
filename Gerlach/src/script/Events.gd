@@ -12,4 +12,4 @@ signal Test()
 signal change(scene)
 signal heart()
 
-signal score(answer)
+signal score(answer) #แสดงคะแนนตอบถูก ตอบผิด 

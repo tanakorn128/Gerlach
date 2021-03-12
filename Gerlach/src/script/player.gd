@@ -9,7 +9,8 @@ onready var animation_node = animation_tree.get("parameters")
 func _ready():
 	#Events.connect("player_speed",self,"player_speed")
 	Events.connect("heart",self,"heart")
-	set_player_position()
+	Events.connect("player_position",self,"player_pos")
+	#set_player_position()
 	$"/root/Global".player = self.position
 	player_position()
 	
@@ -113,7 +114,8 @@ func Animation_Player(value):
 func attack():
 	if Input.is_action_pressed("attack"):
 		animation_tree.set("parameters/Transition/current",0)
-		animation_tree.set("parameters/attack/blend_position",Vector2(-1,0).normalized())
+		animation_tree.set("parameters/attacks_walk/blend_position",Vector2(-1,0).normalized())
+		
 	pass
 
 func set_player_position():
@@ -140,3 +142,7 @@ func _on_heart_timeout():
 	$Particles2D_heart.emitting = false
 	$heart.start()
 	pass # Replace with function body.
+
+func player_pos(pos):
+	self.position = pos
+	pass
