@@ -5,7 +5,7 @@ var isAttacking = false
 var flip_h_isAttacking=false
 onready var animation_tree = get_node("AnimationTreePlayer")
 onready var animation_node = animation_tree.get("parameters")
-
+onready var playback = $AnimationTreePlayer.get("parameters/StateMachine/playback")
 func _ready():
 	#Events.connect("player_speed",self,"player_speed")
 	Events.connect("heart",self,"heart")
@@ -13,7 +13,7 @@ func _ready():
 	#set_player_position()
 	$"/root/Global".player = self.position
 	player_position()
-	
+	playback.start("attackLeft")
 	pass
 
 func _process(delta):
@@ -24,7 +24,6 @@ func _process(delta):
 		speed = 10000
 		Animation_Player("walk")
 	move_and_slide(velocity*delta)
-	attack()
 	pass
 
 func player_position():
@@ -82,6 +81,7 @@ func Animation_Player(value):
 			animation_tree.set("parameters/walk/blend_position",Vector2(-1,0).normalized())
 			Events.emit_signal("player_Collisioion_mission",true)
 			player_position()
+			attack("left")
 		elif Input.is_action_pressed("ui_right") && isAttacking == false:
 			player_position()
 			velocity.y = 0
@@ -90,6 +90,7 @@ func Animation_Player(value):
 			animation_tree.set("parameters/walk/blend_position",Vector2(1,0).normalized())
 			Events.emit_signal("player_Collisioion_mission",true)
 			player_position()
+			attack("right")
 		elif Input.is_action_pressed("ui_down") && isAttacking == false:
 			player_position()
 			velocity.x = 0
@@ -97,25 +98,53 @@ func Animation_Player(value):
 			animation_tree.set("parameters/walk/blend_position",Vector2(0,-1).normalized())
 			Events.emit_signal("player_Collisioion_mission",true)
 			player_position()
+			attack("down")
 		elif Input.is_action_pressed("ui_up") && isAttacking == false:
 			player_position()
 			velocity.x = 0
 			velocity.y = -speed
 			animation_tree.set("parameters/walk/blend_position",Vector2(0,1).normalized())
 			player_position()
+			attack("up")
 			Events.emit_signal("player_Collisioion_mission",true)
 		else:
 			velocity.x = 0
 			velocity.y = 0
 			animation_tree.set("parameters/walk/blend_position",Vector2(0,0).normalized())
+			attack("idle")
 			if isAttacking == false:
 				Events.emit_signal("player_Collisioion_mission",false)
 				player_position()
-func attack():
+func attack(value):
 	if Input.is_action_pressed("attack"):
-		animation_tree.set("parameters/Transition/current",0)
-		animation_tree.set("parameters/attacks_walk/blend_position",Vector2(-1,0).normalized())
-		
+		if value == "left":
+			animation_tree.set("parameters/attacks_Blend2/blend_amount",0)
+			animation_tree.set("parameters/Transition/current",0)
+			animation_tree.set("parameters/attacks_walk/blend_position",Vector2(-1,0).normalized())
+			animation_tree.set("parameters/attacks/blend_position",Vector2(-1,0).normalized())
+		if value == "right":
+			animation_tree.set("parameters/attacks_Blend2/blend_amount",0)
+			animation_tree.set("parameters/Transition/current",0)
+			animation_tree.set("parameters/attacks_walk/blend_position",Vector2(1,0).normalized())
+			animation_tree.set("parameters/attacks/blend_position",Vector2(1,0).normalized())
+		if value == "up":
+			animation_tree.set("parameters/attacks_Blend2/blend_amount",0)
+			animation_tree.set("parameters/Transition/current",0)
+			animation_tree.set("parameters/attacks_walk/blend_position",Vector2(0,1).normalized())
+			animation_tree.set("parameters/attacks/blend_position",Vector2(0,1).normalized())
+		if value == "down":
+			animation_tree.set("parameters/attacks_Blend2/blend_amount",0)
+			animation_tree.set("parameters/Transition/current",0)
+			animation_tree.set("parameters/attacks_walk/blend_position",Vector2(0,-1).normalized())
+			animation_tree.set("parameters/attacks/blend_position",Vector2(0,-1).normalized())
+		if value == "idle":
+			
+			animation_tree.set("parameters/Transition/current",0)
+			animation_tree.set("parameters/attacks_walk/blend_position",Vector2(0,0).normalized())
+			#animation_tree.set("parameters/attacks/blend_position",Vector2(0,0).normalized())
+			animation_tree.set("parameters/attacks_Blend2/blend_amount",1)
+			playback.travel("attackdown")
+			
 	pass
 
 func set_player_position():

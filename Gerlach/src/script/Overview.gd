@@ -1,13 +1,13 @@
 extends Node2D
 
 func _ready():
-	$"/root/Global".Correct_Chapter1 = 2
-	$"/root/Global".Wrong_Chapter1 = 4
-	add_score()
+	#$"/root/Global".Correct_Chapter1 = 2
+	#$"/root/Global".Wrong_Chapter1 = 4
+	show_score()
 	
 	pass
-	
-func add_score():
+
+func show_score():
 	$"Correct/chapter 1".text = str(check_null($"/root/Global".Correct_Chapter1)," ข้อ")
 	$"Correct/chapter 2".text = str(check_null($"/root/Global".Correct_Chapter2)," ข้อ")
 	$"Correct/chapter 3".text = str(check_null($"/root/Global".Correct_Chapter3)," ข้อ")
