@@ -1,6 +1,6 @@
 extends KinematicBody2D
 var velocity : Vector2
-const speed = 10000
+var speed = 10000
 var isAttacking = false
 var flip_h_isAttacking=false
 onready var animation_tree = get_node("AnimationTreePlayer")
@@ -16,48 +16,12 @@ func _ready():
 	pass
 
 func _process(delta):
-	if Input.is_action_pressed("ui_left") && isAttacking == false:
-		player_position()
-		velocity.y = 0
-		velocity.x = -speed
-		flip_h_isAttacking = false
-		animation_tree.set("parameters/Transition/current",1)
-		animation_tree.set("parameters/walk/blend_position",Vector2(-1,0).normalized())
-		Events.emit_signal("player_Collisioion_mission",true)
-		player_position()
-	elif Input.is_action_pressed("ui_right") && isAttacking == false:
-		player_position()
-		velocity.y = 0
-		velocity.x = +speed
-		flip_h_isAttacking = true
-		animation_tree.set("parameters/Transition/current",1)
-		animation_tree.set("parameters/walk/blend_position",Vector2(1,0).normalized())
-		Events.emit_signal("player_Collisioion_mission",true)
-		player_position()
-	elif Input.is_action_pressed("ui_down") && isAttacking == false:
-		player_position()
-		velocity.x = 0
-		velocity.y = +speed
-		animation_tree.set("parameters/Transition/current",1)
-		animation_tree.set("parameters/walk/blend_position",Vector2(0,-1).normalized())
-		Events.emit_signal("player_Collisioion_mission",true)
-		player_position()
-	elif Input.is_action_pressed("ui_up") && isAttacking == false:
-		player_position()
-		velocity.x = 0
-		velocity.y = -speed
-		animation_tree.set("parameters/Transition 2/current",1)
-		animation_tree.set("parameters/walk/blend_position",Vector2(0,1).normalized())
-		player_position()
-		Events.emit_signal("player_Collisioion_mission",true)
+	if Input.is_action_pressed("ui_select"):
+		speed = 20000
+		Animation_Player("run")
 	else:
-		velocity.x = 0
-		velocity.y = 0
-		animation_tree.set("parameters/Transition 2/current",1)
-		animation_tree.set("parameters/walk/blend_position",Vector2(0,0).normalized())
-		if isAttacking == false:
-			Events.emit_signal("player_Collisioion_mission",false)
-			player_position()
+		speed = 10000
+		Animation_Player("walk")
 	move_and_slide(velocity*delta)
 	attack()
 	pass
@@ -66,6 +30,86 @@ func player_position():
 	Events.emit_signal("player_position",self.position)
 	pass
 
+func Animation_Player(value):
+	if value == "run":
+		animation_tree.set("parameters/Transition/current",2)
+		if Input.is_action_pressed("ui_left") && isAttacking == false:
+			player_position()
+			velocity.y = 0
+			velocity.x = -speed
+			flip_h_isAttacking = false
+			animation_tree.set("parameters/run/blend_position",Vector2(-1,0).normalized())
+			Events.emit_signal("player_Collisioion_mission",true)
+			player_position()
+		elif Input.is_action_pressed("ui_right") && isAttacking == false:
+			player_position()
+			velocity.y = 0
+			velocity.x = +speed
+			flip_h_isAttacking = true
+			animation_tree.set("parameters/run/blend_position",Vector2(1,0).normalized())
+			Events.emit_signal("player_Collisioion_mission",true)
+			player_position()
+		elif Input.is_action_pressed("ui_down") && isAttacking == false:
+			player_position()
+			velocity.x = 0
+			velocity.y = +speed
+			animation_tree.set("parameters/run/blend_position",Vector2(0,-1).normalized())
+			Events.emit_signal("player_Collisioion_mission",true)
+			player_position()
+		elif Input.is_action_pressed("ui_up") && isAttacking == false:
+			player_position()
+			velocity.x = 0
+			velocity.y = -speed
+			animation_tree.set("parameters/run/blend_position",Vector2(0,1).normalized())
+			player_position()
+			Events.emit_signal("player_Collisioion_mission",true)
+		else:
+			velocity.x = 0
+			velocity.y = 0
+			animation_tree.set("parameters/run/blend_position",Vector2(0,0).normalized())
+			if isAttacking == false:
+				Events.emit_signal("player_Collisioion_mission",false)
+				player_position()
+		pass
+	if value == "walk":
+		animation_tree.set("parameters/Transition/current",1)
+		if Input.is_action_pressed("ui_left") && isAttacking == false:
+			player_position()
+			velocity.y = 0
+			velocity.x = -speed
+			flip_h_isAttacking = false
+			animation_tree.set("parameters/walk/blend_position",Vector2(-1,0).normalized())
+			Events.emit_signal("player_Collisioion_mission",true)
+			player_position()
+		elif Input.is_action_pressed("ui_right") && isAttacking == false:
+			player_position()
+			velocity.y = 0
+			velocity.x = +speed
+			flip_h_isAttacking = true
+			animation_tree.set("parameters/walk/blend_position",Vector2(1,0).normalized())
+			Events.emit_signal("player_Collisioion_mission",true)
+			player_position()
+		elif Input.is_action_pressed("ui_down") && isAttacking == false:
+			player_position()
+			velocity.x = 0
+			velocity.y = +speed
+			animation_tree.set("parameters/walk/blend_position",Vector2(0,-1).normalized())
+			Events.emit_signal("player_Collisioion_mission",true)
+			player_position()
+		elif Input.is_action_pressed("ui_up") && isAttacking == false:
+			player_position()
+			velocity.x = 0
+			velocity.y = -speed
+			animation_tree.set("parameters/walk/blend_position",Vector2(0,1).normalized())
+			player_position()
+			Events.emit_signal("player_Collisioion_mission",true)
+		else:
+			velocity.x = 0
+			velocity.y = 0
+			animation_tree.set("parameters/walk/blend_position",Vector2(0,0).normalized())
+			if isAttacking == false:
+				Events.emit_signal("player_Collisioion_mission",false)
+				player_position()
 func attack():
 	if Input.is_action_pressed("attack"):
 		animation_tree.set("parameters/Transition/current",0)

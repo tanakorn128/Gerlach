@@ -32,3 +32,8 @@ func check_null(data):
 	else:
 		return data
 	pass
+
+
+func _on_Button_button_down():
+	Events.emit_signal("change",$"/root/Global".scene)
+	pass # Replace with function body.
