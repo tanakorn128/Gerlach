@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=2]
+[gd_resource type="TileSet" load_steps=6 format=2]
 
 [ext_resource path="res://assets/reassets/Tree01.png" type="Texture" id=1]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=2]
+[ext_resource path="res://assets/tileset-wesley2.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 2.92044, 26.8233, 9.21915, 31.5069, 15.0334, 34.8985, 20.04, 34.737, 26.8233, 30.8609, 33.6065, 26.6618, 33.9295, 30.6994, 31.3454, 34.091, 30.5379, 35.5446, 32.799, 36.9981, 34.2525, 39.2592, 34.091, 41.3588, 33.6065, 43.1353, 31.3454, 45.3964, 28.5998, 47.3345, 26.1772, 48.142, 25.2082, 48.3035, 25.0467, 48.788, 11.1572, 49.111, 10.9957, 48.142, 8.57314, 48.142, 3.72797, 44.9119, 1.95141, 42.6508, 1.95141, 38.7747, 5.18152, 35.7061, 2.59743, 32.799, 1.7899, 30.5379 )
@@ -52,3 +53,17 @@ points = PoolVector2Array( 5.02001, 21.1706, 7.6041, 24.7237, 12.2878, 27.1463, 
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
+2/name = "tileset-wesley2.png 2"
+2/texture = ExtResource( 3 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 20, 0, 40, 52 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0

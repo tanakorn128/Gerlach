@@ -361,7 +361,7 @@ format = 1
 tile_data = PoolIntArray( -3800896, 0, 0, -1966098, 0, 0, -65179, 0, 0, 131605, 1, 0, 3866816, 0, 0, 5898177, 0, 0, 11600024, 0, 0, 11796462, 0, 0, 11731346, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 12 )]
-position = Vector2( 993.821, 916.326 )
+position = Vector2( 5977.55, 179.991 )
 
 [node name="Bat" parent="." instance=ExtResource( 13 )]
 visible = false
