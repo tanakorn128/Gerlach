@@ -1,10 +1,11 @@
 extends Node2D
-
+var chapter
+var chapter1_color
 func _ready():
 	#$"/root/Global".Correct_Chapter1 = 2
 	#$"/root/Global".Wrong_Chapter1 = 4
 	show_score()
-	
+	chapter1_color = $"Correct/chapter 1".get_color("font_color")
 	pass
 
 func show_score():
@@ -36,4 +37,24 @@ func check_null(data):
 
 func _on_Button_button_down():
 	Events.emit_signal("change",$"/root/Global".scene)
+	pass # Replace with function body.
+
+
+func _input(event):
+	if Input.is_action_pressed("mouse left"):
+		if chapter == 1:
+			get_tree().change_scene("res://src/scene/view/Correct.tscn")
+		pass
+
+
+
+func _on_chapter1_mouse_entered():
+	chapter = 1
+	$"Correct/chapter 1".add_color_override("font_color",Color(1, 0.5, 0))
+	pass # Replace with function body.
+
+
+func _on_chapter1_mouse_exited():
+	$"Correct/chapter 1".add_color_override("font_color",chapter1_color)
+	chapter = null
 	pass # Replace with function body.

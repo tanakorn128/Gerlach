@@ -13,3 +13,6 @@ signal change(scene)
 signal heart()
 
 signal score(answer) #แสดงคะแนนตอบถูก ตอบผิด 
+signal add_exam(Type0,chapter0)
+
+signal player_Camera2D(settings)

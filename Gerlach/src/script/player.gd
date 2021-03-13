@@ -10,6 +10,7 @@ func _ready():
 	#Events.connect("player_speed",self,"player_speed")
 	Events.connect("heart",self,"heart")
 	Events.connect("player_position",self,"player_pos")
+	Events.connect("player_Camera2D",self,"player_Camera2D")
 	#set_player_position()
 	$"/root/Global".player = self.position
 	player_position()
@@ -174,4 +175,12 @@ func _on_heart_timeout():
 
 func player_pos(pos):
 	self.position = pos
+	pass
+
+func player_Camera2D(settings):
+	if settings:
+		$Camera2D.current = true
+	else:
+		$Camera2D.current = false
+	print(settings)
 	pass

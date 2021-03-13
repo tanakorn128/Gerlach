@@ -5,7 +5,9 @@ var player_damage
 var damage
 var timeend = true
 var C = false
+var dic_exam
 func _ready():
+	dic_exam = $"/root/Global".dic_Correct_Chapter1
 	set_enemy()
 	$HUDPlayer/ColorRect.show()
 	$HUDPlayer/Label.show()
@@ -17,6 +19,7 @@ func _process(delta):
 		Events.emit_signal("Test")
 		$"/root/Global".mission_complete.append($"/root/Global".L_mission)
 		Events.emit_signal("score","Correct")
+		add_exam()
 		C = false
 		if timeend:
 			$Timer.start()
@@ -67,4 +70,6 @@ func _on_Timer_timeout():
 	#get_tree().change_scene("res://src/scene/chapter2.tscn")
 	pass # Replace with function body.
 
-
+func add_exam():
+	Events.emit_signal("add_exam",dic_exam["Type"],dic_exam["chapter"])
+	pass

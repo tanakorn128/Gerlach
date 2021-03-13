@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/script/view/Correct.gd" type="Script" id=1]
+[ext_resource path="res://assets/font/Overview.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/script/view/Correct_Angle.gd" type="Script" id=3]
+
+[sub_resource type="Theme" id=1]
+
+[node name="Correct" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ItemList" type="ItemList" parent="."]
+margin_left = 3.0
+margin_right = 1348.0
+margin_bottom = 792.0
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Angle" type="Panel" parent="."]
+visible = false
+margin_right = 1344.0
+margin_bottom = 783.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect9" type="ColorRect" parent="Angle"]
+margin_left = 470.911
+margin_top = 320.348
+margin_right = 671.911
+margin_bottom = 338.348
+color = Color( 0, 0.298039, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect10" type="ColorRect" parent="Angle"]
+margin_left = 472.799
+margin_top = 450.603
+margin_right = 673.799
+margin_bottom = 468.603
+color = Color( 0, 0.298039, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect1" type="ColorRect" parent="Angle"]
+margin_left = 263.2
+margin_top = 275.54
+margin_right = 527.2
+margin_bottom = 385.54
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Angle"]
+margin_left = 263.2
+margin_top = 404.541
+margin_right = 527.2
+margin_bottom = 514.541
+
+[node name="ColorRect5" type="ColorRect" parent="Angle"]
+margin_left = 666.2
+margin_top = 275.54
+margin_right = 930.2
+margin_bottom = 385.54
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect6" type="ColorRect" parent="Angle"]
+margin_left = 666.2
+margin_top = 404.541
+margin_right = 930.2
+margin_bottom = 514.541
+
+[node name="Label1" type="Label" parent="Angle"]
+margin_left = 987.825
+margin_top = 297.175
+margin_right = 1182.83
+margin_bottom = 368.175
+custom_fonts/font = ExtResource( 2 )
+text = "ถูก"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="Angle"]
+margin_left = 987.825
+margin_top = 423.175
+margin_right = 1182.83
+margin_bottom = 494.175
+custom_fonts/font = ExtResource( 2 )
+text = "ถูก"
+align = 1
+valign = 1
+
+[node name="TextureRect1" type="TextureRect" parent="Angle"]
+margin_left = 314.473
+margin_top = 290.45
+margin_right = 477.473
+margin_bottom = 372.45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Angle"]
+margin_left = 313.473
+margin_top = 419.45
+margin_right = 476.473
+margin_bottom = 501.45
+
+[node name="TextureRect3" type="TextureRect" parent="Angle"]
+margin_left = 718.167
+margin_top = 290.954
+margin_right = 881.167
+margin_bottom = 372.954
+
+[node name="TextureRect4" type="TextureRect" parent="Angle"]
+margin_left = 720.167
+margin_top = 418.954
+margin_right = 882.167
+margin_bottom = 500.954
+
+[node name="Button" type="Button" parent="."]
+margin_left = 625.957
+margin_top = 619.242
+margin_right = 775.957
+margin_bottom = 685.242
+custom_fonts/font = ExtResource( 2 )
+text = "Go"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="."]
+margin_left = 78.269
+margin_top = 619.242
+margin_right = 179.269
+margin_bottom = 685.242
+custom_fonts/font = ExtResource( 2 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="back" to="." method="_on_back_button_down"]

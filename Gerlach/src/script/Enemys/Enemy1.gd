@@ -9,7 +9,9 @@ var correct_Trash1 #คำตอบTrash1
 var correct_Trash2 #คำตอบTrash2
 var correct_Trash3 #คำตอบTrash3
 var ResetPosition = false
+var dic_exam
 func _ready():
+	dic_exam = $"/root/Global".dic_Correct_Chapter1
 	$Trash1/AnimationPlayer.play("swipe")
 	$Trash2/AnimationPlayer.play("swipe")
 	$Trash3/AnimationPlayer.play("swipe")
@@ -20,6 +22,8 @@ func _ready():
 	$Trash1/ReferenceRect1.show()
 	$Trash2/ReferenceRect2.show()
 	$Trash3/ReferenceRect3.show()
+	dic_exam["Type"] = "ปัดเศษ"
+	dic_exam["chapter"] = str(get_node("/root/Global").scene)
 func _process(delta):
 	
 	pass # Replace with function body.

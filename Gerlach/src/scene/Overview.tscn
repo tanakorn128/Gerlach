@@ -272,6 +272,22 @@ custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "1 ข้อ"
 align = 1
 
+[node name="reference" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter1" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 200.0
+margin_right = 750.0
+margin_bottom = 260.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Control" type="Control" parent="."]
 visible = false
 margin_right = 40.0
@@ -324,4 +340,6 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="mouse_entered" from="reference/chapter1" to="." method="_on_chapter1_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter1" to="." method="_on_chapter1_mouse_exited"]
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]

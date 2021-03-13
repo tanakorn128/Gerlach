@@ -10,4 +10,4 @@ Mission = "เรียงจากน้อยไปมาก"
 texture = ExtResource( 2 )
 damage = 50
 location = Vector2( 965.614, 712.042 )
-Enemy_Type = 2
+Enemy_Type = 3

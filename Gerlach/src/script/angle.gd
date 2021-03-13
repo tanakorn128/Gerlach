@@ -13,11 +13,16 @@ var card3 = true
 var card4 = true
 var resource = preload("res://src/script/Exam/Exam_All/Angle.tres")
 export var time = 30
+var dic_exam
+var Angle_Chapter1
 func _ready():
+	dic_exam = $"/root/Global".dic_Correct_Chapter1
+	Angle_Chapter1 = $"/root/Global".Angle_Chapter1
 	set_question()
 	$countdown.value = time
 	$AnimationPlayer.play("idle")
-	
+	dic_exam["Type"] = "จับคู่มุม"
+	dic_exam["chapter"] = str(get_node("/root/Global").scene)
 
 
 func set_question():
@@ -27,6 +32,10 @@ func set_question():
 	var angle2 = resource.ExamAll[1].angle
 	var image2 = resource.ExamAll[1].image
 	var text2 = resource.ExamAll[1].text
+	Angle_Chapter1["data"]["image1"] = image1
+	Angle_Chapter1["data"]["image2"] = image2
+	Angle_Chapter1["data"]["angle1"] = angle1
+	Angle_Chapter1["data"]["angle2"] = angle2
 	var question1
 	var question2
 	var question3

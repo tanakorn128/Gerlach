@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource( 1 )
+Type = "Angle"
 image = ExtResource( 2 )
 angle = ExtResource( 3 )
 text = 180
