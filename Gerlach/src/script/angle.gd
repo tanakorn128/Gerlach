@@ -26,12 +26,12 @@ func _ready():
 
 
 func set_question():
-	var angle1 = resource.ExamAll[0].angle
-	var image1 = resource.ExamAll[0].image
-	var text1 = resource.ExamAll[0].text
-	var angle2 = resource.ExamAll[1].angle
-	var image2 = resource.ExamAll[1].image
-	var text2 = resource.ExamAll[1].text
+	var angle1 = $"/root/ExamInventory".get_exam("angle",0,"angle")
+	var image1 = $"/root/ExamInventory".get_exam("angle",0,"image")
+	var text1 = $"/root/ExamInventory".get_exam("angle",0,"name_angle")
+	var angle2 = $"/root/ExamInventory".get_exam("angle",1,"angle")
+	var image2 = $"/root/ExamInventory".get_exam("angle",1,"image")
+	var text2 = $"/root/ExamInventory".get_exam("angle",1,"name_angle")
 	Angle_Chapter1["data"]["image1"] = image1
 	Angle_Chapter1["data"]["image2"] = image2
 	Angle_Chapter1["data"]["angle1"] = angle1
@@ -130,7 +130,6 @@ func answer(image,numcard1,angle,numcard2):
 		$battle._Correct(50)
 		return true
 	elif NotCorrect:
-		print("NotCorrect")
 		$click.playing = true
 		show()
 		$Wrong.playing = true
@@ -154,7 +153,6 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.doubleclick:
 			click()
-			print("doubleclick")
 	if event.is_action_pressed("mouse left"):
 		if zone1 && card1:
 			$click.playing = true

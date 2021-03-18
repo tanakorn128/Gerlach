@@ -7,7 +7,6 @@ var follow
 var speed= 350
 var reverse = false
 func _ready():
-	Events.connect("player_position",self,"player_position")
 	Events.connect("player_Collisioion_mission",self,"player_Collisioion")
 	follow = get_node("Path2D/follow")
 func _process(delta):

@@ -1,7 +1,7 @@
 extends Resource
 
 class_name Exam_Angle
-export (String) var Type
+var Type:String = "Angle"
 export (Texture) var image
 export (Texture) var angle
-export (int) var text
+export (int) var name_angle

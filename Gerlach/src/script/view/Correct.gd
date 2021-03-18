@@ -15,7 +15,6 @@ func _ready():
 
 func ReportListItem():
 	ItemNo = $ItemList.get_selected_items()
-	print(ItemNo,"ItemNo")
 	if arr.size() > 0:
 		if arr[ItemNo[0]] == "จับคู่มุม":
 			$Angle.start = true

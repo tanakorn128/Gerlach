@@ -10,7 +10,6 @@ onready var animation_tree = get_node("AnimationTree")
 onready var animation_node = animation_tree.get("parameters/playback")
 
 func _ready():
-	Events.connect("player_position",self,"player_position") #เชื่อมสัญญาณ player_position
 	Events.connect("player_Collisioion_mission",self,"Collisioion")
 	Events.connect("hit",self,"hit_mission")
 	animation_node.start("start")
@@ -31,7 +30,7 @@ func hit(hit_mission): # ผู้เล่นชนะ Effect การตา�
 	if mission == hit_mission:
 		missiom_hit = true
 		#$Tree.play("hit")
-	pass
+
 
 func _on_Area2D_body_entered(body):
 	if CollisioionPlayer:
@@ -44,7 +43,6 @@ func Collisioion(Collisioion):
 	CollisioionPlayer = Collisioion
 	pass
 func exam(): #เปลี่ยนฉากไปทำข้อสอย
-	speed_player()
 	#ส่งออกข้่อมูลของสตรู
 	$"/root/Global".mission = mission 
 	$"/root/Global".Enemy_Name = Ename
@@ -60,13 +58,8 @@ func exam(): #เปลี่ยนฉากไปทำข้อสอย
 	if EnemyType == 3:
 		get_tree().change_scene("res://src/scene/EnemyType/angle.tscn")
 
-func speed_player(): # ความเร็วผู้เล่นเป็น 0
-	Events.emit_signal("player_speed",0)
-	pass
 
-func player_position(position):
 
-	pass
 
 func _on_Tree_animation_finished():
 	if missiom_hit:

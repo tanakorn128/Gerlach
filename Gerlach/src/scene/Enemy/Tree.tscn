@@ -94,7 +94,7 @@ shape = SubResource( 1 )
 autostart = true
 
 [node name="Sprite" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.718908 )
+modulate = Color( 1, 1, 1, 0.735294 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 9 )
 

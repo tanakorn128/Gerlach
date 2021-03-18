@@ -1,18 +1,15 @@
 extends Node
-signal player_position(position)
-signal player_speed(speed_player)
+
 signal player_Collisioion_mission(Collisioion)
-signal HUD(show)
 signal HP()
-#signal items_changed(indexes)
 signal Enemy_Name(Name)
 signal hit(hit_mission)
 signal MissionEnd()
-signal Test()
+
 signal change(scene)
 signal heart()
 
 signal score(answer) #แสดงคะแนนตอบถูก ตอบผิด 
 signal add_exam(Type0,chapter0)
 
-signal player_Camera2D(settings)
+

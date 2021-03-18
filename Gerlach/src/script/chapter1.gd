@@ -8,23 +8,26 @@ var chnger_scene = false
 func _ready():
 	#$dialogbox1.show()
 	$player.show()
-	Events.connect("player_position",self,"player_position")
-	$HUD.position.x = $"/root/Global".player.x - HUDPOSX
-	$HUD.position.y = $"/root/Global".player.y - HUDPOSY
 	$HUD/TextureProgress.value = $"/root/Global".PlayerHP
 	$HUD/Label.show()
 	$HUD/ColorRect.show()
 	Events.connect("HP",self,"HP")
 	Events.connect("player_Collisioion_mission",self,"player_Collisioion")
 	get_node("/root/Global").scene = 1
-	pass
 
-func player_position(position):
-	$HUD.position.x = position.x - HUDPOSX
-	$HUD.position.y = position.y - HUDPOSY
-	$Pause.position.x = position.x - PausePOSX
-	$Pause.position.y = position.y - PausePOSY
-	pass
+func _process(delta):
+	update()
+	if $player.position.x > $player/Camera2D.limit_right:
+		$"/root/ChangeScene".change(2)
+func change():
+	$HUD.position.x = $player.position.x - HUDPOSX
+	$HUD.position.y = $player.position.y - HUDPOSY
+	#$"/root/Pause".position = $player.position
+	#$"/root/Pause".position.y = $player.position.y - PausePOSY
+
+func update():
+	HP()
+	change()
 
 func HP():
 	$HUD/TextureProgress.value = $"/root/Global".PlayerHP
@@ -38,30 +41,15 @@ func player_Collisioion(Collisioion):
 
 
 func _on_mailbox1_body_entered(body):
-	if mailbox1:
+	if body.get_name() == "player":
+		print(body.get_name())
 		var inst = load("res://src/scene/dialogbox/dialogbox_all.tscn").instance()
 		add_child(inst)
-	
-	pass # Replace with function body.
-
-
-
-
-
-func _on_chapter2_body_entered(body):
-	if chnger_scene:
-		$HUD.hide()
-		Events.emit_signal("player_Camera2D",false)
-	pass # Replace with function body.
 
 
 func _on_change_scene_chapter2_body_entered(body):
 	if chnger_scene:
 		get_tree().change_scene("res://src/scene/chapter2.tscn")
-	pass # Replace with function body.
 
-func _on_chapter2_body_exited(body):
-	if chnger_scene:
-		$HUD.show()
-		Events.emit_signal("player_Camera2D",true)
-	pass # Replace with function body.
+
+

@@ -9,9 +9,11 @@ func _process(delta):
 		state = !state
 	if state:
 		show()
+		print("show")
 		pass
 	else:
 		hide()
+		print("hide")
 		pass
 	pass
 

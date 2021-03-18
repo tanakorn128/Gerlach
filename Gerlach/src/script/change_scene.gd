@@ -26,11 +26,11 @@ func add_score(chapter):
 		if answers == "Correct":
 			$"/root/Global".Correct_Chapter1 += 1
 			answers = null
-			print($"/root/Global".Correct_Chapter1,"Correct")
+			
 		if answers == "Wrong":
 			$"/root/Global".Wrong_Chapter1 += 1
 			answers = null
-			print($"/root/Global".Wrong_Chapter1,"Wrong")
+			
 		pass
 	pass
 func add_exam(Type0,chapter0):
@@ -38,14 +38,11 @@ func add_exam(Type0,chapter0):
 	dic_exam["data"]["chapter"] = chapter0
 	add_dataExam(Type0)
 	arr_exam.append(dic_exam["data"]["Type"])
-	
-	for i in arr_exam.size():
-		print(arr_exam[i])
-	pass
+
 
 func add_dataExam(Type):
 	if Type == "จับคู่มุม":
-		print("Angle data",Angle_Chapter1["data"],"Angle data")
+		
 		#arr_Angle_Chapter1.append(Angle_Chapter1["data"])
 		pass
 	pass

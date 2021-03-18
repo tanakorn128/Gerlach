@@ -7,11 +7,11 @@ var audio = false
 func _ready():
 	#get_text(0)
 	$AnimationPlayer.play("idle")
-	Events.connect("player_position",self,"player_position")
 
-func player_position(position):
-	self.position.x = position.x -670
-	self.position.y = position.y + 50
+
+func player_position():
+	#self.position.x = position.x -670
+	#self.position.y = position.y + 50
 	pass
 func _input(event):
 	if event.is_action_pressed("ui_select") && end && count < Text.size()-1:
