@@ -1,206 +1,50 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Enemys/png/Apple2.png" type="Texture" id=2]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=3]
-[ext_resource path="res://assets/Enemys/png/Arrow1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemys/png/Apple.png" type="Texture" id=4]
 [ext_resource path="res://assets/hud/CountDown_2.png" type="Texture" id=5]
 [ext_resource path="res://assets/World/DirtTileset.tres" type="TileSet" id=6]
+[ext_resource path="res://assets/audio/kenney/metalClick.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/hud/CountDown_1.png" type="Texture" id=8]
 [ext_resource path="res://src/script/Enemys/Enemy1.gd" type="Script" id=9]
 [ext_resource path="res://assets/World/CliffTileset2.tres" type="TileSet" id=10]
-[ext_resource path="res://assets/audio/music_zapsplat.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/audio/Correct.wav" type="AudioStream" id=12]
-[ext_resource path="res://assets/audio/Wrong.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/audio/kenney/confirmation_002.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/kenney/error_003.ogg" type="AudioStream" id=12]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/font/Kanit-Regular.ttf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 32
+size = 40
 font_data = SubResource( 1 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "swipe"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -36.7831, -186.952 ), Vector2( -36.7831, -279.81 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TextureRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "swipe"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect_down3:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -41.6246, 127.975 ), Vector2( -41.625, 217.975 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TextureRect_down3:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.929412 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "swipe"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -38.2774, -192.025 ), Vector2( -38.277, -279.81 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TextureRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.945367 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "swipe"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect_down2:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -37.4046, 127.975 ), Vector2( -37.405, 217.975 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TextureRect_down2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.945367 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "swipe"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -38.2774, -192.025 ), Vector2( -38.277, -279.81 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TextureRect:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.945367 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "swipe"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("TextureRect_down:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -38.2774, 127.975 ), Vector2( -38.2774, 217.975 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("TextureRect_down:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0.945367 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="DynamicFontData" id=9]
+[sub_resource type="DynamicFontData" id=3]
 font_path = "res://assets/font/Kanit-Regular.ttf"
 
-[sub_resource type="DynamicFont" id=10]
-size = 40
-font_data = SubResource( 9 )
-
-[sub_resource type="DynamicFontData" id=11]
-font_path = "res://assets/font/Kanit-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=4]
 size = 64
-font_data = SubResource( 11 )
+font_data = SubResource( 3 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 128, 146 )
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 128, 146 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 128, 146 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://assets/font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+font_data = SubResource( 8 )
 
 [node name="Trash" type="Node2D"]
 script = ExtResource( 9 )
@@ -242,215 +86,12 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 983038, 0, 196608, 983039, 0, 196609, 917504, 0, 196609, 917505, 0, 196609, 917506, 0, 196609, 917507, 0, 196609, 917508, 0, 196609, 917509, 0, 196609, 917510, 0, 196609, 917511, 0, 196609, 917512, 0, 196609, 917513, 0, 196609, 917514, 0, 196609, 917515, 0, 196609, 917516, 0, 196609, 917517, 0, 196609, 917518, 0, 196609, 917519, 0, 196609, 917520, 0, 196609, 917521, 0, 196609, 917522, 0, 196609, 917523, 0, 196609, 917524, 0, 196609, 917525, 0, 196609, 917526, 0, 196609, 917527, 0, 196609, 917528, 0, 196609, 917529, 0, 196609, 917530, 0, 196609, 917531, 0, 196609, 917532, 0, 196609, 917533, 0, 196609, 917534, 0, 196609, 917535, 0, 196609, 917536, 0, 196609, 917537, 0, 196609, 917538, 0, 196609, 917539, 0, 196609, 917540, 0, 196609, 917541, 0, 196609, 917542, 0, 196609, 917543, 0, 196609, 917544, 0, 196609, 917545, 0, 196609, 917546, 0, 196610, 1179646, 0, 196608, 1179647, 0, 196609, 1114112, 0, 196609, 1114113, 0, 196609, 1114114, 0, 196609, 1114115, 0, 196609, 1114116, 0, 196609, 1114117, 0, 196609, 1114118, 0, 196609, 1114119, 0, 196609, 1114120, 0, 196609, 1114121, 0, 196609, 1114122, 0, 196609, 1114123, 0, 196609, 1114124, 0, 196609, 1114125, 0, 196609, 1114126, 0, 196609, 1114127, 0, 196609, 1114128, 0, 196609, 1114129, 0, 196609, 1114130, 0, 196609, 1114131, 0, 196609, 1114132, 0, 196609, 1114133, 0, 196609, 1114134, 0, 196609, 1114135, 0, 196609, 1114136, 0, 196609, 1114137, 0, 196609, 1114138, 0, 196609, 1114139, 0, 196609, 1114140, 0, 196609, 1114141, 0, 196609, 1114142, 0, 196609, 1114143, 0, 196609, 1114144, 0, 196609, 1114145, 0, 196609, 1114146, 0, 196609, 1114147, 0, 196609, 1114148, 0, 196609, 1114149, 0, 196609, 1114150, 0, 196609, 1114151, 0, 196609, 1114152, 0, 196609, 1114153, 0, 196609, 1114154, 0, 196610 )
 
-[node name="Trash1" type="Sprite" parent="."]
-position = Vector2( 430.052, 503.016 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 2 )
-
-[node name="BG" type="ColorRect" parent="Trash1"]
-margin_left = -66.0395
-margin_top = 60.6463
-margin_right = 70.9605
-margin_bottom = 124.646
-color = Color( 0.643137, 0.156863, 0.156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Trash1"]
-margin_left = -50.0
-margin_top = 65.7143
-margin_right = 48.0
-margin_bottom = 162.714
-custom_fonts/font = SubResource( 2 )
-text = "2.3"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Trash1"]
-margin_left = -36.7831
-margin_top = -186.952
-margin_right = 80.2169
-margin_bottom = -30.9523
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash1"]
-anims/swipe = SubResource( 3 )
-
-[node name="TextureRect_down3" type="TextureRect" parent="Trash1"]
-modulate = Color( 1, 1, 1, 0.929412 )
-margin_left = -41.6246
-margin_top = 127.975
-margin_right = 75.3754
-margin_bottom = 283.975
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 4 )
-flip_v = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer_down3" type="AnimationPlayer" parent="Trash1"]
-anims/swipe = SubResource( 4 )
-
-[node name="ReferenceRect1" type="ReferenceRect" parent="Trash1"]
-visible = false
-margin_left = -117.0
-margin_top = -206.0
-margin_right = 113.0
-margin_bottom = 272.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Trash2" type="Sprite" parent="."]
-position = Vector2( 678.098, 503.016 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 2 )
-
-[node name="ColorRect" type="ColorRect" parent="Trash2"]
-margin_left = -66.1048
-margin_top = 60.6459
-margin_right = 70.8952
-margin_bottom = 124.646
-color = Color( 0.643137, 0.156863, 0.156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Trash2"]
-margin_left = -50.0653
-margin_top = 65.7139
-margin_right = 47.9347
-margin_bottom = 162.714
-custom_fonts/font = SubResource( 2 )
-text = "8.6"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Trash2"]
-modulate = Color( 1, 1, 1, 0.945367 )
-margin_left = -38.2774
-margin_top = -192.025
-margin_right = 78.7226
-margin_bottom = -36.0253
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash2"]
-anims/swipe = SubResource( 5 )
-
-[node name="TextureRect_down2" type="TextureRect" parent="Trash2"]
-modulate = Color( 1, 1, 1, 0.945367 )
-margin_left = -37.4046
-margin_top = 127.975
-margin_right = 79.5954
-margin_bottom = 283.975
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 4 )
-flip_v = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer_down2" type="AnimationPlayer" parent="Trash2"]
-anims/swipe = SubResource( 6 )
-
-[node name="ReferenceRect2" type="ReferenceRect" parent="Trash2"]
-visible = false
-margin_left = -86.0
-margin_top = -215.0
-margin_right = 110.0
-margin_bottom = 283.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Trash3" type="Sprite" parent="."]
-position = Vector2( 923.709, 503.016 )
-scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 2 )
-
-[node name="ColorRect" type="ColorRect" parent="Trash3"]
-margin_left = -62.6919
-margin_top = 60.6459
-margin_right = 74.3081
-margin_bottom = 124.646
-color = Color( 0.643137, 0.156863, 0.156863, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Trash3"]
-margin_left = -45.2239
-margin_top = 65.7139
-margin_right = 52.7761
-margin_bottom = 162.714
-custom_fonts/font = SubResource( 2 )
-text = "2"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TextureRect" type="TextureRect" parent="Trash3"]
-modulate = Color( 1, 1, 1, 0.945367 )
-margin_left = -38.2774
-margin_top = -192.025
-margin_right = 78.7226
-margin_bottom = -36.0253
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Trash3"]
-anims/swipe = SubResource( 7 )
-
-[node name="TextureRect_down" type="TextureRect" parent="Trash3"]
-modulate = Color( 1, 1, 1, 0.945367 )
-margin_left = -38.2774
-margin_top = 127.975
-margin_right = 78.7226
-margin_bottom = 283.975
-rect_scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 4 )
-flip_v = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer_down" type="AnimationPlayer" parent="Trash3"]
-anims/swipe = SubResource( 8 )
-
-[node name="ReferenceRect3" type="ReferenceRect" parent="Trash3"]
-visible = false
-margin_left = -81.0
-margin_top = -210.0
-margin_right = 105.0
-margin_bottom = 261.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Title" type="Label" parent="."]
 margin_left = 548.0
 margin_top = 275.0
 margin_right = 881.0
 margin_bottom = 347.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 7
 custom_constants/shadow_offset_y = 5
@@ -464,29 +105,115 @@ margin_left = 39.507
 margin_top = -87.1537
 margin_right = 216.507
 margin_bottom = 9.84634
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 10
 custom_constants/shadow_offset_y = 6
-text = "ปัดขยะ"
+text = "ปัดเศษ"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 12 )
-volume_db = 11.52
+[node name="Apple1" type="Button" parent="."]
+margin_left = 453.82
+margin_top = 459.995
+margin_right = 532.82
+margin_bottom = 542.995
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AudioWrong" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 13 )
-volume_db = 11.52
+[node name="ColorRect" type="ColorRect" parent="Apple1"]
+margin_left = -15.0
+margin_top = 90.0
+margin_right = 97.0
+margin_bottom = 121.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.7
+[node name="Label" type="Label" parent="Apple1"]
+margin_left = -9.78406
+margin_top = 86.552
+margin_right = 98.2159
+margin_bottom = 123.552
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "23.55"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AudioBG" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
-autoplay = true
+[node name="Apple2" type="Button" parent="."]
+margin_left = 672.812
+margin_top = 460.747
+margin_right = 751.812
+margin_bottom = 543.747
+custom_styles/normal = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Apple2"]
+margin_left = -13.24
+margin_top = 90.0
+margin_right = 98.76
+margin_bottom = 121.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Apple2"]
+margin_left = -8.89001
+margin_top = 87.2545
+margin_right = 99.11
+margin_bottom = 124.255
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "23.55"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Apple3" type="Button" parent="."]
+margin_left = 883.151
+margin_top = 461.232
+margin_right = 962.151
+margin_bottom = 544.232
+custom_styles/normal = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Apple3"]
+margin_left = -11.679
+margin_top = 90.0
+margin_right = 100.321
+margin_bottom = 121.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Apple3"]
+margin_left = -9.43567
+margin_top = 86.4982
+margin_right = 98.5643
+margin_bottom = 123.498
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "23.55"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tree" type="Sprite" parent="."]
 position = Vector2( 214.057, 568.441 )
@@ -528,10 +255,22 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="mouse_entered" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_entered"]
-[connection signal="mouse_exited" from="Trash1/ReferenceRect1" to="." method="_on_ReferenceRect1_mouse_exited"]
-[connection signal="mouse_entered" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_entered"]
-[connection signal="mouse_exited" from="Trash2/ReferenceRect2" to="." method="_on_ReferenceRect2_mouse_exited"]
-[connection signal="mouse_entered" from="Trash3/ReferenceRect3" to="." method="_on_ReferenceRect3_mouse_entered"]
-[connection signal="mouse_exited" from="Trash3/ReferenceRect3" to="." method="_on_ReferenceRect3_mouse_exited"]
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="Correct" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( -6.10352e-05, -2.66968 )
+stream = ExtResource( 11 )
+
+[node name="wrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="button_down" from="Apple1" to="." method="_on_Apple1_button_down"]
+[connection signal="button_up" from="Apple1" to="." method="_on_Apple1_button_up"]
+[connection signal="button_down" from="Apple2" to="." method="_on_Apple2_button_down"]
+[connection signal="button_up" from="Apple2" to="." method="_on_Apple2_button_up"]
+[connection signal="button_down" from="Apple3" to="." method="_on_Apple3_button_down"]
+[connection signal="button_up" from="Apple3" to="." method="_on_Apple3_button_up"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

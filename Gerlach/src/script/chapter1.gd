@@ -5,6 +5,8 @@ const PausePOSX = 1100
 const PausePOSY = 350
 var chapter2 = false
 var chnger_scene = false
+export (Script) var game_save 
+
 func _ready():
 	#$dialogbox1.show()
 	$player.show()
@@ -14,6 +16,7 @@ func _ready():
 	Events.connect("HP",self,"HP")
 	Events.connect("player_Collisioion_mission",self,"player_Collisioion")
 	get_node("/root/Global").scene = 1
+	_save()
 
 func _process(delta):
 	update()
@@ -30,7 +33,8 @@ func update():
 	change()
 
 func HP():
-	$HUD/TextureProgress.value = $"/root/Global".PlayerHP
+	$HUD.set_health($"/root/Global".PlayerHP)
+	
 
 var mailbox1 = false
 
@@ -51,5 +55,16 @@ func _on_change_scene_chapter2_body_entered(body):
 	if chnger_scene:
 		get_tree().change_scene("res://src/scene/chapter2.tscn")
 
+func _load():
+	var chapter1 = load("user://save_01.tres")
+	if chapter1.get("player_pos") == null:
+		print("Null")
+	else:
+		print("not_null")
+
+func _save():
+	var new_save = game_save.new()
+	new_save.player_pos = $player.position
+	ResourceSaver.save("user://save_01.tres",new_save)
 
 

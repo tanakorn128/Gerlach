@@ -4,10 +4,11 @@ var speed = 10000
 onready var animation_tree = get_node("AnimationTreePlayer")
 onready var animation_node = animation_tree.get("parameters")
 onready var playback = $AnimationTreePlayer.get("parameters/StateMachine/playback")
+export (Script) var game_save
 
 func _ready():
 	playback.start("attackLeft")
-
+	_load()
 
 func _physics_process(delta):
 	
@@ -20,8 +21,14 @@ func _physics_process(delta):
 	
 	move_and_slide(velocity*delta)
 	
-
-
+func _load():
+	var _load = load("user://save_01.tres")
+	pass
+func _save():
+	var new_save = game_save.new()
+	new_save.player_pos = self.position
+	ResourceSaver.save("user://save_01.tres",new_save)
+	
 func Animation_Player(value:String):
 	if value == "run":
 		Transition(2)
