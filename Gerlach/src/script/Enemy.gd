@@ -7,7 +7,7 @@ export (Vector2) var location
 
 enum EnemyType {
 	simple ,
-	Trash,
+	Rounding_number,
 	Sort,
 	angle,
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Post box.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -12,9 +12,8 @@
 [ext_resource path="res://assets/tileset-wesley2.png" type="Texture" id=10]
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=11]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/player/sword/sword_1_bit.png" type="Texture" id=13]
 [ext_resource path="res://src/scene/animation/fire .tscn" type="PackedScene" id=14]
-
-
 
 [sub_resource type="TileSet" id=1]
 0/name = "BG2.png 0"
@@ -105,6 +104,9 @@ position = Vector2( 682.479, 68.7983 )
 [node name="Camera2D" parent="player" index="1"]
 limit_left = 400
 limit_top = -2674
+
+[node name="skill" parent="player" index="2"]
+texture = ExtResource( 13 )
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 2 )

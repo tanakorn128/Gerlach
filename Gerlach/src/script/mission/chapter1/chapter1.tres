@@ -7,6 +7,6 @@
 
 [resource]
 script = ExtResource( 1 )
-mission_number = [ 1, 1, 1 ]
+mission_number = [ 1, 2, 3 ]
 Enemy = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ]
 description = [ "ตัดต้นไม้", "ตัดต้นไม้", "ตัดต้นไม้" ]

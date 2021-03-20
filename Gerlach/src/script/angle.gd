@@ -16,13 +16,10 @@ export var time = 30
 var dic_exam
 var Angle_Chapter1
 func _ready():
-	dic_exam = $"/root/Global".dic_Correct_Chapter1
-	Angle_Chapter1 = $"/root/Global".Angle_Chapter1
 	set_question()
 	$countdown.value = time
 	$AnimationPlayer.play("idle")
-	dic_exam["Type"] = "จับคู่มุม"
-	dic_exam["chapter"] = str(get_node("/root/Global").scene)
+
 
 
 func set_question():
@@ -32,10 +29,7 @@ func set_question():
 	var angle2 = $"/root/ExamInventory".get_exam("angle",1,"angle")
 	var image2 = $"/root/ExamInventory".get_exam("angle",1,"image")
 	var text2 = $"/root/ExamInventory".get_exam("angle",1,"name_angle")
-	Angle_Chapter1["data"]["image1"] = image1
-	Angle_Chapter1["data"]["image2"] = image2
-	Angle_Chapter1["data"]["angle1"] = angle1
-	Angle_Chapter1["data"]["angle2"] = angle2
+	
 	var question1
 	var question2
 	var question3
@@ -94,7 +88,7 @@ func _process(delta):
 		$Timeout.shows()
 		$countdown.value = time
 		$Wrong.playing = true
-		$battle._not_correct(10)
+		#$battle._not_correct(10)
 
 func cards():
 	$card.start()
@@ -127,7 +121,7 @@ func answer(image,numcard1,angle,numcard2):
 		$AnimationPlayer.play("correct")
 		card.clear()
 		$card.start()
-		$battle._Correct(50)
+		#$battle._Correct(50)
 		return true
 	elif NotCorrect:
 		$click.playing = true
@@ -136,7 +130,7 @@ func answer(image,numcard1,angle,numcard2):
 		NotCorrect = false
 		$AnimationPlayer.play("NotCorrect")
 		$card.start()
-		$battle._not_correct(51)
+		#$battle._not_correct(51)
 		return false
 	pass
 func click():

@@ -8,7 +8,7 @@ var correct
 func _ready():
 	set_exam(ExamChapter1.ExamAll.size())
 	import_exam()
-	mission = $"/root/Global".mission
+	#mission = $"/root/Global".mission
 	pass
 
 func set_exam(size): #นำเข้าข้อสอบจากภายนอก
@@ -62,12 +62,12 @@ func _show(question,answer1,answer2,answer3,answer4):
 func _answer(correct,answer): #ตรวจคำตอบ
 	
 	if correct == answer:
-		$battle._Correct(40)
+		#$battle._Correct(40)
 		$AudioCorrect.playing = true
 		import_exam()
 		return true
 	else:
-		$battle._not_correct(40)
+		#$battle._not_correct(40)
 		$AudioWrong.playing = true
 		import_exam()
 		return false

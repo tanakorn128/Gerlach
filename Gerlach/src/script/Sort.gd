@@ -21,11 +21,7 @@ func _ready():
 	$AnimationPlayer.play("idle")
 	pass
 
-func _process(delta):
-	if $battle/HUDEnemy/TextureProgress.value <= 0:
-		$Timer.stop()
-		$Label.hide()
-	pass
+
 func set_answer():
 	var rnd = RandomNumber()
 	#print(exam.ExamAll[1].answer1)
@@ -116,7 +112,7 @@ func Check_answer(index,stages):
 		if number4 == answer[index]:
 			$correct.playing = true
 			correct()
-			$battle._Correct(100)
+			#$battle._Correct(100)
 			remove_Setting()
 			set_answer()
 		else:
@@ -139,7 +135,7 @@ func not_correct():
 	$wrong.playing = true
 	remove_Setting()
 	set_answer()
-	$battle._not_correct(20)
+	#$battle._not_correct(20)
 	pass
 
 

@@ -22,6 +22,8 @@ func putenemy():
 		if missions:
 			ins = $"/root/MissionInventory".Enemy_Tree.instance()
 			ins.position = location[i]
+			ins.number = mission_number[i]
+			print(mission_number[i])
 			add_child(ins)
 
 

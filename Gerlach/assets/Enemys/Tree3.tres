@@ -8,4 +8,4 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 damage = 30
 location = Vector2( 1265.61, 712.042 )
-Enemy_Type = 3
+Enemy_Type = 1
