@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://assets/reassets/Tree01.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -12,11 +12,10 @@
 [ext_resource path="res://assets/reassets/Timber01.png" type="Texture" id=10]
 [ext_resource path="res://assets/reassets/label1.png" type="Texture" id=11]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/player/sword/sword_4_bit.png" type="Texture" id=13]
+[ext_resource path="res://assets/player/sword/sword_2_bit.png" type="Texture" id=13]
 [ext_resource path="res://src/script/chapter1.gd" type="Script" id=14]
-[ext_resource path="res://src/scene/Enemy.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/scene/heart.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/scene/dialogbox/chapter1_Start.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/audio/ost.wav" type="AudioStream" id=19]
 [ext_resource path="res://src/script/game_save.gd" type="Script" id=20]
@@ -425,13 +424,8 @@ scale = Vector2( 0.7, 0.7 )
 cell_size = Vector2( 2, 2 )
 format = 1
 
-[node name="Enemy_Inventory" parent="." instance=ExtResource( 15 )]
-
 [node name="HUD" parent="." instance=ExtResource( 16 )]
 scale = Vector2( 0.15, 0.15 )
-
-[node name="heart" parent="." instance=ExtResource( 17 )]
-position = Vector2( 194.812, 338.731 )
 
 [node name="dialogbox1" parent="." instance=ExtResource( 18 )]
 visible = false
@@ -447,6 +441,8 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mailbox1"]
 position = Vector2( 1158.51, 1136.56 )
 shape = SubResource( 22 )
+
+[node name="put_Enemy_Chapter1" parent="." instance=ExtResource( 15 )]
 [connection signal="body_entered" from="mailbox1" to="." method="_on_mailbox1_body_entered"]
 
 [editable path="player"]

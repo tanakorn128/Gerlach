@@ -10,13 +10,13 @@ export (Script) var game_save
 func _ready():
 	#$dialogbox1.show()
 	$player.show()
-	$HUD/TextureProgress.value = $"/root/Global".PlayerHP
+	#$HUD/TextureProgress.value = $"/root/Global".PlayerHP
 	$HUD/Label.show()
 	$HUD/ColorRect.show()
 	Events.connect("HP",self,"HP")
 	Events.connect("player_Collisioion_mission",self,"player_Collisioion")
 	get_node("/root/Global").scene = 1
-	_save()
+	
 
 func _process(delta):
 	update()
@@ -33,8 +33,8 @@ func update():
 	change()
 
 func HP():
-	$HUD.set_health($"/root/Global".PlayerHP)
-	
+	#$HUD.set_health($"/root/Global".PlayerHP)
+	pass
 
 var mailbox1 = false
 

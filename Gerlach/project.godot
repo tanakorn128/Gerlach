@@ -43,6 +43,11 @@ _global_script_classes=[ {
 "class": "mission",
 "language": "GDScript",
 "path": "res://src/script/mission/Mission_All.gd"
+}, {
+"base": "Resource",
+"class": "mission_chappter1",
+"language": "GDScript",
+"path": "res://src/script/mission/chapter1/chapter1.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
@@ -51,7 +56,8 @@ _global_script_class_icons={
 "Exam_All": "",
 "Exam_Angle": "",
 "Exam_Sort": "",
-"mission": ""
+"mission": "",
+"mission_chappter1": ""
 }
 
 [application]
@@ -64,9 +70,8 @@ config/icon="res://icon.png"
 
 Events="*res://src/script/Events.gd"
 Global="*res://src/script/global.gd"
-MissionInventory="*res://src/script/mission/Mission_Inventory.gd"
-ChangeScene="*res://src/scene/change_scene.tscn"
 ExamInventory="*res://src/scene/Exam/Exam_Inventory.tscn"
+MissionInventory="*res://src/scene/Mission_Inventory.tscn"
 
 [display]
 

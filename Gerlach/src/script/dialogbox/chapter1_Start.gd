@@ -1,12 +1,5 @@
 extends Node2D
 
-func _ready():
-	if $"/root/Global".chapter1_Start:
-		text()
-		$dialogbox.get_text(0)
-	else:
-		queue_free()
-	pass
 
 
 func text():

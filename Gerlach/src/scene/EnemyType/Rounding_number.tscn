@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Enemys/png/Apple2.png" type="Texture" id=2]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=3]
 [ext_resource path="res://assets/Enemys/png/Apple.png" type="Texture" id=4]
@@ -27,15 +26,15 @@ font_path = "res://assets/font/Kanit-Regular.ttf"
 size = 64
 font_data = SubResource( 3 )
 
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 128, 146 )
+
 [sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 128, 146 )
 
 [sub_resource type="StyleBoxTexture" id=7]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 128, 146 )
-
-[sub_resource type="StyleBoxTexture" id=5]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 128, 146 )
 
@@ -70,9 +69,6 @@ texture_progress = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="battle" parent="." instance=ExtResource( 1 )]
-position = Vector2( 49.1843, 1.18344 )
 
 [node name="DirtTileset" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
@@ -119,9 +115,9 @@ margin_left = 453.82
 margin_top = 459.995
 margin_right = 532.82
 margin_bottom = 542.995
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 7 )
-custom_styles/normal = SubResource( 5 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -154,7 +150,7 @@ margin_left = 672.812
 margin_top = 460.747
 margin_right = 751.812
 margin_bottom = 543.747
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -187,7 +183,7 @@ margin_left = 883.151
 margin_top = 461.232
 margin_right = 962.151
 margin_bottom = 544.232
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

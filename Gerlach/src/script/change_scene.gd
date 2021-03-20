@@ -6,10 +6,6 @@ var arr_exam
 var Angle_Chapter1
 var arr_Angle_Chapter1
 func _ready():
-	dic_exam = $"/root/Global".dic_Correct_Chapter1
-	arr_exam = $"/root/Global".arr_Correct_Chapter1
-	Angle_Chapter1 = $"/root/Global".Angle_Chapter1
-	arr_Angle_Chapter1 = $"/root/Global".arr_Angle_Chapter1
 	Events.connect("score",self,"score")
 	Events.connect("change",self,"change")
 	Events.connect("add_exam",self,"add_exam")
