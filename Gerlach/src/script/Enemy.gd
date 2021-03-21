@@ -1,15 +1,5 @@
 extends Resource
 class_name Enemy
 
-export (Texture) var texture
-export (int) var damage
-export (Vector2) var location
+export (Array,Dictionary) var dic
 
-enum EnemyType {
-	simple ,
-	Rounding_number,
-	Sort,
-	angle,
-}
-
-export (EnemyType) var Enemy_Type

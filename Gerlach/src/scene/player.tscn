@@ -534,13 +534,13 @@ blend_point_4/node = SubResource( 49 )
 blend_point_4/pos = Vector2( 0, 0 )
 
 [sub_resource type="AnimationNodeBlendTree" id=51]
-graph_offset = Vector2( -828.123, -326.144 )
+graph_offset = Vector2( -1321.53, -206.98 )
 nodes/Blend2/node = SubResource( 12 )
 nodes/Blend2/position = Vector2( -280.881, -385.497 )
 nodes/StateMachine/node = SubResource( 21 )
 nodes/StateMachine/position = Vector2( -1240, -160 )
 nodes/TimeScale/node = SubResource( 24 )
-nodes/TimeScale/position = Vector2( -120, 80 )
+nodes/TimeScale/position = Vector2( -160, 20 )
 "nodes/TimeScale 2/node" = SubResource( 22 )
 "nodes/TimeScale 2/position" = Vector2( -498.881, -281.497 )
 "nodes/TimeScale 3/node" = SubResource( 23 )
@@ -557,8 +557,8 @@ nodes/output/position = Vector2( 280, -160 )
 nodes/run/node = SubResource( 44 )
 nodes/run/position = Vector2( -460, 140 )
 nodes/walk/node = SubResource( 50 )
-nodes/walk/position = Vector2( -560, -60 )
-node_connections = [ "output", 0, "Transition", "TimeScale 3", 0, "StateMachine", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "TimeScale", 0, "run", "TimeScale 2", 0, "attacks_Blend2", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale" ]
+nodes/walk/position = Vector2( -640, 0 )
+node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "TimeScale 2", 0, "attacks_Blend2", "TimeScale 3", 0, "StateMachine", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "TimeScale", 0, "run" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 

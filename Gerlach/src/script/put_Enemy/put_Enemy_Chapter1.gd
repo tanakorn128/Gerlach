@@ -1,30 +1,21 @@
 extends Node2D
-var mission_number:Array
-var enemys:Array
-var location:Array
-var Enemytype:Array
-var missions:Array
+var count:int
+onready var chapter1 = $"/root/MissionInventory"
 func _ready():
-	$"/root/MissionInventory".mission("chapter1")
-	mission_number = $"/root/MissionInventory".number
-	enemys = $"/root/MissionInventory".enemys
-	if not missions.size():
-		for i in mission_number.size():
-			location.append(enemys[i].location)
-			Enemytype.append(enemys[i].Enemy_Type)
-			missions.append(false)
+	count = chapter1.chapter1.dic.size()
 	putenemy()
+	ResourceSaver.save($"/root/MissionInventory".chapter1.get_path(),$"/root/MissionInventory".chapter1)
 
 func putenemy():
 	var ins
-	
-	for i in mission_number.size():
-		if missions:
+	for i in count:
+		if not chapter1.chapters(1,i,"finish"):
 			ins = $"/root/MissionInventory".Enemy_Tree.instance()
-			ins.position = location[i]
-			ins.number = mission_number[i]
-			print(mission_number[i])
+			ins.position = chapter1.chapters(1,i,"pos")
+			ins.number = i
+			ins.type_enemy=chapter1.chapters(1,i,"type")
 			add_child(ins)
+
 
 
 
