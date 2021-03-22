@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/Enemys/png/Apple2.png" type="Texture" id=2]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=3]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/World/CliffTileset2.tres" type="TileSet" id=10]
 [ext_resource path="res://assets/audio/kenney/confirmation_002.ogg" type="AudioStream" id=11]
 [ext_resource path="res://assets/audio/kenney/error_003.ogg" type="AudioStream" id=12]
+[ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/font/Kanit-Regular.ttf"
@@ -44,6 +45,8 @@ font_path = "res://assets/font/Kanit-Regular.ttf"
 [sub_resource type="DynamicFont" id=9]
 size = 24
 font_data = SubResource( 8 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
 
 [node name="Trash" type="Node2D"]
 script = ExtResource( 9 )
@@ -263,6 +266,22 @@ stream = ExtResource( 11 )
 stream = ExtResource( 12 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="player" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1137.28, 140.145 )
+scale = Vector2( 5, 5 )
+stop = false
+
+[node name="Camera2D" parent="player" index="1"]
+visible = false
+current = false
+
+[node name="skill" parent="player" index="2"]
+texture = null
+
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 10 )
+parameters/Transition/current = 1
 [connection signal="button_down" from="Apple1" to="." method="_on_Apple1_button_down"]
 [connection signal="button_up" from="Apple1" to="." method="_on_Apple1_button_up"]
 [connection signal="button_down" from="Apple2" to="." method="_on_Apple2_button_down"]
@@ -270,3 +289,5 @@ stream = ExtResource( 12 )
 [connection signal="button_down" from="Apple3" to="." method="_on_Apple3_button_down"]
 [connection signal="button_up" from="Apple3" to="." method="_on_Apple3_button_up"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="player"]

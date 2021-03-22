@@ -1,6 +1,7 @@
 extends KinematicBody2D
 var velocity : Vector2
 var speed = 10000
+export (bool) var stop = true
 onready var animation_tree = get_node("AnimationTreePlayer")
 onready var animation_node = animation_tree.get("parameters")
 onready var playback = $AnimationTreePlayer.get("parameters/StateMachine/playback")
@@ -12,10 +13,10 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("ui_select"):
+	if Input.is_action_pressed("ui_select") && stop:
 		speed = 20000
 		Animation_Player("run")
-	else:
+	elif stop:
 		speed = 10000
 		Animation_Player("walk")
 	
@@ -86,3 +87,6 @@ func attacks_run(Changepos:Vector2,animation:Vector2):
 
 func Transition(transition:int):
 	animation_tree.set("parameters/Transition/current",transition)
+
+func hp(value:int):
+	$HUD/TextureProgress.value += value

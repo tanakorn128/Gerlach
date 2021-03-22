@@ -1,12 +1,14 @@
 extends Node2D
+const HUDPOSY = 350
+const HUDPOSX = 600
 
-func _ready():
-	$"/root/Global".scene = 2
-	
 func _process(delta):
+	update()
 	
-	#if $player.position.y < $player/Camera2D.limit_top:
-	#	get_tree().change_scene("res://src/scene/chapter3.tscn")
-	#if $player.position.x < $player/Camera2D.limit_left:
-	#	get_tree().change_scene("res://src/scene/chapter1.tscn")
-	pass
+
+func change():
+	$HUD.position.x = $player.position.x - HUDPOSX
+	$HUD.position.y = $player.position.y - HUDPOSY
+
+func update():
+	change()

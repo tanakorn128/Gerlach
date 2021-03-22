@@ -1,0 +1,29 @@
+[gd_resource type="TileSet" load_steps=3 format=2]
+
+[ext_resource path="res://assets/RPG Nature Tileset/RPG Nature Tileset.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 6.7449, 48.4327, 3.72151, 46.5722, 0, 42.1534, 0, 33.7809, 0.465561, 27.9667, 2.79124, 26.8039, 3.72151, 20.292, 3.72151, 17.7337, 6.0472, 18.4314, 7.90774, 17.5012, 10.0008, 17.2686, 14.1871, 19.3617, 18.8384, 17.9663, 20.9315, 18.664, 23.4898, 18.8966, 25.5829, 18.8966, 27.4434, 20.292, 28.8389, 22.1525, 29.5366, 24.9433, 30.932, 26.8039, 31.1645, 34.9438, 32, 35.1763, 31.8622, 43.7813, 29.304, 45.8745, 27.9086, 48.2001, 23.2572, 47.9676, 22.0944, 48.8978, 20.2338, 49.363, 20.4664, 50.7584, 25.5829, 52.1538, 29.304, 54.712, 29.304, 57.5028, 26.048, 59.3634, 20.4664, 60.9914, 12.5591, 60.5262, 8.60544, 59.596, 5.81463, 58.6657, 3.72151, 57.0377, 3.72151, 55.1772, 4.65179, 53.7818, 6.27976, 52.6189, 8.37287, 51.9212, 10.466, 51.9212, 10.466, 50.0607 )
+
+[resource]
+0/name = "RPG Nature Tileset.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 26 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0

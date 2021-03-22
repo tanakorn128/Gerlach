@@ -11,13 +11,16 @@ var Q2:float
 var Q3:float
 var set_question:bool = true
 var apple_position:Array
+var inst
+onready var Enemy_damage:int = $"/root/Global".Enemy_damage
+onready var Player_damage:int = $"/root/Global".Player_damage
 func _ready():
 	audio("loopstop")
 	apple_position.append($Apple1.rect_position)
 	apple_position.append($Apple2.rect_position)
 	apple_position.append($Apple3.rect_position)
 	set_question()
-	
+	_Enemy(0)
 func _process(delta):
 	if apple1 && not Ans1:
 		$Apple1.rect_position.y = get_viewport().get_mouse_position().y
@@ -49,26 +52,32 @@ func answer(Question:String,value:int):
 			audio("Correct")
 			Ans1 = true
 			set_question = true
+			hp_enemy(-Player_damage)
 		else:
 			audio("wrong")
 			Ans1 = true
 			set_question = true
+			hp_player(-Enemy_damage)
 	if Question == "apple2":
 		if value == answer2:
 			audio("Correct")
 			Ans2 = true
+			hp_enemy(-Player_damage)
 		else:
 			audio("wrong")
 			Ans2 = true
+			hp_player(-Enemy_damage)
 	if Question == "apple3":
 		if value == answer3:
 			audio("Correct")
 			$Correct.play()
 			Ans3 = true
+			hp_enemy(-Player_damage)
 		else:
 			audio("wrong")
 			$wrong.play()
 			Ans3 = true
+			hp_player(-Enemy_damage)
 
 func audio(value:String):
 	
@@ -162,3 +171,18 @@ func _on_Timer_timeout():
 	set_question()
 	$Timer.stop()
 	pass # Replace with function body.
+
+func _Enemy(value:int):
+	if value == 0:
+		inst = load("res://src/scene/Enemy/Tree.tscn").instance()
+	elif value == 1:
+		inst = load("res://src/scene/Enemy/Monster1.tscn").instance()
+	inst.position = Vector2(247,144)
+	add_child(inst)
+
+func hp_player(value:int):
+	$player.hp(value)
+
+func hp_enemy(value:int):
+	inst.hp(value)
+	pass

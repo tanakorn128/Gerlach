@@ -12,7 +12,7 @@ onready var type_simple = load("res://src/scene/EnemyType/Simple.tscn")
 #---------------------------------------------------------------------
 #Enemy
 onready var Enemy_Tree = load("res://src/scene/Enemy/Tree.tscn")
-
+onready var Enemy_Monster1 = load("res://src/scene/Enemy/Monster1.tscn")
 
 func _ready():
 	

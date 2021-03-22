@@ -5,6 +5,7 @@ var mission
 export (Array) var exam
 var ExamChapter1 = preload("res://src/script/Exam/Exam_All/Chapter1.tres")
 var correct
+
 func _ready():
 	set_exam(ExamChapter1.ExamAll.size())
 	import_exam()

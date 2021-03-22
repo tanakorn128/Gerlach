@@ -15,6 +15,7 @@ var resource = preload("res://src/script/Exam/Exam_All/Angle.tres")
 export var time = 30
 var dic_exam
 var Angle_Chapter1
+
 func _ready():
 	set_question()
 	$countdown.value = time

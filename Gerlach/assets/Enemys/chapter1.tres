@@ -9,13 +9,25 @@ script = ExtResource( 1 )
 dic = [ {
 "damage": 20,
 "finish": false,
-"pos": Vector2( 465, 712 ),
+"pos": Vector2( 354, 650 ),
 "texture": ExtResource( 2 ),
 "type": 0
 }, {
 "damage": 20,
 "finish": false,
-"pos": Vector2( 965.614, 712.042 ),
+"pos": Vector2( -444.606, 3410.1 ),
 "texture": ExtResource( 3 ),
 "type": 1
+}, {
+"damage": 20,
+"finish": false,
+"pos": Vector2( 3356.11, 1658.32 ),
+"texture": ExtResource( 3 ),
+"type": 1
+}, {
+"damage": 20,
+"finish": false,
+"pos": Vector2( 2074.58, -1294.91 ),
+"texture": ExtResource( 3 ),
+"type": 0
 } ]
