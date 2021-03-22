@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "3 + 3 x 3 ÷ 3 - 3"
+answer1 = "3"
+answer2 = "6"
+answer3 = "9"
+answer4 = "12"
+Correct = "3"

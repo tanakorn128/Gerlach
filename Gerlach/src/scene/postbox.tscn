@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/script/postbox.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI Pack RPG/panel_beige.png" type="Texture" id=2]
@@ -37,6 +37,8 @@ font_path = "res://assets/font/Kanit-Regular.ttf"
 size = 37
 font_data = SubResource( 7 )
 
+[sub_resource type="StyleBoxTexture" id=9]
+
 [node name="postbox" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -66,7 +68,7 @@ margin_right = 991.941
 margin_bottom = 100.854
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "กล่องจดหมาย"
+text = "แจ้งเตือน"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,75 +136,17 @@ text = "Lorem Ipsum is simply dummy text "
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="GridContainer"]
-margin_top = 64.0
-margin_right = 678.0
-margin_bottom = 124.0
+[node name="ItemList" type="ItemList" parent="."]
+margin_left = 515.0
+margin_top = 232.0
+margin_right = 1204.0
+margin_bottom = 662.0
+custom_styles/bg = SubResource( 9 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lorem Ipsum is simply dummy text "
-align = 1
-valign = 1
-
-[node name="Label3" type="Label" parent="GridContainer"]
-margin_top = 128.0
-margin_right = 678.0
-margin_bottom = 188.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lorem Ipsum is simply dummy text "
-align = 1
-valign = 1
-
-[node name="Label4" type="Label" parent="GridContainer"]
-margin_top = 192.0
-margin_right = 678.0
-margin_bottom = 252.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lorem Ipsum is simply dummy text "
-align = 1
-valign = 1
-
-[node name="Label5" type="Label" parent="GridContainer"]
-margin_top = 256.0
-margin_right = 678.0
-margin_bottom = 316.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lorem Ipsum is simply dummy text "
-align = 1
-valign = 1
-
-[node name="Label6" type="Label" parent="GridContainer"]
-margin_top = 320.0
-margin_right = 678.0
-margin_bottom = 380.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lorem Ipsum is simply dummy text "
-align = 1
-valign = 1
-
-[node name="Label7" type="Label" parent="GridContainer"]
-margin_top = 384.0
-margin_right = 678.0
-margin_bottom = 444.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lorem Ipsum is simply dummy text "
-align = 1
-valign = 1
-
-[node name="Label8" type="Label" parent="GridContainer"]
-margin_top = 448.0
-margin_right = 678.0
-margin_bottom = 508.0
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Lorem Ipsum is simply dummy text "
-align = 1
-valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )

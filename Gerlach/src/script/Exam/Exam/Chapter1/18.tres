@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "ค่าประมาณใกล้เคียงจำนวนเต็มสิบของ 802,429"
+answer1 = "802,420"
+answer2 = "802,430"
+answer3 = "802,400"
+answer4 = "802,500"
+Correct = "802,430"

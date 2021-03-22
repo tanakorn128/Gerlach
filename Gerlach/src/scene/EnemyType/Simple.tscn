@@ -1,17 +1,18 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/UI Pack RPG/buttonLong_grey.png" type="Texture" id=1]
 [ext_resource path="res://assets/UI Pack RPG/panelInset_beigeLight.png" type="Texture" id=2]
 [ext_resource path="res://assets/UI Pack RPG/buttonLong_beige.png" type="Texture" id=3]
-[ext_resource path="res://src/scene/battle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/audio/kenney/error_003.ogg" type="AudioStream" id=4]
 [ext_resource path="res://assets/hud/CountDown_2.png" type="Texture" id=5]
 [ext_resource path="res://assets/hud/CountDown_1.png" type="Texture" id=6]
 [ext_resource path="res://src/script/mission/Exam.gd" type="Script" id=7]
-[ext_resource path="res://assets/audio/Correct.wav" type="AudioStream" id=8]
-[ext_resource path="res://assets/audio/Wrong.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/audio/button-1.wav" type="AudioStream" id=10]
-[ext_resource path="res://assets/audio/music_zapsplat.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/kenney/confirmation_002.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/kenney/metalClick.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/audio/soundtrack/The Arrival (BATTLE II).ogg" type="AudioStream" id=11]
 [ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/scene/Enemy/Tree.tscn" type="PackedScene" id=13]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
@@ -30,6 +31,8 @@ font_path = "res://assets/font/Kanit-Regular.ttf"
 size = 30
 font_data = SubResource( 4 )
 
+[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+
 [node name="Mission1" type="Node2D"]
 script = ExtResource( 7 )
 
@@ -44,8 +47,7 @@ __meta__ = {
 }
 
 [node name="BackGround" parent="." instance=ExtResource( 12 )]
-
-[node name="battle" parent="." instance=ExtResource( 4 )]
+position = Vector2( -89.09, -14.2544 )
 
 [node name="answer1" type="Button" parent="."]
 margin_left = 41.0
@@ -188,6 +190,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="player" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1114.71, 147.143 )
+walk = false
+
+[node name="Camera2D" parent="player" index="1"]
+visible = false
+current = false
+
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 6 )
+
+[node name="Tree" parent="." instance=ExtResource( 13 )]
+position = Vector2( 232.06, 159.184 )
+scale = Vector2( 0.9, 0.9 )
+
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
@@ -195,15 +212,22 @@ autostart = true
 stream = ExtResource( 8 )
 
 [node name="AudioWrong" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource( 4 )
 
 [node name="click" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 10 )
+stream = ExtResource( 9 )
 
 [node name="AudioBG" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
+autoplay = true
 [connection signal="button_down" from="answer1" to="." method="_on_answer1_button_down"]
+[connection signal="mouse_entered" from="answer1" to="." method="_on_answer1_mouse_entered"]
 [connection signal="button_down" from="answer2" to="." method="_on_answer2_button_down"]
+[connection signal="mouse_entered" from="answer2" to="." method="_on_answer2_mouse_entered"]
 [connection signal="button_down" from="answer3" to="." method="_on_answer3_button_down"]
+[connection signal="mouse_entered" from="answer3" to="." method="_on_answer3_mouse_entered"]
 [connection signal="button_down" from="answer4" to="." method="_on_answer4_button_down"]
+[connection signal="mouse_entered" from="answer4" to="." method="_on_answer4_mouse_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[editable path="player"]

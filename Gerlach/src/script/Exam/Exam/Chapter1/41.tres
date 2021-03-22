@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "5, 10, 15, 20, 25, x  จำนวน x คือจำนวนใด"
+answer1 = "30"
+answer2 = "35"
+answer3 = "40"
+answer4 = "45"
+Correct = "30"

@@ -1,5 +1,6 @@
 extends Node2D
 var number
+var number_index
 var temp
 var mission
 export (Array) var exam
@@ -9,18 +10,21 @@ var correct
 func _ready():
 	set_exam(ExamChapter1.ExamAll.size())
 	import_exam()
-	#mission = $"/root/Global".mission
-	pass
-
+	var audio = $AudioCorrect.stream as  AudioStreamOGGVorbis
+	audio.set_loop(false)
+	audio = $AudioWrong.stream as  AudioStreamOGGVorbis
+	audio.set_loop(false)
+	audio = $click.stream as  AudioStreamOGGVorbis
+	audio.set_loop(false)
 func set_exam(size): #นำเข้าข้อสอบจากภายนอก
 	for i in size:
 		exam.append(ExamChapter1.ExamAll[i])
-	pass
+
 
 func get_Exam_Chapter(chapter): #นำเข้าข้อสอบจากภายนอก
 	if chapter == 1:
 		return exam
-	pass
+
 
 func _on_answer1_button_down():
 	_answer($answer1/Label.text,correct)
@@ -63,12 +67,12 @@ func _show(question,answer1,answer2,answer3,answer4):
 func _answer(correct,answer): #ตรวจคำตอบ
 	
 	if correct == answer:
-		#$battle._Correct(40)
+		hp_enemy(-20)
 		$AudioCorrect.playing = true
 		import_exam()
 		return true
 	else:
-		#$battle._not_correct(40)
+		hp_player(-20)
 		$AudioWrong.playing = true
 		import_exam()
 		return false
@@ -78,7 +82,18 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	var rng = random_exam(importexam.size()-1)
 	_show(importexam[rng].Question,importexam[rng].answer1,importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	correct = importexam[rng].Correct
-	pass
+
+func finish(value:String,hp:int): #player or Enemy
+	if value == "player" && hp <= 0:
+		change_scene(1)
+	elif value == "enemy" && hp <= 0:
+		$"/root/MissionInventory".set_value(1,$"/root/Global".number_index,"finish",true)
+		change_scene(1)
+
+func change_scene(chapter:int):
+	if chapter == 1:
+		get_tree().change_scene("res://src/scene/chapter1.tscn")
+
 func _on_Timer_timeout():#จับเวลา
 	if $TextureProgress.value > 0:
 		$TextureProgress.value -= 1
@@ -87,3 +102,30 @@ func _on_Timer_timeout():#จับเวลา
 		import_exam()
 	pass # Replace with function body.
 
+func hp_player(value:int):
+	$player.hp(value)
+	finish("player",$player/HUD/TextureProgress.value)
+
+func hp_enemy(value:int):
+	$Tree.hp(value)
+	finish("enemy",$Tree/HUD/TextureProgress.value)
+
+
+func _on_answer1_mouse_entered():
+	$click.play()
+	pass # Replace with function body.
+
+
+func _on_answer2_mouse_entered():
+	$click.play()
+	pass # Replace with function body.
+
+
+func _on_answer3_mouse_entered():
+	$click.play()
+	pass # Replace with function body.
+
+
+func _on_answer4_mouse_entered():
+	$click.play()
+	pass # Replace with function body.

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Nocturnal Mysteries.ogg-6461506db4a4ca6069ad6c55a7270254.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/soundtrack/Nocturnal Mysteries.ogg"
+dest_files=[ "res://.import/Nocturnal Mysteries.ogg-6461506db4a4ca6069ad6c55a7270254.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -69,9 +69,9 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://src/script/global.gd"
-ExamInventory="*res://src/scene/Exam/Exam_Inventory.tscn"
 Events="*res://src/script/Events.gd"
 MissionInventory="*res://src/scene/Mission_Inventory.tscn"
+ExamInventory="*res://src/scene/Exam/Exam_Inventory.tscn"
 
 [display]
 

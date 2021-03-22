@@ -1,7 +1,7 @@
 extends KinematicBody2D
 var velocity : Vector2
 var speed = 10000
-export (bool) var stop = true
+export (bool) var walk
 onready var animation_tree = get_node("AnimationTreePlayer")
 onready var animation_node = animation_tree.get("parameters")
 onready var playback = $AnimationTreePlayer.get("parameters/StateMachine/playback")
@@ -13,10 +13,10 @@ func _ready():
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("ui_select") && stop:
+	if Input.is_action_pressed("ui_select") && walk:
 		speed = 20000
 		Animation_Player("run")
-	elif stop:
+	elif walk:
 		speed = 10000
 		Animation_Player("walk")
 	

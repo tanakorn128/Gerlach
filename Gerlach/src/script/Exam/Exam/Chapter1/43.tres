@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "1, 3, 5, 7, 9, ...  จำนวนที่ 86 คือจำนวนใด"
+answer1 = "170"
+answer2 = "171"
+answer3 = "172"
+answer4 = "173"
+Correct = "171"

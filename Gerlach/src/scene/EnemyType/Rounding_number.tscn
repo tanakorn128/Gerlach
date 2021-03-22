@@ -270,18 +270,13 @@ stream = ExtResource( 12 )
 [node name="player" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1137.28, 140.145 )
 scale = Vector2( 5, 5 )
-stop = false
 
 [node name="Camera2D" parent="player" index="1"]
 visible = false
 current = false
 
-[node name="skill" parent="player" index="2"]
-texture = null
-
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 10 )
-parameters/Transition/current = 1
 [connection signal="button_down" from="Apple1" to="." method="_on_Apple1_button_down"]
 [connection signal="button_up" from="Apple1" to="." method="_on_Apple1_button_up"]
 [connection signal="button_down" from="Apple2" to="." method="_on_Apple2_button_down"]

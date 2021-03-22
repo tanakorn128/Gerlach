@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "((16 ÷ 8) x 20,000)"
+answer1 = "400"
+answer2 = "4,000"
+answer3 = "40,000"
+answer4 = "400,000"
+Correct = "40,000"

@@ -1,7 +1,8 @@
 extends Node
-var scene
+var scene:int = 1
 var Enemy_damage:int = 20
 var Player_damage:int = 20
+var number_index:int
 #-----------------------------------------------------------------------
 #Allchapter
 var player_pos:Vector2

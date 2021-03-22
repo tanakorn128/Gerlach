@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+Question = "700 x 10,000"
+answer1 = "70,000"
+answer2 = "700,000"
+answer3 = "7,000,000"
+answer4 = "70,000,000"
+Correct = "7,000,000"
