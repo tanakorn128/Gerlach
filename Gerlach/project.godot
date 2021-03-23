@@ -72,6 +72,7 @@ Global="*res://src/script/global.gd"
 Events="*res://src/script/Events.gd"
 MissionInventory="*res://src/scene/Mission_Inventory.tscn"
 ExamInventory="*res://src/scene/Exam/Exam_Inventory.tscn"
+Scene="*res://src/scene/scene.tscn"
 
 [display]
 

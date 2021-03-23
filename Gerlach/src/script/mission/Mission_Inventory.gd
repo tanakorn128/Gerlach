@@ -1,5 +1,6 @@
 extends Node2D
-export (Resource) var chapter1
+export (Array,Resource) var all_chapter
+
 
 #---------------------------------------------------------------------
 #Type
@@ -14,18 +15,15 @@ onready var type_simple = load("res://src/scene/EnemyType/Simple.tscn")
 onready var Enemy_Tree = load("res://src/scene/Enemy/Tree.tscn")
 onready var Enemy_Monster1 = load("res://src/scene/Enemy/Monster1.tscn")
 
-func _ready():
-	
+#ตั้วอย่างการ Save ไฟล์
 	#chapter1.dic[0]["finish"] = true
 	#print(chapters(1,"damage"))
 	#ResourceSaver.save(chapter1.get_path(),chapter1)
-	pass
+
 
 func set_value(Chapter:int,index:int,value:String,Vchange):
-	chapter1.dic[index][value] = Vchange
+	all_chapter[Chapter-1].dic[index][value] = Vchange
+
 
 func chapters(Chapter:int,index:int,value:String):
-	if Chapter == 1:
-		return chapter1.dic[index][value]
-
-
+	return all_chapter[Chapter-1].dic[index][value]

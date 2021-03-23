@@ -388,11 +388,11 @@ stream = ExtResource( 13 )
 autoplay = true
 max_distance = 200000.0
 
-[node name="mailbox1" type="Area2D" parent="."]
+[node name="postbox2" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mailbox1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox2"]
 position = Vector2( 1158.51, 1136.56 )
 shape = SubResource( 19 )
 
@@ -422,6 +422,6 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="body_entered" from="mailbox1" to="." method="_on_mailbox1_body_entered"]
+[connection signal="body_entered" from="postbox2" to="." method="_on_mailbox1_body_entered"]
 
 [editable path="player"]

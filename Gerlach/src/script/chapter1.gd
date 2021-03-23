@@ -5,7 +5,6 @@ export (Script) var game_save
 
 func _ready():
 	$"/root/Global".scene = 1
-	
 func _process(delta):
 	update()
 	if $player.position.x > $player/Camera2D.limit_right:

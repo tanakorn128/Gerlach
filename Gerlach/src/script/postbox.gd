@@ -1,7 +1,8 @@
 extends Node2D
 var count:int
-onready var chapter1 = $"/root/MissionInventory"
-var _Enemy:int
+onready var chapter = $"/root/MissionInventory"
+var Enemy_index:int = 0
+
 func _ready():
 	$GridContainer/Label1.text = "กำจัดศัตรูที่ซ่อนอยู่"
 	var audio = $AudioStreamPlayer2D.stream as AudioStreamOGGVorbis
@@ -12,16 +13,17 @@ func _ready():
 
 func _on_Button_button_down():
 	$AudioStreamPlayer2D.play()
-	ResourceSaver.save($"/root/MissionInventory".chapter1.get_path(),$"/root/MissionInventory".chapter1)
+	var scene = $"/root/Global".scene
+	print(chapter.all_chapter[scene-1].get_path())
+	ResourceSaver.save(chapter.all_chapter[scene-1].get_path(),chapter.all_chapter[scene-1])
 	$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
 	pass # Replace with function body.
 
 
 func _on_back_button_down():
 	$AudioStreamPlayer2D.play()
-	if $"/root/Global".scene == 1:
-		queue_free()
-		get_tree().change_scene("res://src/scene/chapter1.tscn")
+	queue_free()
+	$"/root/Scene".scene($"/root/Global".scene)
 	pass # Replace with function body.
 
 
@@ -33,14 +35,11 @@ func _on_score_button_down():
 func postbox():
 	_Enemy($"/root/Global".scene)
 	
-func _Enemy(chapter:int):
-	_Enemy  = 0
+func _Enemy(scene:int):
 	$ItemList.clear()
-	if chapter == 1:
-		count = chapter1.chapter1.dic.size()
-		for i in count:
-			if not chapter1.chapters(1,i,"finish"):
-				_Enemy += 1
-				
-		$ItemList.add_item(str("- ศัตรูที่เหลือ ",_Enemy,"ตัว"),null,true)
+	count = chapter.all_chapter[scene-1].dic.size()
+	for i in count:
+		if not chapter.chapters(scene,i,"finish"):
+			Enemy_index += 1
+	$ItemList.add_item(str("- ศัตรูที่เหลือ ",Enemy_index,"ตัว"),null,true)
 

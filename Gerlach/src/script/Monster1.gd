@@ -1,4 +1,6 @@
 extends Node2D
+var number_index:int
+var type_enemy:int
 
 func _ready():
 	$HUD/TextureProgress.value = 100
@@ -6,13 +8,15 @@ func _ready():
 func _process(delta):
 	if $HUD/TextureProgress.value <= 0:
 		queue_free()
-		get_tree().change_scene("res://src/scene/chapter1.tscn")
+		get_tree().change_scene("res://src/scene/chapter2.tscn")
 
 func hp(value:int):
 	$HUD/TextureProgress.value += value
 
 
 func _on_Area2D_body_entered(body):
-	
+	if body.get_name() == "player":
+		$"/root/Global".number_index = number_index
+		$"/root/Scene".Type(type_enemy)
 	pass # Replace with function body.
 

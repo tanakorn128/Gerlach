@@ -1,0 +1,51 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/script/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/reassets/Monster3_bit.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dic = [ {
+"damage": 20,
+"finish": false,
+"fire1": Vector2( 2925.81, -357 ),
+"fire2": Vector2( 3097.45, -162.5 ),
+"pos": Vector2( 2992.03, -64 ),
+"texture": ExtResource( 2 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": false,
+"fire1": Vector2( 2254.01, 971.9 ),
+"fire2": Vector2( 2397.68, 1106.6 ),
+"pos": Vector2( 2309.08, 1190.82 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": false,
+"fire1": Vector2( 4324.81, 769.69 ),
+"fire2": Vector2( 4517.14, 880 ),
+"pos": Vector2( 4405.84, 987 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": false,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 5309.63, 1190.82 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": false,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 4931.88, -776.284 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": false,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 1525.37, -1182.07 ),
+"type": 2
+} ]

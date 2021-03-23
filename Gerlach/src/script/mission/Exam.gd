@@ -85,14 +85,11 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 
 func finish(value:String,hp:int): #player or Enemy
 	if value == "player" && hp <= 0:
-		change_scene(1)
+		$"/root/Scene".scene($"/root/Global".scene)
 	elif value == "enemy" && hp <= 0:
-		$"/root/MissionInventory".set_value(1,$"/root/Global".number_index,"finish",true)
-		change_scene(1)
+		$"/root/MissionInventory".set_value($"/root/Global".scene,$"/root/Global".number_index,"finish",true)
+		$"/root/Scene".scene($"/root/Global".scene)
 
-func change_scene(chapter:int):
-	if chapter == 1:
-		get_tree().change_scene("res://src/scene/chapter1.tscn")
 
 func _on_Timer_timeout():#จับเวลา
 	if $TextureProgress.value > 0:
