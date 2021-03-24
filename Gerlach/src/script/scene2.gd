@@ -2,10 +2,10 @@ extends Node2D
 
 func _ready():
 	var inst = load("res://src/scene/dialogbox.tscn").instance()
-	add_child(inst)
 	inst.set_text(get_text())
-	inst.connect("end_dialog",self,"end_dialog")
-
+	add_child(inst)
+	
+	get_text()
 
 func end_dialog():
 	get_tree().change_scene("res://src/scene/chapter1.tscn")

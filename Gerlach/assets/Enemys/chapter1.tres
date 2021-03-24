@@ -9,7 +9,7 @@ script = ExtResource( 1 )
 dic = [ {
 "damage": 20,
 "description": "ศัตรูหน้าบ้าน",
-"finish": true,
+"finish": false,
 "pos": Vector2( 354, 650 ),
 "texture": ExtResource( 2 ),
 "type": 2

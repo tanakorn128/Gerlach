@@ -1,5 +1,7 @@
 extends Node2D
 
+
+
 func _ready():
 	text()
 	$dialogbox.get_text(0)

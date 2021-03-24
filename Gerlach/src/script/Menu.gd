@@ -7,14 +7,19 @@ extends Control
 #บทที่5 เส้นขนาน
 #ยทที่6 ทิศและแผนผัง
 #บทที่7 เศษส่วนและการบวกลบคูณหาร
-func _ready():
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
-	#print(save_nodes.size())
-	$AudioStreamPlayer.playing = true
-	pass
 
+func _ready():
+	$"/root/Global".scene = 1
+	
 func _on_start_button_down():
-	get_tree().change_scene("res://src/scene/chapter1.tscn")
+	
+	$"/root/Global"._dialogbox = "prechapter1"
+	if not $dialogbox._dialogbox():
+		get_tree().change_scene("res://src/scene/chapter1.tscn")
+	else:
+		$black.show()
+		$dialogbox.show()
+		$dialogbox._dialogbox()
 	pass # Replace with function body.
 
 

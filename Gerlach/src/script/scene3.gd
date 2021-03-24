@@ -2,18 +2,13 @@ extends Node2D
 
 
 func _ready():
-	player_speed(0)
-	Events.connect("player_position",self,"player_position")
 	var inst = load("res://src/scene/dialogbox.tscn").instance()
 	add_child(inst)
 	inst.set_text(get_text())
 	inst.connect("end_dialog",self,"end_dialog")
-	position.x = 285
-	position.y = 300
+
 	pass
-func end_dialog():
-	queue_free()
-	player_speed(10000)
+
 
 func set_text():
 	var text = {
@@ -63,6 +58,3 @@ func player_position(position):
 	
 	pass
 
-func player_speed(speed):
-	Events.emit_signal("player_speed",speed)
-	pass

@@ -14,7 +14,6 @@ func _ready():
 func _on_Button_button_down():
 	$AudioStreamPlayer2D.play()
 	var scene = $"/root/Global".scene
-	print(chapter.all_chapter[scene-1].get_path())
 	ResourceSaver.save(chapter.all_chapter[scene-1].get_path(),chapter.all_chapter[scene-1])
 	$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
 	pass # Replace with function body.

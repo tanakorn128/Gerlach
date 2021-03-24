@@ -30,22 +30,22 @@ dic = [ {
 }, {
 "damage": 20,
 "finish": false,
-"fire1": Vector2( 0, 0 ),
-"fire2": Vector2( 0, 0 ),
-"pos": Vector2( 5309.63, 1190.82 ),
+"fire1": Vector2( 5375.56, 313 ),
+"fire2": Vector2( 5226.06, 179 ),
+"pos": Vector2( 5287.46, 326 ),
 "type": 2
 }, {
 "damage": 20,
 "finish": false,
-"fire1": Vector2( 0, 0 ),
-"fire2": Vector2( 0, 0 ),
+"fire1": Vector2( 5046.31, -812 ),
+"fire2": Vector2( 4976.46, -949 ),
 "pos": Vector2( 4931.88, -776.284 ),
 "type": 2
 }, {
 "damage": 20,
 "finish": false,
-"fire1": Vector2( 0, 0 ),
-"fire2": Vector2( 0, 0 ),
+"fire1": Vector2( 1632.06, -1293.47 ),
+"fire2": Vector2( 1626.4, -1429.24 ),
 "pos": Vector2( 1525.37, -1182.07 ),
 "type": 2
 } ]

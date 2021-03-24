@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/script/dialogbox.gd" type="Script" id=1]
 [ext_resource path="res://assets/audio/computer-keyboard-1.wav" type="AudioStream" id=2]
+[ext_resource path="res://src/scene/dialogbox/all.tres" type="Resource" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/font/Kanit-Regular.ttf"
@@ -27,6 +28,7 @@ tracks/0/keys = {
 
 [node name="dialogbox" type="Node2D"]
 script = ExtResource( 1 )
+all = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
@@ -61,4 +63,3 @@ anims/idle = SubResource( 3 )
 
 [node name="AudioKeyboard" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

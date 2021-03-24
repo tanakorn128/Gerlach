@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/UI Pack RPG/Menu.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/UI Pack RPG/panelInset_beige.png" type="Texture" id=2]
 [ext_resource path="res://src/script/Menu.gd" type="Script" id=3]
 [ext_resource path="res://assets/audio/soundtrack/Celestial.ogg" type="AudioStream" id=4]
 [ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/font/EightBitDragon-anqx.ttf"
@@ -76,6 +77,20 @@ __meta__ = {
 stream = ExtResource( 4 )
 volume_db = -6.656
 autoplay = true
+
+[node name="black" type="ColorRect" parent="."]
+visible = false
+margin_left = -282.0
+margin_top = -381.0
+margin_right = 1549.0
+margin_bottom = 939.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialogbox" parent="." instance=ExtResource( 6 )]
+visible = false
 [connection signal="button_down" from="start" to="." method="_on_start_button_down"]
 [connection signal="button_down" from="SYSTEM" to="." method="_on_SYSTEM_button_down"]
 [connection signal="button_down" from="EXIT GAME" to="." method="_on_EXIT_GAME_button_down"]

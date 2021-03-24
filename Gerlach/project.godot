@@ -40,6 +40,16 @@ _global_script_classes=[ {
 "path": "res://src/script/Exam/Exam/Sort/ExamSort.gd"
 }, {
 "base": "Resource",
+"class": "all_dialogbox",
+"language": "GDScript",
+"path": "res://src/scene/dialogbox/all_dialogbox.gd"
+}, {
+"base": "Resource",
+"class": "dialogbox",
+"language": "GDScript",
+"path": "res://src/scene/dialogbox/dialogbox.gd"
+}, {
+"base": "Resource",
 "class": "mission",
 "language": "GDScript",
 "path": "res://src/script/mission/Mission_All.gd"
@@ -56,6 +66,8 @@ _global_script_class_icons={
 "Exam_All": "",
 "Exam_Angle": "",
 "Exam_Sort": "",
+"all_dialogbox": "",
+"dialogbox": "",
 "mission": "",
 "mission_chappter1": ""
 }
