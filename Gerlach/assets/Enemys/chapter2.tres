@@ -48,4 +48,11 @@ dic = [ {
 "fire2": Vector2( 1626.4, -1429.24 ),
 "pos": Vector2( 1525.37, -1182.07 ),
 "type": 2
+}, {
+"damage": 20,
+"finish": false,
+"fire1": Vector2( 3099.96, 758 ),
+"fire2": Vector2( 3000.96, 700 ),
+"pos": Vector2( 3224.41, 848 ),
+"type": 0
 } ]

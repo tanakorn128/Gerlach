@@ -5,12 +5,18 @@ var end = false
 var count = 0
 var arr_size
 var state = false
+var save:bool = false
+
 func _ready():
 	pass
 	#get_node("/root/Scene").scene(get_node("/root/Global").scene)
 
-func _dialogbox():
+func _dialogbox(_save:bool):
+	save = _save
 	if not all.all[$"/root/Global"._dialogbox].finish:
+		show()
+		$ColorRect.show()
+		$Label.show()
 		set_text($"/root/Global"._dialogbox)
 		return true
 	return false
@@ -19,9 +25,13 @@ func _input(event):
 		if count < arr_size-1:
 			count += 1
 		else:
-			all.all[$"/root/Global"._dialogbox].finish = true
-			ResourceSaver.save(all.all[$"/root/Global"._dialogbox].get_path(),all.all[$"/root/Global"._dialogbox])
-			queue_free()
+			if save:
+				all.all[$"/root/Global"._dialogbox].finish = true
+				ResourceSaver.save(all.all[$"/root/Global"._dialogbox].get_path(),all.all[$"/root/Global"._dialogbox])
+			hide()
+			$ColorRect.hide()
+			$Label.hide()
+			#queue_free()
 			state = false
 			$"/root/Scene".scene($"/root/Global".scene)
 		get_text(count)

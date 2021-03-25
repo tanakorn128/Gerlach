@@ -5,6 +5,7 @@ var finished = false
 
 var _Enemys
 func _ready():
+	$player.position = $"/root/Global".player_pos
 	$"/root/Global".scene = 1
 	$"/root/Global"._dialogbox = "startchapter1"
 	_dialogbox()
@@ -25,13 +26,12 @@ func _on_mailbox1_body_entered(body):	if body.get_name() == "player":
 		
 
 func _dialogbox():
-
-	if not $dialogbox._dialogbox():
+	if not $dialogbox._dialogbox(true): #ยจบไปแล้ว
 		pass
-	else:
+	else: #ยังไม่จบ
 		$dialogbox.show()
 		$dialogbox.position = $player.position - get_viewport_rect().size/2
-		$dialogbox._dialogbox()
+		$dialogbox._dialogbox(true)
 
 
 
@@ -48,4 +48,47 @@ func _on_next_chapter_body_entered(body):
 			get_tree().change_scene("res://src/scene/chapter2.tscn")
 		else:
 			get_tree().change_scene("res://src/scene/chapter1.tscn")
+	pass # Replace with function body.
+
+func lable(value:String):
+	$"/root/Global"._dialogbox = value
+	if $dialogbox._dialogbox(true):
+		$"/root/Global".player_pos = $player.position
+		$dialogbox.show()
+		$dialogbox.position = $player.position - get_viewport_rect().size/2
+		$dialogbox._dialogbox(true)
+	pass
+
+func _on_lable_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 1")
+	pass # Replace with function body.
+
+
+func _on_lable2_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 2")
+	pass # Replace with function body.
+
+func _on_lable3_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 3")
+	pass # Replace with function body.
+
+
+func _on_lable4_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 4")
+	pass # Replace with function body.
+
+
+func _on_lable5_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 5")
+	pass # Replace with function body.
+
+
+func _on_lable6_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 6")
 	pass # Replace with function body.

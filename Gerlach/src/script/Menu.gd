@@ -14,12 +14,12 @@ func _ready():
 func _on_start_button_down():
 	
 	$"/root/Global"._dialogbox = "prechapter1"
-	if not $dialogbox._dialogbox():
+	if not $dialogbox._dialogbox(true):
 		get_tree().change_scene("res://src/scene/chapter1.tscn")
 	else:
 		$black.show()
 		$dialogbox.show()
-		$dialogbox._dialogbox()
+		$dialogbox._dialogbox(true)
 	pass # Replace with function body.
 
 

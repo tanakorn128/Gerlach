@@ -18,6 +18,7 @@
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=18]
+[ext_resource path="res://assets/font/lable.tres" type="DynamicFont" id=19]
 [ext_resource path="res://src/script/game_save.gd" type="Script" id=20]
 
 [sub_resource type="TileSet" id=1]
@@ -271,15 +272,11 @@ points = PoolVector2Array( 24, 8, 78, 8, 78, 2, 86, 2, 86, 8, 98, 8, 114, 24, 11
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 30.9274, 48.8976 )
 
-[sub_resource type="DynamicFontData" id=20]
-font_path = "res://assets/font/Kanit-Regular.ttf"
-
-[sub_resource type="DynamicFont" id=21]
-size = 35
-font_data = SubResource( 20 )
-
 [sub_resource type="RectangleShape2D" id=22]
 extents = Vector2( 219.434, 174.081 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 60.6753, 48.1487 )
 
 [node name="chapter1" type="Node2D"]
 script = ExtResource( 14 )
@@ -330,6 +327,8 @@ tile_data = PoolIntArray( -1179428, 0, 0, -1179421, 0, 0, -1179414, 0, 0, -11794
 position = Vector2( 10.6137, 28.3834 )
 tile_set = SubResource( 6 )
 cell_size = Vector2( 2, 2 )
+collision_layer = 2
+collision_mask = 3
 format = 1
 tile_data = PoolIntArray( -5635909, 0, 0, -3145754, 0, 0, -1048219, 0, 0, -785904, 1, 0, 3080376, 0, 0, 5111738, 0, 0, 10158057, 0, 0, 10551446, 0, 0, 10748294, 0, 0 )
 
@@ -404,6 +403,9 @@ max_distance = 200000.0
 [node name="postbox2" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 3
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postbox2"]
 position = Vector2( 1158.51, 1136.56 )
@@ -425,11 +427,11 @@ margin_left = 1048.63
 margin_top = 1033.42
 margin_right = 1282.63
 margin_bottom = 1093.42
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = ExtResource( 19 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 4
 custom_constants/line_spacing = 6
-text = "กล่องจดหมาย"
+text = "จุดบันทึกเกม"
 align = 1
 valign = 1
 __meta__ = {
@@ -440,11 +442,145 @@ __meta__ = {
 visible = false
 
 [node name="next_chapter" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_chapter"]
 position = Vector2( 7430.33, 201.761 )
 shape = SubResource( 22 )
+
+[node name="lable" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable"]
+position = Vector2( 2327.92, 795.942 )
+shape = SubResource( 23 )
+
+[node name="Label" type="Label" parent="lable"]
+margin_left = 2223.69
+margin_top = 683.222
+margin_right = 2428.69
+margin_bottom = 743.222
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lable2" type="Area2D" parent="."]
+position = Vector2( -409.328, 1363.42 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable2"]
+position = Vector2( 2327.92, 795.942 )
+shape = SubResource( 23 )
+
+[node name="Label" type="Label" parent="lable2"]
+margin_left = 2226.59
+margin_top = 700.729
+margin_right = 2434.59
+margin_bottom = 760.729
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง 2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lable3" type="Area2D" parent="."]
+position = Vector2( -2494.75, 1275.97 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable3"]
+position = Vector2( 2327.92, 795.942 )
+shape = SubResource( 23 )
+
+[node name="Label" type="Label" parent="lable3"]
+margin_left = 2220.41
+margin_top = 688.099
+margin_right = 2428.41
+margin_bottom = 748.099
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lable4" type="Area2D" parent="."]
+position = Vector2( 2920.32, 1193.92 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable4"]
+position = Vector2( 1872.43, 1011.7 )
+shape = SubResource( 23 )
+
+[node name="Label" type="Label" parent="lable4"]
+margin_left = 1782.81
+margin_top = 899.657
+margin_right = 1991.81
+margin_bottom = 959.657
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lable5" type="Area2D" parent="."]
+position = Vector2( 24.6758, -1607.2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable5"]
+position = Vector2( 2327.92, 795.942 )
+shape = SubResource( 23 )
+
+[node name="Label" type="Label" parent="lable5"]
+margin_left = 2229.72
+margin_top = 680.657
+margin_right = 2438.72
+margin_bottom = 740.657
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lable6" type="Area2D" parent="."]
+position = Vector2( 2070.08, -750.707 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable6"]
+position = Vector2( 2327.92, 795.942 )
+shape = SubResource( 23 )
+
+[node name="Label" type="Label" parent="lable6"]
+margin_left = 2239.97
+margin_top = 678.466
+margin_right = 2448.97
+margin_bottom = 738.466
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง 4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="postbox2" to="." method="_on_mailbox1_body_entered"]
 [connection signal="body_entered" from="next_chapter" to="." method="_on_next_chapter_body_entered"]
+[connection signal="body_entered" from="lable" to="." method="_on_lable_body_entered"]
+[connection signal="body_entered" from="lable2" to="." method="_on_lable2_body_entered"]
+[connection signal="body_entered" from="lable3" to="." method="_on_lable3_body_entered"]
+[connection signal="body_entered" from="lable4" to="." method="_on_lable4_body_entered"]
+[connection signal="body_entered" from="lable5" to="." method="_on_lable5_body_entered"]
+[connection signal="body_entered" from="lable6" to="." method="_on_lable6_body_entered"]
 
 [editable path="player"]

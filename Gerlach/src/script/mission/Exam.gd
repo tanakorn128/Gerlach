@@ -6,7 +6,7 @@ var mission
 export (Array) var exam
 var ExamChapter1 = preload("res://src/script/Exam/Exam_All/Chapter1.tres")
 var correct
-
+export (int) var Time
 func _ready():
 	set_exam(ExamChapter1.ExamAll.size())
 	import_exam()
@@ -62,40 +62,51 @@ func _show(question,answer1,answer2,answer3,answer4):
 	$answer2/Label.text = str(answer2)
 	$answer3/Label.text = str(answer3)
 	$answer4/Label.text = str(answer4)
-	pass
+
+func record_reply(question,correct,answer1,answer2,answer3,answer4):
+	$"/root/Global".question.append(question)
+	$"/root/Global".Ans.append(str("ก)",answer1,"     ข)",answer2,"     ค)",answer3,"     ง)",answer4))
+	$"/root/Global".correct.append(correct)
 
 func _answer(correct,answer): #ตรวจคำตอบ
-	
 	if correct == answer:
 		hp_enemy(-20)
 		$AudioCorrect.playing = true
 		import_exam()
 		return true
 	else:
+		
 		hp_player(-20)
 		$AudioWrong.playing = true
 		import_exam()
+		
 		return false
 
 func import_exam(): # เลือก Chapter ของข้อสอบ
 	var importexam = get_Exam_Chapter(1)
 	var rng = random_exam(importexam.size()-1)
+	record_reply(importexam[rng].Question,importexam[rng].Correct,importexam[rng].answer1,
+	importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	_show(importexam[rng].Question,importexam[rng].answer1,importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	correct = importexam[rng].Correct
+	$TextureProgress.value = Time
 
 func finish(value:String,hp:int): #player or Enemy
 	if value == "player" && hp <= 0:
-		$"/root/Scene".scene($"/root/Global".scene)
+		get_tree().change_scene("res://src/scene/Answer.tscn")
+		#$"/root/Scene".scene($"/root/Global".scene)
 	elif value == "enemy" && hp <= 0:
 		$"/root/MissionInventory".set_value($"/root/Global".scene,$"/root/Global".number_index,"finish",true)
-		$"/root/Scene".scene($"/root/Global".scene)
+		#$"/root/Scene".scene($"/root/Global".scene)
+		get_tree().change_scene("res://src/scene/Answer.tscn")
 
 
 func _on_Timer_timeout():#จับเวลา
 	if $TextureProgress.value > 0:
 		$TextureProgress.value -= 1
 	else:
-		$TextureProgress.value = 60
+		$TextureProgress.value = Time
+		hp_player(-20)
 		import_exam()
 	pass # Replace with function body.
 
