@@ -8,6 +8,7 @@ onready var playback = $AnimationTreePlayer.get("parameters/StateMachine/playbac
 export (Script) var game_save
 
 func _ready():
+	
 	playback.start("attackLeft")
 	_load()
 

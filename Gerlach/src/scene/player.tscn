@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://src/script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/player/sword/sword_4_bit.png" type="Texture" id=8]
 [ext_resource path="res://assets/player/sword/sword_1_bit.png" type="Texture" id=9]
+[ext_resource path="res://assets/audio/soundtrack/footstep.wav" type="AudioStream" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.67216, 13.5313 )
@@ -252,6 +253,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ null, null ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("footstep:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 0.2
@@ -310,6 +323,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ null, null ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("footstep:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=10]
 length = 0.3
@@ -338,6 +363,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [ null, null ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("footstep:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=11]
 length = 0.3
@@ -365,6 +402,18 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ null, null ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("footstep:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="AnimationNodeBlend2" id=12]
@@ -535,7 +584,7 @@ blend_point_4/node = SubResource( 49 )
 blend_point_4/pos = Vector2( 0, 0 )
 
 [sub_resource type="AnimationNodeBlendTree" id=51]
-graph_offset = Vector2( 0, -287.5 )
+graph_offset = Vector2( -1044.59, -146.696 )
 nodes/Blend2/node = SubResource( 12 )
 nodes/Blend2/position = Vector2( -280.881, -385.497 )
 nodes/StateMachine/node = SubResource( 21 )
@@ -559,7 +608,7 @@ nodes/run/node = SubResource( 44 )
 nodes/run/position = Vector2( -460, 140 )
 nodes/walk/node = SubResource( 50 )
 nodes/walk/position = Vector2( -640, 0 )
-node_connections = [ "output", 0, "Transition", "TimeScale 3", 0, "StateMachine", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale", 0, "run", "TimeScale 2", 0, "attacks_Blend2" ]
+node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "TimeScale", 0, "run", "TimeScale 3", 0, "StateMachine", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale 2", 0, "attacks_Blend2" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 
@@ -583,10 +632,9 @@ __meta__ = {
 }
 
 [node name="skill" type="Sprite" parent="."]
-position = Vector2( 14.7334, 11.5943 )
-rotation = 0.115192
+position = Vector2( -9.98871, 16 )
+rotation = -0.544543
 scale = Vector2( 0.2, 0.2 )
-flip_h = true
 
 [node name="player" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -628,3 +676,6 @@ parameters/walk/blend_position = Vector2( 0, 0 )
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 position = Vector2( -12.1021, -16 )
 scale = Vector2( 0.03, 0.03 )
+
+[node name="footstep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
