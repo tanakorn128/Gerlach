@@ -10,3 +10,6 @@ func _on_Area2D_body_entered(body):
 
 func hp(value:int):
 	$HUD/TextureProgress.value += value
+
+func get_hp():
+	return $HUD/TextureProgress.value

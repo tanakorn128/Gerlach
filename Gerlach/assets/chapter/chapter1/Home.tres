@@ -1,8 +1,9 @@
-[gd_resource type="TileSet" load_steps=10 format=2]
+[gd_resource type="TileSet" load_steps=11 format=2]
 
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileset-wesley2.png" type="Texture" id=2]
 [ext_resource path="res://assets/reassets/Home.png" type="Texture" id=3]
+[ext_resource path="res://assets/Pipoya RPG World Tileset 48x48 40x40 32x32/48x48/pipo-map001.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64.1555, 36.8398, 64.4247, 92.1555, 1.16833, 91.8863, 1.4375, 36.9744 )
@@ -177,3 +178,17 @@ points = PoolVector2Array( 36.4497, 3.32409, 53.3286, 3.32409, 60.1605, 17.3898,
 8/shape_one_way_margin = 0.0
 8/shapes = [  ]
 8/z_index = 0
+9/name = "pipo-map001.png 9"
+9/texture = ExtResource( 4 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 243, 388, 47, 90 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape_one_way = false
+9/shape_one_way_margin = 0.0
+9/shapes = [  ]
+9/z_index = 0

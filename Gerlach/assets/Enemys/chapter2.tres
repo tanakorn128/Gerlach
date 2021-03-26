@@ -50,7 +50,7 @@ dic = [ {
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "fire1": Vector2( 3099.96, 758 ),
 "fire2": Vector2( 3000.96, 700 ),
 "pos": Vector2( 3224.41, 848 ),

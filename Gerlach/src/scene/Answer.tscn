@@ -68,7 +68,7 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/guide_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-allow_rmb_select = true
+select_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -11,16 +11,19 @@ var Q2:float
 var Q3:float
 var set_question:bool = true
 var apple_position:Array
-var inst
+var inst_enemy
 onready var Enemy_damage:int = $"/root/Global".Enemy_damage
 onready var Player_damage:int = $"/root/Global".Player_damage
 func _ready():
+	$player.walk = false
 	audio("loopstop")
 	apple_position.append($Apple1.rect_position)
 	apple_position.append($Apple2.rect_position)
 	apple_position.append($Apple3.rect_position)
 	set_question()
-	_Enemy(0)
+	inst_enemy = $"/root/Scene".Enemy($"/root/Global".enemy)
+	add_child(inst_enemy)
+
 func _process(delta):
 	if apple1 && not Ans1:
 		$Apple1.rect_position.y = get_viewport().get_mouse_position().y
@@ -172,17 +175,20 @@ func _on_Timer_timeout():
 	$Timer.stop()
 	pass # Replace with function body.
 
-func _Enemy(value:int):
-	if value == 0:
-		inst = load("res://src/scene/Enemy/Tree.tscn").instance()
-	elif value == 1:
-		inst = load("res://src/scene/Enemy/Monster1.tscn").instance()
-	inst.position = Vector2(247,144)
-	add_child(inst)
+
 
 func hp_player(value:int):
 	$player.hp(value)
+	finish("player",$player/HUD/TextureProgress.value)
 
 func hp_enemy(value:int):
-	inst.hp(value)
-	pass
+	inst_enemy.hp(value)
+	finish("enemy",inst_enemy.get_hp())
+
+
+func finish(value:String,hp:int): #player or Enemy
+	if value == "player" && hp <= 0:
+		$"/root/Scene".scene($"/root/Global".scene)
+	elif value == "enemy" && hp <= 0:
+		$"/root/MissionInventory".set_value($"/root/Global".scene,$"/root/Global".number_index,"finish",true)
+		$"/root/Scene".scene($"/root/Global".scene)

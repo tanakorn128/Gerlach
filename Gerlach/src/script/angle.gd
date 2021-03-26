@@ -262,3 +262,10 @@ func _on_Timer_countdown_timeout():
 	$Timeout.hides()
 	$countdown.value -= 1
 	pass # Replace with function body.
+
+func finish(value:String,hp:int): #player or Enemy
+	if value == "player" && hp <= 0:
+		$"/root/Scene".scene($"/root/Global".scene)
+	elif value == "enemy" && hp <= 0:
+		$"/root/MissionInventory".set_value($"/root/Global".scene,$"/root/Global".number_index,"finish",true)
+		$"/root/Scene".scene($"/root/Global".scene)
