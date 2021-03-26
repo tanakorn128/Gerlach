@@ -27,6 +27,7 @@ tracks/0/keys = {
 }
 
 [node name="dialogbox" type="Node2D"]
+position = Vector2( 8.11914, 0.277771 )
 script = ExtResource( 1 )
 all = ExtResource( 4 )
 

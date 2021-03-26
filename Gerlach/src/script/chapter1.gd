@@ -31,6 +31,7 @@ func _dialogbox():
 	else: #ยังไม่จบ
 		$dialogbox.show()
 		$dialogbox.position = $player.position - get_viewport_rect().size/2
+		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
 		$dialogbox._dialogbox(true)
 
 
@@ -56,6 +57,7 @@ func lable(value:String):
 		$"/root/Global".player_pos = $player.position
 		$dialogbox.show()
 		$dialogbox.position = $player.position - get_viewport_rect().size/2
+		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
 		$dialogbox._dialogbox(true)
 	pass
 

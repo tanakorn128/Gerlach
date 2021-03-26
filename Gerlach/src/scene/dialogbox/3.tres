@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 dialogbox = [ "11111", "222222", "333333" ]
-finish = false
+finish = true
