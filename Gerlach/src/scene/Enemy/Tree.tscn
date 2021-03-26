@@ -1,8 +1,17 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_50.png" type="Texture" id=2]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_29.png" type="Texture" id=3]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_48.png" type="Texture" id=4]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_53.png" type="Texture" id=5]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_58.png" type="Texture" id=6]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_44.png" type="Texture" id=7]
 [ext_resource path="res://src/script/mission/mission1.gd" type="Script" id=8]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=9]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_37.png" type="Texture" id=10]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_52.png" type="Texture" id=11]
+[ext_resource path="res://assets/Explosions/Green/exposion_green_46.png" type="Texture" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 36.7439
@@ -21,6 +30,46 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.705882 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "attack1"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("attack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ), null ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("attack:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 129.254, 10.5946 ), Vector2( 1250, 10.595 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("attack:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 3, 3 ), Vector2( 4, 4 ), Vector2( 5, 5 ), Vector2( 6, 6 ), Vector2( 7, 7 ), Vector2( 8, 8 ), Vector2( 9, 9 ), Vector2( 10, 10 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -95,6 +144,10 @@ modulate = Color( 1, 1, 1, 0.705882 )
 scale = Vector2( 3.5, 3.5 )
 texture = ExtResource( 9 )
 
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 1250, 10.595 )
+scale = Vector2( 10, 10 )
+
 [node name="HUD" parent="." instance=ExtResource( 1 )]
 position = Vector2( -49.5716, -118.876 )
 scale = Vector2( 0.1, 0.1 )
@@ -107,6 +160,7 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Flashing = SubResource( 2 )
+anims/attack1 = SubResource( 12 )
 anims/start = SubResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]

@@ -4,7 +4,6 @@ var type_enemy:int
 
 func _ready():
 	$HUD/TextureProgress.value = 100
-
 func _process(delta):
 	if $HUD/TextureProgress.value <= 0:
 		queue_free()
@@ -22,4 +21,15 @@ func _on_Area2D_body_entered(body):
 		$"/root/Global".number_index = number_index
 		$"/root/Scene".Type(type_enemy)
 	pass # Replace with function body.
+
+func attack():
+	$AnimationPlayer.play("attack1")
+
+func attack_finished():
+	return true
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	attack_finished()
+	pass # Replace with function body.
+
 

@@ -6,6 +6,7 @@ var mission
 export (Array) var exam
 var ExamChapter1 = preload("res://src/script/Exam/Exam_All/Chapter1.tres")
 var correct
+var inst_enemy
 export (int) var Time
 func _ready():
 	set_exam(ExamChapter1.ExamAll.size())
@@ -16,6 +17,7 @@ func _ready():
 	audio.set_loop(false)
 	audio = $click.stream as  AudioStreamOGGVorbis
 	audio.set_loop(false)
+	enemy()
 func set_exam(size): #นำเข้าข้อสอบจากภายนอก
 	for i in size:
 		exam.append(ExamChapter1.ExamAll[i])
@@ -69,17 +71,16 @@ func record_reply(question,correct,answer1,answer2,answer3,answer4):
 	$"/root/Global".correct.append(correct)
 
 func _answer(correct,answer): #ตรวจคำตอบ
-	if correct == answer:
+	if correct == answer: #ตอบถูก
 		hp_enemy(-20)
 		$AudioCorrect.playing = true
 		import_exam()
 		return true
-	else:
-		
+	else:#ตอบผิด
+		attack("enemy")
 		hp_player(-20)
 		$AudioWrong.playing = true
 		import_exam()
-		
 		return false
 
 func import_exam(): # เลือก Chapter ของข้อสอบ
@@ -112,11 +113,11 @@ func _on_Timer_timeout():#จับเวลา
 
 func hp_player(value:int):
 	$player.hp(value)
-	finish("player",$player/HUD/TextureProgress.value)
+	finish("player",$player.get_hp())
 
 func hp_enemy(value:int):
-	$Tree.hp(value)
-	finish("enemy",$Tree/HUD/TextureProgress.value)
+	inst_enemy.hp(value)
+	finish("enemy",inst_enemy.get_hp())
 
 
 func _on_answer1_mouse_entered():
@@ -137,3 +138,12 @@ func _on_answer3_mouse_entered():
 func _on_answer4_mouse_entered():
 	$click.play()
 	pass # Replace with function body.
+
+func enemy():
+	inst_enemy = $"/root/Scene".Enemy($"/root/Global".enemy)
+	inst_enemy.position = Vector2(232.06,159.184)
+	add_child(inst_enemy)
+
+func attack(value:String):#player and enemy
+	if value == "enemy":
+		inst_enemy.attack()

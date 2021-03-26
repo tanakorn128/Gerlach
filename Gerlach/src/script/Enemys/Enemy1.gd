@@ -21,8 +21,7 @@ func _ready():
 	apple_position.append($Apple2.rect_position)
 	apple_position.append($Apple3.rect_position)
 	set_question()
-	inst_enemy = $"/root/Scene".Enemy($"/root/Global".enemy)
-	add_child(inst_enemy)
+	enemy()
 
 func _process(delta):
 	if apple1 && not Ans1:
@@ -55,6 +54,7 @@ func answer(Question:String,value:int):
 			audio("Correct")
 			Ans1 = true
 			set_question = true
+			
 			hp_enemy(-Player_damage)
 		else:
 			audio("wrong")
@@ -85,6 +85,7 @@ func answer(Question:String,value:int):
 func audio(value:String):
 	
 	if value == "wrong":
+		attack("enemy")
 		$wrong.play()
 	if value == "Correct":
 		$Correct.play()
@@ -192,3 +193,24 @@ func finish(value:String,hp:int): #player or Enemy
 	elif value == "enemy" && hp <= 0:
 		$"/root/MissionInventory".set_value($"/root/Global".scene,$"/root/Global".number_index,"finish",true)
 		$"/root/Scene".scene($"/root/Global".scene)
+
+func enemy():
+	inst_enemy = $"/root/Scene".Enemy($"/root/Global".enemy)
+	inst_enemy.position = Vector2(207.655,135.611)
+	add_child(inst_enemy)
+
+func attack(value:String):#player and enemy
+	if value == "enemy":
+		inst_enemy.attack()
+	
+
+
+func _on_Timer2_timeout():
+	
+	if $TextureProgress.value <= 0:
+		hp_player(-20)
+		$Timer.start()
+		$TextureProgress.value = 60
+	else:
+		$TextureProgress.value -= 1
+	pass # Replace with function body.

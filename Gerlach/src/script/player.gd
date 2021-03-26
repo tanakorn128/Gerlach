@@ -91,3 +91,6 @@ func Transition(transition:int):
 
 func hp(value:int):
 	$HUD/TextureProgress.value += value
+
+func get_hp():
+	return $HUD/TextureProgress.value

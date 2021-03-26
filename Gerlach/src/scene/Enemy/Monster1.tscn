@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/script/Monster1.gd" type="Script" id=1]
 [ext_resource path="res://assets/reassets/Monster3_bit.png" type="Texture" id=2]
@@ -6,9 +6,52 @@
 [ext_resource path="res://assets/reassets/Monster2_bit.png" type="Texture" id=4]
 [ext_resource path="res://assets/reassets/Monster4_bit.png" type="Texture" id=5]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Explosions/Orange(normal)/orange_explosion_53.png" type="Texture" id=7]
+[ext_resource path="res://assets/Explosions/Orange(normal)/orange_explosion_49.png" type="Texture" id=8]
+[ext_resource path="res://assets/Explosions/Orange(normal)/orange_explosion_55.png" type="Texture" id=9]
+[ext_resource path="res://assets/Explosions/Orange(normal)/orange_explosion_29.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
-resource_name = "idle"
+resource_name = "attack1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("attack:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1.2, 1.4, 1.5, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 10 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ), null ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("attack:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.5, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3, 3 ), Vector2( 4, 4 ), Vector2( 5, 5 ), Vector2( 6, 6 ), Vector2( 7, 7 ), Vector2( 8, 8 ), Vector2( 8, 8 ), Vector2( 8, 8 ), Vector2( 8, 8 ), Vector2( 8, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("attack:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.1, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 152.939, -17.0448 ), Vector2( 620, -17.045 ) ]
+}
+
+[sub_resource type="Animation" id=2]
 length = 0.35
 loop = true
 tracks/0/type = "value"
@@ -24,33 +67,42 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=2]
+[sub_resource type="AnimationNodeAnimation" id=3]
 animation = "idle"
 
-[sub_resource type="AnimationNodeTimeScale" id=3]
+[sub_resource type="AnimationNodeTimeScale" id=4]
 
-[sub_resource type="AnimationNodeBlendTree" id=4]
-graph_offset = Vector2( -227, 37 )
-nodes/Animation/node = SubResource( 2 )
-nodes/Animation/position = Vector2( -140, 100 )
-nodes/TimeScale/node = SubResource( 3 )
-nodes/TimeScale/position = Vector2( 100, 100 )
+[sub_resource type="AnimationNodeBlendTree" id=5]
+graph_offset = Vector2( -243, 31 )
+nodes/Animation/node = SubResource( 3 )
+nodes/Animation/position = Vector2( -220, 80 )
+nodes/TimeScale/node = SubResource( 4 )
+nodes/TimeScale/position = Vector2( 40, 100 )
 node_connections = [ "output", 0, "TimeScale", "TimeScale", 0, "Animation" ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 87.3636, 29.068 )
 
 [node name="Monster1" type="Node2D"]
+scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
+
+[node name="attack" type="Sprite" parent="."]
+position = Vector2( 282.678, -17.0448 )
+scale = Vector2( 6, 6 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/idle = SubResource( 1 )
+anims/attack1 = SubResource( 1 )
+anims/idle = SubResource( 2 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 4 )
+tree_root = SubResource( 5 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/TimeScale/scale = 1.2
@@ -65,9 +117,16 @@ visible = false
 visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="HUD"]
