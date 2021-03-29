@@ -15,42 +15,42 @@ dic = [ {
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "fire1": Vector2( 2254.01, 971.9 ),
 "fire2": Vector2( 2397.68, 1106.6 ),
 "pos": Vector2( 2309.08, 1190.82 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "fire1": Vector2( 4324.81, 769.69 ),
 "fire2": Vector2( 4517.14, 880 ),
 "pos": Vector2( 4405.84, 987 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "fire1": Vector2( 5375.56, 313 ),
 "fire2": Vector2( 5226.06, 179 ),
 "pos": Vector2( 5287.46, 326 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "fire1": Vector2( 5046.31, -812 ),
 "fire2": Vector2( 4976.46, -949 ),
 "pos": Vector2( 4931.88, -776.284 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "fire1": Vector2( 1632.06, -1293.47 ),
 "fire2": Vector2( 1626.4, -1429.24 ),
 "pos": Vector2( 1525.37, -1182.07 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "fire1": Vector2( 3099.96, 758 ),
 "fire2": Vector2( 3000.96, 700 ),
 "pos": Vector2( 3224.41, 848 ),

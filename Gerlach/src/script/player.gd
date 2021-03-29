@@ -8,16 +8,15 @@ onready var playback = $AnimationTreePlayer.get("parameters/StateMachine/playbac
 export (Script) var game_save
 
 func _ready():
-	
 	playback.start("attackLeft")
 	_load()
 
 func _physics_process(delta):
-	
+	walk = $"/root/Global".playerwalk
 	if Input.is_action_pressed("ui_select") && walk:
 		speed = 20000
 		Animation_Player("run")
-	elif walk:
+	elif walk && walk:
 		speed = 10000
 		Animation_Player("walk")
 	

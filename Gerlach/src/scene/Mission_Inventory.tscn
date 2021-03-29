@@ -1,9 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/script/mission/Mission_Inventory.gd" type="Script" id=1]
 [ext_resource path="res://assets/Enemys/chapter1.tres" type="Resource" id=2]
 [ext_resource path="res://assets/Enemys/chapter2.tres" type="Resource" id=3]
+[ext_resource path="res://assets/Enemys/chapter3_2.tres" type="Resource" id=4]
+[ext_resource path="res://assets/Enemys/chapter5_3.tres" type="Resource" id=5]
 
 [node name="Mission_Inventory" type="Node2D"]
 script = ExtResource( 1 )
-all_chapter = [ ExtResource( 2 ), ExtResource( 3 ) ]
+all_chapter = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ]

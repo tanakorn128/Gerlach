@@ -32,7 +32,7 @@ func _dialogbox():
 		$dialogbox.show()
 		$dialogbox.position = $player.position - get_viewport_rect().size/2
 		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
-		$dialogbox._dialogbox(true)
+		$dialogbox._dialogbox(true) #ต้องการ save ไหม
 
 
 
@@ -59,7 +59,7 @@ func lable(value:String):
 		$dialogbox.position = $player.position - get_viewport_rect().size/2
 		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
 		$dialogbox._dialogbox(true)
-	pass
+
 
 func _on_lable_body_entered(body):
 	if body.get_name() == "player":

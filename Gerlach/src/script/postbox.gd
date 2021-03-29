@@ -22,6 +22,7 @@ func _on_Button_button_down():
 func _on_back_button_down():
 	$click.play()
 	queue_free()
+	print($"/root/Global".scene)
 	$"/root/Scene".scene($"/root/Global".scene)
 	pass # Replace with function body.
 

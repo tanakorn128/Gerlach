@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=2]
+[gd_resource type="TileSet" load_steps=8 format=2]
 
 [ext_resource path="res://assets/reassets/Tree01.png" type="Texture" id=1]
 [ext_resource path="res://assets/reassets/Tree02.png" type="Texture" id=2]
@@ -10,6 +10,9 @@ points = PoolVector2Array( 2.92044, 26.8233, 9.21915, 31.5069, 15.0334, 34.8985,
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 5.02001, 21.1706, 7.6041, 24.7237, 12.2878, 27.1463, 18.9095, 29.0843, 26.6618, 30.6994, 33.768, 29.5689, 45.5579, 24.8852, 49.5955, 20.5245, 50.5646, 28.4383, 48.465, 35.8676, 45.5579, 39.0977, 43.1353, 41.3588, 40.3897, 42.8123, 41.0357, 45.2349, 39.9052, 48.3035, 37.4826, 51.5336, 33.2835, 53.3102, 31.6684, 53.6332, 21.6551, 53.9562, 17.9405, 52.0181, 14.0643, 48.9495, 13.4183, 46.2039, 13.4183, 43.6198, 13.9028, 41.5203, 12.1263, 44.2659, 10.9957, 39.9052, 9.54217, 37.3211, 8.57314, 39.7437, 6.63506, 38.4517, 3.88947, 34.5755, 3.72797, 32.4759, 3.08195, 29.2458, 2.92044, 24.0777 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 21.5595, 53.2627, 29.118, 54.6193, 31.056, 57.914, 26.5985, 61.2088, 14.9701, 62.1778, 6.83022, 59.8521, 4.11692, 56.945, 6.83022, 54.4255, 11.8692, 53.4565, 9.3497, 50.937, 0.822212, 43.5724, 0.822212, 35.2387, 3.3417, 24.3855, 6.83022, 13.3385, 14.0011, 4.0358, 19.4277, 3.45438, 25.4357, 9.6562, 28.5366, 19.7341, 31.8313, 27.4864, 32.6065, 36.0139, 32.9941, 45.7042, 29.118, 49.3866, 24.6604, 49.3866, 21.1719, 51.5184 )
 
 [resource]
 0/name = "Tree01.png 0"
@@ -78,9 +81,16 @@ points = PoolVector2Array( 5.02001, 21.1706, 7.6041, 24.7237, 12.2878, 27.1463, 
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 3 )
 3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 3/z_index = 0
 4/name = "tileset-wesley2.png 4"
 4/texture = ExtResource( 3 )

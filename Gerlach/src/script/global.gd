@@ -1,5 +1,5 @@
 extends Node
-var scene:int
+var scene:float
 var Enemy_damage:int = 20
 var Player_damage:int = 20
 var number_index:int
@@ -9,6 +9,7 @@ var _dialogbox:String
 #Allchapter
 var player_pos:Vector2 = Vector2(721.7,850.025)
 var PlayerHP
+var playerwalk:bool = true
 #chapter1
 var chapter1_Enemy:Array
 var chapter_mission:Array

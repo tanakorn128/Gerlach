@@ -1,24 +1,30 @@
-[gd_resource type="Resource" load_steps=10 format=2]
+[gd_resource type="Resource" load_steps=13 format=2]
 
 [ext_resource path="res://src/scene/dialogbox/all_dialogbox.gd" type="Script" id=1]
-[ext_resource path="res://src/scene/dialogbox/1.tres" type="Resource" id=2]
-[ext_resource path="res://src/scene/dialogbox/2.tres" type="Resource" id=3]
-[ext_resource path="res://src/scene/dialogbox/3.tres" type="Resource" id=4]
-[ext_resource path="res://src/scene/dialogbox/4.tres" type="Resource" id=5]
-[ext_resource path="res://src/scene/dialogbox/6.tres" type="Resource" id=6]
-[ext_resource path="res://src/scene/dialogbox/5.tres" type="Resource" id=7]
-[ext_resource path="res://src/scene/dialogbox/7.tres" type="Resource" id=8]
-[ext_resource path="res://src/scene/dialogbox/8.tres" type="Resource" id=9]
+[ext_resource path="res://src/scene/dialogbox/chapter1/2.tres" type="Resource" id=2]
+[ext_resource path="res://src/scene/dialogbox/chapter1/4.tres" type="Resource" id=3]
+[ext_resource path="res://src/scene/dialogbox/chapter1/7.tres" type="Resource" id=4]
+[ext_resource path="res://src/scene/dialogbox/chapter1/5.tres" type="Resource" id=5]
+[ext_resource path="res://src/scene/dialogbox/chapter1/6.tres" type="Resource" id=6]
+[ext_resource path="res://src/scene/dialogbox/chapter1/8.tres" type="Resource" id=7]
+[ext_resource path="res://src/scene/dialogbox/chapter1/1.tres" type="Resource" id=8]
+[ext_resource path="res://src/scene/dialogbox/chapter1/3.tres" type="Resource" id=9]
+[ext_resource path="res://src/scene/dialogbox/chapter3_1/2.tres" type="Resource" id=10]
+[ext_resource path="res://src/scene/dialogbox/chapter3_1/1.tres" type="Resource" id=11]
+[ext_resource path="res://src/scene/dialogbox/chapter3_2/1.tres" type="Resource" id=12]
 
 [resource]
 script = ExtResource( 1 )
 all = {
-"prechapter1": ExtResource( 2 ),
-"startchapter1": ExtResource( 3 ),
-"ป้ายบอกทาง 1": ExtResource( 4 ),
-"ป้ายบอกทาง 2": ExtResource( 5 ),
-"ป้ายบอกทาง 3": ExtResource( 7 ),
+"chapter3_1 ป้ายบอกทาง 1": ExtResource( 11 ),
+"chapter3_1 ป้ายบอกทาง 2": ExtResource( 10 ),
+"chapter3_2 ป้ายบอกทาง 1": ExtResource( 12 ),
+"prechapter1": ExtResource( 8 ),
+"startchapter1": ExtResource( 2 ),
+"ป้ายบอกทาง 1": ExtResource( 9 ),
+"ป้ายบอกทาง 2": ExtResource( 3 ),
+"ป้ายบอกทาง 3": ExtResource( 5 ),
 "ป้ายบอกทาง 4": ExtResource( 6 ),
-"ป้ายบอกทาง 5": ExtResource( 8 ),
-"ป้ายบอกทาง 6": ExtResource( 9 )
+"ป้ายบอกทาง 5": ExtResource( 4 ),
+"ป้ายบอกทาง 6": ExtResource( 7 )
 }

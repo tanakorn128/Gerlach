@@ -17,6 +17,7 @@ func _dialogbox(_save:bool):
 		show()
 		$ColorRect.show()
 		$Label.show()
+		$"/root/Global".playerwalk = false
 		set_text($"/root/Global"._dialogbox)
 		return true
 	return false
@@ -33,6 +34,7 @@ func _input(event):
 			$Label.hide()
 			#queue_free()
 			state = false
+			$"/root/Global".playerwalk = true
 			$"/root/Scene".scene($"/root/Global".scene)
 		get_text(count)
 

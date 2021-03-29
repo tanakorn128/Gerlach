@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource( 1 )
-dialogbox = [ "wefewfwee", "ewfwefe" ]
+dialogbox = [ "chapter3_1 ป้ายบอกทาง 1", "chapter3_1 ป้ายบอกทาง 1" ]
 finish = true
