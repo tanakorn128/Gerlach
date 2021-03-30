@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=15]
 [ext_resource path="res://icon.png" type="Texture" id=16]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=17]
 
 [sub_resource type="TileSet" id=1]
 6/name = "tileset-wesley.png 6"
@@ -262,6 +263,8 @@ scale = Vector2( 0.15, 0.15 )
 [node name="icon" type="Sprite" parent="."]
 position = Vector2( 2251.98, -2317.99 )
 texture = ExtResource( 16 )
+
+[node name="dialogbox" parent="." instance=ExtResource( 17 )]
 [connection signal="body_entered" from="chapter5_2" to="." method="_on_chapter5_2_body_entered"]
 [connection signal="body_entered" from="chapter6" to="." method="_on_chapter6_body_entered"]
 

@@ -6,6 +6,7 @@ var fire2
 
 onready var chapter2 = $"/root/MissionInventory"
 func _ready():
+	$"/root/Global".number_enemy = 1
 	count = chapter2.all_chapter[1].dic.size() #chapter2
 	putenemy()
 

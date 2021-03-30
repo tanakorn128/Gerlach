@@ -40,7 +40,8 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1335.0
+margin_left = -310.0
+margin_right = 1677.0
 margin_bottom = 292.0
 __meta__ = {
 "_edit_use_anchors_": false

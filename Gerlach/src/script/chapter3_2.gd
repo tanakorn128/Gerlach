@@ -6,8 +6,9 @@ var _Enemys
 onready var chapter = $"/root/MissionInventory"
 
 func _ready():
+	lable("chapter3_2_start")
 	_stop()
-	$"/root/Global".scene = 3.2
+	$"/root/Global".scene = 3
 func _process(delta):
 	update()
 
@@ -30,7 +31,7 @@ func lable(value:String):
 
 func _on_postbox_body_entered(body):
 	if body.get_name() == "player":
-		lable("chapter3_2 ป้ายบอกทาง 1")
+		pass
 	pass # Replace with function body.
 
 
@@ -46,11 +47,17 @@ func _on_chapter4_1_body_entered(body):
 	pass # Replace with function body.
 
 func _stop():
-	_Enemys = chapter.all_chapter[2].dic.size()
+	_Enemys = chapter.all_chapter[3].dic.size()
 	for i in _Enemys:
-		if chapter.chapters(3,i,"finish"):
+		if chapter.chapters(4,i,"finish"):
 			_Enemys -= 1
 	if _Enemys <= 0:
+		soldier()
 		$stop.queue_free()
+		
 	
-	
+func soldier():
+	var soldier = load("res://src/scene/Enemy/soldier1.tscn").instance()
+	soldier.position = Vector2(3346.72,-1516.434)
+	soldier._dialogbox = "chapter3_2_end"
+	add_child(soldier)

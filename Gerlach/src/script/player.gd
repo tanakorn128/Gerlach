@@ -33,7 +33,6 @@ func _save():
 	
 func Animation_Player(value:String):
 	if value == "run":
-		print("T")
 		Transition(2)
 		if Input.is_action_pressed("ui_left"):
 			attacks_run(Vector2(-speed,0),Vector2(-1,0))
@@ -47,7 +46,6 @@ func Animation_Player(value:String):
 			attacks_run(Vector2(0,0),Vector2(0,0))
 
 	if value == "walk":
-		print("T")
 		Transition(1)
 		if Input.is_action_pressed("ui_left"):
 			attacks_walk(Vector2(-speed,0),Vector2(-1,0),"left")

@@ -295,7 +295,7 @@ shape = SubResource( 5 )
 [node name="HUD" parent="." instance=ExtResource( 14 )]
 scale = Vector2( 0.15, 0.15 )
 
-[node name="put_Enemy_Chapter3_1" parent="." instance=ExtResource( 15 )]
+[node name="put_Enemy_Chapter3_2" parent="." instance=ExtResource( 15 )]
 
 [node name="dialogbox" parent="." instance=ExtResource( 16 )]
 visible = false

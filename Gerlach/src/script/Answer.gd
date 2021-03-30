@@ -10,5 +10,8 @@ func _ready():
 
 
 func _on_Button_button_down():
+	$"/root/Global".question.clear()
+	$"/root/Global".Ans.clear()
+	$"/root/Global".correct.clear()
 	$"/root/Scene".scene($"/root/Global".scene)
 	pass # Replace with function body.

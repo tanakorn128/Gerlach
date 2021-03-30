@@ -97,10 +97,9 @@ func finish(value:String,hp:int): #player or Enemy
 	$"/root/Global".playerwalk = true
 	if value == "player" && hp <= 0:
 		get_tree().change_scene("res://src/scene/Answer.tscn")
-		#$"/root/Scene".scene($"/root/Global".scene)
 	elif value == "enemy" && hp <= 0:
-		$"/root/MissionInventory".set_value($"/root/Global".scene,$"/root/Global".number_index,"finish",true)
-		#$"/root/Scene".scene($"/root/Global".scene)
+		$"/root/MissionInventory".set_value($"/root/Global".number_enemy+1,$"/root/Global".number_index,"finish",true)
+		#clear_enemy
 		get_tree().change_scene("res://src/scene/Answer.tscn")
 
 

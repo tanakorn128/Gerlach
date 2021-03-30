@@ -8,7 +8,7 @@ func _ready():
 	var audio = $click.stream as AudioStreamOGGVorbis
 	audio.set_loop(false)
 	Events.connect("postbox",self,"postbox")
-	_Enemy($"/root/Global".scene)
+	_Enemy($"/root/Global".number_enemy)
 	
 
 func _on_Button_button_down():
@@ -22,7 +22,7 @@ func _on_Button_button_down():
 func _on_back_button_down():
 	$click.play()
 	queue_free()
-	print($"/root/Global".scene)
+	
 	$"/root/Scene".scene($"/root/Global".scene)
 	pass # Replace with function body.
 
@@ -33,13 +33,14 @@ func _on_score_button_down():
 	pass # Replace with function body.
 
 func postbox():
-	_Enemy($"/root/Global".scene)
+	_Enemy($"/root/Global".number_enemy)
 	
-func _Enemy(scene:int):
+func _Enemy(enemy:int):
 	$ItemList.clear()
-	count = chapter.all_chapter[scene-1].dic.size()
+	count = chapter.all_chapter[enemy].dic.size()
+	print(count)
 	for i in count:
-		if not chapter.chapters(scene,i,"finish"):
+		if not chapter.chapters(enemy+1,i,"finish"):
 			Enemy_index += 1
 	$ItemList.add_item(str("- ศัตรูที่เหลือ ",Enemy_index,"ตัว"),null,true)
 

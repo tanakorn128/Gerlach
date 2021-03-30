@@ -4,6 +4,7 @@ var ins
 
 onready var chapter1 = $"/root/MissionInventory"
 func _ready():
+	$"/root/Global".number_enemy = 0
 	putenemy()
 
 func putenemy():

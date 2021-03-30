@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/script/chapter4_1.gd" type="Script" id=11]
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=12]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset-wesley3.png 0"
@@ -176,6 +177,9 @@ shape = SubResource( 4 )
 
 [node name="HUD" parent="." instance=ExtResource( 13 )]
 scale = Vector2( 0.15, 0.15 )
+
+[node name="dialogbox" parent="." instance=ExtResource( 14 )]
+visible = false
 [connection signal="body_entered" from="chapter4_2" to="." method="_on_chapter4_2_body_entered"]
 [connection signal="body_entered" from="chapter3_2" to="." method="_on_chapter3_2_body_entered"]
 

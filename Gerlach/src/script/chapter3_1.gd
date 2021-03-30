@@ -5,8 +5,9 @@ var _Enemys
 onready var chapter = $"/root/MissionInventory"
 
 func _ready():
+	lable("chapter3_1_start")
 	_stop()
-	$"/root/Global".scene = 3.1
+	$"/root/Global".scene = 3
 func _process(delta):
 	update()
 
@@ -44,9 +45,9 @@ func lable(value:String):
 		$dialogbox._dialogbox(true)
 
 func _stop():
-	_Enemys = chapter.all_chapter[2].dic.size()
+	_Enemys = chapter.all_chapter[3].dic.size()
 	for i in _Enemys:
-		if chapter.chapters(3,i,"finish"):
+		if chapter.chapters(4,i,"finish"):
 			_Enemys -= 1
 	if _Enemys <= 0:
 		$stop.queue_free()

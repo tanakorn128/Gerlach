@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://src/script/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://src/scene/Enemy/soldier1.tscn" type="PackedScene" id=2]
+
+[resource]
+script = ExtResource( 1 )
+dic = [ {
+"damage": 20,
+"finish": false,
+"pos": Vector2( 2343.29, -1735.05 ),
+"scene": ExtResource( 2 ),
+"type": 2
+} ]
