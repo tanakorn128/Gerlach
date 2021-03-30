@@ -7,7 +7,7 @@
 script = ExtResource( 1 )
 dic = [ {
 "damage": 20,
-"finish": true,
+"finish": false,
 "fire1": Vector2( 1000, 318 ),
 "fire2": Vector2( 3097.45, -162.5 ),
 "pos": Vector2( 2343.29, -1735.05 ),

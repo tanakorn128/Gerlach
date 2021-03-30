@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=3 format=2]
+[gd_resource type="TileSet" load_steps=4 format=2]
 
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=1]
 [ext_resource path="res://assets/reassets/BG5.png" type="Texture" id=2]
+[ext_resource path="res://assets/Dungeon_Tileset/Dungeon_Tileset.png" type="Texture" id=3]
 
 [resource]
 resource_local_to_scene = true
@@ -33,3 +34,17 @@ resource_local_to_scene = true
 3/shape_one_way_margin = 0.0
 3/shapes = [  ]
 3/z_index = 0
+4/name = "Dungeon_Tileset.png 4"
+4/texture = ExtResource( 3 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 343, 281, 34, 33 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0

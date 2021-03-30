@@ -10,15 +10,16 @@
 [ext_resource path="res://src/scene/dialogbox/chapter1/1.tres" type="Resource" id=8]
 [ext_resource path="res://src/scene/dialogbox/chapter1/3.tres" type="Resource" id=9]
 [ext_resource path="res://src/scene/dialogbox/chapter3_1/2.tres" type="Resource" id=10]
-[ext_resource path="res://src/scene/dialogbox/chapter3_1/1.tres" type="Resource" id=11]
 [ext_resource path="res://src/scene/dialogbox/chapter3_2/1.tres" type="Resource" id=12]
+[ext_resource path="res://src/scene/dialogbox/chapter5_3/1.tres" type="Resource" id=13]
 
 [resource]
 script = ExtResource( 1 )
 all = {
-"chapter3_1 ป้ายบอกทาง 1": ExtResource( 11 ),
+"chapter3_1 ป้ายบอกทาง 1": null,
 "chapter3_1 ป้ายบอกทาง 2": ExtResource( 10 ),
 "chapter3_2 ป้ายบอกทาง 1": ExtResource( 12 ),
+"chapter5_3 npc 1": ExtResource( 13 ),
 "prechapter1": ExtResource( 8 ),
 "startchapter1": ExtResource( 2 ),
 "ป้ายบอกทาง 1": ExtResource( 9 ),

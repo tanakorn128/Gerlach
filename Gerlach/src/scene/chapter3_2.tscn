@@ -267,7 +267,7 @@ scale = Vector2( 1.2, 1.2 )
 tile_set = ExtResource( 5 )
 cell_size = Vector2( 4, 4 )
 format = 1
-tile_data = PoolIntArray( -4652987, 9, 0, -4652902, 9, 0, -4325290, 10, 0, -4259742, 11, 0, -4259732, 11, 0, -4259722, 11, 0, -4259712, 11, 0, -3145659, 9, 0, -3145574, 9, 0 )
+tile_data = PoolIntArray( -4652987, 9, 0, -4652902, 9, 0, -3145659, 9, 0, -3145574, 9, 0 )
 
 [node name="lable" type="TileMap" parent="wall"]
 tile_set = ExtResource( 6 )

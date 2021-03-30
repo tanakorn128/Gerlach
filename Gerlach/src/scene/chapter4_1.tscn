@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/script/chapter4_1.gd" type="Script" id=11]
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=12]
+[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset-wesley3.png 0"
@@ -157,6 +158,9 @@ limit_right = 2840
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 2 )
 
+[node name="HUD" parent="player" index="6"]
+visible = false
+
 [node name="chapter4_2" type="Area2D" parent="."]
 position = Vector2( -0.547363, 21.2417 )
 
@@ -169,6 +173,9 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chapter3_2"]
 position = Vector2( 3074.21, -4364.37 )
 shape = SubResource( 4 )
+
+[node name="HUD" parent="." instance=ExtResource( 13 )]
+scale = Vector2( 0.15, 0.15 )
 [connection signal="body_entered" from="chapter4_2" to="." method="_on_chapter4_2_body_entered"]
 [connection signal="body_entered" from="chapter3_2" to="." method="_on_chapter3_2_body_entered"]
 

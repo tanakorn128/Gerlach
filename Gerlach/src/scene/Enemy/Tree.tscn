@@ -32,7 +32,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.705882 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=3]
 resource_name = "attack1"
 length = 1.2
 tracks/0/type = "value"
@@ -72,8 +72,7 @@ tracks/2/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 3, 3 ), Vector2( 4, 4 ), Vector2( 5, 5 ), Vector2( 6, 6 ), Vector2( 7, 7 ), Vector2( 8, 8 ), Vector2( 9, 9 ), Vector2( 10, 10 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "start"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:scale")
 tracks/0/interp = 1
@@ -99,35 +98,35 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=4]
-animation = "Flashing"
-
 [sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Flashing"
 
 [sub_resource type="AnimationNodeAnimation" id=6]
-animation = "start"
+animation = "Flashing"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=7]
-switch_mode = 2
-auto_advance = true
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "start"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
 switch_mode = 2
 auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
+switch_mode = 2
+auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachine" id=10]
-states/Flashing/node = SubResource( 5 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachine" id=11]
+states/Flashing/node = SubResource( 6 )
 states/Flashing/position = Vector2( 438, 78 )
-"states/Flashing 2/node" = SubResource( 4 )
+"states/Flashing 2/node" = SubResource( 5 )
 "states/Flashing 2/position" = Vector2( 433, 203 )
-states/start/node = SubResource( 6 )
+states/start/node = SubResource( 7 )
 states/start/position = Vector2( 155, 78 )
-transitions = [ "Flashing", "Flashing 2", SubResource( 7 ), "Flashing 2", "Flashing", SubResource( 8 ), "start", "Flashing", SubResource( 9 ) ]
+transitions = [ "Flashing", "Flashing 2", SubResource( 8 ), "Flashing 2", "Flashing", SubResource( 9 ), "start", "Flashing", SubResource( 10 ) ]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=12]
 
 [node name="Tree" type="Node2D"]
 script = ExtResource( 8 )
@@ -160,14 +159,14 @@ visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Flashing = SubResource( 2 )
-anims/attack1 = SubResource( 12 )
-anims/start = SubResource( 3 )
+anims/attack1 = SubResource( 3 )
+anims/start = SubResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 10 )
+tree_root = SubResource( 11 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 11 )
+parameters/playback = SubResource( 12 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="HUD"]

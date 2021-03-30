@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -14,10 +14,13 @@
 [ext_resource path="res://assets/Pipoya RPG World Tileset 48x48 40x40 32x32/48x48/pipo-map001.png" type="Texture" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
+[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=15]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
+
+[sub_resource type="TileSet" id=3]
 0/name = "pipo-map001.png 0"
 0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
@@ -53,9 +56,15 @@ tile_data = PoolIntArray( -3145688, 2, 0, -3145686, 2, 0, -3145685, 2, 0, -31456
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 969.346, 1278.26 )
 
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 1 )
+
+[node name="HUD" parent="player" index="6"]
+visible = false
+
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
@@ -83,7 +92,7 @@ format = 1
 tile_data = PoolIntArray( -2490225, 0, 0 )
 
 [node name="mountain" type="TileMap" parent="wall"]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -4849544, 0, 0, -2359245, 0, 0, -2359240, 0, 0, -2359235, 0, 0, -2359230, 0, 0, -2162637, 0, 0, -2162632, 0, 0, -2162627, 0, 0, -2162622, 0, 0, -1966029, 0, 0, -1966024, 0, 0, -1966019, 0, 0, -1966014, 0, 0, -1769421, 0, 0, -1769416, 0, 0, -1769411, 0, 0, -1769406, 0, 0, -1638349, 0, 0, -1638344, 0, 0, -1638339, 0, 0, -1638334, 0, 0, -1507277, 0, 0, -1507272, 0, 0, -1507267, 0, 0, -1507262, 0, 0, -655309, 0, 0, -655304, 0, 0, -655299, 0, 0, -655294, 0, 0, -458701, 0, 0, -458696, 0, 0, -458691, 0, 0, -458686, 0, 0, -262093, 0, 0, -262088, 0, 0, -262083, 0, 0, -262078, 0, 0, -65485, 0, 0, -65480, 0, 0, -65475, 0, 0, -65470, 0, 0, 65592, 0, 0, 65597, 0, 0, 65602, 0, 0, 131123, 0, 0, 196659, 0, 0, 196664, 0, 0, 196669, 0, 0, 196674, 0, 0 )
@@ -131,3 +140,8 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -2490217, 1, 0 )
+
+[node name="HUD" parent="." instance=ExtResource( 15 )]
+scale = Vector2( 0.15, 0.15 )
+
+[editable path="player"]

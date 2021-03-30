@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Post box.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/script/chapter5_2.gd" type="Script" id=8]
 [ext_resource path="res://assets/chapter/chapter2/Background2.tres" type="TileSet" id=9]
 [ext_resource path="res://assets/chapter/chapter2/Pool.tres" type="TileSet" id=10]
+[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -119,4 +120,7 @@ tile_data = PoolIntArray( -6029207, 1, 0, -5963663, 3, 0, -5308293, 23, 0, -4980
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chapter5_3"]
 position = Vector2( 7626.09, -213.816 )
 shape = SubResource( 1 )
+
+[node name="HUD" parent="." instance=ExtResource( 11 )]
+scale = Vector2( 0.15, 0.15 )
 [connection signal="body_entered" from="chapter5_3" to="." method="_on_chapter5_3_body_entered"]

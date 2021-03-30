@@ -9,6 +9,7 @@ var correct
 var inst_enemy
 export (int) var Time
 func _ready():
+	$"/root/Global".playerwalk = false
 	set_exam(ExamChapter1.ExamAll.size())
 	import_exam()
 	var audio = $AudioCorrect.stream as  AudioStreamOGGVorbis
@@ -93,6 +94,7 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	$TextureProgress.value = Time
 
 func finish(value:String,hp:int): #player or Enemy
+	$"/root/Global".playerwalk = true
 	if value == "player" && hp <= 0:
 		get_tree().change_scene("res://src/scene/Answer.tscn")
 		#$"/root/Scene".scene($"/root/Global".scene)
