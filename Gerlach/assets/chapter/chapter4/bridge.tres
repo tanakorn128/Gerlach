@@ -1,6 +1,24 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=8 format=2]
 
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 17.1937, 0.812134, 14.9611, -45.2363, 7.98401, -45.5154, 7.70496, -67.5628, 21.6591, -66.4465, 22.7754, 22.3014, 8.26312, 22.5805, 7.4259, 0.812134 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 58.2188, -67.0047, 71.6146, -66.1674, 71.3356, -45.7945, 63.8004, -45.5154, 63.8004, -0.583252, 71.3356, -0.304199, 72.1728, 21.7433, 58.4978, 21.4642 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 21.9381, 12.4372, 21.9381, 102.022, 8.26312, 102.022, 7.98401, 79.9749, 15.7983, 80.5331, 15.2402, 34.2055, 7.70496, 34.2055, 7.70496, 12.9953 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 71.8937, 12.7162, 71.0565, 33.9265, 63.8004, 33.9265, 64.6376, 79.9749, 72.4519, 80.5331, 71.8937, 102.022, 58.4978, 102.301, 57.6605, 12.9953 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 22.2172, 12.7162, 22.2172, 102.022, 8.26312, 101.464, 8.82129, 80.5331, 16.0774, 80.254, 15.7983, 35.0428, 8.54218, 35.0428, 7.98401, 12.7162 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 71.3356, 12.7162, 71.6146, 34.2055, 62.9631, 34.2055, 64.0795, 79.4167, 71.3356, 80.254, 71.6146, 102.022, 57.6605, 101.464, 57.3815, 12.7162 )
 
 [resource]
 0/name = "tileset-wesley3.png 0"
@@ -13,9 +31,22 @@
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
 0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
 1/name = "tileset-wesley3.png 1"
 1/texture = ExtResource( 1 )
@@ -27,9 +58,22 @@
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = "tileset-wesley3.png 2"
 2/texture = ExtResource( 1 )
@@ -41,9 +85,22 @@
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 5 )
 2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = "tileset-wesley3.png 3"
 3/texture = ExtResource( 1 )

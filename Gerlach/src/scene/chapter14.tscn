@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -10,31 +10,13 @@
 [ext_resource path="res://assets/chapter/chapter2/Pool.tres" type="TileSet" id=8]
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=9]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/script/chapter3.gd" type="Script" id=11]
-[ext_resource path="res://assets/Pipoya RPG World Tileset 48x48 40x40 32x32/48x48/pipo-map001.png" type="Texture" id=12]
+[ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=11]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 
 [sub_resource type="TileSet" id=1]
 
-[sub_resource type="TileSet" id=2]
-0/name = "pipo-map001.png 0"
-0/texture = ExtResource( 12 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 3, 187, 92, 102 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
-0/z_index = 0
-
 [node name="chapter3" type="Node2D"]
-script = ExtResource( 11 )
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -76,7 +58,7 @@ format = 1
 tile_data = PoolIntArray( -5439349, 38, 0, -5177244, 39, 0, -4587404, 40, 0, -4587391, 40, 0, -3866508, 40, 0, -3866495, 40, 0, -3211148, 40, 0, -3211135, 40, 0, -2883420, 37, 0, -2817972, 37, 0, -2817949, 38, 0, -2555766, 39, 0 )
 
 [node name="mountain" type="TileMap" parent="wall"]
-tile_set = SubResource( 2 )
+tile_set = ExtResource( 11 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -4849544, 0, 0, -1900531, 0, 0, -1900527, 0, 0, -1900523, 0, 0, -1900519, 0, 0, -1900515, 0, 0, -1900512, 0, 0, -1900510, 0, 0, -1900506, 0, 0, -1900501, 0, 0, -1703923, 0, 0, -1703893, 0, 0, -1441791, 0, 0, -1441787, 0, 0, -1441783, 0, 0, -1441779, 0, 0, -1441749, 0, 0, -1441745, 0, 0, -1441741, 0, 0, -1441737, 0, 0, -851966, 0, 0, -851963, 0, 0, -851959, 0, 0, -851955, 0, 0, -851925, 0, 0, -851921, 0, 0, -851917, 0, 0, -851916, 0, 0, -851913, 0, 0, -655347, 0, 0, -655317, 0, 0, -524275, 0, 0, -524245, 0, 0, -393203, 0, 0, -393198, 0, 0, -393194, 0, 0, -393190, 0, 0, -393186, 0, 0, -393182, 0, 0, -393179, 0, 0, -393176, 0, 0, -393173, 0, 0 )

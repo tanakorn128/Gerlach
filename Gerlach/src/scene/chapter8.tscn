@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Post box.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://assets/chapter/chapter1/Home.tres" type="TileSet" id=5]
 [ext_resource path="res://assets/chapter/chapter1/lable.tres" type="TileSet" id=6]
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=7]
-[ext_resource path="res://src/script/chapter2.gd" type="Script" id=8]
 [ext_resource path="res://assets/reassets/BG2.png" type="Texture" id=9]
 [ext_resource path="res://assets/tileset-wesley2.png" type="Texture" id=10]
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=11]
@@ -15,7 +14,6 @@
 [ext_resource path="res://assets/water/water.tres" type="Texture" id=13]
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=14]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter2.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
 0/name = "BG2.png 0"
@@ -115,12 +113,8 @@ points = PoolVector2Array( 64, 48, 0, 48, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 38.9222, 50.1921 )
-
-[node name="chapter2" type="Node2D"]
+[node name="chapter8" type="Node2D"]
 position = Vector2( -237.841, 361.519 )
-script = ExtResource( 8 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -2667.93 ]
 }
@@ -240,15 +234,6 @@ tile_data = PoolIntArray( -13368996, 0, 0, -13368995, 0, 0, -13368991, 0, 0, -13
 
 [node name="HUD" parent="." instance=ExtResource( 15 )]
 scale = Vector2( 0.15, 0.15 )
-
-[node name="put_Enemy_Chapter2" parent="." instance=ExtResource( 16 )]
-
-[node name="postbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
-position = Vector2( 1539.39, -10.5234 )
-shape = SubResource( 7 )
-[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 
 [editable path="player"]
 

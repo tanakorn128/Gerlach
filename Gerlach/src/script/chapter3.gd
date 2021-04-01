@@ -5,7 +5,7 @@ const HUDPOSX = 600
 func _process(delta):
 	update()
 
-func change():
+ func change():
 	$HUD.position.x = $player.position.x - HUDPOSX
 	$HUD.position.y = $player.position.y - HUDPOSY
 

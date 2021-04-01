@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=7 format=2]
+[gd_resource type="TileSet" load_steps=60 format=2]
 
 [ext_resource path="res://assets/reassets/Timber01.png" type="Texture" id=1]
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=2]
@@ -7,7 +7,166 @@
 [ext_resource path="res://assets/Pipoya RPG World Tileset 48x48 40x40 32x32/48x48/pipo-map001.png" type="Texture" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.73353, 1.9426, 4.3441, 2.59166, 3.56524, 3.1109, 2.91618, 3.56524, 2.72147, 4.08448, 2.33203, 11.8731, 2.20222, 12.1977, 1.22864, 14.5343, 1.35845, 14.729, 0.319963, 17.3252, 0.255058, 17.5199, 1.48826, 20.5705, 1.55317, 20.6354, 0.514681, 28.0346, 0.579586, 28.2942, 1.29354, 29.5923, 1.16373, 29.9817, 2.72147, 30.4361, 2.72147, 30.6308, 4.92825, 31.4097, 4.92825, 31.4746, 7.39466, 32.5131, 7.78409, 32.5131, 12.4573, 30.5659, 12.652, 30.5659, 13.4309, 29.5923, 13.6256, 29.4625, 14.4044, 23.3614, 14.6641, 23.3614, 15.8324, 14.2746, 15.7026, 14.2746, 16.6112, 8.43314, 16.6761, 8.17352, 17.3901, 3.30561, 17.3252, 3.1758, 16.3516, 2.52675, 16.2218, 2.46185, 15.5078, 1.55317, 15.378, 1.61807, 14.5992, 0.579586, 14.4693 )
+points = PoolVector2Array( 0.884186, 7.30306, 9.25664, 6.7449, 26.0015, 6.46582, 31.025, 7.02398, 31.8622, 7.86122, 31.8622, 9.25663, 31.8622, 11.2102, 27.9551, 12.3265, 25.4434, 13.7219, 19.5827, 14.5592, 15.1173, 15.3964, 8.69847, 14.8383, 7.58214, 17.0709, 3.675, 17.6291, 0.605103, 12.8847 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 4.04163, 15.2037, 20.2454, 15.7824, 25.4536, 16.9398, 27.7684, 19.8333, 28.9259, 24.4629, 23.7175, 26.7777, 19.6666, 30.8287, 10.9861, 30.8287, 4.6203, 28.5139, 1.72681, 20.9907 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 2.75, 5.08337, 10.3889, 5.08337, 13.8611, 0.22229, 15.9445, 23.1389, 14.5557, 29.3889, 4.83337, 31.4723, 2.05566, 27.3056 )
+
+[sub_resource type="ConcavePolygonShape2D" id=4]
+segments = PoolVector2Array( 3.16538, 12.4098, 1.30483, 10.7818, 1.30483, 10.7818, 1.30483, 9.38638, 1.30483, 9.38638, 2.70025, 9.38638, 2.70025, 9.38638, 5.02592, 9.38638, 5.02592, 9.38638, 8.28187, 9.61896, 8.28187, 9.61896, 9.21215, 9.61896, 9.21215, 9.61896, 11.5378, 9.61896, 11.5378, 9.61896, 14.5612, 8.68869, 14.5612, 8.68869, 14.7938, 8.68869, 14.7938, 8.68869, 14.0961, 9.61896, 14.0961, 9.61896, 12.7007, 11.4795, 12.7007, 11.4795, 14.7938, 12.6423, 14.7938, 12.6423, 13.3984, 14.2703, 13.3984, 14.2703, 10.375, 14.968, 10.375, 14.968, 7.58418, 16.1309, 7.58418, 16.1309, 5.49105, 15.4332, 5.49105, 15.4332, 2.00254, 15.2006, 2.00254, 15.2006, 3.16538, 12.4098 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 1, 2, 42, 2, 46, 43, 43, 44, 24, 45, 9, 48, 0, 37 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 14.1127, 16.7104, 13.7778, 22.0688, 7.74959, 22.0688, 1.05164, 20.7292, 1.38654, 17.0453, 6.41, 16.7104 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 13.5884, 17.3802, 14.593, 21.399, 11.579, 20.7292, 10.5743, 22.7386, 5.88571, 23.4083, 5.88571, 21.7339, 2.20183, 21.7339, 1.19714, 17.3802, 6.8904, 16.7104 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 12.1141, 17.8418, 14.4583, 19.8512, 17.1375, 19.5163, 19.4818, 18.1767, 18.812, 24.2049, 13.1187, 26.8841, 7.76038, 22.5304, 7.42548, 17.5069 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 13.8371, 11.1345, 14.8418, 12.4741, 9.81834, 15.1533, 6.80428, 12.1392 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 1.8147, 6.84717, 7.02307, 1.63885, 13.3888, 3.95367, 15.7036, 51.9861, 0.657288, 53.1435 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 4.90729, 5.68976, 10.6943, 2.79626, 18.2175, 5.11108, 18.7961, 51.4073, 6.0647, 51.9861 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 5.2955, 13.4961, 28.4437, 12.0494, 31.8194, 18.8009, 31.3372, 22.6589, 30.3727, 23.1412, 26.5146, 27.9637, 25.0679, 28.446, 15.9051, 28.9282, 5.2955, 26.0347, 2.40198, 20.7299 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 5.21292, 14.3611, 27.2036, 14.9398, 30.6759, 17.2546, 30.6759, 21.8842, 28.3611, 24.199, 26.0463, 26.5139, 26.6249, 31.1435, 21.9953, 32.8796, 21.4166, 29.4074, 10.4212, 28.8287, 3.47681, 25.9352, 3.47681, 20.1481 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 26.9491, 12.7654, 26.9491, 19.9992, 22.6088, 22.4105, 13.9282, 23.375, 4.76541, 21.9282, 2.35416, 19.0347, 0.90741, 11.8009 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 6.85107, 13.2477, 14.0849, 13.2477, 13.6026, 19.9992, 8.78009, 22.8927, 2.99304, 19.0347 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 11.4444, 7.26233, 13.3734, 9.19135, 11.9267, 12.0849, 4.21065, 13.0494, 1.79936, 10.1559, 3.72838, 7.26233 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 29.9769, 7.78008, 30.4591, 13.5671, 6.82869, 15.0139, 3.93517, 15.0139, 2.48842, 9.22684 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 15.5987, 6.78008, 16.5632, 8.70909, 15.1165, 13.0494, 7.40044, 13.0494, 2.09566, 11.1203, 4.50694, 5.81557 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 9.63889, 19, 42.9722, 19, 44.3611, 21.7778, 44.3611, 30.8056, 40.8889, 37.75, 31.1667, 42.6111, 21.4445, 42.6111, 11.7222, 39.8333, 8.25, 30.1111 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 7.6001, 34.7202, 60.8801, 28.9602, 60.8801, 44.8003, 60.8801, 56.3203, 63.7603, 72.1602, 37.8401, 72.1602, 37.8401, 67.8402, 23.4402, 69.2803, 23.4402, 73.6002, 13.3601, 72.1602, 6.16016, 69.2803 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 43.972, 1.34256, 65.9628, 9.44443, 79.8517, 23.3333, 83.9026, 39.537, 81.009, 55.7407, 70.5924, 70.2083, 46.2869, 80.625, 35.2915, 79.4676, 21.4026, 71.9444, 13.3008, 64.4213, 5.77759, 49.9537, 8.09241, 26.2268, 21.4026, 8.28702 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 3.5, 25.6713, 46.9027, 26.8287, 52.6897, 25.6713, 52.1111, 29.1435, 53.8472, 40.1389, 53.8472, 47.662, 53.2684, 48.8194, 48.6388, 49.9768, 44.5879, 48.2407, 38.2222, 50.5555, 39.3795, 51.1342, 43.4305, 53.449, 43.4305, 55.7639, 39.9583, 58.6574, 28.9629, 57.5, 23.1759, 56.9213, 4.07861, 55.7639 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+points = PoolVector2Array( 6.27774, 12.3611, 14.3796, 12.3611, 23.0601, 12.3611, 27.1111, 14.6759, 27.1111, 21.0416, 20.1666, 25.6713, 10.9073, 25.6713, 4.54163, 25.6713, 1.0694, 16.412 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+points = PoolVector2Array( 1.63889, 25.1111, 34.2778, 25.1111, 34.9722, 34.8333, 27.3333, 41.7778, 10.6667, 41.7778, 2.33334, 35.5278 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+points = PoolVector2Array( 6.59256, 11.412, 32.0555, 10.8333, 36.1064, 12.5694, 29.162, 17.7778, 0.805511, 17.7778, 0.805511, 17.7778 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 6.27774, 9.66202, 16.6944, 9.66202, 21.9027, 9.08331, 28.8472, 8.50461, 32.3194, 8.50461, 35.7916, 12.5555, 30.0046, 17.1852, 3.38422, 16.0278 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+points = PoolVector2Array( 2.87033, 11.9722, 10.3935, 11.3935, 16.7592, 12.5509, 19.6527, 16.6018, 18.4953, 21.8102, 0.555511, 20.0741 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+points = PoolVector2Array( 22.6666, 0.0323944, 26.7176, 5.81943, 24.4027, 11.0278, 0.675903, 11.6065, 7.04163, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+points = PoolVector2Array( 8.89813, 9.5509, 19.8935, 10.7083, 22.787, 14.7592, 24.5231, 18.2315, 18.1574, 14.7592, 14.1064, 18.2315, 7.74072, 18.2315, 7.74072, 18.2315, 4.26849, 15.338 )
+
+[sub_resource type="ConvexPolygonShape2D" id=30]
+points = PoolVector2Array( 5.68051, 11.2592, 6.25922, 8.36572, 25.3564, 8.36572, 26.5138, 11.2592, 29.9861, 13.5741, 29.9861, 17.625, 28.8286, 22.2546, 27.0925, 25.7268, 21.3055, 25.7268, 12.0462, 24.5694, 5.68051, 24.5694, 4.5231, 20.5185, 2.20828, 15.8889 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+points = PoolVector2Array( 5.30557, 18.9445, 21.2778, 19.6389, 23.3611, 30.75, 24.75, 46.7222, 1.83334, 47.4167, 0.444458, 30.75, 3.91669, 30.75 )
+
+[sub_resource type="ConvexPolygonShape2D" id=32]
+points = PoolVector2Array( 4.66669, 22.3333, 22.7222, 23.7222, 23.4167, 32.0556, 23.4167, 31.3611, 23.4167, 50.1111, 1.88889, 49.4167, 2.58334, 32.75 )
+
+[sub_resource type="ConvexPolygonShape2D" id=33]
+points = PoolVector2Array( 9.11111, 5.72223, 18.8333, 7.11111, 20.2222, 14.75, 23, 23.7778, 22.3056, 30.0278, 2.86111, 32.1111, 0.0833435, 21.6945, 0.0833435, 16.1389 )
+
+[sub_resource type="ConvexPolygonShape2D" id=34]
+points = PoolVector2Array( 44.6667, 9.44446, 46.75, 18.4723, 43.9723, 24.0278, 3.69458, 23.3334, 5.08337, 20.5555, 1.61121, 19.1667, 2.30566, 9.44446 )
+
+[sub_resource type="ConvexPolygonShape2D" id=35]
+points = PoolVector2Array( 3.42877, 17.5175, 30.2206, 16.5128, 31.2253, 26.5597, 3.09387, 26.5597 )
+
+[sub_resource type="ConvexPolygonShape2D" id=36]
+points = PoolVector2Array( 3.5257, 32.5503, 3.5257, 30.541, 3.5257, 15.1356, 38.3551, 15.4705, 39.3598, 29.8712, 38.3551, 31.2108, 38.0202, 43.2671, 3.8606, 42.9322 )
+
+[sub_resource type="ConvexPolygonShape2D" id=37]
+points = PoolVector2Array( 3.83789, 9.69904, 32.1943, 10.2777, 33.9304, 31.1111, 2.10168, 31.1111 )
+
+[sub_resource type="ConvexPolygonShape2D" id=38]
+points = PoolVector2Array( 0, 23, 0, 9.95828, 23.1295, 9.37958, 23.7083, 23 )
+
+[sub_resource type="ConvexPolygonShape2D" id=39]
+points = PoolVector2Array( 1.30566, 15.8055, 44.3612, 16.5, 42.9723, 26.2222, 41.5834, 29, 3.38892, 28.3055, 3.38892, 26.2222 )
+
+[sub_resource type="ConvexPolygonShape2D" id=40]
+points = PoolVector2Array( 11.1945, 23.75, 12.5834, 44.5834, 4.94446, 43.8889, 2.86115, 39.7223, 4.94446, 30.6945, 6.33337, 22.3611 )
+
+[sub_resource type="ConvexPolygonShape2D" id=41]
+points = PoolVector2Array( 21.6111, 23.0556, 24.3889, 23.0556, 27.8611, 42.5, 19.5278, 43.8889 )
+
+[sub_resource type="ConvexPolygonShape2D" id=42]
+points = PoolVector2Array( 26.3889, 24.4445, 27.0834, 44.5834, 23.6111, 45.2778, 19.4445, 41.1111, 20.1389, 23.75 )
+
+[sub_resource type="ConvexPolygonShape2D" id=43]
+points = PoolVector2Array( 45.8334, 23.75, 50, 23.0556, 52.0834, 42.5, 46.5278, 44.5834, 45.8334, 42.5 )
+
+[sub_resource type="ConvexPolygonShape2D" id=44]
+points = PoolVector2Array( 0, 54.3057, 1.63892, 53.6112, 2.33334, 46.6667, 0, 41.8057, 0, 15.4167, 10.6667, 16.1112, 12.7501, 44.5834, 6.50006, 48.7501, 7.19446, 54.3057, 9.27783, 61.25, 0.944458, 61.9446 )
+
+[sub_resource type="ConvexPolygonShape2D" id=45]
+points = PoolVector2Array( 62.0556, 14.7223, 62.0556, 48.7501, 63.4445, 54.3057, 62.0556, 60.5557, 57.1945, 60.5557, 55.8056, 57.0834, 56.5, 50.8334, 53.0278, 45.9723, 50.9445, 15.4167 )
+
+[sub_resource type="ConvexPolygonShape2D" id=46]
+points = PoolVector2Array( 12.8611, 58.0556, 1.75006, 40.6945, 71.1945, 41.3889, 66.3334, 53.1945, 51.0556, 65.0001, 57.3056, 69.1667, 50.3611, 76.8056, 36.4723, 79.5834, 24.6667, 77.5001, 18.4167, 71.2501, 19.8056, 66.3889 )
+
+[sub_resource type="ConvexPolygonShape2D" id=47]
+points = PoolVector2Array( 30.3147, 13.2268, 29.736, 22.4861, 24.5276, 23.6435, 23.949, 34.6389, 10.0601, 32.9028, 9.48132, 24.8009, 5.43042, 22.4861, 4.85181, 12.6481 )
+
+[sub_resource type="ConvexPolygonShape2D" id=48]
+points = PoolVector2Array( 1.00452, 10.787, 91.861, 10.787, 91.2822, 22.3611, 0, 24.0972 )
+
+[sub_resource type="ConvexPolygonShape2D" id=49]
+points = PoolVector2Array( 0.235962, 12.2916, 43.0601, 11.7129, 43.6388, 20.3935, 1.39343, 20.3935, 1.39343, 20.3935 )
+
+[sub_resource type="ConvexPolygonShape2D" id=50]
+points = PoolVector2Array( 5.51367, 30.2361, 7.82861, 28.5, 7.82861, 23.8703, 8.40723, 23.8703, 8.98596, 30.8148, 11.3008, 30.8148, 11.8795, 37.7592, 4.35632, 37.7592 )
+
+[sub_resource type="ConvexPolygonShape2D" id=51]
+points = PoolVector2Array( 43.8057, 17.6389, 43.1112, 21.8055, 41.7223, 29.4445, 36.8612, 28.0555, 29.9167, 25.9722, 21.5835, 29.4445, 16.0278, 25.2778, 10.4723, 29.4445, 3.52783, 29.4445, 3.52783, 18.3334 )
+
+[sub_resource type="ConvexPolygonShape2D" id=52]
+points = PoolVector2Array( 42.5835, 12.5278, 41.8889, 22.25, 41.8889, 24.3334, 1.61121, 22.25, 0.22229, 12.5278 )
+
+[sub_resource type="ConvexPolygonShape2D" id=53]
+points = PoolVector2Array( 1.52783, 25.8334, 2.22229, 12.6389, 45.2778, 13.3334, 45.2778, 25.1389, 40.4167, 25.8334, 41.1112, 20.9723, 5.69458, 20.9723 )
+
+[sub_resource type="ConvexPolygonShape2D" id=54]
+points = PoolVector2Array( 2.38892, 0.22229, 7.25, 5.08337, 15.5834, 5.77783, 14.1945, 30.0834, 4.47229, 30.7778, 1.69446, 20.3611 )
 
 [resource]
 0/name = "Timber01.png 0"
@@ -41,9 +200,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 2 )
 1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = "tileset-wesley3.png 2"
 2/texture = ExtResource( 2 )
@@ -55,9 +221,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 13 )
 2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = "tileset-wesley3.png 3"
 3/texture = ExtResource( 2 )
@@ -69,9 +242,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 3/navigation_offset = Vector2( 0, 0 )
 3/shape_offset = Vector2( 0, 0 )
 3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 23 )
 3/shape_one_way = false
-3/shape_one_way_margin = 0.0
-3/shapes = [  ]
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 23 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 3/z_index = 0
 4/name = "tileset-wesley2.png 4"
 4/texture = ExtResource( 3 )
@@ -83,9 +263,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 4/navigation_offset = Vector2( 0, 0 )
 4/shape_offset = Vector2( 0, 0 )
 4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 34 )
 4/shape_one_way = false
-4/shape_one_way_margin = 0.0
-4/shapes = [  ]
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 34 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 4/z_index = 0
 5/name = "tileset-wesley2.png 5"
 5/texture = ExtResource( 3 )
@@ -97,9 +284,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 39 )
 5/shape_one_way = false
-5/shape_one_way_margin = 0.0
-5/shapes = [  ]
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 39 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 5/z_index = 0
 6/name = "tileset-wesley2.png 6"
 6/texture = ExtResource( 3 )
@@ -111,9 +305,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 51 )
 6/shape_one_way = false
-6/shape_one_way_margin = 0.0
-6/shapes = [  ]
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 51 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 6/z_index = 0
 7/name = "tileset-wesley2.png 7"
 7/texture = ExtResource( 3 )
@@ -125,9 +326,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 52 )
 7/shape_one_way = false
-7/shape_one_way_margin = 0.0
-7/shapes = [  ]
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 52 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 7/z_index = 0
 8/name = "tileset-wesley2.png 8"
 8/texture = ExtResource( 3 )
@@ -139,9 +347,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 53 )
 8/shape_one_way = false
-8/shape_one_way_margin = 0.0
-8/shapes = [  ]
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 53 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 8/z_index = 0
 9/name = "tileset-wesley2.png 9"
 9/texture = ExtResource( 3 )
@@ -153,9 +368,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 9/navigation_offset = Vector2( 0, 0 )
 9/shape_offset = Vector2( 0, 0 )
 9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 54 )
 9/shape_one_way = false
-9/shape_one_way_margin = 0.0
-9/shapes = [  ]
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 54 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 9/z_index = 0
 10/name = "tileset-wesley2.png 10"
 10/texture = ExtResource( 3 )
@@ -167,9 +389,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 10/navigation_offset = Vector2( 0, 0 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 3 )
 10/shape_one_way = false
-10/shape_one_way_margin = 0.0
-10/shapes = [  ]
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 10/z_index = 0
 11/name = "tileset-wesley2.png 11"
 11/texture = ExtResource( 3 )
@@ -181,9 +410,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 11/navigation_offset = Vector2( 0, 0 )
 11/shape_offset = Vector2( 0, 0 )
 11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 4 )
 11/shape_one_way = false
-11/shape_one_way_margin = 0.0
-11/shapes = [  ]
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 11/z_index = 0
 12/name = "tileset-wesley2.png 12"
 12/texture = ExtResource( 3 )
@@ -195,9 +431,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 12/navigation_offset = Vector2( 0, 0 )
 12/shape_offset = Vector2( 0, 0 )
 12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape = SubResource( 5 )
 12/shape_one_way = false
-12/shape_one_way_margin = 0.0
-12/shapes = [  ]
+12/shape_one_way_margin = 1.0
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 12/z_index = 0
 13/name = "tileset-wesley3.png 13"
 13/texture = ExtResource( 2 )
@@ -209,9 +452,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 13/navigation_offset = Vector2( 0, 0 )
 13/shape_offset = Vector2( 0, 0 )
 13/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+13/shape = SubResource( 6 )
 13/shape_one_way = false
-13/shape_one_way_margin = 0.0
-13/shapes = [  ]
+13/shape_one_way_margin = 1.0
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 13/z_index = 0
 14/name = "tileset-wesley3.png 14"
 14/texture = ExtResource( 2 )
@@ -223,9 +473,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 14/navigation_offset = Vector2( 0, 0 )
 14/shape_offset = Vector2( 0, 0 )
 14/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+14/shape = SubResource( 7 )
 14/shape_one_way = false
-14/shape_one_way_margin = 0.0
-14/shapes = [  ]
+14/shape_one_way_margin = 1.0
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 14/z_index = 0
 15/name = "tileset-wesley3.png 15"
 15/texture = ExtResource( 2 )
@@ -237,9 +494,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 15/navigation_offset = Vector2( 0, 0 )
 15/shape_offset = Vector2( 0, 0 )
 15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+15/shape = SubResource( 8 )
 15/shape_one_way = false
-15/shape_one_way_margin = 0.0
-15/shapes = [  ]
+15/shape_one_way_margin = 1.0
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 15/z_index = 0
 16/name = "tileset-wesley3.png 16"
 16/texture = ExtResource( 2 )
@@ -251,9 +515,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 16/navigation_offset = Vector2( 0, 0 )
 16/shape_offset = Vector2( 0, 0 )
 16/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+16/shape = SubResource( 9 )
 16/shape_one_way = false
-16/shape_one_way_margin = 0.0
-16/shapes = [  ]
+16/shape_one_way_margin = 1.0
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 16/z_index = 0
 17/name = "tileset-wesley3.png 17"
 17/texture = ExtResource( 2 )
@@ -265,9 +536,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 17/navigation_offset = Vector2( 0, 0 )
 17/shape_offset = Vector2( 0, 0 )
 17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+17/shape = SubResource( 10 )
 17/shape_one_way = false
-17/shape_one_way_margin = 0.0
-17/shapes = [  ]
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 17/z_index = 0
 18/name = "tileset-wesley3.png 18"
 18/texture = ExtResource( 2 )
@@ -279,9 +557,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 18/navigation_offset = Vector2( 0, 0 )
 18/shape_offset = Vector2( 0, 0 )
 18/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+18/shape = SubResource( 11 )
 18/shape_one_way = false
-18/shape_one_way_margin = 0.0
-18/shapes = [  ]
+18/shape_one_way_margin = 1.0
+18/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 18/z_index = 0
 19/name = "tileset-wesley2.png 19"
 19/texture = ExtResource( 3 )
@@ -293,9 +578,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 19/navigation_offset = Vector2( 0, 0 )
 19/shape_offset = Vector2( 0, 0 )
 19/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+19/shape = SubResource( 12 )
 19/shape_one_way = false
-19/shape_one_way_margin = 0.0
-19/shapes = [  ]
+19/shape_one_way_margin = 1.0
+19/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 19/z_index = 0
 20/name = "tileset-wesley2.png 20"
 20/texture = ExtResource( 3 )
@@ -307,9 +599,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 20/navigation_offset = Vector2( 0, 0 )
 20/shape_offset = Vector2( 0, 0 )
 20/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+20/shape = SubResource( 14 )
 20/shape_one_way = false
-20/shape_one_way_margin = 0.0
-20/shapes = [  ]
+20/shape_one_way_margin = 1.0
+20/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 20/z_index = 0
 21/name = "tileset-wesley2.png 21"
 21/texture = ExtResource( 3 )
@@ -321,9 +620,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 21/navigation_offset = Vector2( 0, 0 )
 21/shape_offset = Vector2( 0, 0 )
 21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+21/shape = SubResource( 15 )
 21/shape_one_way = false
-21/shape_one_way_margin = 0.0
-21/shapes = [  ]
+21/shape_one_way_margin = 1.0
+21/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 21/z_index = 0
 22/name = "tileset-wesley2.png 22"
 22/texture = ExtResource( 3 )
@@ -335,9 +641,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 22/navigation_offset = Vector2( 0, 0 )
 22/shape_offset = Vector2( 0, 0 )
 22/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+22/shape = SubResource( 16 )
 22/shape_one_way = false
-22/shape_one_way_margin = 0.0
-22/shapes = [  ]
+22/shape_one_way_margin = 1.0
+22/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 22/z_index = 0
 23/name = "tileset-wesley2.png 23"
 23/texture = ExtResource( 3 )
@@ -349,9 +662,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 23/navigation_offset = Vector2( 0, 0 )
 23/shape_offset = Vector2( 0, 0 )
 23/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+23/shape = SubResource( 17 )
 23/shape_one_way = false
-23/shape_one_way_margin = 0.0
-23/shapes = [  ]
+23/shape_one_way_margin = 1.0
+23/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 23/z_index = 0
 24/name = "tileset-wesley2.png 24"
 24/texture = ExtResource( 3 )
@@ -363,9 +683,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 24/navigation_offset = Vector2( 0, 0 )
 24/shape_offset = Vector2( 0, 0 )
 24/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+24/shape = SubResource( 18 )
 24/shape_one_way = false
-24/shape_one_way_margin = 0.0
-24/shapes = [  ]
+24/shape_one_way_margin = 1.0
+24/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 24/z_index = 0
 25/name = "tileset-wesley2.png 25"
 25/texture = ExtResource( 3 )
@@ -377,9 +704,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 25/navigation_offset = Vector2( 0, 0 )
 25/shape_offset = Vector2( 0, 0 )
 25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+25/shape = SubResource( 19 )
 25/shape_one_way = false
-25/shape_one_way_margin = 0.0
-25/shapes = [  ]
+25/shape_one_way_margin = 1.0
+25/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 25/z_index = 0
 26/name = "tileset-wesley2.png 26"
 26/texture = ExtResource( 3 )
@@ -405,9 +739,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 27/navigation_offset = Vector2( 0, 0 )
 27/shape_offset = Vector2( 0, 0 )
 27/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+27/shape = SubResource( 20 )
 27/shape_one_way = false
-27/shape_one_way_margin = 0.0
-27/shapes = [  ]
+27/shape_one_way_margin = 1.0
+27/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 20 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 27/z_index = 0
 28/name = "tileset-wesley3.png 28"
 28/texture = ExtResource( 2 )
@@ -419,9 +760,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 28/navigation_offset = Vector2( 0, 0 )
 28/shape_offset = Vector2( 0, 0 )
 28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape = SubResource( 21 )
 28/shape_one_way = false
-28/shape_one_way_margin = 0.0
-28/shapes = [  ]
+28/shape_one_way_margin = 1.0
+28/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 28/z_index = 0
 29/name = "tileset-wesley3.png 29"
 29/texture = ExtResource( 2 )
@@ -433,9 +781,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 29/navigation_offset = Vector2( 0, 0 )
 29/shape_offset = Vector2( 0, 0 )
 29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape = SubResource( 22 )
 29/shape_one_way = false
-29/shape_one_way_margin = 0.0
-29/shapes = [  ]
+29/shape_one_way_margin = 1.0
+29/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 29/z_index = 0
 30/name = "tileset-wesley2.png 30"
 30/texture = ExtResource( 3 )
@@ -447,9 +802,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 30/navigation_offset = Vector2( 0, 0 )
 30/shape_offset = Vector2( 0, 0 )
 30/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+30/shape = SubResource( 24 )
 30/shape_one_way = false
-30/shape_one_way_margin = 0.0
-30/shapes = [  ]
+30/shape_one_way_margin = 1.0
+30/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 24 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 30/z_index = 0
 31/name = "tileset-wesley3.png 31"
 31/texture = ExtResource( 2 )
@@ -461,9 +823,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 31/navigation_offset = Vector2( 0, 0 )
 31/shape_offset = Vector2( 0, 0 )
 31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+31/shape = SubResource( 25 )
 31/shape_one_way = false
-31/shape_one_way_margin = 0.0
-31/shapes = [  ]
+31/shape_one_way_margin = 1.0
+31/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 25 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 31/z_index = 0
 32/name = "tileset-wesley3.png 32"
 32/texture = ExtResource( 2 )
@@ -475,9 +844,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 32/navigation_offset = Vector2( 0, 0 )
 32/shape_offset = Vector2( 0, 0 )
 32/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+32/shape = SubResource( 26 )
 32/shape_one_way = false
-32/shape_one_way_margin = 0.0
-32/shapes = [  ]
+32/shape_one_way_margin = 1.0
+32/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 32/z_index = 0
 33/name = "tileset-wesley3.png 33"
 33/texture = ExtResource( 2 )
@@ -489,9 +865,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 33/navigation_offset = Vector2( 0, 0 )
 33/shape_offset = Vector2( 0, 0 )
 33/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+33/shape = SubResource( 27 )
 33/shape_one_way = false
-33/shape_one_way_margin = 0.0
-33/shapes = [  ]
+33/shape_one_way_margin = 1.0
+33/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 27 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 33/z_index = 0
 34/name = "tileset-wesley3.png 34"
 34/texture = ExtResource( 2 )
@@ -503,9 +886,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 34/navigation_offset = Vector2( 0, 0 )
 34/shape_offset = Vector2( 0, 0 )
 34/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+34/shape = SubResource( 28 )
 34/shape_one_way = false
-34/shape_one_way_margin = 0.0
-34/shapes = [  ]
+34/shape_one_way_margin = 1.0
+34/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 28 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 34/z_index = 0
 35/name = "tileset-wesley3.png 35"
 35/texture = ExtResource( 2 )
@@ -517,9 +907,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 35/navigation_offset = Vector2( 0, 0 )
 35/shape_offset = Vector2( 0, 0 )
 35/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+35/shape = SubResource( 29 )
 35/shape_one_way = false
-35/shape_one_way_margin = 0.0
-35/shapes = [  ]
+35/shape_one_way_margin = 1.0
+35/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 29 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 35/z_index = 0
 36/name = "tileset-wesley3.png 36"
 36/texture = ExtResource( 2 )
@@ -531,9 +928,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 36/navigation_offset = Vector2( 0, 0 )
 36/shape_offset = Vector2( 0, 0 )
 36/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+36/shape = SubResource( 30 )
 36/shape_one_way = false
-36/shape_one_way_margin = 0.0
-36/shapes = [  ]
+36/shape_one_way_margin = 1.0
+36/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 30 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 36/z_index = 0
 37/name = "Dungeon_Tileset.png 37"
 37/texture = ExtResource( 4 )
@@ -545,9 +949,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 37/navigation_offset = Vector2( 0, 0 )
 37/shape_offset = Vector2( 0, 0 )
 37/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+37/shape = SubResource( 31 )
 37/shape_one_way = false
-37/shape_one_way_margin = 0.0
-37/shapes = [  ]
+37/shape_one_way_margin = 1.0
+37/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 31 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 37/z_index = 0
 38/name = "Dungeon_Tileset.png 38"
 38/texture = ExtResource( 4 )
@@ -559,9 +970,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 38/navigation_offset = Vector2( 0, 0 )
 38/shape_offset = Vector2( 0, 0 )
 38/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+38/shape = SubResource( 32 )
 38/shape_one_way = false
-38/shape_one_way_margin = 0.0
-38/shapes = [  ]
+38/shape_one_way_margin = 1.0
+38/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 32 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 38/z_index = 0
 39/name = "Dungeon_Tileset.png 39"
 39/texture = ExtResource( 4 )
@@ -573,9 +991,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 39/navigation_offset = Vector2( 0, 0 )
 39/shape_offset = Vector2( 0, 0 )
 39/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+39/shape = SubResource( 33 )
 39/shape_one_way = false
-39/shape_one_way_margin = 0.0
-39/shapes = [  ]
+39/shape_one_way_margin = 1.0
+39/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 33 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 39/z_index = 0
 40/name = "Dungeon_Tileset.png 40"
 40/texture = ExtResource( 4 )
@@ -615,9 +1040,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 42/navigation_offset = Vector2( 0, 0 )
 42/shape_offset = Vector2( 0, 0 )
 42/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+42/shape = SubResource( 35 )
 42/shape_one_way = false
-42/shape_one_way_margin = 0.0
-42/shapes = [  ]
+42/shape_one_way_margin = 1.0
+42/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 35 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 42/z_index = 0
 43/name = "pipo-map001.png 43"
 43/texture = ExtResource( 5 )
@@ -629,9 +1061,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 43/navigation_offset = Vector2( 0, 0 )
 43/shape_offset = Vector2( 0, 0 )
 43/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+43/shape = SubResource( 36 )
 43/shape_one_way = false
-43/shape_one_way_margin = 0.0
-43/shapes = [  ]
+43/shape_one_way_margin = 1.0
+43/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 36 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 43/z_index = 0
 44/name = "tileset-wesley3.png 44"
 44/texture = ExtResource( 2 )
@@ -643,9 +1082,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 44/navigation_offset = Vector2( 0, 0 )
 44/shape_offset = Vector2( 0, 0 )
 44/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+44/shape = SubResource( 37 )
 44/shape_one_way = false
-44/shape_one_way_margin = 0.0
-44/shapes = [  ]
+44/shape_one_way_margin = 1.0
+44/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 37 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 44/z_index = 0
 45/name = "tileset-wesley3.png 45"
 45/texture = ExtResource( 2 )
@@ -657,9 +1103,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 45/navigation_offset = Vector2( 0, 0 )
 45/shape_offset = Vector2( 0, 0 )
 45/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+45/shape = SubResource( 38 )
 45/shape_one_way = false
-45/shape_one_way_margin = 0.0
-45/shapes = [  ]
+45/shape_one_way_margin = 1.0
+45/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 38 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 45/z_index = 0
 46/name = "tileset-wesley2.png 46"
 46/texture = ExtResource( 3 )
@@ -755,9 +1208,22 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 52/navigation_offset = Vector2( 0, 0 )
 52/shape_offset = Vector2( 0, 0 )
 52/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+52/shape = SubResource( 40 )
 52/shape_one_way = false
-52/shape_one_way_margin = 0.0
-52/shapes = [  ]
+52/shape_one_way_margin = 1.0
+52/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 40 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 41 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 52/z_index = 0
 53/name = "tileset-wesley2.png 53"
 53/texture = ExtResource( 3 )
@@ -769,9 +1235,22 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 53/navigation_offset = Vector2( 0, 0 )
 53/shape_offset = Vector2( 0, 0 )
 53/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+53/shape = SubResource( 42 )
 53/shape_one_way = false
-53/shape_one_way_margin = 0.0
-53/shapes = [  ]
+53/shape_one_way_margin = 1.0
+53/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 42 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 43 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 53/z_index = 0
 54/name = "tileset-wesley2.png 54"
 54/texture = ExtResource( 3 )
@@ -783,9 +1262,22 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 54/navigation_offset = Vector2( 0, 0 )
 54/shape_offset = Vector2( 0, 0 )
 54/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+54/shape = SubResource( 44 )
 54/shape_one_way = false
-54/shape_one_way_margin = 0.0
-54/shapes = [  ]
+54/shape_one_way_margin = 1.0
+54/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 44 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 45 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 54/z_index = 0
 55/name = "tileset-wesley2.png 55"
 55/texture = ExtResource( 3 )
@@ -797,9 +1289,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 55/navigation_offset = Vector2( 0, 0 )
 55/shape_offset = Vector2( 0, 0 )
 55/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+55/shape = SubResource( 46 )
 55/shape_one_way = false
-55/shape_one_way_margin = 0.0
-55/shapes = [  ]
+55/shape_one_way_margin = 1.0
+55/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 46 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 55/z_index = 0
 56/name = "tileset-wesley3.png 56"
 56/texture = ExtResource( 2 )
@@ -811,9 +1310,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 56/navigation_offset = Vector2( 0, 0 )
 56/shape_offset = Vector2( 0, 0 )
 56/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+56/shape = SubResource( 47 )
 56/shape_one_way = false
-56/shape_one_way_margin = 0.0
-56/shapes = [  ]
+56/shape_one_way_margin = 1.0
+56/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 47 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 56/z_index = 0
 57/name = "tileset-wesley3.png 57"
 57/texture = ExtResource( 2 )
@@ -825,9 +1331,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 57/navigation_offset = Vector2( 0, 0 )
 57/shape_offset = Vector2( 0, 0 )
 57/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+57/shape = SubResource( 48 )
 57/shape_one_way = false
-57/shape_one_way_margin = 0.0
-57/shapes = [  ]
+57/shape_one_way_margin = 1.0
+57/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 48 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 57/z_index = 0
 58/name = "tileset-wesley3.png 58"
 58/texture = ExtResource( 2 )
@@ -839,9 +1352,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 58/navigation_offset = Vector2( 0, 0 )
 58/shape_offset = Vector2( 0, 0 )
 58/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+58/shape = SubResource( 49 )
 58/shape_one_way = false
-58/shape_one_way_margin = 0.0
-58/shapes = [  ]
+58/shape_one_way_margin = 1.0
+58/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 49 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 58/z_index = 0
 59/name = "tileset-wesley3.png 59"
 59/texture = ExtResource( 2 )
@@ -853,9 +1373,16 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 59/navigation_offset = Vector2( 0, 0 )
 59/shape_offset = Vector2( 0, 0 )
 59/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+59/shape = SubResource( 50 )
 59/shape_one_way = false
-59/shape_one_way_margin = 0.0
-59/shapes = [  ]
+59/shape_one_way_margin = 1.0
+59/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 50 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 59/z_index = 0
 60/name = "Dungeon_Tileset.png 60"
 60/texture = ExtResource( 4 )
@@ -871,3 +1398,17 @@ points = PoolVector2Array( 0.579586, 6.09655, 0.969017, 5.31768, 1.61807, 4.7335
 60/shape_one_way_margin = 0.0
 60/shapes = [  ]
 60/z_index = 0
+61/name = "pipo-map001.png 61"
+61/texture = ExtResource( 5 )
+61/tex_offset = Vector2( 0, 0 )
+61/modulate = Color( 1, 1, 1, 1 )
+61/region = Rect2( 64, 0, 32, 32 )
+61/tile_mode = 0
+61/occluder_offset = Vector2( 0, 0 )
+61/navigation_offset = Vector2( 0, 0 )
+61/shape_offset = Vector2( 0, 0 )
+61/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+61/shape_one_way = false
+61/shape_one_way_margin = 0.0
+61/shapes = [  ]
+61/z_index = 0

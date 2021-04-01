@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=2 format=2]
+[gd_resource type="TileSet" load_steps=3 format=2]
 
 [ext_resource path="res://assets/tileset-wesley2.png" type="Texture" id=1]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 7.69238, 1.67755, 13.5066, 1.51605, 24.3275, 1.83905, 32.2412, 1.51605, 37.8939, 1.51605, 44.6771, 2.9696, 46.9382, 5.87671, 47.4227, 31.7176, 47.7457, 38.6623, 46.2922, 42.7, 44.5156, 44.7995, 40.155, 45.6071, 24.9734, 46.5761, 12.2145, 46.0916, 8.01538, 45.9301, 3.33173, 41.7309, 2.03967, 34.9477, 2.03967, 31.2331, 1.87817, 26.3879, 2.36267, 24.2883, 2.20117, 22.6733, 1.55518, 20.7352, 1.87817, 19.7662, 2.52417, 17.6666, 3.00873, 16.2131, 2.36267, 14.275, 2.03967, 12.6599, 1.71667, 9.91434, 2.52417, 8.46078, 2.36267, 6.19971, 3.81622, 5.39218, 4.13928, 3.2926 )
 
 [resource]
 0/name = "tileset-wesley2.png 0"
@@ -13,7 +16,14 @@
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 1 )
 0/shape_one_way = false
-0/shape_one_way_margin = 0.0
-0/shapes = [  ]
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 0/z_index = 0
