@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/npc/Chief of soldiers 1.png" type="Texture" id=1]
+[ext_resource path="res://src/script/soldier2.gd" type="Script" id=2]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 37.767, 57.9385 )
+
+[node name="soldier2" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 9
+frame = 19
+
+[node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="dialogbox" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+position = Vector2( -34.9234, -76.4538 )
+scale = Vector2( 0.07, 0.07 )
+
+[node name="ColorRect" parent="HUD" index="0"]
+visible = false
+
+[node name="Label" parent="HUD" index="2"]
+visible = false
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[editable path="HUD"]

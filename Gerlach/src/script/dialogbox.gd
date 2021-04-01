@@ -6,7 +6,9 @@ var count = 0
 var arr_size
 var state = false
 var save:bool = false
-
+var finished:bool = false
+var _changescene:bool = false
+var scene:int
 func _ready():
 	pass
 	#get_node("/root/Scene").scene(get_node("/root/Global").scene)
@@ -19,6 +21,7 @@ func _dialogbox(_save:bool):
 		$Label.show()
 		$"/root/Global".playerwalk = false
 		set_text($"/root/Global"._dialogbox)
+		finished = false
 		return true
 	return false
 func _input(event):
@@ -35,7 +38,8 @@ func _input(event):
 			#queue_free()
 			state = false
 			$"/root/Global".playerwalk = true
-			$"/root/Scene".scene($"/root/Global".scene)
+			changescene()
+			finished = true
 		get_text(count)
 
 
@@ -54,3 +58,9 @@ func get_text(value):
 
 func clear_text():
 	Text.clear()
+
+func changescene():
+	if not _changescene:
+		$"/root/Scene".scene($"/root/Global".scene)
+	else:
+		$"/root/Global".scene = scene

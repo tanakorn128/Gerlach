@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Post box.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://assets/chapter/chapter2/Pool.tres" type="TileSet" id=10]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 374.099, 172.442 )
@@ -123,4 +124,6 @@ shape = SubResource( 1 )
 
 [node name="HUD" parent="." instance=ExtResource( 11 )]
 scale = Vector2( 0.15, 0.15 )
+
+[node name="dialogbox" parent="." instance=ExtResource( 13 )]
 [connection signal="body_entered" from="chapter5_3" to="." method="_on_chapter5_3_body_entered"]

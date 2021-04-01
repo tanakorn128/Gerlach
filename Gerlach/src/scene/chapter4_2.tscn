@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=15]
 [ext_resource path="res://icon.png" type="Texture" id=16]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter4_2.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
 6/name = "tileset-wesley.png 6"
@@ -147,7 +148,7 @@ format = 1
 tile_data = PoolIntArray( -589730, 2, 0, 720990, 3, 0, 1245278, 3, 0, 1704030, 2, 0, 1769566, 3, 0, 3014750, 3, 0, 3539038, 3, 0, 4063326, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2469.96, 935.347 )
+position = Vector2( 2622.61, -2180.61 )
 
 [node name="Camera2D" parent="player" index="1"]
 limit_top = -3964
@@ -261,10 +262,13 @@ shape = SubResource( 5 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="icon" type="Sprite" parent="."]
+visible = false
 position = Vector2( 2251.98, -2317.99 )
 texture = ExtResource( 16 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 17 )]
+
+[node name="put_Enemy_Chapter4_2" parent="." instance=ExtResource( 18 )]
 [connection signal="body_entered" from="chapter5_2" to="." method="_on_chapter5_2_body_entered"]
 [connection signal="body_entered" from="chapter6" to="." method="_on_chapter6_body_entered"]
 

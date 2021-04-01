@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=18 format=2]
+[gd_resource type="Resource" load_steps=22 format=2]
 
 [ext_resource path="res://src/scene/dialogbox/all_dialogbox.gd" type="Script" id=1]
 [ext_resource path="res://src/scene/dialogbox/chapter1/2.tres" type="Resource" id=2]
@@ -12,11 +12,15 @@
 [ext_resource path="res://src/scene/dialogbox/chapter3_1/2.tres" type="Resource" id=10]
 [ext_resource path="res://src/scene/dialogbox/chapter3_2/2.tres" type="Resource" id=11]
 [ext_resource path="res://src/scene/dialogbox/chapter3_2/1.tres" type="Resource" id=12]
-[ext_resource path="res://src/scene/dialogbox/chapter5_3/1.tres" type="Resource" id=13]
+[ext_resource path="res://src/scene/dialogbox/chapter5_3/start.tres" type="Resource" id=13]
 [ext_resource path="res://src/scene/dialogbox/chapter3_1/1.tres" type="Resource" id=14]
 [ext_resource path="res://src/scene/dialogbox/chapter3_1/3.tres" type="Resource" id=15]
 [ext_resource path="res://src/scene/dialogbox/chapter4_1/1.tres" type="Resource" id=16]
 [ext_resource path="res://src/scene/dialogbox/chapter4_2/1.tres" type="Resource" id=17]
+[ext_resource path="res://src/scene/dialogbox/chapter4_2/2.tres" type="Resource" id=18]
+[ext_resource path="res://src/scene/dialogbox/chapter4_2/end.tres" type="Resource" id=19]
+[ext_resource path="res://src/scene/dialogbox/chapter5_2/1.tres" type="Resource" id=20]
+[ext_resource path="res://src/scene/dialogbox/chapter5_3/end.tres" type="Resource" id=21]
 
 [resource]
 script = ExtResource( 1 )
@@ -27,8 +31,13 @@ all = {
 "chapter3_2_end": ExtResource( 11 ),
 "chapter3_2_start": ExtResource( 12 ),
 "chapter4_1_start": ExtResource( 16 ),
+"chapter4_2_end": ExtResource( 19 ),
+"chapter4_2_soldiers1": ExtResource( 18 ),
 "chapter4_2_start": ExtResource( 17 ),
-"chapter5_3 npc 1": ExtResource( 13 ),
+"chapter5_2_soldier": ExtResource( 13 ),
+"chapter5_2_start": ExtResource( 20 ),
+"chapter5_3_end": ExtResource( 21 ),
+"chapter5_3_start": ExtResource( 13 ),
 "prechapter1": ExtResource( 8 ),
 "startchapter1": ExtResource( 2 ),
 "ป้ายบอกทาง 1": ExtResource( 9 ),

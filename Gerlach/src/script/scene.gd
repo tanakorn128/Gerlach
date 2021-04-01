@@ -36,6 +36,8 @@ func Enemy(value:String):
 		inst = load("res://src/scene/Enemy/Monster1.tscn").instance()
 	elif value == "soldler1":
 		inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
+	elif value == "soldler2":
+		inst = load("res://src/scene/Enemy/soldier2.tscn").instance()
 	inst.position = Vector2(247,144)
 	return inst
 	

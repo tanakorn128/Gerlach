@@ -11,7 +11,6 @@ func _ready():
 	putenemy()
 
 func putenemy():
-	
 	for i in count:
 		if not chapter2.chapters(2,i,"finish"):
 			inst = load("res://src/scene/Enemy/Monster1.tscn").instance()

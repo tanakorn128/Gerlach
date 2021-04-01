@@ -27,3 +27,4 @@ func set_value(Chapter:int,index:int,value:String,Vchange):
 
 func chapters(scene:int,index:int,value:String): #เช่น chapter2 ใส่ 2
 	return all_chapter[scene-1].dic[index][value]
+ 

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/script/setting.gd" type="Script" id=1]
+[ext_resource path="res://src/scene/dialogbox/all.tres" type="Resource" id=2]
+[ext_resource path="res://assets/font/answer.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/font/Overview.tres" type="DynamicFont" id=4]
+
+[node name="setting" type="Node2D"]
+script = ExtResource( 1 )
+_dialogbox = ExtResource( 2 )
+
+[node name="fisinhed1" type="ItemList" parent="."]
+margin_right = 1330.0
+margin_bottom = 456.0
+custom_fonts/font = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reset" type="Button" parent="."]
+margin_left = 203.647
+margin_top = 585.484
+margin_right = 424.647
+margin_bottom = 684.484
+custom_fonts/font = ExtResource( 4 )
+text = "Reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="."]
+margin_left = 893.783
+margin_top = 585.484
+margin_right = 1114.78
+margin_bottom = 684.484
+custom_fonts/font = ExtResource( 4 )
+text = "save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="reset" to="." method="_on_reset_button_down"]
+[connection signal="button_down" from="save" to="." method="_on_save_button_down"]
