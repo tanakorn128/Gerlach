@@ -20,6 +20,8 @@ func scene(scene:int):
 		get_tree().change_scene("res://src/scene/chapter5_2.tscn")
 	if scene == 8:
 		get_tree().change_scene("res://src/scene/chapter5_3.tscn")
+	if scene == 9:
+		get_tree().change_scene("res://src/scene/chapter6_1.tscn")
 func Type(value:int):
 	if value == 0:
 		get_tree().change_scene("res://src/scene/EnemyType/Rounding_number.tscn")

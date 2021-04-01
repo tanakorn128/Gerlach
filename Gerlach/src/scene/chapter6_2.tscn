@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=9]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=11]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 
@@ -107,3 +108,6 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -8715936, 1, 0 )
+
+[node name="dialogbox" parent="." instance=ExtResource( 12 )]
+visible = false

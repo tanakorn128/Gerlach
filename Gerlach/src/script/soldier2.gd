@@ -22,8 +22,8 @@ func lable(value:String):
 
 
 func _on_Area2D_body_entered(body):
-	lable(_dialogbox)
-	print("T")
+	if body.get_name() == "player":
+		lable(_dialogbox)
 	pass # Replace with function body.
 
 

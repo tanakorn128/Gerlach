@@ -148,7 +148,7 @@ format = 1
 tile_data = PoolIntArray( -589730, 2, 0, 720990, 3, 0, 1245278, 3, 0, 1704030, 2, 0, 1769566, 3, 0, 3014750, 3, 0, 3539038, 3, 0, 4063326, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2622.61, -2180.61 )
+position = Vector2( 2042.28, -2018.88 )
 
 [node name="Camera2D" parent="player" index="1"]
 limit_top = -3964
@@ -263,7 +263,7 @@ scale = Vector2( 0.15, 0.15 )
 
 [node name="icon" type="Sprite" parent="."]
 visible = false
-position = Vector2( 2251.98, -2317.99 )
+position = Vector2( 1300.61, -2398.86 )
 texture = ExtResource( 16 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 17 )]

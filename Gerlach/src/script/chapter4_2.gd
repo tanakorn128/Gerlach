@@ -3,10 +3,13 @@ const HUDPOSY = 350
 const HUDPOSX = 600
 onready var chapter = $"/root/MissionInventory"
 var _Enemys
+var _Enemys5_3
+var state_Enemys5_3:bool = false
 var _dialogbox:bool = true
+
 func _ready():
 	$"/root/Global".number_enemy = 5
-	lable("chapter4_2_start")
+	#lable("chapter4_2_start")
 	
 func _process(delta):
 	update()
@@ -18,7 +21,7 @@ func change():
 func update():
 	change()
 	enemy()
-
+	chapter5_3_finished()
 
 func _on_chapter6_body_entered(body):
 	if body.get_name() == "player":
@@ -51,3 +54,16 @@ func enemy():
 	if _Enemys <= 0 && not _dialogbox:
 		lable("chapter4_2_end")
 		_dialogbox = true
+
+func chapter5_3_finished():
+	_Enemys5_3 = chapter.all_chapter[8].dic.size()
+	for i in _Enemys5_3:
+		if chapter.chapters(9,i,"finish"):
+			_Enemys5_3 -= 1
+	if _Enemys5_3 <= 0 && not state_Enemys5_3:
+		var inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
+		inst.position = Vector2(1300.614,-2398.856)
+		inst._dialogbox = "chapter4_2_soldier2"
+		add_child(inst)
+		state_Enemys5_3 = true
+	
