@@ -21,4 +21,6 @@ var question:Array
 var Ans:Array
 var correct:Array
 
-
+####
+#chapter complete
+var chapter6_2:bool = false

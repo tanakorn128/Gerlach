@@ -22,6 +22,30 @@ func scene(scene:int):
 		get_tree().change_scene("res://src/scene/chapter5_3.tscn")
 	if scene == 9:
 		get_tree().change_scene("res://src/scene/chapter6_1.tscn")
+	if scene == 10:
+		get_tree().change_scene("res://src/scene/chapter6_2.tscn")
+	if scene == 11:
+		get_tree().change_scene("res://src/scene/chapter7_1.tscn")
+	if scene == 12:
+		get_tree().change_scene("res://src/scene/chapter7_2.tscn")
+	if scene == 13:
+		get_tree().change_scene("res://src/scene/chapter7_3.tscn")
+	if scene == 14:
+		get_tree().change_scene("res://src/scene/chapter8.tscn")
+	if scene == 15:
+		get_tree().change_scene("res://src/scene/chapter9.tscn")
+	if scene == 16:
+		get_tree().change_scene("res://src/scene/chapter10.tscn")
+	if scene == 17:
+		get_tree().change_scene("res://src/scene/chapter11-12.tscn")
+	if scene == 18:
+		get_tree().change_scene("res://src/scene/chapter13.tscn")
+	if scene == 19:
+		get_tree().change_scene("res://src/scene/chapter14.tscn")
+	if scene == 20:
+		get_tree().change_scene("res://src/scene/chapter15_1.tscn")
+	if scene == 21:
+		get_tree().change_scene("res://src/scene/chapter15_2.tscn")
 func Type(value:int):
 	if value == 0:
 		get_tree().change_scene("res://src/scene/EnemyType/Rounding_number.tscn")

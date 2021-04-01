@@ -21,13 +21,13 @@
 
 [sub_resource type="TileSet" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 81.767, 48.6361 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 38.1167, 64.4301 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 109.131, 186.637 )
 
 [node name="chapter3_2" type="Node2D"]
@@ -146,7 +146,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="label1"]
 position = Vector2( 1917.81, -401.979 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="HUD" parent="." instance=ExtResource( 14 )]
 scale = Vector2( 0.15, 0.15 )
@@ -163,7 +163,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postbox1"]
 position = Vector2( 1757.48, -396.315 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -172,7 +172,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chapter4_1"]
 position = Vector2( 316.466, -262.639 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 [connection signal="body_entered" from="label1" to="." method="_on_postbox_body_entered"]
 [connection signal="body_entered" from="postbox1" to="." method="_on_postbox1_body_entered"]
 [connection signal="body_entered" from="chapter4_1" to="." method="_on_chapter4_1_body_entered"]

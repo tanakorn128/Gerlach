@@ -5,6 +5,7 @@ onready var chapter = $"/root/MissionInventory"
 var _Enemys
 var _Enemys5_3
 var state_Enemys5_3:bool = false
+var state_Enemys6_2:bool = false
 var _dialogbox:bool = true
 
 func _ready():
@@ -22,7 +23,7 @@ func update():
 	change()
 	enemy()
 	chapter5_3_finished()
-
+	chapter6_2_finished()
 func _on_chapter6_body_entered(body):
 	if body.get_name() == "player":
 		$"/root/Scene".scene(6)
@@ -66,4 +67,12 @@ func chapter5_3_finished():
 		inst._dialogbox = "chapter4_2_soldier2"
 		add_child(inst)
 		state_Enemys5_3 = true
+
+func chapter6_2_finished():
+	if not $"/root/Global".chapter6_2 && not state_Enemys6_2:
+		var inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
+		inst.position = Vector2(3218.191,-2278.2186)
+		inst._dialogbox = "chapter6_2_dialogbox2"
+		add_child(inst)
+		state_Enemys6_2 = true
 	

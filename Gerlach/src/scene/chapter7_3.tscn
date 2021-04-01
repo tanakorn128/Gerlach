@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/chapter/chapter7/middle_mountain.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter7/BlackGround4.tres" type="TileSet" id=2]
@@ -6,8 +6,14 @@
 [ext_resource path="res://assets/chapter/chapter1/lable.tres" type="TileSet" id=4]
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=5]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/script/chapter7_3.gd" type="Script" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 215.534, 369.468 )
 
 [node name="chapter7" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="BlackGround4" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -50,3 +56,47 @@ tile_data = PoolIntArray( -14417702, 0, 0, -4127896, 0, 0, -2949929, 0, 0, 87167
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 position = Vector2( -9758.69, -353.975 )
+
+[node name="dialogbox" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 6110.58, 1720.08 )
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 8287.72, 3991.06 )
+shape = SubResource( 1 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2( 3497.53, 5211.56 )
+shape = SubResource( 1 )
+
+[node name="Area2D4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2( -1915.66, 5783.24 )
+shape = SubResource( 1 )
+
+[node name="Area2D5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2( 2861.54, -2334.41 )
+shape = SubResource( 1 )
+
+[node name="Area2D6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
+position = Vector2( 10739.1, -709.266 )
+shape = SubResource( 1 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="." method="_on_Area2D4_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="." method="_on_Area2D5_body_entered"]

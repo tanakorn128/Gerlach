@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -11,12 +11,15 @@
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=9]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/chapter/chapter4/bridge.tres" type="TileSet" id=11]
+[ext_resource path="res://src/script/chapter7_1.gd" type="Script" id=12]
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=13]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=14]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 530.736, 307.806 )
 
 [node name="chapter7_1" type="Node2D"]
+script = ExtResource( 12 )
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -93,4 +96,7 @@ position = Vector2( -839.285, -7865.76 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene7_2"]
 position = Vector2( 3386.67, -4656.67 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
+
+[node name="dialogbox" parent="." instance=ExtResource( 14 )]
+[connection signal="body_entered" from="Scene7_2" to="." method="_on_Scene7_2_body_entered"]

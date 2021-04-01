@@ -262,8 +262,7 @@ shape = SubResource( 5 )
 scale = Vector2( 0.15, 0.15 )
 
 [node name="icon" type="Sprite" parent="."]
-visible = false
-position = Vector2( 1300.61, -2398.86 )
+position = Vector2( 3218.19, -2278.22 )
 texture = ExtResource( 16 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 17 )]

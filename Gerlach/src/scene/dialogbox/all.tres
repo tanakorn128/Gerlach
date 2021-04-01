@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=25 format=2]
+[gd_resource type="Resource" load_steps=44 format=2]
 
 [ext_resource path="res://src/scene/dialogbox/all_dialogbox.gd" type="Script" id=1]
 [ext_resource path="res://src/scene/dialogbox/chapter1/2.tres" type="Resource" id=2]
@@ -24,10 +24,39 @@
 [ext_resource path="res://src/scene/dialogbox/chapter4_2/soldier1.tres" type="Resource" id=22]
 [ext_resource path="res://src/scene/dialogbox/chapter6_1/Dialogbox2.tres" type="Resource" id=23]
 [ext_resource path="res://src/scene/dialogbox/chapter6_1/Dialogbox1.tres" type="Resource" id=24]
+[ext_resource path="res://src/scene/dialogbox/chapter6_2/Dialogbox1.tres" type="Resource" id=25]
+[ext_resource path="res://src/scene/dialogbox/chapter6_2/Dialogbox2.tres" type="Resource" id=26]
+[ext_resource path="res://src/scene/dialogbox/chapter7_1/Dialogbox1.tres" type="Resource" id=27]
+[ext_resource path="res://src/scene/dialogbox/chapter7_2/Dialogbox1.tres" type="Resource" id=28]
+[ext_resource path="res://src/scene/dialogbox/chapter7_3/Dialogbox1.tres" type="Resource" id=29]
+[ext_resource path="res://src/scene/dialogbox/chapter8/Dialogbox1.tres" type="Resource" id=30]
+[ext_resource path="res://src/scene/dialogbox/chapter8/Dialogbox2.tres" type="Resource" id=31]
+[ext_resource path="res://src/scene/dialogbox/chapter9/Dialogbox1.tres" type="Resource" id=32]
+[ext_resource path="res://src/scene/dialogbox/chapter9/Dialogbox2.tres" type="Resource" id=33]
+[ext_resource path="res://src/scene/dialogbox/chapter10/Dialogbox1.tres" type="Resource" id=34]
+[ext_resource path="res://src/scene/dialogbox/chapter10/Dialogbox2.tres" type="Resource" id=35]
+[ext_resource path="res://src/scene/dialogbox/chapter13/Dialogbox2.tres" type="Resource" id=36]
+[ext_resource path="res://src/scene/dialogbox/chapter11-12/Dialogbox1.tres" type="Resource" id=37]
+[ext_resource path="res://src/scene/dialogbox/chapter13/Dialogbox1.tres" type="Resource" id=38]
+[ext_resource path="res://src/scene/dialogbox/chapter14/Dialogbox1.tres" type="Resource" id=39]
+[ext_resource path="res://src/scene/dialogbox/chapter14/Dialogbox2.tres" type="Resource" id=40]
+[ext_resource path="res://src/scene/dialogbox/chapter15_2/Dialogbox2.tres" type="Resource" id=41]
+[ext_resource path="res://src/scene/dialogbox/chapter15_1/Dialogbox1.tres" type="Resource" id=42]
+[ext_resource path="res://src/scene/dialogbox/chapter15_2/Dialogbox1.tres" type="Resource" id=43]
 
 [resource]
 script = ExtResource( 1 )
 all = {
+"chapter10_dialogbox1": ExtResource( 34 ),
+"chapter10_dialogbox2": ExtResource( 35 ),
+"chapter11_12dialogbox1": ExtResource( 37 ),
+"chapter13dialogbox1": ExtResource( 38 ),
+"chapter13dialogbox2": ExtResource( 36 ),
+"chapter14_dialogbox1": ExtResource( 39 ),
+"chapter14_dialogbox2": ExtResource( 40 ),
+"chapter15_1_dialogbox1": ExtResource( 42 ),
+"chapter15_2_dialogbox1": ExtResource( 43 ),
+"chapter15_2_dialogbox2": ExtResource( 41 ),
 "chapter3_1 ป้ายบอกทาง 1": ExtResource( 10 ),
 "chapter3_1 ป้ายบอกทาง 2": ExtResource( 15 ),
 "chapter3_1_start": ExtResource( 14 ),
@@ -44,6 +73,15 @@ all = {
 "chapter5_3_start": ExtResource( 13 ),
 "chapter6_1_dialogbox1": ExtResource( 24 ),
 "chapter6_1_dialogbox2": ExtResource( 23 ),
+"chapter6_2_dialogbox1": ExtResource( 25 ),
+"chapter6_2_dialogbox2": ExtResource( 26 ),
+"chapter7_1_dialogbox1": ExtResource( 27 ),
+"chapter7_2_dialogbox1": ExtResource( 28 ),
+"chapter7_3_dialogbox1": ExtResource( 29 ),
+"chapter8_dialogbox1": ExtResource( 30 ),
+"chapter8_dialogbox2": ExtResource( 31 ),
+"chapter9_dialogbox1": ExtResource( 32 ),
+"chapter9_dialogbox2": ExtResource( 33 ),
 "prechapter1": ExtResource( 8 ),
 "startchapter1": ExtResource( 2 ),
 "ป้ายบอกทาง 1": ExtResource( 9 ),
