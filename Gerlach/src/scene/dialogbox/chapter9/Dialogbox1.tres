@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 dialogbox = [ "ถึงป้อมปราการแล้วทำการจัดปีศาจในป้อม 5 ตัว ", "ถึงป้อมปราการแล้วทำการจัดปีศาจในป้อม 5 ตัว " ]
-finish = true
+finish = false

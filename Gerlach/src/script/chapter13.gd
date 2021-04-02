@@ -2,8 +2,9 @@ extends Node2D
 onready var chapter = $"/root/MissionInventory"
 var _Enemys
 var _dialogbox2:bool = false
+
 func _ready():
-	lable("chapter9_dialogbox1")
+	lable("chapter13dialogbox1")
 
 func _process(delta):
 	update()
@@ -23,16 +24,10 @@ func lable(value:String):
 		$dialogbox._dialogbox(true)
 
 func dialogbox2():
-	_Enemys = chapter.all_chapter[15].dic.size()
+	_Enemys = chapter.all_chapter[18].dic.size()
 	for i in _Enemys:
-		if chapter.chapters(16,i,"finish"):
+		if chapter.chapters(19,i,"finish"):
 			_Enemys -= 1
 	if _Enemys <= 0 && not _dialogbox2:
-		lable("chapter9_dialogbox2")
+		lable("chapter13dialogbox2")
 		_dialogbox2 = true
-
-
-func _on_Area2D_body_entered(body):
-	if body.get_name() == "player" && _dialogbox2:
-		$"/root/Scene".scene(17)
-	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -10,9 +10,12 @@
 [ext_resource path="res://assets/chapter/chapter2/Pool.tres" type="TileSet" id=8]
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=9]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=12]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=13]
+[ext_resource path="res://src/script/chapter15_2.gd" type="Script" id=14]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=15]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter15_2.tscn" type="PackedScene" id=16]
 
 [sub_resource type="TileSet" id=1]
 6/name = "tileset-wesley.png 6"
@@ -103,6 +106,7 @@
 3/z_index = 0
 
 [node name="chapter3" type="Node2D"]
+script = ExtResource( 14 )
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -211,3 +215,19 @@ tile_set = ExtResource( 7 )
 cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -2621216, 0, 0 )
+
+[node name="put_Enemy_Chapter13" parent="." instance=ExtResource( 16 )]
+position = Vector2( 8.11914, 0.277771 )
+
+[node name="dialogbox" parent="." instance=ExtResource( 11 )]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 3507.62
+margin_top = -856.746
+margin_right = 3739.62
+margin_bottom = -705.746
+__meta__ = {
+"_edit_use_anchors_": false
+}

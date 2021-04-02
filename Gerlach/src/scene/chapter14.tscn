@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -11,12 +11,16 @@
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=9]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=11]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter14.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
+[ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/script/chapter14.gd" type="Script" id=16]
 
 [sub_resource type="TileSet" id=1]
 
-[node name="chapter3" type="Node2D"]
+[node name="chapter14" type="Node2D"]
+script = ExtResource( 16 )
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -107,3 +111,18 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -8715936, 1, 0 )
+
+[node name="put_Enemy_Chapter13" parent="." instance=ExtResource( 12 )]
+
+[node name="dialogbox" parent="." instance=ExtResource( 15 )]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 2721.23
+margin_top = -764.577
+margin_right = 2939.23
+margin_bottom = -572.577
+__meta__ = {
+"_edit_use_anchors_": false
+}

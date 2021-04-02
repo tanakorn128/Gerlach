@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/tileset-wesley3.png" type="Texture" id=12]
 [ext_resource path="res://src/script/chapter10.gd" type="Script" id=13]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter10.tscn" type="PackedScene" id=14]
 
 [sub_resource type="TileSet" id=1]
 0/name = "tileset-wesley3.png 0"
@@ -144,3 +145,15 @@ position = Vector2( -5905.92, -5079.83 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 11 )]
 visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = -2.62207
+margin_top = -9640.54
+margin_right = 212.378
+margin_bottom = -9479.54
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="put_Enemy_Chapter9" parent="." instance=ExtResource( 14 )]

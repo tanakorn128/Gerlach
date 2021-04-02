@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource( 1 )
-dialogbox = [ "ช่วยงานแล้ว " ]
+dialogbox = [ "ช่วยงานแล้ว 9" ]
 finish = false

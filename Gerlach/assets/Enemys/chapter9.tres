@@ -7,10 +7,42 @@
 script = ExtResource( 1 )
 dic = [ {
 "damage": 20,
-"finish": false,
-"fire1": Vector2( 1000, 318 ),
-"fire2": Vector2( 3097.45, -162.5 ),
-"pos": Vector2( 2343.29, -1735.05 ),
+"finish": true,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 2433.85, -1693.13 ),
+"texture": ExtResource( 2 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": true,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 3118.33, -1664.84 ),
+"texture": ExtResource( 2 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": true,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 3745.29, -1654.4 ),
+"texture": ExtResource( 2 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": true,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 3118.33, -1630.9 ),
+"texture": ExtResource( 2 ),
+"type": 2
+}, {
+"damage": 20,
+"finish": true,
+"fire1": Vector2( 0, 0 ),
+"fire2": Vector2( 0, 0 ),
+"pos": Vector2( 2416.88, -1019.96 ),
 "texture": ExtResource( 2 ),
 "type": 2
 } ]

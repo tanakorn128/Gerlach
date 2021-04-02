@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Post box.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=14]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter8.tscn" type="PackedScene" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "BG2.png 0"
@@ -239,6 +240,19 @@ tile_data = PoolIntArray( -13368996, 0, 0, -13368995, 0, 0, -13368991, 0, 0, -13
 scale = Vector2( 0.15, 0.15 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 16 )]
+visible = false
+
+[node name="put_Enemy_Chapter8" parent="." instance=ExtResource( 17 )]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 4334.88
+margin_top = -1025.76
+margin_right = 4589.88
+margin_bottom = -864.759
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="player"]
 

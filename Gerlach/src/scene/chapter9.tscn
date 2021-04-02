@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -15,12 +15,13 @@
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 [ext_resource path="res://src/script/chapter9.gd" type="Script" id=15]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter9.tscn" type="PackedScene" id=16]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=3]
-
-[sub_resource type="TileSet" id=1]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
+
+[sub_resource type="TileSet" id=3]
 0/name = "pipo-map001.png 0"
 0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
@@ -35,6 +36,9 @@
 0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 141.005, 250.992 )
 
 [node name="chapter9" type="Node2D"]
 script = ExtResource( 15 )
@@ -63,11 +67,11 @@ limit_right = 8006
 limit_bottom = 511
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
-parameters/StateMachine/playback = SubResource( 3 )
+parameters/StateMachine/playback = SubResource( 1 )
 
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
@@ -89,7 +93,7 @@ format = 1
 tile_data = PoolIntArray( -5111697, 43, 0, -5111670, 43, 0, -5111643, 43, 0 )
 
 [node name="mountain" type="TileMap" parent="wall"]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -4849544, 0, 0, -2686963, 0, 0, -2555891, 0, 0, -2490355, 0, 0, -2359283, 0, 0, -2293747, 0, 0, -2097139, 0, 0, -1900531, 0, 0, -1703923, 0, 0, -1441779, 0, 0, -1245171, 0, 0, -1048563, 0, 0, -851955, 0, 0, -655347, 0, 0, -524275, 0, 0, -327667, 0, 0, -196595, 0, 0, -65523, 0, 0, 65549, 0, 0 )
@@ -144,7 +148,32 @@ cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -8846819, 1, 0 )
 
+[node name="put_Enemy_Chapter9" parent="." instance=ExtResource( 16 )]
+
 [node name="dialogbox" parent="." instance=ExtResource( 11 )]
 visible = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 2416.88
+margin_top = -1019.96
+margin_right = 2577.88
+margin_bottom = -848.964
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 7201.26, -4028.13 )
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="player"]
