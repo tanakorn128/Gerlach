@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/script/chapter3_1.gd" type="Script" id=11]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=13]
 [ext_resource path="res://assets/font/lable.tres" type="DynamicFont" id=14]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
@@ -99,14 +98,13 @@ tile_data = PoolIntArray( -14155858, 3, 0, -14155851, 3, 0, -14155844, 3, 0, -14
 position = Vector2( 840.487, -4328.99 )
 
 [node name="Camera2D" parent="player" index="1"]
+limit_left = -2970
 limit_top = -5968
 limit_right = 2447
+limit_bottom = 610
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 1 )
-
-[node name="HUD" parent="player" index="6"]
-visible = false
 
 [node name="postbox1" type="Area2D" parent="."]
 position = Vector2( -4.23785, 0 )
@@ -152,9 +150,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chapter3_2"]
 position = Vector2( 2666.97, -4391.53 )
 shape = SubResource( 3 )
-
-[node name="HUD" parent="." instance=ExtResource( 13 )]
-scale = Vector2( 0.15, 0.15 )
 
 [node name="chapter4_1" type="Area2D" parent="."]
 

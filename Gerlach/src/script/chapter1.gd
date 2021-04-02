@@ -10,14 +10,6 @@ func _ready():
 	$"/root/Global"._dialogbox = "startchapter1"
 	_dialogbox()
 	
-func _process(delta):
-	update()
-
-func change():
-	$HUD.position = $player.position - get_viewport_rect().size/2.1
-	#$dialogbox.position = $player.position -get_viewport_rect().size/2
-func update():
-	change()
 
 func _on_mailbox1_body_entered(body):	if body.get_name() == "player":
 		Events.emit_signal("postbox")

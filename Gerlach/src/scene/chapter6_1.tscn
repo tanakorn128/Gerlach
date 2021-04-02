@@ -14,13 +14,15 @@
 [ext_resource path="res://src/script/chapter6_1.gd" type="Script" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
-[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter6_1.tscn" type="PackedScene" id=17]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 244.005, 970.74 )
 
 [node name="chapter6_1" type="Node2D"]
 script = ExtResource( 12 )
@@ -42,11 +44,14 @@ tile_data = PoolIntArray( -3145688, 2, 0, -3145686, 2, 0, -3145685, 2, 0, -31456
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 969.346, 1278.26 )
 
+[node name="Camera2D" parent="player" index="1"]
+limit_left = 123
+limit_top = -2645
+limit_right = 6333
+limit_bottom = 1560
+
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 1 )
-
-[node name="HUD" parent="player" index="6"]
-visible = false
 
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
@@ -127,9 +132,6 @@ cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -2490217, 1, 0 )
 
-[node name="HUD" parent="." instance=ExtResource( 15 )]
-scale = Vector2( 0.15, 0.15 )
-
 [node name="dialogbox" parent="." instance=ExtResource( 16 )]
 visible = false
 
@@ -143,5 +145,11 @@ margin_bottom = -1329.88
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Chapter6_2 " type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chapter6_2 "]
+position = Vector2( 6583.45, -951.365 )
+shape = SubResource( 3 )
 
 [editable path="player"]

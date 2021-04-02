@@ -1,6 +1,4 @@
 extends Node2D
-const HUDPOSY = 350
-const HUDPOSX = 600
 onready var chapter = $"/root/MissionInventory"
 var _Enemys
 var _Enemys5_3
@@ -15,12 +13,7 @@ func _ready():
 func _process(delta):
 	update()
 
-func change():
-	$HUD.position.x = $player.position.x - HUDPOSX
-	$HUD.position.y = $player.position.y - HUDPOSY
-
 func update():
-	change()
 	enemy()
 	chapter5_3_finished()
 	chapter6_2_finished()

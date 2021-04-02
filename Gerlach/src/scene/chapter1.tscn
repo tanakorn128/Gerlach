@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://assets/RPG Nature Tileset/Tree.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://assets/audio/soundtrack/Celestial.ogg" type="AudioStream" id=13]
 [ext_resource path="res://src/script/chapter1.gd" type="Script" id=14]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter1.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=18]
 [ext_resource path="res://assets/font/lable.tres" type="DynamicFont" id=19]
@@ -300,13 +299,13 @@ tile_data = PoolIntArray( -2228274, 2, 0, -2228273, 2, 0, -2228272, 2, 0, -22282
 position = Vector2( 889.7, 898.025 )
 
 [node name="Camera2D" parent="player" index="1"]
+limit_left = -2441
+limit_top = -1921
 limit_right = 7513
+limit_bottom = 4309
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 2 )
-
-[node name="HUD" parent="player" index="6"]
-visible = false
 
 [node name="wall" type="TileMap" parent="."]
 position = Vector2( -0.790863, 5.78988 )
@@ -391,9 +390,6 @@ tile_data = PoolIntArray( 393436, 0, 0, 393443, 0, 0, 393450, 0, 0, 393457, 0, 0
 scale = Vector2( 0.7, 0.7 )
 cell_size = Vector2( 2, 2 )
 format = 1
-
-[node name="HUD" parent="." instance=ExtResource( 16 )]
-scale = Vector2( 0.15, 0.15 )
 
 [node name="AudioBG" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )

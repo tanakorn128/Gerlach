@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://assets/RPG Nature Tileset/Tree.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter5_3.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/script/chapter5_3.gd" type="Script" id=14]
-[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=18]
 
@@ -279,9 +278,6 @@ limit_right = 7513
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 2 )
 
-[node name="HUD" parent="player" index="6"]
-visible = false
-
 [node name="wall" type="TileMap" parent="."]
 position = Vector2( -0.790863, 5.78988 )
 scale = Vector2( 6, 6 )
@@ -377,9 +373,6 @@ format = 1
 scale = Vector2( 0.7, 0.7 )
 cell_size = Vector2( 2, 2 )
 format = 1
-
-[node name="HUD" parent="." instance=ExtResource( 16 )]
-scale = Vector2( 0.15, 0.15 )
 
 [node name="postbox2" type="Area2D" parent="."]
 collision_layer = 2

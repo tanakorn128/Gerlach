@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -17,7 +17,9 @@
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/script/chapter14.gd" type="Script" id=16]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
+
+[sub_resource type="TileSet" id=2]
 
 [node name="chapter14" type="Node2D"]
 script = ExtResource( 16 )
@@ -38,9 +40,16 @@ format = 1
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 5095.26, -1338.48 )
 
+[node name="Camera2D" parent="player" index="1"]
+limit_top = -2390
+limit_bottom = -320
+
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 1 )
+
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
@@ -126,3 +135,5 @@ margin_bottom = -572.577
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[editable path="player"]

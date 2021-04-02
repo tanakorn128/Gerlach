@@ -141,7 +141,7 @@ tile_data = PoolIntArray( -3145649, 0, 0, -3145647, 0, 0, -3145645, 0, 0, -31456
 position = Vector2( 1358.47, 2512.1 )
 
 [node name="Camera2D" parent="player" index="1"]
-limit_left = 400
+limit_left = -603
 limit_top = -2674
 
 [node name="AnimationTreePlayer" parent="player" index="5"]

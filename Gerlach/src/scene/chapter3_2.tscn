@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://src/script/chapter3_2.gd" type="Script" id=11]
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=12]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=13]
-[ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter3_2.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=16]
 
@@ -32,9 +31,6 @@ extents = Vector2( 109.131, 186.637 )
 
 [node name="chapter3_2" type="Node2D"]
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_vertical_guides_": [ 4746.02, 5050.02, 5226.02 ]
-}
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -56,14 +52,11 @@ position = Vector2( 1047.77, -341.884 )
 [node name="Camera2D" parent="player" index="1"]
 limit_left = 456
 limit_top = -3324
-limit_right = 5226
+limit_right = 5006
 limit_bottom = 1207
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 1 )
-
-[node name="HUD" parent="player" index="6"]
-visible = false
 
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
@@ -147,9 +140,6 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="label1"]
 position = Vector2( 1917.81, -401.979 )
 shape = SubResource( 3 )
-
-[node name="HUD" parent="." instance=ExtResource( 14 )]
-scale = Vector2( 0.15, 0.15 )
 
 [node name="put_Enemy_Chapter3_2" parent="." instance=ExtResource( 15 )]
 

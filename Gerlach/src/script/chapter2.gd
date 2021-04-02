@@ -1,6 +1,4 @@
 extends Node2D
-const HUDPOSY = 350
-const HUDPOSX = 600
 var finished:bool = false
 var _dialogbox2:bool = false
 var _Enemys
@@ -13,12 +11,9 @@ func _ready():
 func _process(delta):
 	update()
 
-func change():
-	$HUD.position.x = $player.position.x - HUDPOSX
-	$HUD.position.y = $player.position.y - HUDPOSY
+
 
 func update():
-	change()
 	dialogbox2()
 
 func _on_postbox_body_entered(body):

@@ -1,7 +1,5 @@
 extends Node2D
 onready var chapter = $"/root/MissionInventory"
-const HUDPOSY = 350
-const HUDPOSX = 600
 var _Enemys
 var _dialogbox:bool = true
 
@@ -10,15 +8,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	update()
 	enemy()
-
-func change():
-	$HUD.position.x = $player.position.x - HUDPOSX
-	$HUD.position.y = $player.position.y - HUDPOSY
-
-func update():
-	change()
 
 func lable(value:String):
 	$"/root/Global"._dialogbox = value

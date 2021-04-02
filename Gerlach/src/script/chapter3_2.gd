@@ -1,7 +1,4 @@
 extends Node2D
-const HUDPOSY = 350
-const HUDPOSX = 600
-
 var _Enemys
 onready var chapter = $"/root/MissionInventory"
 
@@ -9,16 +6,6 @@ func _ready():
 	lable("chapter3_2_start")
 	_stop()
 	$"/root/Global".scene = 3
-func _process(delta):
-	update()
-
-func change():
-	$HUD.position.x = $player.position.x - HUDPOSX
-	$HUD.position.y = $player.position.y - HUDPOSY
-
-func update():
-	change()
-
 
 func lable(value:String):
 	$"/root/Global"._dialogbox = value

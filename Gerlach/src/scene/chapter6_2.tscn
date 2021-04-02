@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -16,9 +16,11 @@
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 [ext_resource path="res://src/script/chapter6_2.gd" type="Script" id=15]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="TileSet" id=2]
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 317.897, 432.378 )
 
 [node name="chapter6_2" type="Node2D"]
@@ -40,9 +42,18 @@ format = 1
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 5095.26, -1338.48 )
 
+[node name="Camera2D" parent="player" index="1"]
+limit_left = 604
+limit_top = -2402
+limit_right = 5578
+limit_bottom = -325
+
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 1 )
+
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
@@ -121,5 +132,7 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 266.683, -1308.02 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[editable path="player"]

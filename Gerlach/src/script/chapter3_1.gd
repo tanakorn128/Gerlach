@@ -8,15 +8,7 @@ func _ready():
 	lable("chapter3_1_start")
 	_stop()
 	$"/root/Global".scene = 3
-func _process(delta):
-	update()
 
-func change():
-	$HUD.position.x = $player.position.x - HUDPOSX
-	$HUD.position.y = $player.position.y - HUDPOSY
-
-func update():
-	change()
 
 func _on_postbox1_body_entered(body):
 	if body.get_name() == "player":

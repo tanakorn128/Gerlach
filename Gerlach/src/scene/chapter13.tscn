@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -17,9 +17,11 @@
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter13.tscn" type="PackedScene" id=16]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
+
+[sub_resource type="TileSet" id=3]
 0/name = "pipo-map001.png 0"
 0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
@@ -55,9 +57,15 @@ tile_data = PoolIntArray( -6619014, 1, 0, -6356851, 1, 0, -6160283, 1, 0, -60947
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 7376.69, -1458.58 )
 
+[node name="Camera2D" parent="player" index="1"]
+limit_top = 1583
+
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 1 )
+
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
@@ -79,7 +87,7 @@ format = 1
 tile_data = PoolIntArray( -7339828, 23, 0, -7339823, 23, 0, -5111697, 43, 0, -5111670, 43, 0, -5111643, 43, 0 )
 
 [node name="mountain" type="TileMap" parent="wall"]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -4849544, 0, 0, -2686963, 0, 0, -2555891, 0, 0, -2490355, 0, 0, -2359283, 0, 0, -2293747, 0, 0, -2097139, 0, 0, -1900531, 0, 0, -1703923, 0, 0, -1441783, 0, 0, -1441779, 0, 0, -851959, 0, 0, -851955, 0, 0, -655347, 0, 0, -524275, 0, 0, -327667, 0, 0, -196595, 0, 0, -65523, 0, 0, 65549, 0, 0 )
@@ -148,3 +156,5 @@ margin_bottom = -782.568
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[editable path="player"]

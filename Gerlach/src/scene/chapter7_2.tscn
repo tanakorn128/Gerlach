@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -15,9 +15,11 @@
 [ext_resource path="res://src/script/chapter7_2.gd" type="Script" id=13]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=14]
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
+
+[sub_resource type="TileSet" id=3]
 0/name = "pipo-map001.png 0"
 0/texture = ExtResource( 12 )
 0/tex_offset = Vector2( 0, 0 )
@@ -33,7 +35,7 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 256.061, 231.899 )
 
 [node name="chapter7_2" type="Node2D"]
@@ -56,9 +58,18 @@ tile_data = PoolIntArray( -3145688, 2, 0, -3145686, 2, 0, -3145685, 2, 0, -31456
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 4732.68, -2880.02 )
 
+[node name="Camera2D" parent="player" index="1"]
+limit_left = 120
+limit_top = -3143
+limit_right = 5033
+limit_bottom = 2878
+
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 1 )
+
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
-tile_set = SubResource( 1 )
+tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 
@@ -86,7 +97,7 @@ format = 1
 tile_data = PoolIntArray( -2490225, 0, 0, 9437580, 0, 0 )
 
 [node name="mountain" type="TileMap" parent="wall"]
-tile_set = SubResource( 2 )
+tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -4849544, 0, 0, -2555853, 0, 0, -2359245, 0, 0, -2162637, 0, 0, -1966029, 0, 0, -1769421, 0, 0, -1638349, 0, 0, -1507277, 0, 0, -1376205, 0, 0, -1245133, 0, 0, -1048525, 0, 0, -851917, 0, 0, -655309, 0, 0, -458701, 0, 0, -262094, 0, 0, -65486, 0, 0, 131122, 0, 0, 327730, 0, 0, 458802, 0, 0, 655410, 0, 0, 852018, 0, 0, 1310770, 0, 0, 1441842, 0, 0, 1572914, 0, 0, 1703986, 0, 0, 1900594, 0, 0 )
@@ -129,5 +140,7 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 5066.72, 1963.26 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[editable path="player"]
