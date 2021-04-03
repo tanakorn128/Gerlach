@@ -6,32 +6,32 @@
 script = ExtResource( 1 )
 dic = [ {
 "damage": 20,
-"finish": false,
+"finish": true,
 "pos": Vector2( 2373.32, -1606.39 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "pos": Vector2( 2373.32, -1126.93 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "pos": Vector2( 2373.32, -1726.25 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "pos": Vector2( 5287.46, 326 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "pos": Vector2( 2373.32, -1031.04 ),
 "type": 2
 }, {
 "damage": 20,
-"finish": false,
+"finish": true,
 "pos": Vector2( 4240.53, -1549.88 ),
 "type": 2
 } ]

@@ -10,6 +10,7 @@ extends Control
 
 func _ready():
 	$"/root/Global".scene = 1
+	Events.connect("count_dialogbox",self,"count_dialogbox")
 func _on_start_button_down():
 	
 	$"/root/Global"._dialogbox = "prechapter1"
@@ -49,3 +50,29 @@ func chapterX(chapter:int):
 	else:
 		return false
 
+func count_dialogbox(count):
+	if count == 2:
+		$Sprite.texture = _image(0)
+	if count == 11:
+		$Sprite.texture = _image(1)
+	if count == 12:
+		$Sprite.texture = _image(2)
+	if count == 15:
+		$Sprite.texture = _image(3)
+	if count == 16:
+		$Sprite.texture = _image(4)
+	if count == 17:
+		$Sprite.texture = _image(5)
+	if count == 18:
+		$Sprite.texture = _image(6)
+func _image(num:int):
+	var image:Array
+	image.append(load("res://assets/Game_Start/2.png"))
+	image.append(load("res://assets/Game_Start/11.png"))
+	image.append(load("res://assets/Game_Start/12.png"))
+	image.append(load("res://assets/Game_Start/13.png"))
+	image.append(load("res://assets/Game_Start/15.png"))
+	image.append(load("res://assets/Game_Start/16.png"))
+	image.append(load("res://assets/Game_Start/17.png"))
+	image.append(load("res://assets/Game_Start/18.png"))
+	return image[num]

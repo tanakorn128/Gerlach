@@ -284,6 +284,7 @@ extents = Vector2( 57.1846, 56.3948 )
 extents = Vector2( 52.2056, 57.7166 )
 
 [node name="chapter1" type="Node2D"]
+position = Vector2( -28.5088, 634.32 )
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -416,10 +417,11 @@ shape = SubResource( 19 )
 [node name="put_Enemy_Chapter1" parent="." instance=ExtResource( 15 )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 2074.58
-margin_top = -1294.91
-margin_right = 2131.58
-margin_bottom = -1249.91
+visible = false
+margin_left = 1043.64
+margin_top = 526.606
+margin_right = 1100.64
+margin_bottom = 571.606
 __meta__ = {
 "_edit_use_anchors_": false
 }

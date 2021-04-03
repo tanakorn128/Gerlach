@@ -1,8 +1,14 @@
 extends Node2D
 var count:int
+var count2:int
 var ins
-
+var _Enemys
 onready var chapter1 = $"/root/MissionInventory"
+onready var chapter1_1 = $"/root/MissionInventory"
+var finished = false
+var fire1
+var fire2
+
 func _ready():
 	$"/root/Global".number_enemy = 0
 	putenemy()
@@ -17,4 +23,22 @@ func putenemy():
 			ins.type_enemy=chapter1.chapters(1,i,"type")
 			$"/root/Global".Enemy_damage=chapter1.chapters(1,i,"damage")
 			add_child(ins)
+
+
+func monster():
+	count2 = chapter1_1.all_chapter[22].dic.size()
+	for i in count2:
+		if not chapter1_1.chapters(23,i,"finish"):
+			ins = load("res://src/scene/Enemy/Monster1.tscn").instance()
+			fire1 = load("res://src/scene/animation/fire .tscn").instance()
+			fire2 = load("res://src/scene/animation/fire .tscn").instance()
+			ins.position = Vector2(364.055,708) #$"/root/Global".Enemy_pos
+			fire1.position = Vector2(632.115,522.831)
+			fire2.position = Vector2(1043.644,526.606)
+			ins.number_index = i
+			$"/root/Global".number_enemy = 22
+			ins.type_enemy=chapter1_1.chapters(23,i,"type")
+			add_child(ins)
+			add_child(fire1)
+			add_child(fire2)
 

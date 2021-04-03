@@ -28,6 +28,7 @@ func _input(event):
 	if event.is_action_pressed("ui_select") && state:
 		if count < arr_size-1:
 			count += 1
+			Events.emit_signal("count_dialogbox",count)
 		else:
 			if save:
 				all.all[$"/root/Global"._dialogbox].finish = true

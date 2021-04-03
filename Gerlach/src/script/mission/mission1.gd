@@ -3,6 +3,7 @@ var number_index:int
 var type_enemy:int
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "player":
+		Events.emit_signal("Enemy_pos",position)
 		$"/root/Global".enemy = "tree"
 		$"/root/Global".number_index = number_index
 		$"/root/Scene".Type(type_enemy)

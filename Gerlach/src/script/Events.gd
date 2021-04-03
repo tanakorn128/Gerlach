@@ -14,3 +14,6 @@ signal add_exam(Type0,chapter0)
 
 signal postbox()
 
+signal Enemy_pos(pos)
+
+signal count_dialogbox(count)

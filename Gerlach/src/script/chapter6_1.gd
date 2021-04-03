@@ -2,10 +2,11 @@ extends Node2D
 var _Enemys
 onready var chapter = $"/root/MissionInventory"
 var _dialogbox:bool = false
-
+var chapter6_2:bool = false
 func _ready():
 	lable("chapter6_1_dialogbox1")
 	$"/root/Global".scene = 9
+	
 func _process(delta):
 	 update()
 	
@@ -29,5 +30,20 @@ func enemy():
 			_Enemys -= 1
 	if _Enemys <= 0 && not _dialogbox:
 		lable("chapter6_1_dialogbox2")
+		soldier()
 		_dialogbox = true
 	
+func soldier():
+	var inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
+	inst.position = Vector2(3478.577,-1461.156)
+	inst._dialogbox = "chapter6_1_dialogbox3"
+	add_child(inst)
+	chapter6_2 = true
+	pass
+
+
+func _on_Chapter6_2__body_entered(body):
+	if body.get_name() == "player" && chapter6_2:
+		$"/root/Scene".scene(10)
+		
+	pass # Replace with function body.
