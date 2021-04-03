@@ -1,8 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=2]
-
-[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
-
-[resource]
-script = ExtResource( 1 )
-dialogbox = [ "chapter3_1 ป้ายบอกทาง 1", "chapter3_1 ป้ายบอกทาง 1" ]
-finish = false

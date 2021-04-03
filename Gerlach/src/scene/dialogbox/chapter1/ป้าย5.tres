@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource( 1 )
-dialogbox = [ "wefewfwe", "ewfewewfe" ]
-finish = false
+dialogbox = [ "ป้าย : ทิศเหนือต้นไม้ต้นที่ 4 , ทิศใต้ต้นไม้ต้นที่ 3" ]
+finish = true

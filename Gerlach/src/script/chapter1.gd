@@ -8,6 +8,7 @@ func _ready():
 	$player.position = $"/root/Global".player_pos
 	$"/root/Global".scene = 1
 	$"/root/Global"._dialogbox = "startchapter1"
+	print("1")
 	_dialogbox()
 	
 
@@ -22,8 +23,8 @@ func _dialogbox():
 		pass
 	else: #ยังไม่จบ
 		$dialogbox.show()
-		$dialogbox.position = $player.position - get_viewport_rect().size/2
-		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
+		$dialogbox.position.x = $player.position.x -660
+		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true) #ต้องการ save ไหม
 
 
@@ -48,8 +49,8 @@ func lable(value:String):
 	if $dialogbox._dialogbox(true):
 		$"/root/Global".player_pos = $player.position
 		$dialogbox.show()
-		$dialogbox.position = $player.position - get_viewport_rect().size/2
-		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
+		$dialogbox.position.x = $player.position.x -660
+		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)
 
 
@@ -82,7 +83,20 @@ func _on_lable5_body_entered(body):
 	pass # Replace with function body.
 
 
+
 func _on_lable6_body_entered(body):
 	if body.get_name() == "player":
 		lable("ป้ายบอกทาง 6")
+	pass # Replace with function body.
+
+
+func _on_lable7_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 7")
+	pass # Replace with function body.
+
+
+func _on_lable8_body_entered(body):
+	if body.get_name() == "player":
+		lable("ป้ายบอกทาง 8")
 	pass # Replace with function body.

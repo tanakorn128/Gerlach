@@ -1,7 +1,7 @@
 extends Node2D
 onready var chapter = $"/root/MissionInventory"
 var _Enemys
-var _dialogbox:bool = true
+var _dialogbox:bool = false
 
 func _ready():
 	
@@ -15,8 +15,8 @@ func lable(value:String):
 	if $dialogbox._dialogbox(true):
 		$"/root/Global".player_pos = $player.position
 		$dialogbox.show()
-		$dialogbox.position = $player.position - get_viewport_rect().size/2
-		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
+		$dialogbox.position.x = $player.position.x -660
+		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)
 
 func enemy():
@@ -24,10 +24,8 @@ func enemy():
 	for i in _Enemys:
 		if chapter.chapters(9,i,"finish"):
 			_Enemys -= 1
-	if _Enemys <= 0:
-		_dialogbox = false
 	if _Enemys <= 0 &&  not _dialogbox:
-		lable("chapter5_3_end")
+		lable("chapter5_3_dialogbox2")
 		_dialogbox = true
 
 func _on_npc_body_entered(body):

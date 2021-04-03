@@ -2,7 +2,7 @@ extends Node2D
 var count:int
 var inst
 onready var chapter4_2 = $"/root/MissionInventory"
-
+var soldier1:bool
 func _ready():
 	count = chapter4_2.all_chapter[5].dic.size()
 	
@@ -17,5 +17,5 @@ func putenemy():
 			inst.type_enemy = chapter4_2.chapters(6,i,"type")
 			inst.number_index = i
 			inst._scene = 5
-			inst._dialogbox = "chapter4_2_soldiers1"
+			inst._dialogbox = "chapter4_2_dialogbox2"
 			add_child(inst)

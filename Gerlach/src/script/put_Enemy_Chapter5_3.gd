@@ -15,6 +15,6 @@ func putenemy():
 			inst.type_enemy = chapter5_3.chapters(9,i,"type")
 			inst.number_index = i
 			inst._scene = 8
-			inst._dialogbox = "chapter5_3_start"
+			inst._dialogbox = "chapter5_3_dialogbox1"
 			inst.savedialog = false
 			add_child(inst)

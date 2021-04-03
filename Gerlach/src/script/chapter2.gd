@@ -7,7 +7,6 @@ onready var chapter = $"/root/MissionInventory"
 func _ready():
 	$"/root/Global".scene = 2
 	lable("chapter2_dialogbox1")
-
 func _process(delta):
 	update()
 
@@ -58,6 +57,6 @@ func lable(value:String):
 	if $dialogbox._dialogbox(true):
 		$"/root/Global".player_pos = $player.position
 		$dialogbox.show()
-		$dialogbox.position.x = $player.position.x - get_viewport_rect().size.x/5
-		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
+		$dialogbox.position.x = $player.position.x -660
+		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)

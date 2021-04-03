@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/RPG Nature Tileset/Tree.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -277,6 +277,12 @@ extents = Vector2( 219.434, 174.081 )
 [sub_resource type="RectangleShape2D" id=21]
 extents = Vector2( 60.6753, 48.1487 )
 
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 57.1846, 56.3948 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 52.2056, 57.7166 )
+
 [node name="chapter1" type="Node2D"]
 script = ExtResource( 14 )
 __meta__ = {
@@ -446,23 +452,27 @@ __meta__ = {
 position = Vector2( 7430.33, 201.761 )
 shape = SubResource( 20 )
 
-[node name="lable" type="Area2D" parent="."]
+[node name="label1" type="Area2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lable"]
-position = Vector2( 2327.92, 795.942 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="label1"]
+position = Vector2( -193.727, -348.366 )
 shape = SubResource( 21 )
-
-[node name="Label" type="Label" parent="lable"]
-margin_left = 2223.69
-margin_top = 683.222
-margin_right = 2428.69
-margin_bottom = 743.222
-custom_fonts/font = ExtResource( 19 )
-text = "ป้ายบอกทาง 1"
 __meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="label1"]
+margin_left = -280.904
+margin_top = -460.602
+margin_right = -75.9044
+margin_bottom = -400.602
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง "
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -473,17 +483,21 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lable2"]
-position = Vector2( 2327.92, 795.942 )
+position = Vector2( -310.398, -198.534 )
 shape = SubResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="lable2"]
-margin_left = 2226.59
-margin_top = 700.729
-margin_right = 2434.59
-margin_bottom = 760.729
+margin_left = -393.053
+margin_top = -304.41
+margin_right = -185.053
+margin_bottom = -244.41
 custom_fonts/font = ExtResource( 19 )
-text = "ป้ายบอกทาง 2"
+text = "ป้ายบอกทาง "
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -494,17 +508,18 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lable3"]
-position = Vector2( 2327.92, 795.942 )
+position = Vector2( 2332.96, 811.061 )
 shape = SubResource( 21 )
 
 [node name="Label" type="Label" parent="lable3"]
-margin_left = 2220.41
-margin_top = 688.099
-margin_right = 2428.41
-margin_bottom = 748.099
+margin_left = 2238.05
+margin_top = 693.139
+margin_right = 2446.05
+margin_bottom = 753.139
 custom_fonts/font = ExtResource( 19 )
-text = "ป้ายบอกทาง 3"
+text = "ป้ายบอกทาง"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -515,17 +530,21 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lable4"]
-position = Vector2( 1872.43, 1011.7 )
+position = Vector2( -563.707, -1983.13 )
 shape = SubResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="lable4"]
-margin_left = 1782.81
-margin_top = 899.657
-margin_right = 1991.81
-margin_bottom = 959.657
+margin_left = -655.929
+margin_top = -2090.04
+margin_right = -446.929
+margin_bottom = -2030.04
 custom_fonts/font = ExtResource( 19 )
-text = "ป้ายบอกทาง 4"
+text = "ป้ายบอกทาง"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -536,17 +555,21 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lable5"]
-position = Vector2( 2327.92, 795.942 )
+position = Vector2( 2300.28, 2411.5 )
 shape = SubResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="lable5"]
-margin_left = 2229.72
-margin_top = 680.657
-margin_right = 2438.72
-margin_bottom = 740.657
+margin_left = 2213.41
+margin_top = 2305.66
+margin_right = 2422.41
+margin_bottom = 2365.66
 custom_fonts/font = ExtResource( 19 )
-text = "ป้ายบอกทาง 4"
+text = "ป้ายบอกทาง"
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -557,26 +580,80 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="lable6"]
-position = Vector2( 2327.92, 795.942 )
+position = Vector2( -152.565, 2923.96 )
 shape = SubResource( 21 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Label" type="Label" parent="lable6"]
-margin_left = 2239.97
-margin_top = 678.466
-margin_right = 2448.97
-margin_bottom = 738.466
+margin_left = -240.515
+margin_top = 2806.48
+margin_right = -31.5145
+margin_bottom = 2866.48
 custom_fonts/font = ExtResource( 19 )
-text = "ป้ายบอกทาง 4"
+text = "ป้ายบอกทาง"
 __meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="lable7" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable7"]
+position = Vector2( 4399.18, 46.8699 )
+shape = SubResource( 22 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="lable7"]
+margin_left = 4312.26
+margin_top = -59.7271
+margin_right = 4521.26
+margin_bottom = 0.272949
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="lable8" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lable8"]
+position = Vector2( 4797.02, 2200.68 )
+shape = SubResource( 23 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="lable8"]
+margin_left = 4711.18
+margin_top = 2097.28
+margin_right = 4920.18
+margin_bottom = 2157.28
+custom_fonts/font = ExtResource( 19 )
+text = "ป้ายบอกทาง"
+__meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 [connection signal="body_entered" from="postbox2" to="." method="_on_mailbox1_body_entered"]
 [connection signal="body_entered" from="next_chapter" to="." method="_on_next_chapter_body_entered"]
-[connection signal="body_entered" from="lable" to="." method="_on_lable_body_entered"]
+[connection signal="body_entered" from="label1" to="." method="_on_lable_body_entered"]
 [connection signal="body_entered" from="lable2" to="." method="_on_lable2_body_entered"]
 [connection signal="body_entered" from="lable3" to="." method="_on_lable3_body_entered"]
 [connection signal="body_entered" from="lable4" to="." method="_on_lable4_body_entered"]
 [connection signal="body_entered" from="lable5" to="." method="_on_lable5_body_entered"]
 [connection signal="body_entered" from="lable6" to="." method="_on_lable6_body_entered"]
+[connection signal="body_entered" from="lable7" to="." method="_on_lable7_body_entered"]
+[connection signal="body_entered" from="lable8" to="." method="_on_lable8_body_entered"]
 
 [editable path="player"]

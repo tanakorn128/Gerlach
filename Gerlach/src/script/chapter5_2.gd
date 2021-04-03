@@ -1,6 +1,6 @@
 extends Node2D
 func _ready():
-	lable("chapter5_2_start")
+	lable("chapter5_2_dialogbox1")
 
 func _on_chapter5_3_body_entered(body):
 	if body.get_name() == "player":
@@ -12,6 +12,6 @@ func lable(value:String):
 	if $dialogbox._dialogbox(true):
 		$"/root/Global".player_pos = $player.position
 		$dialogbox.show()
-		$dialogbox.position = $player.position - get_viewport_rect().size/2
-		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
+		$dialogbox.position.x = $player.position.x -660
+		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)

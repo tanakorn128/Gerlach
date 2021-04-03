@@ -18,6 +18,7 @@ func _on_start_button_down():
 	else:
 		$black.show()
 		$dialogbox.show()
+		$Sprite.show()
 		$dialogbox._dialogbox(true)
 	pass # Replace with function body.
 

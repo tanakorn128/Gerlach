@@ -6,6 +6,7 @@ var exam:bool = false
 var finished:bool = true
 var _scene:int
 var savedialog:bool = false
+
 func _ready():
 	$dialogbox._changescene = true
 	$dialogbox.scene = _scene

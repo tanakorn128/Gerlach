@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+dialogbox = [ "ภารกิจ : ตามหาทหารหัวหน้าเก่าและพูดคุย", "ภารกิจ : (TIP เดินตรวจสอบชาวบ้าน หากไม่เจอให้ไปป่าทางตะวันออกของหมู่บ้าน)" ]
+finish = true

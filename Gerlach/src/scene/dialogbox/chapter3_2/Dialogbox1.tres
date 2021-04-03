@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+dialogbox = [ "เกอราช : ถึงป้อมปราการสักที ", "เกอราช : ปีศาจ!!!", "เกอราช : แม้แต่ป้อมปราการก็ยังโดนปีศาจโจมตีหรอเนี่ย ทหารที่นี่ต้องรู้เรื่องอะไรแน่ๆ", "เกอราช : ก่อนอื่นก็กำจัดปีศาจในป้อมปราการให้หมดเสียก่อนแล้วค่อยถามว่าเกิดอะไรขึ้น", "ภารกิจ : กำจัดปีศาจทั้งหมดภายในป้อมปราการทั้ง 5 ตัว" ]
+finish = true

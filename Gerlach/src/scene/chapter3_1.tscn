@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -17,12 +17,9 @@
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 47.4144, 56.043 )
-
-[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 229.767, 218.789 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 518.392, 269.249 )
 
 [node name="chapter3_1" type="Node2D"]
@@ -106,58 +103,42 @@ limit_bottom = 610
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 1 )
 
-[node name="postbox1" type="Area2D" parent="."]
-position = Vector2( -4.23785, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox1"]
-position = Vector2( 671.106, -4497 )
-shape = SubResource( 2 )
-
-[node name="Label" type="Label" parent="postbox1"]
-margin_left = 581.18
-margin_top = -4616.52
-margin_right = 782.18
-margin_bottom = -4563.52
+[node name="Label" type="Label" parent="."]
+margin_left = 563.942
+margin_top = -4608.52
+margin_right = 803.942
+margin_bottom = -4555.52
 custom_fonts/font = ExtResource( 14 )
-text = "ป้ายบอกทาง 1"
+text = "ทางไปเมืองหลวง"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="postbox2" type="Area2D" parent="."]
-position = Vector2( 450.657, 14.2544 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox2"]
-position = Vector2( 671.106, -4497 )
-shape = SubResource( 2 )
+[node name="Label2" type="Label" parent="."]
+margin_left = 1020.83
+margin_top = -4602.15
+margin_right = 1281.83
+margin_bottom = -4549.15
+custom_fonts/font = ExtResource( 14 )
+text = "ทางไปป้อมปราการ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="dialogbox" parent="." instance=ExtResource( 12 )]
 visible = false
-
-[node name="Label" type="Label" parent="."]
-margin_left = 1022.83
-margin_top = -4604.15
-margin_right = 1230.83
-margin_bottom = -4551.15
-custom_fonts/font = ExtResource( 14 )
-text = "ป้ายบอกทาง 2"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="chapter3_2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chapter3_2"]
 position = Vector2( 2666.97, -4391.53 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="chapter4_1" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chapter4_1"]
 position = Vector2( -1102.44, -6237.12 )
-shape = SubResource( 4 )
-[connection signal="body_entered" from="postbox1" to="." method="_on_postbox1_body_entered"]
-[connection signal="body_entered" from="postbox2" to="." method="_on_postbox2_body_entered"]
+shape = SubResource( 3 )
 [connection signal="body_entered" from="chapter3_2" to="." method="_on_chapter3_2_body_entered"]
 [connection signal="body_entered" from="chapter4_1" to="." method="_on_chapter4_1_body_entered"]
 

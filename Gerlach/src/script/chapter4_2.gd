@@ -4,10 +4,14 @@ var _Enemys
 var _Enemys5_3
 var state_Enemys5_3:bool = false
 var state_Enemys6_2:bool = false
-var _dialogbox:bool = true
+var _dialogbox:bool = false
+var soldier1:bool 
+var soldier2:bool
+var soldier3:bool
 
 func _ready():
 	$"/root/Global".number_enemy = 5
+	lable("chapter4_2_dialogbox1")
 	#lable("chapter4_2_start")
 	
 func _process(delta):
@@ -33,8 +37,8 @@ func lable(value:String):
 	if $dialogbox._dialogbox(true):
 		$"/root/Global".player_pos = $player.position
 		$dialogbox.show()
-		$dialogbox.position = $player.position - get_viewport_rect().size/2
-		$dialogbox.position.y = $player.position.y - get_viewport_rect().size.y/13
+		$dialogbox.position.x = $player.position.x -660
+		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)
 
 
@@ -43,10 +47,8 @@ func enemy():
 	for i in _Enemys:
 		if chapter.chapters(6,i,"finish"):
 			_Enemys -= 1
-	if _Enemys <= 0:
-		_dialogbox = false
 	if _Enemys <= 0 && not _dialogbox:
-		lable("chapter4_2_end")
+		lable("chapter4_2_dialogbox3")
 		_dialogbox = true
 
 func chapter5_3_finished():
@@ -57,7 +59,7 @@ func chapter5_3_finished():
 	if _Enemys5_3 <= 0 && not state_Enemys5_3:
 		var inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
 		inst.position = Vector2(1300.614,-2398.856)
-		inst._dialogbox = "chapter4_2_soldier2"
+		inst._dialogbox = "chapter4_2_dialogbox2"
 		add_child(inst)
 		state_Enemys5_3 = true
 

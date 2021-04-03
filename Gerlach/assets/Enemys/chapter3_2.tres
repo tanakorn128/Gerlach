@@ -15,7 +15,7 @@ dic = [ {
 "type": 2
 }, {
 "damage": 20,
-"finish": true,
+"finish": false,
 "fire1": Vector2( 0, 0 ),
 "fire2": Vector2( 0, 0 ),
 "pos": Vector2( 3095.91, -1729.91 ),
@@ -23,7 +23,7 @@ dic = [ {
 "type": 2
 }, {
 "damage": 20,
-"finish": true,
+"finish": false,
 "fire1": Vector2( 0, 0 ),
 "fire2": Vector2( 0, 0 ),
 "pos": Vector2( 3745.29, -1654.4 ),
@@ -31,7 +31,7 @@ dic = [ {
 "type": 2
 }, {
 "damage": 20,
-"finish": true,
+"finish": false,
 "fire1": Vector2( 0, 0 ),
 "fire2": Vector2( 0, 0 ),
 "pos": Vector2( 2423.87, -967.262 ),
@@ -39,7 +39,7 @@ dic = [ {
 "type": 2
 }, {
 "damage": 20,
-"finish": true,
+"finish": false,
 "fire1": Vector2( 0, 0 ),
 "fire2": Vector2( 0, 0 ),
 "pos": Vector2( 4137.94, -1103.18 ),
