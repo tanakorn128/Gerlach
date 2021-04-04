@@ -9,28 +9,28 @@ script = ExtResource( 1 )
 dic = [ {
 "damage": 20,
 "description": "ศัตรูหน้าบ้าน",
-"finish": false,
+"finish": true,
 "pos": Vector2( 354, 650 ),
 "texture": ExtResource( 2 ),
 "type": 2
 }, {
 "damage": 20,
 "description": "ศัตรอยู่่ในป่าด้านซ้ายล่าง",
-"finish": false,
+"finish": true,
 "pos": Vector2( -444.606, 3410.1 ),
 "texture": ExtResource( 3 ),
 "type": 2
 }, {
 "damage": 20,
 "description": "ศัตรอยู่่ในป่าด้านขวาล่าง",
-"finish": false,
+"finish": true,
 "pos": Vector2( 3356.11, 1658.32 ),
 "texture": ExtResource( 3 ),
 "type": 2
 }, {
 "damage": 20,
 "description": "ศัตรูอยู่ด้านบน",
-"finish": false,
+"finish": true,
 "pos": Vector2( 2074.58, -1294.91 ),
 "texture": ExtResource( 3 ),
 "type": 2

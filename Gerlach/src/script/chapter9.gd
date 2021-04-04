@@ -3,6 +3,7 @@ onready var chapter = $"/root/MissionInventory"
 var _Enemys
 var _dialogbox2:bool = false
 func _ready():
+	$"/root/Global"._Exam = 1
 	lable("chapter9_dialogbox1")
 
 func _process(delta):

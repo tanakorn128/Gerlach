@@ -4,6 +4,7 @@ var _Enemys
 var _dialogbox2:bool = false
 
 func _ready():
+	$"/root/Global"._Exam = 3
 	lable("chapter14_dialogbox1")
 	pass
 

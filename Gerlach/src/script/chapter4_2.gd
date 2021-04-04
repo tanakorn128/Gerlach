@@ -10,6 +10,7 @@ var soldier2:bool
 var soldier3:bool
 
 func _ready():
+	$"/root/Global"._Exam = 2
 	$"/root/Global".number_enemy = 5
 	lable("chapter4_2_dialogbox1")
 	#lable("chapter4_2_start")

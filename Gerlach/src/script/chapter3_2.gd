@@ -5,6 +5,7 @@ var _Enemys
 onready var chapter = $"/root/MissionInventory"
 
 func _ready():
+	$"/root/Global"._Exam = 2
 	lable("chapter3_2_dialogbox1")
 	_stop()
 	$"/root/Global".scene = 3

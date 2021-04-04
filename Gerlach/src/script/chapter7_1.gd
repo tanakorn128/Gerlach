@@ -1,5 +1,6 @@
 extends Node2D
 func _ready():
+	$"/root/Global"._Exam = 3
 	lable("chapter7_1_dialogbox1")
 
 func lable(value:String):

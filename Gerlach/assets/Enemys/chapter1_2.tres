@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource( 1 )
 dic = [ {
-"finish": false,
+"finish": true,
 "texture": ExtResource( 2 ),
 "type": 2
 } ]

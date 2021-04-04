@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=50 format=2]
+[gd_resource type="Resource" load_steps=51 format=2]
 
 [ext_resource path="res://src/scene/dialogbox/all_dialogbox.gd" type="Script" id=1]
 [ext_resource path="res://src/scene/dialogbox/chapter1/2.tres" type="Resource" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://src/scene/dialogbox/chapter1/ป้าย2.tres" type="Resource" id=47]
 [ext_resource path="res://src/scene/dialogbox/chapter1/ป้าย3.tres" type="Resource" id=48]
 [ext_resource path="res://src/scene/dialogbox/chapter1/Dialogbox2.tres" type="Resource" id=49]
+[ext_resource path="res://src/scene/dialogbox/chapter3_1/1.tres" type="Resource" id=50]
 
 [resource]
 script = ExtResource( 1 )
@@ -63,11 +64,13 @@ all = {
 "chapter15_1_dialogbox1": ExtResource( 42 ),
 "chapter15_2_dialogbox1": ExtResource( 43 ),
 "chapter15_2_dialogbox2": ExtResource( 41 ),
+"chapter1_dialogbox1": null,
 "chapter1_dialogbox2": ExtResource( 49 ),
 "chapter1_dialogbox3": ExtResource( 22 ),
 "chapter2_dialogbox1": ExtResource( 45 ),
 "chapter2_dialogbox2": ExtResource( 44 ),
 "chapter2_dialogbox3": ExtResource( 46 ),
+"chapter3_1_dialogbox1": ExtResource( 50 ),
 "chapter3_2_dialogbox1": ExtResource( 12 ),
 "chapter3_2_dialogbox2": ExtResource( 10 ),
 "chapter3_2_dialogbox3": ExtResource( 11 ),

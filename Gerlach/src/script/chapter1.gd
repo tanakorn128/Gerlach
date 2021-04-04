@@ -6,6 +6,7 @@ var _Enemys
 var monster
 var finished_monster:bool = false
 func _ready():
+	$"/root/Global"._Exam = 1
 	Events.connect("Enemy_pos",self,"monster1")
 	$player.position = $"/root/Global".player_pos
 	$"/root/Global".scene = 1
@@ -13,6 +14,8 @@ func _ready():
 	_dialogbox()
 
 func _process(delta):
+	$"/root/Global".player_pos.x = $player.position.x
+	$"/root/Global".player_pos.y = $player.position.y + 10
 	momster()
 
 func _on_mailbox1_body_entered(body):	if body.get_name() == "player":
@@ -40,7 +43,7 @@ func momster():
 		if chapter.chapters(23,i,"finish"):
 			monster -= 1
 	if monster <= 0 && not finished_monster:
-		lable("chapter1_dialogbox3")
+		lable2("chapter1_dialogbox3")
 		finished_monster = true
 	
 	
@@ -50,27 +53,35 @@ func _on_next_chapter_body_entered(body):
 		if chapter.chapters(1,i,"finish"):
 			_Enemys -= 1
 	if _Enemys <= 0:
-		lable("chapter1_dialogbox2")
+		lable2("chapter1_dialogbox2")
 		$put_Enemy_Chapter1.monster()
 		finished = true
 		
 	
-	if body.get_name() == "player" && finished_monster:
-		if finished:
+	if body.get_name() == "player":
+		if finished && finished_monster:
+			$"/root/Global".player_pos = Vector2(635.898,84.035)
 			get_tree().change_scene("res://src/scene/chapter2.tscn")
 		else:
-			get_tree().change_scene("res://src/scene/chapter1.tscn")
+			$"/root/Global".player_pos = Vector2(889.7,898.25)
+			$"/root/Scene".scene(1)
 	pass # Replace with function body.
 
 func lable(value:String):
 	$"/root/Global"._dialogbox = value
+	if $dialogbox._dialogbox(false):
+		$dialogbox.show()
+		$dialogbox.position.x = $player.position.x -660
+		$dialogbox.position.y = $player.position.y + 120
+		$dialogbox._dialogbox(false)
+
+func lable2(value:String):
+	$"/root/Global"._dialogbox = value
 	if $dialogbox._dialogbox(true):
-		$"/root/Global".player_pos = $player.position
 		$dialogbox.show()
 		$dialogbox.position.x = $player.position.x -660
 		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)
-
 
 func _on_lable_body_entered(body):
 	if body.get_name() == "player":

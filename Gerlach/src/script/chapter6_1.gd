@@ -4,6 +4,7 @@ onready var chapter = $"/root/MissionInventory"
 var _dialogbox:bool = false
 var chapter6_2:bool = false
 func _ready():
+	$"/root/Global"._Exam = 3
 	lable("chapter6_1_dialogbox1")
 	$"/root/Global".scene = 9
 	

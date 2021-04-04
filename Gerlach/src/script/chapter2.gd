@@ -5,9 +5,13 @@ var _Enemys
 onready var chapter = $"/root/MissionInventory"
 
 func _ready():
+	$player.position = $"/root/Global".player_pos
+	$"/root/Global"._Exam = 2
 	$"/root/Global".scene = 2
 	lable("chapter2_dialogbox1")
 func _process(delta):
+	$"/root/Global".player_pos.x = $player.position.x
+	$"/root/Global".player_pos.y = $player.position.y + 10
 	update()
 
 

@@ -14,6 +14,8 @@ func _ready():
 func _on_Button_button_down():
 	$click.play()
 	var scene = $"/root/Global".scene
+	$"/root/Player".player.position = $"/root/Global".player_pos
+	print($"/root/Player".player.position)
 	ResourceSaver.save(chapter.all_chapter[scene-1].get_path(),chapter.all_chapter[scene-1])
 	ResourceSaver.save("res://assets/player/player.tres",$"/root/Player".player)
 	$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"

@@ -16,7 +16,7 @@
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter3_2.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=16]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=6]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
 
@@ -53,7 +53,7 @@ position = Vector2( 977.103, -274.977 )
 limit_right = 5079
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
-parameters/StateMachine/playback = SubResource( 6 )
+parameters/StateMachine/playback = SubResource( 1 )
 
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )

@@ -23,6 +23,8 @@ var question:Array
 var Ans:Array
 var correct:Array
 
+##ชุดข้อสอบ
+var _Exam:int
 ####
 #chapter complete
 var chapter6_2:bool = false

@@ -4,7 +4,7 @@ var _Enemys
 var _dialogbox:bool = false
 
 func _ready():
-	
+	$"/root/Global"._Exam = 3
 	pass
 
 func _process(delta):

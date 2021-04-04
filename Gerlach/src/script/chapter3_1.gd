@@ -5,7 +5,8 @@ var _Enemys
 onready var chapter = $"/root/MissionInventory"
 
 func _ready():
-	lable("chapter3_1_start")
+	$"/root/Global"._Exam = 2
+	lable("chapter3_1_dialogbox1")
 	_stop()
 	$"/root/Global".scene = 3
 
@@ -38,4 +39,12 @@ func _stop():
 func _on_chapter4_1_body_entered(body):
 	if body.get_name() == "player":
 		$"/root/Scene".scene(4.1)
+	pass # Replace with function body.
+
+
+
+func _on_chapter3_2_body_entered(body):
+	if body.get_name() == "player":
+		$"/root/Scene".scene(3)
+		print("TTTT")
 	pass # Replace with function body.

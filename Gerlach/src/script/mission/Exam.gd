@@ -4,14 +4,15 @@ var number_index
 var temp
 var mission
 export (Array) var exam
-var ExamChapter1 = preload("res://src/script/Exam/Exam_All/Chapter1.tres")
+var ExamChapter1 #= preload("res://src/script/Exam/Exam_All/Chapter1.tres")
 var correct
 var inst_enemy
 export (int) var Time
 var playerhp
 func _ready():
+	exam($"/root/Global"._Exam)
 	$"/root/Global".playerwalk = false
-	set_exam(ExamChapter1.ExamAll.size())
+	set_exam(ExamChapter1.Exam_Group.size())
 	import_exam()
 	var audio = $AudioCorrect.stream as  AudioStreamOGGVorbis
 	audio.set_loop(false)
@@ -24,7 +25,7 @@ func _ready():
 	enemy()
 func set_exam(size): #นำเข้าข้อสอบจากภายนอก
 	for i in size:
-		exam.append(ExamChapter1.ExamAll[i])
+		exam.append(ExamChapter1.Exam_Group[i])
 
 
 func get_Exam_Chapter(chapter): #นำเข้าข้อสอบจากภายนอก
@@ -103,6 +104,8 @@ func finish(value:String,hp:int): #player or Enemy
 		$"/root/Player".player.hp = playerhp  - 10
 	elif value == "enemy" && hp <= 0:
 		$"/root/MissionInventory".set_value($"/root/Global".number_enemy+1,$"/root/Global".number_index,"finish",true)
+		if $"/root/Player".player.hp < 100:
+			$"/root/Player".player.hp = playerhp  + 10
 		#clear_enemy
 		get_tree().change_scene("res://src/scene/Answer.tscn")
 
@@ -152,3 +155,14 @@ func enemy():
 func attack(value:String):#player and enemy
 	if value == "enemy":
 		inst_enemy.attack()
+
+
+
+func exam(group:int):
+	if group == 1:
+		ExamChapter1 = load("res://src/script/Exam/group/group1.tres")
+	if group == 2:
+		ExamChapter1 = load("res://src/script/Exam/group/group2.tres")
+	if group == 3:
+		ExamChapter1 = load("res://src/script/Exam/group/group3.tres")
+

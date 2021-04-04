@@ -4,6 +4,7 @@ var _Enemys
 var _dialogbox2:bool = false
 
 func _ready():
+	$"/root/Global"._Exam = 3
 	lable("chapter15_2_dialogbox1")
 
 func _process(delta):
