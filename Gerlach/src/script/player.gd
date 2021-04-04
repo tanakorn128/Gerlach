@@ -2,12 +2,14 @@ extends KinematicBody2D
 var velocity : Vector2
 var speed = 10000
 export (bool) var walk
+onready var res = $"/root/Player".player
 onready var animation_tree = get_node("AnimationTreePlayer")
 onready var animation_node = animation_tree.get("parameters")
 onready var playback = $AnimationTreePlayer.get("parameters/StateMachine/playback")
-export (Script) var game_save
 
 func _ready():
+	if $"/root/Player".player.hp <= 0:
+		get_tree().change_scene("res://src/scene/Menu.tscn")
 	playback.start("attackLeft")
 	_load()
 
@@ -24,13 +26,11 @@ func _physics_process(delta):
 	
 	
 func _load():
-	var _load = load("user://save_01.tres")
+	$HUD/TextureProgress.value = res.hp
 	pass
 func _save():
-	var new_save = game_save.new()
-	new_save.player_pos = self.position
-	ResourceSaver.save("user://save_01.tres",new_save)
-	
+	#ResourceSaver.save("user://save_01.tres",new_save)
+	pass
 func Animation_Player(value:String):
 	if value == "run":
 		Transition(2)
@@ -59,7 +59,7 @@ func Animation_Player(value:String):
 			attacks_walk(Vector2(0,0),Vector2(0,0),"idle")
 
 func attack(value):
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_pressed("attack") && false:
 		Transition(0)
 		if value == "left":
 			animation_tree.set("parameters/attacks_Blend2/blend_amount",0)

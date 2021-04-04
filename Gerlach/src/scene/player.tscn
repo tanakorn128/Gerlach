@@ -1,9 +1,8 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://src/script/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/player/player.png" type="Texture" id=2]
 [ext_resource path="res://assets/player/sword/sword_3_bit.png" type="Texture" id=3]
-[ext_resource path="res://src/script/game_save.gd" type="Script" id=4]
 [ext_resource path="res://assets/player/sword/sword_2_bit.png" type="Texture" id=5]
 [ext_resource path="res://assets/player/sword/sword_0_bit.png" type="Texture" id=6]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=7]
@@ -608,7 +607,7 @@ nodes/run/node = SubResource( 44 )
 nodes/run/position = Vector2( -460, 140 )
 nodes/walk/node = SubResource( 50 )
 nodes/walk/position = Vector2( -640, 0 )
-node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "TimeScale", 0, "run", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale 2", 0, "attacks_Blend2", "TimeScale 3", 0, "StateMachine", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3" ]
+node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "TimeScale 2", 0, "attacks_Blend2", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale", 0, "run", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "TimeScale 3", 0, "StateMachine" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=52]
 
@@ -617,7 +616,6 @@ scale = Vector2( 3, 3 )
 collision_mask = 3
 script = ExtResource( 1 )
 walk = true
-game_save = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -5.96046e-08, -4.76837e-07 )

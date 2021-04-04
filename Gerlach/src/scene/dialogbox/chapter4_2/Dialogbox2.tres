@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 dialogbox = [ "เกอราช : ข้าชื่อเกอราช", "หัวหน้าทหารคนที่ 1 : !!!" ]
-finish = true
+finish = false

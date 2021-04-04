@@ -1,0 +1,188 @@
+[gd_resource type="Resource" load_steps=23 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam_Group.gd" type="Script" id=1]
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+Question = "สมการข้อใดเป็นจริง"
+answer1 = "2 x 3 = 6"
+answer2 = "2 + 3 = 6"
+answer3 = "2 x 2 = 6"
+answer4 = "2 + 2 = 6"
+Correct = "2 x 3 = 6"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Question = "สมการข้อใดเป็นเท็จ"
+answer1 = "2 – 3 = 1"
+answer2 = "3 – 2 = 1"
+answer3 = "3 + 2 = 5"
+answer4 = "2 + 3 = 5"
+Correct = "2 – 3 = 1"
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+Question = "3x + 22 = 43"
+answer1 = "x=7"
+answer2 = "x=6"
+answer3 = "x=5"
+answer4 = "x=4"
+Correct = "x=7"
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 2 )
+Question = "3x + 22 = 40"
+answer1 = "x=7"
+answer2 = "x=6"
+answer3 = "x=5"
+answer4 = "x=4"
+Correct = "x=6"
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 2 )
+Question = "3x + 22 = 37"
+answer1 = "x=7"
+answer2 = "x=6"
+answer3 = "x=5"
+answer4 = "x=4"
+Correct = "x=5"
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 2 )
+Question = "3x + 22 = 34"
+answer1 = "x=7"
+answer2 = "x=6"
+answer3 = "x=5"
+answer4 = "x=4"
+Correct = "x=4"
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 2 )
+Question = "3x + 22 = 37"
+answer1 = "x=7"
+answer2 = "x=6"
+answer3 = "x=5"
+answer4 = "x=4"
+Correct = "x=5"
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 2 )
+Question = "2e + 41 = 45"
+answer1 = "e=3"
+answer2 = "e=2"
+answer3 = "e=1"
+answer4 = "e=4"
+Correct = "e=2"
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 2 )
+Question = "ถ้า 6k-21 =3  เเล้ว 8k+8 มีค่าเท่าไร"
+answer1 = "39"
+answer2 = "40"
+answer3 = "41"
+answer4 = "38"
+Correct = "40"
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 2 )
+Question = "ถ้า 6k-21 =3  เเล้ว 8k+9 มีค่าเท่าไร"
+answer1 = "39"
+answer2 = "40"
+answer3 = "41"
+answer4 = "38"
+Correct = "41"
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 2 )
+Question = "ถ้า 6k-21 =3  เเล้ว 8k+7 มีค่าเท่าไร"
+answer1 = "39"
+answer2 = "40"
+answer3 = "41"
+answer4 = "38"
+Correct = "39"
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 2 )
+Question = "ถ้า 6k-21 =3  เเล้ว 8k+6 มีค่าเท่าไร"
+answer1 = "39"
+answer2 = "40"
+answer3 = "41"
+answer4 = "38"
+Correct = "38"
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 2 )
+Question = "6q+9q=30"
+answer1 = "q=2"
+answer2 = "q=3"
+answer3 = "q=4"
+answer4 = "q=5"
+Correct = "q=2"
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 2 )
+Question = "6q+9q=45"
+answer1 = "q=2"
+answer2 = "q=3"
+answer3 = "q=4"
+answer4 = "q=5"
+Correct = "q=3"
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 2 )
+Question = "6q+9q=60"
+answer1 = "q=2"
+answer2 = "q=3"
+answer3 = "q=4"
+answer4 = "q=5"
+Correct = "q=4"
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 2 )
+Question = "6q+9q=75"
+answer1 = "q=2"
+answer2 = "q=3"
+answer3 = "q=4"
+answer4 = "q=5"
+Correct = "q=5"
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 2 )
+Question = "3m-2m=3"
+answer1 = "m=2"
+answer2 = "m=3"
+answer3 = "m=4"
+answer4 = "m=5"
+Correct = "m=3"
+
+[sub_resource type="Resource" id=18]
+script = ExtResource( 2 )
+Question = "3m-2m=2"
+answer1 = "m=2"
+answer2 = "m=3"
+answer3 = "m=4"
+answer4 = "m=5"
+Correct = "m=2"
+
+[sub_resource type="Resource" id=19]
+script = ExtResource( 2 )
+Question = "3m-2m=4"
+answer1 = "m=2"
+answer2 = "m=3"
+answer3 = "m=4"
+answer4 = "m=5"
+Correct = "m=4"
+
+[sub_resource type="Resource" id=20]
+script = ExtResource( 2 )
+Question = "3m-2m=5"
+answer1 = "m=2"
+answer2 = "m=3"
+answer3 = "m=4"
+answer4 = "m=5"
+Correct = "m=5"
+
+[resource]
+script = ExtResource( 1 )
+Exam_Group = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ]

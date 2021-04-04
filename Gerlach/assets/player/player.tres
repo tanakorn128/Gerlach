@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://assets/player/player.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+position = Vector2( 889.7, 898.025 )
+hp = 100

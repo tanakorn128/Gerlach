@@ -36,6 +36,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="black" type="ColorRect" parent="."]
+visible = false
+margin_left = -282.0
+margin_top = -381.0
+margin_right = 1549.0
+margin_bottom = 939.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="BackGround" parent="." instance=ExtResource( 5 )]
 
 [node name="start" type="Button" parent="."]
@@ -78,17 +89,6 @@ __meta__ = {
 stream = ExtResource( 4 )
 volume_db = -6.656
 autoplay = true
-
-[node name="black" type="ColorRect" parent="."]
-visible = false
-margin_left = -282.0
-margin_top = -381.0
-margin_right = 1549.0
-margin_bottom = 939.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Sprite" type="Sprite" parent="."]
 visible = false

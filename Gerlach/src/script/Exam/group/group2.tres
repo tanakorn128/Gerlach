@@ -1,0 +1,476 @@
+[gd_resource type="Resource" load_steps=55 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam_Group.gd" type="Script" id=1]
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+Question = "ตัวประกอบของ 10 มีอะไรบ้าง"
+answer1 = "1,2,10"
+answer2 = "1,2,5,10"
+answer3 = "1,5,10"
+answer4 = "1,3,9"
+Correct = "1,2,5,10"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Question = "ตัวประกอบของ 20 มีอะไรบ้าง"
+answer1 = "1,2,10,20"
+answer2 = "1,2,5,10,20"
+answer3 = "1,5,10"
+answer4 = "1,3,9"
+Correct = "1,2,5,10,20"
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+Question = "ตัวประกอบของ 18 มีอะไรบ้าง"
+answer1 = "1 , 2 , 3 , 6 , 9 , 18"
+answer2 = "1 , 2 , 3 , 6 , 9"
+answer3 = "1 , 2 , 3 , 6"
+answer4 = "1 , 2 , 3"
+Correct = "1 , 2 , 3 , 6 , 9 , 18"
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 2 )
+Question = "ตัวประกอบของ 9 มีอะไรบ้าง"
+answer1 = ""
+answer2 = ""
+answer3 = ""
+answer4 = ""
+Correct = ""
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 2 )
+Question = "ตัวประกอบของ 9 มีอะไรบ้าง"
+answer1 = "1 , 2 , 3 , 6 , 9"
+answer2 = "1 , 2 , 3  , 9"
+answer3 = "1 , 3 , 6 , 9"
+answer4 = "1 , 3 , 9"
+Correct = "1 , 3 , 9"
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 2 )
+Question = "ตัวประกอบของ 12 มีอะไรบ้าง"
+answer1 = "1 , 2 , 3 , 4 , 6 , 12"
+answer2 = "1 , 2 , 3 , 4 , 6 "
+answer3 = "1 , 2 , 3 , 4 "
+answer4 = "1 , 2 "
+Correct = "1 , 2 , 3 , 4 , 6 , 12"
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 2 )
+Question = "ตัวประกอบของ 6 มีอะไรบ้าง"
+answer1 = "1 , 2 , 3 , 6"
+answer2 = "1 , 2 , 3"
+answer3 = "1 , 2"
+answer4 = "6"
+Correct = "1 , 2 , 3 , 6"
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 2 )
+Question = "ตัวประกอบเฉพาะของ 12 มีอะไรบ้าง"
+answer1 = "1 , 2 , 3 , 4 , 6 , 12"
+answer2 = "1 , 2 , 3 , 4 , 6"
+answer3 = "2 , 3"
+answer4 = "2 , 3"
+Correct = "2 , 3"
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 2 )
+Question = "ตัวประกอบเฉพาะของ 24 มีอะไรบ้าง"
+answer1 = "1 , 2 , 3 , 4 , 6 , 12 , 24"
+answer2 = "1 , 2 , 3 , 4 , 6 ,24"
+answer3 = "2 , 3"
+answer4 = "1 , 2"
+Correct = "2 , 3"
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "2"
+answer2 = "4"
+answer3 = "6"
+answer4 = "8"
+Correct = "2"
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "3"
+answer2 = "6"
+answer3 = "9"
+answer4 = "12"
+Correct = "3"
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 2 )
+Question = "ห.ร.ม ของ 12 18 24 คือ "
+answer1 = "2"
+answer2 = "3"
+answer3 = "6"
+answer4 = "72"
+Correct = "6"
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 2 )
+Question = "ห.ร.ม ของ 12 18 คือ"
+answer1 = "2"
+answer2 = "3"
+answer3 = "4"
+answer4 = "72"
+Correct = "6"
+
+[sub_resource type="Resource" id=14]
+script = ExtResource( 2 )
+Question = "ห.ร.ม ของ 19,38,57 คือ"
+answer1 = "19"
+answer2 = "38"
+answer3 = "57"
+answer4 = "28"
+Correct = "19"
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 2 )
+Question = "ห.ร.ม ของ 19,38 คือ"
+answer1 = "19"
+answer2 = "38"
+answer3 = "57"
+answer4 = "28"
+Correct = "19"
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 2 )
+Question = "ค.ร.น ของ 12 18 24 คือ"
+answer1 = "2"
+answer2 = "3"
+answer3 = "6"
+answer4 = "72"
+Correct = "72"
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 2 )
+Question = "ค.ร.น ของ 12 18 คือ"
+answer1 = "24"
+answer2 = "18"
+answer3 = "36"
+answer4 = "72"
+Correct = "36"
+
+[sub_resource type="Resource" id=18]
+script = ExtResource( 2 )
+Question = "ค.ร.น ของ 14,28 คือ"
+answer1 = "14"
+answer2 = "12"
+answer3 = "28"
+answer4 = "24"
+Correct = "28"
+
+[sub_resource type="Resource" id=19]
+script = ExtResource( 2 )
+Question = "ค.ร.น ของ 14,28,42 คือ"
+answer1 = "24"
+answer2 = "42"
+answer3 = "48"
+answer4 = "84"
+Correct = "84"
+
+[sub_resource type="Resource" id=20]
+script = ExtResource( 2 )
+Question = "|-4| มีค่าตรงกับข้อใด"
+answer1 = "2"
+answer2 = "-4"
+answer3 = "4"
+answer4 = "-2"
+Correct = "4"
+
+[sub_resource type="Resource" id=21]
+script = ExtResource( 2 )
+Question = "|-8| มีค่าตรงกับข้อใด"
+answer1 = "4"
+answer2 = "-4"
+answer3 = "8"
+answer4 = "-8"
+Correct = "8"
+
+[sub_resource type="Resource" id=22]
+script = ExtResource( 2 )
+Question = "|-9| มีค่าตรงกับข้อใด"
+answer1 = "3"
+answer2 = "-3"
+answer3 = "9"
+answer4 = "-9"
+Correct = "-9"
+
+[sub_resource type="Resource" id=23]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "ไม่มีข้อถูก"
+answer2 = "4"
+answer3 = "5"
+answer4 = "6"
+Correct = "5"
+
+[sub_resource type="Resource" id=24]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "10"
+answer2 = "11"
+answer3 = "9"
+answer4 = "8"
+Correct = "11"
+
+[sub_resource type="Resource" id=25]
+script = ExtResource( 2 )
+Question = "96 แยกตัวประกอบได้ตามข้อใด"
+answer1 = "3×8×4"
+answer2 = "3×32"
+answer3 = "6×16"
+answer4 = "3×2×2×2×2×2"
+Correct = "3×2×2×2×2×2"
+
+[sub_resource type="Resource" id=26]
+script = ExtResource( 2 )
+Question = "9 แยกตัวประกอบได้ตามข้อใด"
+answer1 = "3×3"
+answer2 = "3×2"
+answer3 = "2×2"
+answer4 = "2×2×2"
+Correct = "3×3"
+
+[sub_resource type="Resource" id=27]
+script = ExtResource( 2 )
+Question = "พิจารณาการแยกตัวประกอบของจำนวนต่อไปนี้ 60 = 2×2×3×5 70 = 2×5×7 40 = 2×2×2×5 ห.ร.ม. ตรงกับข้อใด"
+answer1 = "2×5"
+answer2 = "2×2×5"
+answer3 = "2×2×3×5"
+answer4 = "2×2×2×3×5×7"
+Correct = "2×5"
+
+[sub_resource type="Resource" id=28]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "13"
+answer2 = "14"
+answer3 = "15"
+answer4 = "16"
+Correct = "13"
+
+[sub_resource type="Resource" id=29]
+script = ExtResource( 2 )
+Question = "มีลวด 3 เส้น ยาว 8 เมตร 10 เมตร และ 12 เมตร ต้องการตัดให้ยาวเท่าๆ กัน และยาวมากที่สุด จะต้องหาคำตอบด้วยวิธีใด"
+answer1 = "ค.ร.น."
+answer2 = "ห.ร.ม."
+answer3 = "แยกตัวประกอบ"
+answer4 = "บัญญัติไตรยางศ์"
+Correct = "ห.ร.ม."
+
+[sub_resource type="Resource" id=30]
+script = ExtResource( 2 )
+Question = "มีลวด 3 เส้น ยาว 8 เมตร 10 เมตร และ 12 เมตร ต้องการตัดให้ยาวเท่าๆ กัน และยาวมากที่สุด จะต้องหาคำตอบด้วยวิธีใด"
+answer1 = "ค.ร.น."
+answer2 = "ห.ร.ม."
+answer3 = "แยกตัวประกอบ"
+answer4 = "บัญญัติไตรยางศ์"
+Correct = "ห.ร.ม."
+
+[sub_resource type="Resource" id=31]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "16"
+answer2 = "17"
+answer3 = "18"
+answer4 = "15"
+Correct = "17"
+
+[sub_resource type="Resource" id=32]
+script = ExtResource( 2 )
+Question = "ข้อใดไม่ถูกต้อง"
+answer1 = "2 มีตัวประกอบ 2 ตัว คือ 1 และ 2"
+answer2 = "5 มีตัวประกอบ 2 ตัว คือ 1 และ 5"
+answer3 = "7 มีตัวประกอบ 2 ตัว คือ 1 และ 7"
+answer4 = "12 มีตัวประกอบ 2 ตัว คือ 1 และ 12"
+Correct = "12 มีตัวประกอบ 2 ตัว คือ 1 และ 12"
+
+[sub_resource type="Resource" id=33]
+script = ExtResource( 2 )
+Question = "ข้อใดไม่ถูกต้อง"
+answer1 = "11 มีตัวประกอบ 2 ตัว คือ 1 และ 11"
+answer2 = "13 มีตัวประกอบ 2 ตัว คือ 1 และ 13"
+answer3 = "19 มีตัวประกอบ 2 ตัว คือ 1 และ 19"
+answer4 = "6 มีตัวประกอบ 2 ตัว คือ 1 และ 6"
+Correct = "6 มีตัวประกอบ 2 ตัว คือ 1 และ 6"
+
+[sub_resource type="Resource" id=34]
+script = ExtResource( 2 )
+Question = "จำนวนใดบ้างเป็นตัวประกอบเฉพาะของ 18"
+answer1 = "1, 2"
+answer2 = "2, 3"
+answer3 = "1, 3"
+answer4 = "1, 2, 3"
+Correct = "2, 3"
+
+[sub_resource type="Resource" id=35]
+script = ExtResource( 2 )
+Question = "จำนวนใดบ้างเป็นตัวประกอบเฉพาะของ 16"
+answer1 = "2"
+answer2 = "2, 3"
+answer3 = "1, 2"
+answer4 = "1, 2, 3"
+Correct = "2"
+
+[sub_resource type="Resource" id=36]
+script = ExtResource( 2 )
+Question = "ห.ร.ม. ของ 18 24 และ 30 คือจำนวนใด"
+answer1 = "2"
+answer2 = "4"
+answer3 = "6"
+answer4 = "8"
+Correct = "2"
+
+[sub_resource type="Resource" id=37]
+script = ExtResource( 2 )
+Question = "ห.ร.ม. ของ 24 30 คือจำนวนใด"
+answer1 = "2"
+answer2 = "4"
+answer3 = "6"
+answer4 = "8"
+Correct = "6"
+
+[sub_resource type="Resource" id=38]
+script = ExtResource( 2 )
+Question = "ค.ร.น. ของ 20 25 และ 30 คือข้อใด"
+answer1 = "150"
+answer2 = "200"
+answer3 = "250"
+answer4 = "300"
+Correct = "300"
+
+[sub_resource type="Resource" id=39]
+script = ExtResource( 2 )
+Question = "ค.ร.น. ของ 20 30 คือข้อใด"
+answer1 = "60"
+answer2 = "30"
+answer3 = "120"
+answer4 = "240"
+Correct = "60"
+
+[sub_resource type="Resource" id=40]
+script = ExtResource( 2 )
+Question = "ตัวประกอบร่วมของ 12 และ 16 คือข้อใด"
+answer1 = "1, 2, 3"
+answer2 = "1, 2, 4"
+answer3 = "1, 2, 8"
+answer4 = "1, 2, 3, 4"
+Correct = "1, 2, 4"
+
+[sub_resource type="Resource" id=41]
+script = ExtResource( 2 )
+Question = "ตัวประกอบร่วมของ 9 และ 18 คือข้อใด"
+answer1 = "1, 3, 9"
+answer2 = "1, 2, 4"
+answer3 = "1, 2, 3"
+answer4 = "1, 2, 9"
+Correct = "1, 3, 9"
+
+[sub_resource type="Resource" id=42]
+script = ExtResource( 2 )
+Question = "จำนวนใดมี ค.ร.น. เป็น 150"
+answer1 = "6, 12"
+answer2 = "10, 30"
+answer3 = "5, 50"
+answer4 = "6, 25"
+Correct = "6, 25"
+
+[sub_resource type="Resource" id=43]
+script = ExtResource( 2 )
+Question = "13 เป็น ห.ร.ม. ของ 117, ....... 273 ควรเติมจำนวนใดลงในช่องว่าง"
+answer1 = "123"
+answer2 = "132"
+answer3 = "143"
+answer4 = "253"
+Correct = "143"
+
+[sub_resource type="Resource" id=44]
+script = ExtResource( 2 )
+Question = "แม่จะต้องมีเงินอย่างน้อยที่สุดเท่าไร หากต้องการแบ่งให้ลูกไม่ว่าจะเป็นครั้งละ 60 บาท หรือ 90 บาท หรือ 100 บาท แล้วเงินหมดพอดี"
+answer1 = "800 บาท"
+answer2 = "900 บาท"
+answer3 = "1,000 บาท"
+answer4 = "1,100 บาท"
+Correct = "900 บาท"
+
+[sub_resource type="Resource" id=45]
+script = ExtResource( 2 )
+Question = "มีลวดอยู่ 3 เส้น ยาว 24 56 และ 48 เมตร นำลวดมาตัดเป็นเส้นสั้นๆ เท่ากันให้ยาวที่สุด และไม่เหลือเศษจะได้ลวดยาวเส้นละกี่เมตร และจำนวนทั้งหมดกี่เส้น"
+answer1 = "เส้นละ 8 เมตร จำนวน 16 เส้น"
+answer2 = "เส้นละ 6 เมตร จำนวน 18 เส้น"
+answer3 = "เส้นละ 4 เมตร จำนวน 25 เส้น"
+answer4 = "เส้นละ 2 เมตร จำนวน 47 เส้น"
+Correct = "เส้นละ 8 เมตร จำนวน 16 เส้น"
+
+[sub_resource type="Resource" id=46]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "21"
+answer2 = "22"
+answer3 = "23"
+answer4 = "24"
+Correct = "23"
+
+[sub_resource type="Resource" id=47]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "40"
+answer2 = "41"
+answer3 = "42"
+answer4 = "39"
+Correct = "41"
+
+[sub_resource type="Resource" id=48]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "45"
+answer2 = "46"
+answer3 = "47"
+answer4 = "48"
+Correct = "47"
+
+[sub_resource type="Resource" id=49]
+script = ExtResource( 2 )
+Question = "ข้อใดเป็นจำนวนเฉพาะ"
+answer1 = "2"
+answer2 = "4"
+answer3 = "6"
+answer4 = "8"
+Correct = "2"
+
+[sub_resource type="Resource" id=50]
+script = ExtResource( 2 )
+Question = "ข้อใดไม่เป็นจำนวนเฉพาะ"
+answer1 = "2"
+answer2 = "4"
+answer3 = "6"
+answer4 = "8"
+Correct = "8"
+
+[sub_resource type="Resource" id=51]
+script = ExtResource( 2 )
+Question = "ข้อใดไม่เป็นจำนวนเฉพาะ"
+answer1 = "79"
+answer2 = "83"
+answer3 = "89"
+answer4 = "72"
+Correct = "72"
+
+[sub_resource type="Resource" id=52]
+script = ExtResource( 2 )
+Question = "ข้อใดไม่เป็นจำนวนเฉพาะ"
+answer1 = "61"
+answer2 = "67"
+answer3 = "73"
+answer4 = "74"
+Correct = "74"
+
+[resource]
+script = ExtResource( 1 )
+Exam_Group = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ]

@@ -8,6 +8,7 @@ var ExamChapter1 = preload("res://src/script/Exam/Exam_All/Chapter1.tres")
 var correct
 var inst_enemy
 export (int) var Time
+var playerhp
 func _ready():
 	$"/root/Global".playerwalk = false
 	set_exam(ExamChapter1.ExamAll.size())
@@ -18,6 +19,8 @@ func _ready():
 	audio.set_loop(false)
 	audio = $click.stream as  AudioStreamOGGVorbis
 	audio.set_loop(false)
+	playerhp = $"/root/Player".player.hp
+	$player/HUD/TextureProgress.value = 100
 	enemy()
 func set_exam(size): #นำเข้าข้อสอบจากภายนอก
 	for i in size:
@@ -97,6 +100,7 @@ func finish(value:String,hp:int): #player or Enemy
 	$"/root/Global".playerwalk = true
 	if value == "player" && hp <= 0:
 		get_tree().change_scene("res://src/scene/Answer.tscn")
+		$"/root/Player".player.hp = playerhp  - 10
 	elif value == "enemy" && hp <= 0:
 		$"/root/MissionInventory".set_value($"/root/Global".number_enemy+1,$"/root/Global".number_index,"finish",true)
 		#clear_enemy

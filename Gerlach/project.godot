@@ -35,6 +35,11 @@ _global_script_classes=[ {
 "path": "res://src/script/Exam/Exam/Angle/Angle.gd"
 }, {
 "base": "Resource",
+"class": "Exam_Group",
+"language": "GDScript",
+"path": "res://src/script/Exam/script/Exam_Group.gd"
+}, {
+"base": "Resource",
 "class": "Exam_Sort",
 "language": "GDScript",
 "path": "res://src/script/Exam/Exam/Sort/ExamSort.gd"
@@ -58,6 +63,11 @@ _global_script_classes=[ {
 "class": "mission_chappter1",
 "language": "GDScript",
 "path": "res://src/script/mission/chapter1/chapter1.gd"
+}, {
+"base": "Resource",
+"class": "player",
+"language": "GDScript",
+"path": "res://assets/player/player.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
@@ -65,11 +75,13 @@ _global_script_class_icons={
 "Exam": "",
 "Exam_All": "",
 "Exam_Angle": "",
+"Exam_Group": "",
 "Exam_Sort": "",
 "all_dialogbox": "",
 "dialogbox": "",
 "mission": "",
-"mission_chappter1": ""
+"mission_chappter1": "",
+"player": ""
 }
 
 [application]
@@ -85,6 +97,7 @@ Events="*res://src/script/Events.gd"
 MissionInventory="*res://src/scene/Mission_Inventory.tscn"
 ExamInventory="*res://src/scene/Exam/Exam_Inventory.tscn"
 Scene="*res://src/scene/scene.tscn"
+Player="*res://assets/player/player.tscn"
 
 [display]
 
