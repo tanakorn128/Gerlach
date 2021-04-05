@@ -9,6 +9,7 @@ var correct
 var inst_enemy
 export (int) var Time
 var playerhp
+var check_button:bool = false
 func _ready():
 	exam($"/root/Global"._Exam)
 	$"/root/Global".playerwalk = false
@@ -34,22 +35,26 @@ func get_Exam_Chapter(chapter): #นำเข้าข้อสอบจาก�
 
 
 func _on_answer1_button_down():
-	_answer($answer1/Label.text,correct)
+	if not check_button:
+		_answer($answer1/Label.text,correct)
 	pass # Replace with function body.
 
 
 func _on_answer2_button_down():
-	_answer($answer2/Label.text,correct)
+	if not check_button:
+		_answer($answer2/Label.text,correct)
 	pass # Replace with function body.
 
 
 func _on_answer3_button_down():
-	_answer($answer3/Label.text,correct)
+	if not check_button:
+		_answer($answer3/Label.text,correct)
 	pass # Replace with function body.
 
 
 func _on_answer4_button_down():
-	_answer($answer4/Label.text,correct)
+	if not check_button:
+		_answer($answer4/Label.text,correct)
 	pass # Replace with function body.
 
 func random_exam(value): #สุ่มตัวเลข
@@ -75,12 +80,13 @@ func record_reply(question,correct,answer1,answer2,answer3,answer4):
 	$"/root/Global".Ans.append(str("ก)",answer1,"     ข)",answer2,"     ค)",answer3,"     ง)",answer4))
 	$"/root/Global".correct.append(correct)
 
+
+
 func _answer(correct,answer): #ตรวจคำตอบ
-	if correct == answer: #ตอบถูก
+	if correct == answer && not check_button: #ตอบถูก
 		hp_enemy(-20)
 		$AudioCorrect.playing = true
 		$player.skill()
-		
 		Answer()
 		#import_exam()
 		return true
@@ -176,10 +182,13 @@ var Q #คำถาม
 var A #คำตอบ
 
 func Answer():
+	check_button = true
 	$answer/Timer_answer.start()
 	pass
 
 func _on_Button_button_down():
+	check_button = false
+	
 	$TextureProgress.value = Time
 	$answer.hide()
 	$TextureProgress.show()
