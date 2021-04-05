@@ -94,3 +94,7 @@ func hp(value:int):
 
 func get_hp():
 	return $HUD/TextureProgress.value
+
+func skill():
+	$animation.play("skill")
+	pass

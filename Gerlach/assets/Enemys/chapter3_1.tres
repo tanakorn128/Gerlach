@@ -6,5 +6,5 @@
 script = ExtResource( 1 )
 dic = [ {
 "Description": "ตรวจสอบภารกิจ 3.2",
-"finish": true
+"finish": false
 } ]

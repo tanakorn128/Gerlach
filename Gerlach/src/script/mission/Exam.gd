@@ -79,13 +79,17 @@ func _answer(correct,answer): #ตรวจคำตอบ
 	if correct == answer: #ตอบถูก
 		hp_enemy(-20)
 		$AudioCorrect.playing = true
-		import_exam()
+		$player.skill()
+		
+		Answer()
+		#import_exam()
 		return true
 	else:#ตอบผิด
 		attack("enemy")
 		hp_player(-20)
 		$AudioWrong.playing = true
-		import_exam()
+		Answer()
+		#import_exam()
 		return false
 
 func import_exam(): # เลือก Chapter ของข้อสอบ
@@ -95,6 +99,8 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	_show(importexam[rng].Question,importexam[rng].answer1,importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	correct = importexam[rng].Correct
+	Q = str("คำถาม ",importexam[rng].Question)
+	A = str("คำตอบ ",importexam[rng].Correct)
 	$TextureProgress.value = Time
 
 func finish(value:String,hp:int): #player or Enemy
@@ -166,3 +172,25 @@ func exam(group:int):
 	if group == 3:
 		ExamChapter1 = load("res://src/script/Exam/group/group3.tres")
 
+var Q #คำถาม
+var A #คำตอบ
+
+func Answer():
+	$answer/Timer_answer.start()
+	pass
+
+func _on_Button_button_down():
+	$TextureProgress.value = Time
+	$answer.hide()
+	$TextureProgress.show()
+	import_exam()
+	pass # Replace with function body.
+
+
+func _on_Timer_answer_timeout():
+	$answer/Q.text = str(Q)
+	$answer/A.text = str(A)
+	$answer.show()
+	$TextureProgress.hide()
+	$answer/Timer_answer.stop()
+	pass # Replace with function body.

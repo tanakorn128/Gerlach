@@ -15,7 +15,7 @@ func _ready():
 
 func _process(delta):
 	$"/root/Global".player_pos.x = $player.position.x
-	$"/root/Global".player_pos.y = $player.position.y + 10
+	$"/root/Global".player_pos.y = $player.position.y + 20
 	momster()
 
 func _on_mailbox1_body_entered(body):	if body.get_name() == "player":
