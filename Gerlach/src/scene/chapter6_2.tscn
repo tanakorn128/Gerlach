@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -23,6 +23,9 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 317.897, 432.378 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 34.4814, 58.646 )
+
 [node name="chapter6_2" type="Node2D"]
 script = ExtResource( 15 )
 
@@ -40,7 +43,7 @@ cell_size = Vector2( 15, 15 )
 format = 1
 
 [node name="player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 1553.73, -1368.42 )
+position = Vector2( 5262.51, -1311.99 )
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 1 )
@@ -127,6 +130,13 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 266.683, -1308.02 )
 shape = SubResource( 3 )
+
+[node name="postbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 4195.54, -1521.55 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 
 [editable path="player"]

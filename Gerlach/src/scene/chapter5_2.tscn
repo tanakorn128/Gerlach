@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Post box.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -17,6 +17,9 @@
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 374.099, 172.442 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 36.2917, 45.3131 )
 
 [node name="chapter5_2" type="Node2D"]
 script = ExtResource( 8 )
@@ -133,6 +136,13 @@ position = Vector2( 7626.09, -213.816 )
 shape = SubResource( 2 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 13 )]
+
+[node name="postbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 3486.96, 1438.88 )
+shape = SubResource( 3 )
 [connection signal="body_entered" from="chapter5_3" to="." method="_on_chapter5_3_body_entered"]
+[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 
 [editable path="player"]

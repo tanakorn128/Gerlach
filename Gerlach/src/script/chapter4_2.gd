@@ -10,8 +10,9 @@ var soldier2:bool
 var soldier3:bool
 
 func _ready():
+	$"/root/Global".scene = 5
 	$"/root/Global"._Exam = 2
-	$"/root/Global".number_enemy = 5
+	$"/root/Global".number_enemy = 0
 	lable("chapter4_2_dialogbox1")
 	#lable("chapter4_2_start")
 	
@@ -72,3 +73,10 @@ func chapter6_2_finished():
 		add_child(inst)
 		state_Enemys6_2 = true
 	
+
+
+func _on_postbox_body_entered(body):
+	if body.get_name() == "player":
+		Events.emit_signal("postbox")
+		get_tree().change_scene("res://src/scene/postbox.tscn")
+	pass # Replace with function body.

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 dialogbox = [ "ภารกิจ : พูดคุยกับทหารในสนามรบ" ]
-finish = false
+finish = true

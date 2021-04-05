@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 dialogbox = [ "ภารกิจ : ตามหาทหารหัวหน้าเก่าและพูดคุย", "ภารกิจ : (TIP เดินตรวจสอบชาวบ้าน หากไม่เจอให้ไปป่าทางตะวันออกของหมู่บ้าน)" ]
-finish = false
+finish = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -23,6 +23,9 @@
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 244.005, 970.74 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 35.5891, 58.1985 )
 
 [node name="chapter6_1" type="Node2D"]
 script = ExtResource( 12 )
@@ -151,6 +154,13 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chapter6_2 "]
 position = Vector2( 6583.45, -951.365 )
 shape = SubResource( 3 )
+
+[node name="postbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 1760.61, -391.271 )
+shape = SubResource( 4 )
 [connection signal="body_entered" from="Chapter6_2 " to="." method="_on_Chapter6_2__body_entered"]
+[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 
 [editable path="player"]

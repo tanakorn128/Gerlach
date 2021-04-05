@@ -7,7 +7,7 @@ func _ready():
 	$"/root/Global"._Exam = 3
 	lable("chapter6_1_dialogbox1")
 	$"/root/Global".scene = 9
-	
+	$"/root/Global".number_enemy = 9
 func _process(delta):
 	 update()
 	
@@ -47,4 +47,11 @@ func _on_Chapter6_2__body_entered(body):
 	if body.get_name() == "player" && chapter6_2:
 		$"/root/Scene".scene(10)
 		
+	pass # Replace with function body.
+
+
+func _on_postbox_body_entered(body):
+	if body.get_name() == "player":
+		Events.emit_signal("postbox")
+		get_tree().change_scene("res://src/scene/postbox.tscn")
 	pass # Replace with function body.

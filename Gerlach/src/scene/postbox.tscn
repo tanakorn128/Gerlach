@@ -89,21 +89,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="score" type="Button" parent="."]
-margin_left = 111.314
-margin_top = 260.0
-margin_right = 330.314
-margin_bottom = 336.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/disabled = SubResource( 5 )
-custom_styles/normal = SubResource( 6 )
-custom_fonts/font = SubResource( 8 )
-text = "คะแนน"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="back" type="Button" parent="."]
 margin_left = 111.314
 margin_top = 584.0
@@ -157,5 +142,4 @@ autoplay = true
 stream = ExtResource( 6 )
 [connection signal="button_down" from="save" to="." method="_on_Button_button_down"]
 [connection signal="mouse_entered" from="save" to="." method="_on_save_mouse_entered"]
-[connection signal="button_down" from="score" to="." method="_on_score_button_down"]
 [connection signal="button_down" from="back" to="." method="_on_back_button_down"]

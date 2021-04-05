@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 dialogbox = [ "ภารกิจ : หาทางลับที่ตัดผ่านภูเขาเพื่ออ้อมไปโจมตีปีศาจจากด้านหลัง", "ภารกิจ : (TIP เดินลงไปทางตอนใต้ของป้อมปราการ)" ]
-finish = false
+finish = true
