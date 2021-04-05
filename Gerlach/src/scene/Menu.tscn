@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/UI Pack RPG/Menu.tres" type="StyleBox" id=1]
-[ext_resource path="res://assets/UI Pack RPG/panelInset_beige.png" type="Texture" id=2]
+[ext_resource path="res://assets/Game_Start/world.png" type="Texture" id=2]
 [ext_resource path="res://src/script/Menu.gd" type="Script" id=3]
 [ext_resource path="res://assets/audio/soundtrack/Celestial.ogg" type="AudioStream" id=4]
 [ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=5]
@@ -15,6 +15,20 @@ font_path = "res://assets/font/EightBitDragon-anqx.ttf"
 size = 35
 font_data = SubResource( 1 )
 
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 142
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 41
+font_data = SubResource( 5 )
+
 [node name="Menu" type="Control"]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -26,11 +40,11 @@ __meta__ = {
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -128.0
-margin_top = -326.0
-margin_right = -75.0
-margin_bottom = -266.0
-rect_scale = Vector2( 17, 15 )
+margin_left = -2.37537
+margin_top = -11.6904
+margin_right = 1241.62
+margin_bottom = 689.31
+rect_scale = Vector2( 1.05, 1.05 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,16 +58,18 @@ margin_right = 1549.0
 margin_bottom = 939.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="BackGround" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -1.49832 )
 
 [node name="start" type="Button" parent="."]
-margin_left = 499.054
-margin_top = 89.0294
-margin_right = 802.054
-margin_bottom = 174.029
+margin_left = 518.711
+margin_top = 390.137
+margin_right = 821.711
+margin_bottom = 475.137
 custom_styles/normal = ExtResource( 1 )
 custom_fonts/font = SubResource( 2 )
 text = "START"
@@ -61,23 +77,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SYSTEM" type="Button" parent="."]
-margin_left = 499.054
-margin_top = 189.029
-margin_right = 802.054
-margin_bottom = 274.029
-custom_styles/normal = ExtResource( 1 )
-custom_fonts/font = SubResource( 2 )
-text = "SYSTEM"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="EXIT GAME" type="Button" parent="."]
-margin_left = 499.054
-margin_top = 290.029
-margin_right = 802.054
-margin_bottom = 375.029
+margin_left = 518.711
+margin_top = 508.137
+margin_right = 821.711
+margin_bottom = 593.137
 custom_styles/normal = ExtResource( 1 )
 custom_fonts/font = SubResource( 2 )
 text = "EXIT GAME"
@@ -95,10 +99,45 @@ visible = false
 position = Vector2( 670.044, 228.033 )
 scale = Vector2( 0.627921, 0.583422 )
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="dialogbox" parent="." instance=ExtResource( 6 )]
 visible = false
 position = Vector2( -5.35034, 458.242 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 436.141
+margin_top = 78.4881
+margin_right = 925.141
+margin_bottom = 292.488
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 7
+custom_constants/line_spacing = 4
+custom_constants/shadow_offset_y = 4
+text = "Gerlach"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 452.254
+margin_top = 235.429
+margin_right = 1033.25
+margin_bottom = 310.429
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 7
+custom_constants/line_spacing = 4
+text = "in world War Math Game "
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_down" from="start" to="." method="_on_start_button_down"]
-[connection signal="button_down" from="SYSTEM" to="." method="_on_SYSTEM_button_down"]
 [connection signal="button_down" from="EXIT GAME" to="." method="_on_EXIT_GAME_button_down"]

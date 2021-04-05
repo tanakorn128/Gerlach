@@ -20,6 +20,10 @@ func _on_start_button_down():
 		$black.show()
 		$dialogbox.show()
 		$Sprite.show()
+		$Label.hide()
+		$Label2.hide()
+		$start.hide()
+		$"EXIT GAME".hide()
 		$dialogbox._dialogbox(true)
 	pass # Replace with function body.
 
@@ -51,28 +55,31 @@ func chapterX(chapter:int):
 		return false
 
 func count_dialogbox(count):
+	if count == 1:
+		$Sprite.texture = _image(1)
 	if count == 2:
 		$Sprite.texture = _image(0)
-	if count == 11:
-		$Sprite.texture = _image(1)
-	if count == 12:
+	if count == 10:
 		$Sprite.texture = _image(2)
-	if count == 15:
-		$Sprite.texture = _image(3)
-	if count == 16:
-		$Sprite.texture = _image(4)
-	if count == 17:
+	if count == 14:
 		$Sprite.texture = _image(5)
-	if count == 18:
-		$Sprite.texture = _image(6)
+	if count == 15:
+		$Sprite.texture = _image(6)###
+	if count == 17:
+		$Sprite.texture = _image(8)
+	#if count == 18:
+		#$Sprite.texture = _image(6)
+	if count == 19:
+		$Sprite.texture = _image(0)
 func _image(num:int):
 	var image:Array
-	image.append(load("res://assets/Game_Start/2.png"))
-	image.append(load("res://assets/Game_Start/11.png"))
-	image.append(load("res://assets/Game_Start/12.png"))
-	image.append(load("res://assets/Game_Start/13.png"))
-	image.append(load("res://assets/Game_Start/15.png"))
-	image.append(load("res://assets/Game_Start/16.png"))
-	image.append(load("res://assets/Game_Start/17.png"))
-	image.append(load("res://assets/Game_Start/18.png"))
+	image.append(load("res://assets/Game_Start/world.png")) #0
+	image.append(load("res://assets/Game_Start/2.png")) #1
+	image.append(load("res://assets/Game_Start/11.png")) #2
+	image.append(load("res://assets/Game_Start/12.png")) #3
+	image.append(load("res://assets/Game_Start/13.png")) #4
+	image.append(load("res://assets/Game_Start/15.png")) #5
+	image.append(load("res://assets/Game_Start/16.png")) #6
+	image.append(load("res://assets/Game_Start/17.png")) #7
+	image.append(load("res://assets/Game_Start/18.png")) #8
 	return image[num]

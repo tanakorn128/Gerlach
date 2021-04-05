@@ -11,6 +11,8 @@ func _ready():
 	$"/root/Global".scene = 3
 
 func _process(delta):
+	$"/root/Global".player_pos.x = $player.position.x
+	$"/root/Global".player_pos.y = $player.position.y + 20
 	update()
 
 func update():

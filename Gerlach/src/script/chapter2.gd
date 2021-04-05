@@ -11,7 +11,7 @@ func _ready():
 	lable("chapter2_dialogbox1")
 func _process(delta):
 	$"/root/Global".player_pos.x = $player.position.x
-	$"/root/Global".player_pos.y = $player.position.y + 10
+	$"/root/Global".player_pos.y = $player.position.y + 20
 	update()
 
 
@@ -28,6 +28,7 @@ func _on_postbox_body_entered(body):
 
 
 func _on_chapter3_1_body_entered(body):
+	
 	_Enemys = chapter.all_chapter[1].dic.size()
 	for i in _Enemys:
 		if chapter.chapters(2,i,"finish"):
@@ -37,8 +38,10 @@ func _on_chapter3_1_body_entered(body):
 	
 	if body.get_name() == "player":
 		if finished:
+			$"/root/Global".player_pos = Vector2(395.992,26.163)
 			get_tree().change_scene("res://src/scene/chapter3_1.tscn")
 		else:
+			$"/root/Global".player_pos = Vector2(635.898,84.035)
 			get_tree().change_scene("res://src/scene/chapter2.tscn")
 	pass # Replace with function body.
 	

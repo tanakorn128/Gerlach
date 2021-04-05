@@ -194,6 +194,7 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "ABCDEFG"
 align = 1
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

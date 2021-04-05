@@ -107,6 +107,7 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	correct = importexam[rng].Correct
 	Q = str("คำถาม ",importexam[rng].Question)
 	A = str("คำตอบ ",importexam[rng].Correct)
+	print(A)
 	$TextureProgress.value = Time
 
 func finish(value:String,hp:int): #player or Enemy
@@ -188,7 +189,6 @@ func Answer():
 
 func _on_Button_button_down():
 	check_button = false
-	
 	$TextureProgress.value = Time
 	$answer.hide()
 	$TextureProgress.show()

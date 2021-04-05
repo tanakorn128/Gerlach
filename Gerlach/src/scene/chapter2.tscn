@@ -60,12 +60,12 @@
 3/shapes = [  ]
 3/z_index = 0
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 3.14453, 9.02655, 3.14453, 5.77057, 4.53992, 2.51465, 9.42383, 1.58435, 13.8427, 0.886658, 38.96, 1.11923, 44.3091, 2.74719, 47.0999, 5.30545, 48, 12.515, 47.7975, 38.5627, 46.8673, 41.1209, 45.7045, 43.4466, 43.6113, 44.3769, 41.5182, 46.2374, 38.7274, 46.2374, 9.88898, 47, 4.53992, 44.6094, 2.91199, 41.8186, 1.05139, 35.0742, 1.51654, 32.7485, 2.21423, 27.3994, 1.74915, 20.4224, 1.74915, 14.3756 )
 
-[sub_resource type="TileSet" id=3]
+[sub_resource type="TileSet" id=4]
 0/name = "tileset-wesley2.png 0"
 0/texture = ExtResource( 10 )
 0/tex_offset = Vector2( 0, 0 )
@@ -76,19 +76,19 @@ points = PoolVector2Array( 3.14453, 9.02655, 3.14453, 5.77057, 4.53992, 2.51465,
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 2 )
+0/shape = SubResource( 3 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 3 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 38.9222, 50.1921 )
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -115,7 +115,7 @@ tile_data = PoolIntArray( -3145649, 0, 0, -3145647, 0, 0, -3145645, 0, 0, -31456
 position = Vector2( 635.898, 84.035 )
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
-parameters/StateMachine/playback = SubResource( 5 )
+parameters/StateMachine/playback = SubResource( 2 )
 
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
@@ -124,7 +124,7 @@ format = 1
 
 [node name="Pool" type="TileMap" parent="wall"]
 scale = Vector2( 1.5, 1 )
-tile_set = SubResource( 3 )
+tile_set = SubResource( 4 )
 cell_size = Vector2( 4, 4 )
 format = 1
 tile_data = PoolIntArray( -2359260, 0, 0, 1179765, 0, 0 )
@@ -201,7 +201,7 @@ tile_data = PoolIntArray( -13368996, 0, 0, -13368995, 0, 0, -13368991, 0, 0, -13
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
 position = Vector2( 1539.39, -10.5234 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
