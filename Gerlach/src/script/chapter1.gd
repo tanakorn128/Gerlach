@@ -5,6 +5,8 @@ var finished = false
 var _Enemys
 var monster
 var finished_monster:bool = false
+var area:bool = false
+
 func _ready():
 	$"/root/Global"._Exam = 1
 	Events.connect("Enemy_pos",self,"monster1")
@@ -12,13 +14,14 @@ func _ready():
 	$"/root/Global".scene = 1
 	$"/root/Global"._dialogbox = "startchapter1"
 	_dialogbox()
-
+	$postbox2/Timer.start()
 func _process(delta):
 	$"/root/Global".player_pos.x = $player.position.x
-	$"/root/Global".player_pos.y = $player.position.y + 20
+	$"/root/Global".player_pos.y = $player.position.y
 	momster()
 
-func _on_mailbox1_body_entered(body):	if body.get_name() == "player":
+func _on_mailbox1_body_entered(body):
+	if body.get_name() == "player" && area:
 		Events.emit_signal("postbox")
 		get_tree().change_scene("res://src/scene/postbox.tscn")
 		
@@ -42,10 +45,11 @@ func momster():
 	for i in monster:
 		if chapter.chapters(23,i,"finish"):
 			monster -= 1
-	if monster <= 0 && not finished_monster:
+	if monster <= 0:
 		lable2("chapter1_dialogbox3")
 		finished_monster = true
 	
+
 	
 func _on_next_chapter_body_entered(body):
 	_Enemys = chapter.all_chapter[0].dic.size()
@@ -56,7 +60,6 @@ func _on_next_chapter_body_entered(body):
 		lable2("chapter1_dialogbox2")
 		$put_Enemy_Chapter1.monster()
 		finished = true
-		
 	
 	if body.get_name() == "player":
 		if finished && finished_monster:
@@ -84,48 +87,54 @@ func lable2(value:String):
 		$dialogbox._dialogbox(true)
 
 func _on_lable_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 1")
 	pass # Replace with function body.
 
 
 func _on_lable2_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 2")
 	pass # Replace with function body.
 
 func _on_lable3_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 3")
 	pass # Replace with function body.
 
 
 func _on_lable4_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 4")
 	pass # Replace with function body.
 
 
 func _on_lable5_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 5")
 	pass # Replace with function body.
 
 
 
 func _on_lable6_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 6")
 	pass # Replace with function body.
 
 
 func _on_lable7_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 7")
 	pass # Replace with function body.
 
 
 func _on_lable8_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("ป้ายบอกทาง 8")
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	area = true
+	$postbox2/Timer.stop()
 	pass # Replace with function body.

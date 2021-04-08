@@ -11,15 +11,6 @@ func _ready():
 	_Enemy($"/root/Global".number_enemy)
 	
 
-func _on_Button_button_down():
-	$click.play()
-	var scene = $"/root/Global".scene
-	$"/root/Player".player.position = $"/root/Global".player_pos
-	ResourceSaver.save(chapter.all_chapter[scene-1].get_path(),chapter.all_chapter[scene-1])
-	ResourceSaver.save("res://assets/player/player.tres",$"/root/Player".player)
-	$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
-	pass # Replace with function body.
-
 
 func _on_back_button_down():
 	$click.play()
@@ -45,3 +36,13 @@ func _Enemy(enemy:int):
 			Enemy_index += 1
 	$ItemList.add_item(str("- ศัตรูที่เหลือ ",Enemy_index,"ตัว"),null,true)
 
+
+
+func _on_save_button_down():
+	$click.play()
+	var scene = $"/root/Global".scene
+	$"/root/Player".player.position = $"/root/Global".player_pos
+	ResourceSaver.save(chapter.all_chapter[scene-1].get_path(),chapter.all_chapter[scene-1])
+	ResourceSaver.save("res://assets/player/player.tres",$"/root/Player".player)
+	$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
+	pass # Replace with function body.

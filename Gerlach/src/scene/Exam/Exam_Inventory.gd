@@ -1,45 +1,47 @@
 extends Node2D
-
-onready var angle
-onready var sort
-onready var simple
+var exam1 = load("res://src/script/Exam/group/group1.tres") #Exam_Group
+var exam2 = load("res://src/script/Exam/group/group2.tres")
+var random_exam1:Array = exam1.Exam_Group
+var random_exam2:Array = exam2.Exam_Group
+var index_Exam1:int = -1
+var index_Exam2:int = -1
+var _Exam #ข้อสอบ
 func _ready():
-	angle = load("res://src/script/Exam/Exam_All/Angle.tres")
-	sort = load("res://src/script/Exam/Exam_All/Sort.tres")
-	simple = load("res://src/script/Exam/Exam_All/Chapter1.tres")
-	get_angle()
-	get_sort()
-	get_simple()
+	random()
+	pass
+
+func exam(group:int):
+	if group == 1:
+		return random_exam1
+	if group == 2:
+		return random_exam2
+	if group == 3:
+		return load("res://src/script/Exam/group/group3.tres")
+
+
+func index(group:int):
+	if group == 1:
+		if index_Exam1 >= exam1.Exam_Group.size()-1:
+			index_Exam1 = 0
+			random_exam1.shuffle()
+		else:
+			index_Exam1 += 1
+		return index_Exam1
+	if group == 2:
+		if index_Exam2 >= exam2.Exam_Group.size()-1:
+			index_Exam2 = 0
+			random_exam2.shuffle()
+		index_Exam2 += 1
+		return index_Exam2
+	if group == 3:
+		return load("res://src/script/Exam/group/group3.tres")
 	
 
 
-func get_exam(type:String,topic:int,name:String):
-	if type.to_lower() == "angle":
-		if topic < angle.ExamAll.size():
-			return get_angle()[topic][name]
-		else:
-			print("end of size array")
-			return get_angle()[0]
-	if type.to_lower() == "sort":
-		return get_sort()[topic][name]
-		pass
-	if type.to_lower() == "simple":
-		get_simple()
-
-
-func get_angle():
-	return angle.ExamAll
-
-func get_size_angle():
-	var sum:int = angle.ExamAll.size()
-	return sum
-
-func get_sort():
-	var sum:int = sort.ExamAll.size()
-
-
-
-func get_simple():
-	var sum:int = simple.ExamAll.size()
-
-
+func random(): #สุ่มตัวเลข
+	randomize()
+	random_exam1.shuffle()
+	random_exam2.shuffle()
+	#random_exam1.erase(random_exam1[0])
+	#random_exam2.erase(random_exam1[0])
+	#print(random_exam1.size())

@@ -27,12 +27,13 @@ func putenemy():
 
 func monster():
 	count2 = chapter1_1.all_chapter[22].dic.size()
+	print("Enemy2")
 	for i in count2:
 		if not chapter1_1.chapters(23,i,"finish"):
 			ins = load("res://src/scene/Enemy/Monster1.tscn").instance()
 			fire1 = load("res://src/scene/animation/fire .tscn").instance()
 			fire2 = load("res://src/scene/animation/fire .tscn").instance()
-			ins.position = Vector2(364.055,708) #$"/root/Global".Enemy_pos
+			ins.position = $"/root/Global".Enemy_pos #$"/root/Global".Enemy_pos
 			fire1.position = Vector2(632.115,522.831)
 			fire2.position = Vector2(1043.644,526.606)
 			ins.number_index = i

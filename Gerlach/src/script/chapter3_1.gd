@@ -3,16 +3,20 @@ const HUDPOSY = 350
 const HUDPOSX = 600
 var _Enemys
 onready var chapter = $"/root/MissionInventory"
-
+var area:bool = false
 func _ready():
+	$player.position = $"/root/Global".player_pos
 	$"/root/Global"._Exam = 2
 	lable("chapter3_1_dialogbox1")
 	_stop()
-	$"/root/Global".scene = 3
-
+	$"/root/Global".scene = 4
+	$Timer.start()
+func _process(delta):
+	$"/root/Global".player_pos.x = $player.position.x
+	$"/root/Global".player_pos.y = $player.position.y
 
 func _on_postbox1_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		lable("chapter3_1 ป้ายบอกทาง 1")
 	pass # Replace with function body.
 
@@ -37,13 +41,19 @@ func _stop():
 
 
 func _on_chapter4_1_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		$"/root/Scene".scene(4.1)
 	pass # Replace with function body.
 
 
 
 func _on_chapter3_2_body_entered(body):
-	if body.get_name() == "player":
+	if body.get_name() == "player" && area:
 		$"/root/Scene".scene(3)
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	area = true
+	$Timer.stop()
 	pass # Replace with function body.

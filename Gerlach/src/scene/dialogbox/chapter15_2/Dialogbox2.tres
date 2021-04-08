@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource( 1 )
 dialogbox = [ "เกอราช : เป็นระยะเวลานานแค่ไหนแล้วนะที่เริ่มสงครามกัน ", "เกอราช : และแล้วสงความก็จบเสียที", "ระบบ : ^^" ]
-finish = false
+finish = true

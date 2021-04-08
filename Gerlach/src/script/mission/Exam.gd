@@ -4,34 +4,33 @@ var number_index
 var temp
 var mission
 export (Array) var exam
-var ExamChapter1 #= preload("res://src/script/Exam/Exam_All/Chapter1.tres")
 var correct
 var inst_enemy
 export (int) var Time
 var playerhp
 var check_button:bool = false
+var a:Array
+
 func _ready():
-	exam($"/root/Global"._Exam)
 	$"/root/Global".playerwalk = false
-	set_exam(ExamChapter1.Exam_Group.size())
+	#ข้อสอบ
+	exam($"/root/Global"._Exam) #เลือกข่อสอบ
+	random_exam()
 	import_exam()
+	
+	##############
 	var audio = $AudioCorrect.stream as  AudioStreamOGGVorbis
 	audio.set_loop(false)
 	audio = $AudioWrong.stream as  AudioStreamOGGVorbis
 	audio.set_loop(false)
 	audio = $click.stream as  AudioStreamOGGVorbis
 	audio.set_loop(false)
+	###############
 	playerhp = $"/root/Player".player.hp
 	$player/HUD/TextureProgress.value = 100
+	
 	enemy()
-func set_exam(size): #นำเข้าข้อสอบจากภายนอก
-	for i in size:
-		exam.append(ExamChapter1.Exam_Group[i])
 
-
-func get_Exam_Chapter(chapter): #นำเข้าข้อสอบจากภายนอก
-	if chapter == 1:
-		return exam
 
 
 func _on_answer1_button_down():
@@ -57,16 +56,11 @@ func _on_answer4_button_down():
 		_answer($answer4/Label.text,correct)
 	pass # Replace with function body.
 
-func random_exam(value): #สุ่มตัวเลข
-	var temp_rng
-	var rng = RandomNumberGenerator.new()
-	rng.randomize()
-	var my_random_number : int = rng.randf_range(1, value)
-	number = my_random_number
-	if temp == number:
-		number+2
-	temp = number
-	return my_random_number
+func random_exam(): #สุ่มตัวเลข
+	for i in exam.size():
+		a.append(i)
+	randomize()
+	a.shuffle()
 
 func _show(question,answer1,answer2,answer3,answer4):
 	$"Label question".text = str(question)
@@ -75,7 +69,7 @@ func _show(question,answer1,answer2,answer3,answer4):
 	$answer3/Label.text = str(answer3)
 	$answer4/Label.text = str(answer4)
 
-func record_reply(question,correct,answer1,answer2,answer3,answer4):
+func record(question,correct,answer1,answer2,answer3,answer4):
 	$"/root/Global".question.append(question)
 	$"/root/Global".Ans.append(str("ก)",answer1,"     ข)",answer2,"     ค)",answer3,"     ง)",answer4))
 	$"/root/Global".correct.append(correct)
@@ -98,17 +92,21 @@ func _answer(correct,answer): #ตรวจคำตอบ
 		#import_exam()
 		return false
 
+
+
 func import_exam(): # เลือก Chapter ของข้อสอบ
-	var importexam = get_Exam_Chapter(1)
-	var rng = random_exam(importexam.size()-1)
-	record_reply(importexam[rng].Question,importexam[rng].Correct,importexam[rng].answer1,
+	var importexam = exam
+	var rng = $"/root/ExamInventory".index($"/root/Global"._Exam)
+	record(importexam[rng].Question,importexam[rng].Correct,importexam[rng].answer1,
 	importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	_show(importexam[rng].Question,importexam[rng].answer1,importexam[rng].answer2,importexam[rng].answer3,importexam[rng].answer4)
 	correct = importexam[rng].Correct
 	Q = str("คำถาม ",importexam[rng].Question)
 	A = str("คำตอบ ",importexam[rng].Correct)
-	print(A)
 	$TextureProgress.value = Time
+
+
+
 
 func finish(value:String,hp:int): #player or Enemy
 	$"/root/Global".playerwalk = true
@@ -172,12 +170,7 @@ func attack(value:String):#player and enemy
 
 
 func exam(group:int):
-	if group == 1:
-		ExamChapter1 = load("res://src/script/Exam/group/group1.tres")
-	if group == 2:
-		ExamChapter1 = load("res://src/script/Exam/group/group2.tres")
-	if group == 3:
-		ExamChapter1 = load("res://src/script/Exam/group/group3.tres")
+	exam= $"/root/ExamInventory".exam(group)
 
 var Q #คำถาม
 var A #คำตอบ
@@ -192,6 +185,7 @@ func _on_Button_button_down():
 	$TextureProgress.value = Time
 	$answer.hide()
 	$TextureProgress.show()
+	exam($"/root/Global"._Exam)
 	import_exam()
 	pass # Replace with function body.
 

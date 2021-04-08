@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 	$"/root/Global".player_pos.x = $player.position.x
-	$"/root/Global".player_pos.y = $player.position.y + 20
+	$"/root/Global".player_pos.y = $player.position.y + 40
 	update()
 
 func update():
