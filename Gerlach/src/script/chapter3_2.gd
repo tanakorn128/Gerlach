@@ -11,8 +11,8 @@ func _ready():
 	$"/root/Global".scene = 3
 
 func _process(delta):
-	$"/root/Global".player_pos.x = $player.position.x
-	$"/root/Global".player_pos.y = $player.position.y + 40
+	#$"/root/Global".player_pos.x = $player.position.x
+	#$"/root/Global".player_pos.y = $player.position.y + 40
 	update()
 
 func update():
@@ -41,7 +41,7 @@ func _on_postbox1_body_entered(body):
 
 func _on_chapter4_1_body_entered(body):
 	if body.get_name() == "player":
-		$"/root/Scene".scene(4.1)
+		$"/root/Scene".scene(5)
 	pass # Replace with function body.
 
 func _stop():

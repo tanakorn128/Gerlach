@@ -1,8 +1,7 @@
 extends Node2D
-func _ready():
-	$"/root/Global"._Exam = 3
 
 
-func _on_Area2D_body_entered(body):
-	$"/root/Scene".scene(7)
+func _on_Chapter5_2__body_entered(body):
+	if body.get_name() == "player":
+		$"/root/Scene".scene(8)
 	pass # Replace with function body.

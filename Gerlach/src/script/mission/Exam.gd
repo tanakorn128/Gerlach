@@ -81,8 +81,8 @@ func _answer(correct,answer): #ตรวจคำตอบ
 		hp_enemy(-20)
 		$AudioCorrect.playing = true
 		$player.skill()
-		Answer()
-		#import_exam()
+		#Answer()
+		import_exam()
 		return true
 	else:#ตอบผิด
 		attack("enemy")

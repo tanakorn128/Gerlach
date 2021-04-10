@@ -13,7 +13,7 @@
 [ext_resource path="res://assets/reassets/label1.png" type="Texture" id=11]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/audio/soundtrack/Celestial.ogg" type="AudioStream" id=13]
-[ext_resource path="res://src/script/chapter11-12.gd" type="Script" id=14]
+[ext_resource path="res://src/script/chapter7_4.gd" type="Script" id=14]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/scene/HUD.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=17]
@@ -237,7 +237,7 @@ font_data = SubResource( 17 )
 [sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 219.434, 174.081 )
 
-[node name="chapter1" type="Node2D"]
+[node name="chapter7_4" type="Node2D"]
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ],
@@ -399,7 +399,7 @@ visible = false
 [node name="next_chapter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_chapter"]
-position = Vector2( 7430.33, 201.761 )
+position = Vector2( -2329.67, 2345.76 )
 shape = SubResource( 19 )
 [connection signal="body_entered" from="postbox2" to="." method="_on_mailbox1_body_entered"]
 [connection signal="body_entered" from="next_chapter" to="." method="_on_next_chapter_body_entered"]

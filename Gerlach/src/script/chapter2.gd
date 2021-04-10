@@ -37,10 +37,10 @@ func _on_chapter3_1_body_entered(body):
 	if _Enemys <= 0:
 		finished = true
 	
-	if body.get_name() == "player" && area:
-		if finished:
+	if body.get_name() == "player": #&& area:
+		if true: #finished:
 			$"/root/Global".player_pos = Vector2(395.992,26.163)
-			get_tree().change_scene("res://src/scene/chapter3_1.tscn")
+			$"/root/Scene".scene(3)
 		else:
 			$"/root/Global".player_pos = Vector2(635.898,84.035)
 			get_tree().change_scene("res://src/scene/chapter2.tscn")

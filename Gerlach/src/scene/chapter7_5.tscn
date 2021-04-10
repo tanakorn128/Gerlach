@@ -10,12 +10,11 @@
 [ext_resource path="res://assets/chapter/chapter2/Pool.tres" type="TileSet" id=8]
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=9]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/script/chapter13.gd" type="Script" id=11]
+[ext_resource path="res://src/script/chapter7_5.gd" type="Script" id=11]
 [ext_resource path="res://assets/Pipoya RPG World Tileset 48x48 40x40 32x32/48x48/pipo-map001.png" type="Texture" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter13.tscn" type="PackedScene" id=16]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -37,7 +36,10 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[node name="chapter13" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 364.743, 281.009 )
+
+[node name="chapter7_5" type="Node2D"]
 script = ExtResource( 11 )
 
 [node name="Background" type="TileMap" parent="."]
@@ -142,8 +144,6 @@ cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -8846821, 1, 0 )
 
-[node name="put_Enemy_Chapter13" parent="." instance=ExtResource( 16 )]
-
 [node name="dialogbox" parent="." instance=ExtResource( 15 )]
 visible = false
 
@@ -156,5 +156,12 @@ margin_bottom = -782.568
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="7_6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="7_6"]
+position = Vector2( 1302.8, -1334.84 )
+shape = SubResource( 4 )
+[connection signal="body_entered" from="7_6" to="." method="_on_7_6_body_entered"]
 
 [editable path="player"]

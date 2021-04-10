@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -15,13 +15,16 @@
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=15]
-[ext_resource path="res://src/script/chapter14.gd" type="Script" id=16]
+[ext_resource path="res://src/script/chapter7_6.gd" type="Script" id=16]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
 
-[node name="chapter14" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 381.96, 482.907 )
+
+[node name="chapter7_6" type="Node2D"]
 script = ExtResource( 16 )
 
 [node name="Background" type="TileMap" parent="."]
@@ -135,5 +138,11 @@ margin_bottom = -572.577
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 286.938, -1419.59 )
+shape = SubResource( 3 )
 
 [editable path="player"]

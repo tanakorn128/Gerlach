@@ -62,7 +62,7 @@ func _on_next_chapter_body_entered(body):
 		finished = true
 	
 	if body.get_name() == "player":
-		if finished && finished_monster:
+		if true: #finished && finished_monster:
 			$"/root/Global".player_pos = Vector2(635.898,84.035)
 			get_tree().change_scene("res://src/scene/chapter2.tscn")
 		else:
