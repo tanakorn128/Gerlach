@@ -9,13 +9,16 @@ var save:bool = false
 var finished:bool = false
 var _changescene:bool = false
 var scene:int
+var _save2 = load("user://dialogbox/dialogbox.tres")
+var id
 func _ready():
 	pass
 	#get_node("/root/Scene").scene(get_node("/root/Global").scene)
 
 func _dialogbox(_save:bool):
+	id = all.all[$"/root/Global"._dialogbox].id
 	save = _save
-	if not all.all[$"/root/Global"._dialogbox].finish:
+	if not _save2.save[id]:
 		show()
 		$ColorRect.show()
 		$Label.show()
@@ -28,11 +31,12 @@ func _input(event):
 	if event.is_action_pressed("ui_select") && state:
 		if count < arr_size-1:
 			count += 1
+			#print(all.all[$"/root/Global"._dialogbox].finish)
 			Events.emit_signal("count_dialogbox",count)
 		else:
 			if save:
-				all.all[$"/root/Global"._dialogbox].finish = true
-				ResourceSaver.save(all.all[$"/root/Global"._dialogbox].get_path(),all.all[$"/root/Global"._dialogbox])
+				_save2.save[id] = true
+				ResourceSaver.save("user://dialogbox/dialogbox.tres",_save2)
 			hide()
 			$ColorRect.hide()
 			$Label.hide()

@@ -1,8 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=2]
-
-[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
-
-[resource]
-script = ExtResource( 1 )
-dialogbox = [ "เกอราช : ออกจากป่าได้สักที เป็นป่าที่ใหญ่จริงๆ", "เกอราช : มาถึงป้อมปราการสุดท้ายของปีศาจจนได้", "เกอราช : เราต้องยึดป้อมปราการจากปีศาจแล้วโจมตีจากข้างหลัง", "ภารกิจ : กำจัดปีศาจทั้งหมดในปราสาท 5 ตัว" ]
-finish = false

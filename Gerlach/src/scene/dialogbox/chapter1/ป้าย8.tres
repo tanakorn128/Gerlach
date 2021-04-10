@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
+id = 11
 dialogbox = [ "ป้าย : ทิศตะวันตกต้นไม้ต้นที่ 2 และ 3" ]
 finish = false

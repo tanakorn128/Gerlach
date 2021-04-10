@@ -1,0 +1,138 @@
+[gd_resource type="Resource" load_steps=53 format=2]
+
+[ext_resource path="res://src/script/Exam/script/Exam_Group.gd" type="Script" id=1]
+[ext_resource path="res://src/script/Exam/script/Exam.gd" type="Script" id=2]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/1.tres" type="Resource" id=3]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/10.tres" type="Resource" id=4]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/8.tres" type="Resource" id=5]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/11.tres" type="Resource" id=6]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/12.tres" type="Resource" id=7]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/5.tres" type="Resource" id=8]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/9.tres" type="Resource" id=9]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/2.tres" type="Resource" id=10]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/6.tres" type="Resource" id=11]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/3.tres" type="Resource" id=12]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/4.tres" type="Resource" id=13]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/7.tres" type="Resource" id=14]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/18.tres" type="Resource" id=15]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/24.tres" type="Resource" id=16]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/20.tres" type="Resource" id=17]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/25.tres" type="Resource" id=18]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/23.tres" type="Resource" id=19]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/21.tres" type="Resource" id=20]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/19.tres" type="Resource" id=21]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/17.tres" type="Resource" id=22]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/22.tres" type="Resource" id=23]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/36.tres" type="Resource" id=24]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/31.tres" type="Resource" id=25]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/32.tres" type="Resource" id=26]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/35.tres" type="Resource" id=27]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/14.tres" type="Resource" id=28]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/15.tres" type="Resource" id=29]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/13.tres" type="Resource" id=30]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/40.tres" type="Resource" id=31]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/39.tres" type="Resource" id=32]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/34.tres" type="Resource" id=33]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/37.tres" type="Resource" id=34]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/29.tres" type="Resource" id=35]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/33.tres" type="Resource" id=36]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/30.tres" type="Resource" id=37]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/38.tres" type="Resource" id=38]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/27.tres" type="Resource" id=39]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/16.tres" type="Resource" id=40]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/28.tres" type="Resource" id=41]
+[ext_resource path="res://src/script/Exam/Exam/Chapter1/26.tres" type="Resource" id=42]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+Question = "เลข 9 ในจำนวน 1,945,813 มีค่าเท่ากับข้อใด"
+answer1 = "9,000"
+answer2 = "90,000"
+answer3 = "900,000"
+answer4 = "9,000,000"
+Correct = "900,000"
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Question = "ข้อใดเรียงลำดับจำนวนจากมากไปหาน้อยได้ถูกต้อง"
+answer1 = "24,567   24,897   24,923   24,924"
+answer2 = "58,765   57,658   56,578   55,876"
+answer3 = "25,678   25,679   25,680   25,671"
+answer4 = "56,789   56,324   56,790   56,732"
+Correct = "58,765   57,658   56,578   55,876"
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+Question = "เลข 9 กับเลข 8 ของ 1,968,754 มีค่าต่างกันเท่าไร"
+answer1 = "1"
+answer2 = "892,000"
+answer3 = "82"
+answer4 = "802,000"
+Correct = "892,000"
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 2 )
+Question = "เลข 6 กับเลข 8 ของ 1,968,754 มีค่าต่างกันเท่าไร"
+answer1 = "3"
+answer2 = "52"
+answer3 = "52000"
+answer4 = "520"
+Correct = "52000"
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 2 )
+Question = "เลข 8 กับเลข 7 ของ 1,968,754 มีค่าต่างกันเท่าไร"
+answer1 = "1"
+answer2 = "7300"
+answer3 = "73"
+answer4 = "73,000"
+Correct = "7300"
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 2 )
+Question = "ขายกระเป๋า 4 ใบ ใบละ 230 บาท ลูกค้ายื่นธนบัตรห้าร้อยมาสองใบ ต้องทอนเงินเท่าไร"
+answer1 = "80 บาท"
+answer2 = "200 บาท"
+answer3 = "180 บาท"
+answer4 = "20 บาท"
+Correct = "80 บาท"
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 2 )
+Question = "ซื้อลูกอมมา 5 ห่อ ห่อละ 30 เม็ด นำมาขาย 2 เม็ด 1 บาท จะได้เงินมาเท่าไร"
+answer1 = "70 บาท"
+answer2 = "75 บาท"
+answer3 = "80 บาท"
+answer4 = "85 บาท"
+Correct = "75 บาท"
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 2 )
+Question = "จงหาค่าของ (581 × 541 - 36,612 ÷ 4 ) × 0"
+answer1 = "314321"
+answer2 = "313,996"
+answer3 = "0"
+answer4 = "ถูกทุกข้อ"
+Correct = "0"
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 2 )
+Question = "ซื้อแก้วน้ำมาราคาโหลละ 124 บาท ขายต่อในราคาใบละ 20 บาท จะได้กำไรโหลละเท่าไร"
+answer1 = "116 บาท"
+answer2 = "120 บาท"
+answer3 = "126 บาท"
+answer4 = "240 บาท"
+Correct = "116 บาท"
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 2 )
+Question = "ซื้อแสตมป์ที่ระลึกราคา 93 บาท ขายไป 105 บาทได้กำไรจากการขายกี่บาท"
+answer1 = "11"
+answer2 = "12"
+answer3 = "13"
+answer4 = "14"
+Correct = "12"
+
+[resource]
+script = ExtResource( 1 )
+Exam_Group = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 40 ), ExtResource( 22 ), ExtResource( 15 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 20 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 18 ), ExtResource( 42 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 35 ), ExtResource( 37 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 27 ), ExtResource( 24 ), ExtResource( 34 ), ExtResource( 38 ), ExtResource( 32 ), ExtResource( 31 ) ]
