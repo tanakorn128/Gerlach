@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource( 1 )
-position = Vector2( 1117.48, 1215.5 )
+position = Vector2( 1142.25, 1215.49 )
 hp = 100

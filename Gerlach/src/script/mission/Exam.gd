@@ -104,7 +104,7 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	Q = str("คำถาม ",importexam[rng].Question)
 	A = str("คำตอบ ",importexam[rng].Correct)
 	$TextureProgress.value = Time
-
+	print(A)
 
 
 
@@ -114,7 +114,8 @@ func finish(value:String,hp:int): #player or Enemy
 		get_tree().change_scene("res://src/scene/Answer.tscn")
 		$"/root/Player".player.hp = playerhp  - 10
 	elif value == "enemy" && hp <= 0:
-		$"/root/MissionInventory".set_value($"/root/Global".number_enemy+1,$"/root/Global".number_index,"finish",true)
+		$"/root/MissionInventory"._save_mission.save[$"/root/Global".number_index] = true
+		#$"/root/MissionInventory".set_value($"/root/Global".number_enemy+1,$"/root/Global".number_index,"finish",true)
 		if $"/root/Player".player.hp < 100:
 			$"/root/Player".player.hp = playerhp  + 10
 		#clear_enemy

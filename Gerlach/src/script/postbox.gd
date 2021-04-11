@@ -42,7 +42,12 @@ func _on_save_button_down():
 	$click.play()
 	var scene = $"/root/Global".scene
 	$"/root/Player".player.position = $"/root/Global".player_pos
-	ResourceSaver.save(chapter.all_chapter[scene-1].get_path(),chapter.all_chapter[scene-1])
-	ResourceSaver.save("res://assets/player/player.tres",$"/root/Player".player)
-	$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
+	#ResourceSaver.save(chapter.all_chapter[scene-1].get_path(),chapter.all_chapter[scene-1])
+	#ResourceSaver.save("res://assets/player/player.tres",$"/root/Player".player)
+	var Error_dialogbox:int = ResourceSaver.save("user://dialogbox/dialogbox.tres",$"/root/MissionInventory"._save_dialogbox)
+	var Error_mission:int = ResourceSaver.save("user://mission/mission.tres",$"/root/MissionInventory"._save_mission)
+	if Error_dialogbox == 0 && Error_mission == 0:
+		$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
+	else:
+		$GridContainer/Label1.text = str("Error",Error_dialogbox," Error",Error_mission)
 	pass # Replace with function body.

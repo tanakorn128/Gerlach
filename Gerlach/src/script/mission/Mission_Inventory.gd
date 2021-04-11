@@ -1,7 +1,8 @@
 extends Node2D
 export (Array,Resource) var all_chapter
-
-
+var _save_mission = load("user://mission/mission.tres")
+var _dialogbox = load("res://src/scene/dialogbox/all.tres")
+var _save_dialogbox = load("user://dialogbox/dialogbox.tres")
 #---------------------------------------------------------------------
 #Type
 onready var type_angle = load("res://src/scene/EnemyType/angle.tscn")

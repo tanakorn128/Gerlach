@@ -18,7 +18,7 @@ func _ready():
 func _process(delta):
 	$"/root/Global".player_pos.x = $player.position.x
 	$"/root/Global".player_pos.y = $player.position.y
-	#momster()
+	momster()
 
 func _on_mailbox1_body_entered(body):
 	if body.get_name() == "player" && area:
@@ -41,9 +41,9 @@ func monster1(pos):
 	
 
 func momster():
-	monster = chapter.all_chapter[22].dic.size()
+	monster = chapter.all_chapter[1].dic.size()
 	for i in monster:
-		if chapter.chapters(23,i,"finish"):
+		if chapter.chapters(2,i,"finish"):
 			monster -= 1
 	if monster <= 0:
 		lable2("chapter1_dialogbox3")

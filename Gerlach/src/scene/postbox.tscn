@@ -141,5 +141,4 @@ autoplay = true
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 [connection signal="button_down" from="save" to="." method="_on_save_button_down"]
-[connection signal="mouse_entered" from="save" to="." method="_on_save_mouse_entered"]
 [connection signal="button_down" from="back" to="." method="_on_back_button_down"]
