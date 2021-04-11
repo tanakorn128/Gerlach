@@ -4,7 +4,7 @@ var Enemy_damage:int = 20
 var Player_damage:int = 20
 var number_index:int
 var enemy:String
-
+var test:bool = false
 var _dialogbox:String
 
 var Enemy_pos:Vector2

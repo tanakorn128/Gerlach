@@ -11,6 +11,7 @@ var fire2
 var Enemy_index1:int = 0
 var Enemy_index2:int = 1
 var id
+
 func _ready():
 	$"/root/Global".number_enemy = Enemy_index1
 	putenemy()

@@ -3,6 +3,7 @@ export (Array,Resource) var all_chapter
 var _save_mission #= load("user://mission/mission.tres")
 var _dialogbox = load("res://src/scene/dialogbox/all.tres")
 var _save_dialogbox #= load("user://dialogbox/dialogbox.tres")
+var _save_player
 #---------------------------------------------------------------------
 #Type
 onready var type_angle = load("res://src/scene/EnemyType/angle.tscn")
@@ -24,6 +25,8 @@ func _ready():
 	loadresorce()
 	_save_dialogbox = load("user://dialogbox/dialogbox.tres")
 	_save_mission = load("user://mission/mission.tres")
+	_save_player = load("user://player/player.tres")
+	$"/root/Global".player_pos = _save_player.position
 
 func set_value(Chapter:int,index:int,value:String,Vchange):
 	all_chapter[Chapter-1].dic[index][value] = Vchange
@@ -40,6 +43,7 @@ func loadresorce():
 	if not dir.dir_exists("user://mission"):
 		dir.make_dir_recursive("user://mission")
 		ResourceSaver.save("user://mission/mission.tres",load("res://src/save/mission.tres"))
-	
-	
+	if not dir.dir_exists("user://player"):
+		dir.make_dir_recursive("user://player")
+		ResourceSaver.save("user://player/player.tres",load("res://assets/player/player.tres"))
 

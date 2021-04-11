@@ -25,7 +25,7 @@ func _on_score_button_down():
 	pass # Replace with function body.
 
 func postbox():
-	_Enemy($"/root/Global".number_enemy)
+	_Enemy(1) #$"/root/Global".number_enemy
 	
 func _Enemy(enemy:int):
 	$ItemList.clear()
@@ -46,6 +46,8 @@ func _on_save_button_down():
 	#ResourceSaver.save("res://assets/player/player.tres",$"/root/Player".player)
 	var Error_dialogbox:int = ResourceSaver.save("user://dialogbox/dialogbox.tres",$"/root/MissionInventory"._save_dialogbox)
 	var Error_mission:int = ResourceSaver.save("user://mission/mission.tres",$"/root/MissionInventory"._save_mission)
+	ResourceSaver.save("user://player/player.tres",$"/root/MissionInventory"._save_player)
+	
 	if Error_dialogbox == 0 && Error_mission == 0:
 		$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
 	else:

@@ -4,15 +4,20 @@ var _dialogbox2:bool = false
 var _Enemys
 onready var chapter = $"/root/MissionInventory"
 var area:bool = false
+export (bool) var test
 func _ready():
-	#$player.position = $"/root/Global".player_pos
+	finished()
+	if test && not $"/root/Global".test:
+		$"/root/Global".player_pos = Vector2(635.898,84)
+		$"/root/Global".test = true
+	else:
+		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/Global"._Exam = 2
 	$"/root/Global".scene = 2
 	lable("chapter2_dialogbox1")
 	$postbox/Timer.start()
 func _process(delta):
-	$"/root/Global".player_pos.x = $player.position.x
-	$"/root/Global".player_pos.y = $player.position.y
+	$"/root/MissionInventory"._save_player.position = $player.position
 	update()
 
 
@@ -27,16 +32,19 @@ func _on_postbox_body_entered(body):
 		get_tree().change_scene("res://src/scene/postbox.tscn")
 	pass # Replace with function body.
 
+func finished():
+	var Enemy_index:int = 2
+	var _Enemy:int
+	var count = chapter.all_chapter[Enemy_index].dic.size()
+	var id 
+	for i in count:
+		id = chapter.chapters(Enemy_index+1,i,"id")
+		if not $"/root/MissionInventory"._save_mission.save[id]:
+			_Enemy += 1
+	if _Enemy <= 0:
+		$wall/blocked.queue_free()
 
 func _on_chapter3_1_body_entered(body):
-	
-	_Enemys = chapter.all_chapter[1].dic.size()
-	for i in _Enemys:
-		if chapter.chapters(2,i,"finish"):
-			_Enemys -= 1
-	if _Enemys <= 0:
-		finished = true
-	
 	if body.get_name() == "player": #&& area:
 		if true: #finished:
 			$"/root/Global".player_pos = Vector2(395.992,26.163)
