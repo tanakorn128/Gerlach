@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://assets/RPG Nature Tileset/Tree.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=2]
@@ -284,6 +284,9 @@ extents = Vector2( 57.1846, 56.3948 )
 [sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 52.2056, 57.7166 )
 
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 306.847, 151.539 )
+
 [node name="chapter1" type="Node2D"]
 position = Vector2( -28.5088, 634.32 )
 script = ExtResource( 14 )
@@ -403,6 +406,7 @@ format = 1
 tile_set = ExtResource( 16 )
 cell_size = Vector2( 8, 8 )
 format = 1
+tile_data = PoolIntArray( 131221, 0, 0, 196757, 0, 0, 262293, 0, 0, 327829, 0, 0, 393365, 0, 0 )
 
 [node name="AudioBG" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 13 )
@@ -655,6 +659,12 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="checkmission" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="checkmission"]
+position = Vector2( 6919.49, 173.869 )
+shape = SubResource( 24 )
 [connection signal="body_entered" from="postbox2" to="." method="_on_mailbox1_body_entered"]
 [connection signal="timeout" from="postbox2/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="next_chapter" to="." method="_on_next_chapter_body_entered"]
@@ -666,5 +676,6 @@ __meta__ = {
 [connection signal="body_entered" from="lable6" to="." method="_on_lable6_body_entered"]
 [connection signal="body_entered" from="lable7" to="." method="_on_lable7_body_entered"]
 [connection signal="body_entered" from="lable8" to="." method="_on_lable8_body_entered"]
+[connection signal="body_entered" from="checkmission" to="." method="_on_checkmission_body_entered"]
 
 [editable path="player"]

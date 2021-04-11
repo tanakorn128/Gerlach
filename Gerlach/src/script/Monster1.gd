@@ -4,7 +4,7 @@ var type_enemy:int
 var area:bool = false
 func _ready():
 	$HUD/TextureProgress.value = 100
-	$Timer.start()
+	$Area2D/Timer.start()
 func _process(delta):
 	if $HUD/TextureProgress.value <= 0:
 		queue_free()
@@ -18,6 +18,7 @@ func get_hp():
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "player" && area:
+		$"/root/Global".playerwalk = false
 		$"/root/Global".enemy = "monster1"
 		$"/root/Global".number_index = number_index
 		$"/root/Scene".Type(type_enemy)
@@ -38,5 +39,5 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 func _on_Timer_timeout():
 	area = true
-	$Timer.stop()
+	$Area2D/Timer.stop()
 	pass # Replace with function body.

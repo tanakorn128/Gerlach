@@ -8,6 +8,7 @@ extends Control
 #ยทที่6 ทิศและแผนผัง
 #บทที่7 เศษส่วนและการบวกลบคูณหาร
 
+
 func _ready():
 	$"/root/Global".scene = 1
 	Events.connect("count_dialogbox",self,"count_dialogbox")
@@ -16,7 +17,6 @@ func _on_start_button_down():
 	if not $dialogbox._dialogbox(true):
 		changescene()
 	else:
-		loadresorce()
 		$black.show()
 		$dialogbox.show()
 		$Sprite.show()
@@ -83,14 +83,4 @@ func _image(num:int):
 	image.append(load("res://assets/Game_Start/17.png")) #7
 	image.append(load("res://assets/Game_Start/18.png")) #8
 	return image[num]
-
-func loadresorce():
-	var dir = Directory.new()
-	if not dir.dir_exists("user://dialogbox"):
-		dir.make_dir_recursive("user://dialogbox")
-	if not dir.dir_exists("user://mission"):
-		dir.make_dir_recursive("user://mission")
-	
-	ResourceSaver.save("user://dialogbox/dialogbox.tres",load("res://src/save/doalogbox.tres"))
-	ResourceSaver.save("user://mission/mission.tres",load("res://src/save/mission.tres"))
 

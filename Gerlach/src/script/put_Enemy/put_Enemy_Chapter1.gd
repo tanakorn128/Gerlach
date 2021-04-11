@@ -30,16 +30,17 @@ func putenemy():
 
 func monster():
 	count2 = chapter1_1.all_chapter[Enemy_index2].dic.size()
-	print("Enemy2")
 	for i in count2:
-		if not chapter1_1.chapters(Enemy_index2+1,i,"finish"):
+		id = chapter1_1.chapters(Enemy_index2+1,i,"id")
+		if not $"/root/MissionInventory"._save_mission.save[id]:
 			ins = load("res://src/scene/Enemy/Monster1.tscn").instance()
 			fire1 = load("res://src/scene/animation/fire .tscn").instance()
 			fire2 = load("res://src/scene/animation/fire .tscn").instance()
 			ins.position = $"/root/Global".Enemy_pos #$"/root/Global".Enemy_pos
 			fire1.position = Vector2(632.115,522.831)
 			fire2.position = Vector2(1043.644,526.606)
-			ins.number_index = i
+			ins.number_index = id
+			print($"/root/MissionInventory"._save_mission.save[id])
 			$"/root/Global".number_enemy = Enemy_index2
 			ins.type_enemy=chapter1_1.chapters(Enemy_index2+1,i,"type")
 			add_child(ins)

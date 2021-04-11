@@ -19,7 +19,7 @@ func _physics_process(delta):
 		speed = 20000
 		Animation_Player("run")
 		move_and_slide(velocity*delta)
-	elif walk && walk:
+	elif walk:
 		speed = 10000
 		Animation_Player("walk")
 		move_and_slide(velocity*delta)

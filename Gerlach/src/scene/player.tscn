@@ -626,7 +626,7 @@ nodes/run/node = SubResource( 45 )
 nodes/run/position = Vector2( -460, 140 )
 nodes/walk/node = SubResource( 51 )
 nodes/walk/position = Vector2( -640, 0 )
-node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale 3", 0, "StateMachine", "TimeScale 2", 0, "attacks_Blend2", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "TimeScale", 0, "run" ]
+node_connections = [ "output", 0, "Transition", "TimeScale 3", 0, "StateMachine", "TimeScale", 0, "run", "TimeScale 2", 0, "attacks_Blend2", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=53]
 
@@ -634,6 +634,7 @@ node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Tran
 scale = Vector2( 3, 3 )
 collision_mask = 3
 script = ExtResource( 1 )
+walk = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -5.96046e-08, -4.76837e-07 )

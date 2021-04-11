@@ -15,10 +15,10 @@ func _ready():
 	$"/root/Global"._dialogbox = "startchapter1"
 	_dialogbox()
 	$postbox2/Timer.start()
+	momster()
 func _process(delta):
 	$"/root/Global".player_pos.x = $player.position.x
 	$"/root/Global".player_pos.y = $player.position.y
-	momster()
 
 func _on_mailbox1_body_entered(body):
 	if body.get_name() == "player" && area:
@@ -41,26 +41,28 @@ func monster1(pos):
 	
 
 func momster():
+	var count = chapter.all_chapter[0].dic.size()
+	var Enemychapter1:int
+	var id 
+	
 	monster = chapter.all_chapter[1].dic.size()
 	for i in monster:
-		if chapter.chapters(2,i,"finish"):
-			monster -= 1
-	if monster <= 0:
-		lable2("chapter1_dialogbox3")
-		finished_monster = true
+		id = chapter.chapters(2,i,"id")
+		if  $"/root/MissionInventory"._save_mission.save[id]:
+			lable2("chapter1_dialogbox3")
+			$wall/blocked.queue_free()
+			finished_monster = true
 	
-
-	
-func _on_next_chapter_body_entered(body):
-	_Enemys = chapter.all_chapter[0].dic.size()
-	for i in _Enemys:
-		if chapter.chapters(1,i,"finish"):
-			_Enemys -= 1
-	if _Enemys <= 0:
+	for i in count:
+		id = chapter.chapters(1,i,"id")
+		if not $"/root/MissionInventory"._save_mission.save[id]:
+			Enemychapter1 += 1
+	if Enemychapter1 <= 0 && not finished_monster:
 		lable2("chapter1_dialogbox2")
 		$put_Enemy_Chapter1.monster()
-		finished = true
-	
+
+
+func _on_next_chapter_body_entered(body):
 	if body.get_name() == "player":
 		if true: #finished && finished_monster:
 			$"/root/Global".player_pos = Vector2(635.898,84.035)
@@ -137,4 +139,9 @@ func _on_lable8_body_entered(body):
 func _on_Timer_timeout():
 	area = true
 	$postbox2/Timer.stop()
+	pass # Replace with function body.
+
+var clear1 = false
+func _on_checkmission_body_entered(body):
+	
 	pass # Replace with function body.

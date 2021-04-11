@@ -11,6 +11,8 @@ var _changescene:bool = false
 var scene:int
 var _save2
 var id
+
+
 func _ready():
 	all = $"/root/MissionInventory"._dialogbox
 	_save2 = $"/root/MissionInventory"._save_dialogbox
@@ -70,3 +72,4 @@ func changescene():
 		$"/root/Scene".scene($"/root/Global".scene)
 	else:
 		$"/root/Global".scene = scene
+

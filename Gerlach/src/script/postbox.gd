@@ -2,7 +2,7 @@ extends Node2D
 var count:int
 onready var chapter = $"/root/MissionInventory"
 var Enemy_index:int = 0 #in array
-
+var id
 func _ready():
 	$GridContainer/Label1.text = "กำจัดศัตรูที่ซ่อนอยู่"
 	var audio = $click.stream as AudioStreamOGGVorbis
@@ -30,9 +30,9 @@ func postbox():
 func _Enemy(enemy:int):
 	$ItemList.clear()
 	count = chapter.all_chapter[enemy].dic.size()
-	print(count)
 	for i in count:
-		if not chapter.chapters(enemy+1,i,"finish"):
+		id = chapter.chapters(enemy+1,i,"id")
+		if not $"/root/MissionInventory"._save_mission.save[id]:
 			Enemy_index += 1
 	$ItemList.add_item(str("- ศัตรูที่เหลือ ",Enemy_index,"ตัว"),null,true)
 
