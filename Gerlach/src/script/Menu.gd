@@ -33,26 +33,10 @@ func _on_EXIT_GAME_button_down():
 	pass # Replace with function body.
 
 func changescene():
-	var size = $"/root/MissionInventory".all_chapter.size()
-	var chapter = 1
-	for i in size:
-		if chapterX(chapter):
-			chapter += 1
-		else:
-			$"/root/Scene".scene(chapter)
+	$"/root/Scene".scene($"/root/MissionInventory"._save_player.chapter)
+	
 
 
-func chapterX(chapter:int):
-	var size = $"/root/MissionInventory".all_chapter.size()
-	var _mission = $"/root/MissionInventory".all_chapter[chapter-1].dic.size()
-	var temp:int = _mission
-	for i in _mission:
-		if $"/root/MissionInventory".chapters(chapter,i,"finish"): #ภารกิจจบแล้ว
-			temp -= 1
-	if temp == 0:
-		return true #chapterนั้นจบแล้ว
-	else:
-		return false
 
 func count_dialogbox(count):
 	if count == 1:

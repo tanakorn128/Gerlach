@@ -6,3 +6,4 @@
 script = ExtResource( 1 )
 position = Vector2( 889.7, 898.025 )
 hp = 100
+chapter = 1

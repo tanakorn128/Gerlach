@@ -1,12 +1,12 @@
 extends Node2D
 var finished:bool = false
-var _dialogbox2:bool = false
 var _Enemys
 onready var chapter = $"/root/MissionInventory"
 var area:bool = false
 export (bool) var test
 func _ready():
-	finished()
+	$"/root/MissionInventory"._save_player.chapter = 2
+	
 	if test && not $"/root/Global".test:
 		$"/root/Global".player_pos = Vector2(635.898,84)
 		$"/root/Global".test = true
@@ -16,6 +16,7 @@ func _ready():
 	$"/root/Global".scene = 2
 	lable("chapter2_dialogbox1")
 	$postbox/Timer.start()
+	finished()
 func _process(delta):
 	$"/root/MissionInventory"._save_player.position = $player.position
 	update()
@@ -23,7 +24,7 @@ func _process(delta):
 
 
 func update():
-	dialogbox2()
+	pass
 
 func _on_postbox_body_entered(body):
 	$"/root/Global".scene = 2
@@ -42,7 +43,14 @@ func finished():
 		if not $"/root/MissionInventory"._save_mission.save[id]:
 			_Enemy += 1
 	if _Enemy <= 0:
+		print("chapter2_dialogbox2")
+		lable("chapter2_dialogbox2")
+		var Headman = load("res://src/scene/Enemy/Headman.tscn").instance()
+		Headman._dialogbox = "chapter2_dialogbox3"
+		Headman.position = Vector2(2956.713,-19.957)
+		add_child(Headman)
 		$wall/blocked.queue_free()
+		$"/root/Global".chapter2_dialogbox2 = true
 
 func _on_chapter3_1_body_entered(body):
 	if body.get_name() == "player": #&& area:
@@ -54,19 +62,6 @@ func _on_chapter3_1_body_entered(body):
 			get_tree().change_scene("res://src/scene/chapter2.tscn")
 	pass # Replace with function body.
 	
-func dialogbox2():
-	_Enemys = chapter.all_chapter[1].dic.size()
-	for i in _Enemys:
-		if chapter.chapters(2,i,"finish"):
-			_Enemys -= 1
-	if _Enemys <= 0 && not _dialogbox2:
-		lable("chapter2_dialogbox2")
-		var Headman = load("res://src/scene/Enemy/Headman.tscn").instance()
-		Headman._dialogbox = "chapter2_dialogbox3"
-		Headman.position = Vector2(2956.713,-19.957)
-		add_child(Headman)
-		_dialogbox2 = true
-	
 
 func lable(value:String):
 	$"/root/Global"._dialogbox = value
@@ -75,6 +70,7 @@ func lable(value:String):
 		$dialogbox.show()
 		$dialogbox.position.x = $player.position.x -660
 		$dialogbox.position.y = $player.position.y + 120
+		print($dialogbox.position)
 		$dialogbox._dialogbox(true)
 
 

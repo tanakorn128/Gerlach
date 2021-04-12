@@ -30,3 +30,7 @@ var _Exam:int
 ####
 #chapter complete
 var chapter6_2:bool = false
+
+
+############ Dialogbox ###################
+var chapter2_dialogbox2:bool = false

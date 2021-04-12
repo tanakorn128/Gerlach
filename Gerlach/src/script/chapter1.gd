@@ -6,19 +6,22 @@ var _Enemys
 var monster
 var finished_monster:bool = false
 var area:bool = false
-
+export (bool) var test
 func _ready():
+	if test && not $"/root/Global".test:
+		$"/root/Global".player_pos = Vector2(889.7,898.025)
+		$"/root/Global".test = true
+	else:
+		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/Global"._Exam = 1
 	Events.connect("Enemy_pos",self,"monster1")
-	$player.position = $"/root/Global".player_pos
 	$"/root/Global".scene = 1
 	$"/root/Global"._dialogbox = "startchapter1"
 	_dialogbox()
 	$postbox2/Timer.start()
 	momster()
 func _process(delta):
-	$"/root/Global".player_pos.x = $player.position.x
-	$"/root/Global".player_pos.y = $player.position.y
+	$"/root/MissionInventory"._save_player.position = $player.position
 
 func _on_mailbox1_body_entered(body):
 	if body.get_name() == "player" && area:

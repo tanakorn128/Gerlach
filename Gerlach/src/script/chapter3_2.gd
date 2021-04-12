@@ -2,21 +2,28 @@ extends Node2D
 var finished:bool = false
 var _dialogbox2:bool = false
 var _Enemys
+var area:bool = false
 onready var chapter = $"/root/MissionInventory"
+export (bool) var test
 
 func _ready():
-	$"/root/Global"._Exam = 2
+	if test && not $"/root/Global".test:
+		$"/root/Global".player_pos = Vector2(977.103,-274.977)
+		$"/root/Global".test = true
+	else:
+		$player.position = $"/root/MissionInventory"._save_player.position
+	$"/root/Global"._Exam = 3
+	$"/root/Global".scene = 4
 	lable("chapter3_2_dialogbox1")
-	_stop()
-	$"/root/Global".scene = 3
+	$postbox1/Timer.start()
 
 func _process(delta):
-	#$"/root/Global".player_pos.x = $player.position.x
-	#$"/root/Global".player_pos.y = $player.position.y + 40
+	$"/root/MissionInventory"._save_player.position = $player.position
 	update()
 
 func update():
-	dialogbox2()
+	#dialogbox2()
+	pass
 
 func lable(value:String):
 	$"/root/Global"._dialogbox = value
@@ -26,18 +33,6 @@ func lable(value:String):
 		$dialogbox.position.x = $player.position.x -660
 		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)
-
-func _on_postbox_body_entered(body):
-	if body.get_name() == "player":
-		pass
-	pass # Replace with function body.
-
-
-func _on_postbox1_body_entered(body):
-	if body.get_name() == "player":
-		get_tree().change_scene("res://src/scene/postbox.tscn")
-	pass # Replace with function body.
-
 
 func _on_chapter4_1_body_entered(body):
 	if body.get_name() == "player":
@@ -68,3 +63,17 @@ func dialogbox2():
 	if _Enemys <= 0 && not _dialogbox2:
 		lable("chapter3_2_dialogbox2")
 		_dialogbox2 = true
+
+
+func _on_postbox1_body_entered(body):
+	if body.get_name() == "player" && area:
+		$"/root/Global".scene = 4
+		Events.emit_signal("postbox")
+		get_tree().change_scene("res://src/scene/postbox.tscn")
+	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	area = true
+	$postbox1/Timer.stop()
+	pass # Replace with function body.
