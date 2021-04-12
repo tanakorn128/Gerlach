@@ -5,13 +5,13 @@
 [resource]
 script = ExtResource( 1 )
 dic = [ {
-"id": 10,
+"id": 11,
 "pos": Vector2( 2408.2, -1758.91 )
 }, {
-"id": 11,
+"id": 12,
 "pos": Vector2( 3133.09, -1615.44 )
 }, {
-"id": 12,
+"id": 13,
 "pos": Vector2( 3782.48, -1630.55 )
 }, {
 "id": 14,

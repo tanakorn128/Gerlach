@@ -68,7 +68,7 @@ func momster():
 func _on_next_chapter_body_entered(body):
 	if body.get_name() == "player":
 		if true: #finished && finished_monster:
-			$"/root/Global".player_pos = Vector2(635.898,84.035)
+			$"/root/MissionInventory"._save_player.position = Vector2(635.898,84.035)
 			get_tree().change_scene("res://src/scene/chapter2.tscn")
 		else:
 			$"/root/Global".player_pos = Vector2(889.7,898.25)

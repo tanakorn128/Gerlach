@@ -10,7 +10,7 @@ dic = [ {
 "finish": false,
 "fire1": Vector2( 2925.81, -357 ),
 "fire2": Vector2( 3097.45, -162.5 ),
-"id": 5,
+"id": 6,
 "pos": Vector2( 2992.03, -64 ),
 "texture": ExtResource( 2 ),
 "type": 2
@@ -19,7 +19,7 @@ dic = [ {
 "finish": false,
 "fire1": Vector2( 2254.01, 971.9 ),
 "fire2": Vector2( 2397.68, 1106.6 ),
-"id": 6,
+"id": 7,
 "pos": Vector2( 2309.08, 1190.82 ),
 "type": 2
 }, {
@@ -27,7 +27,7 @@ dic = [ {
 "finish": false,
 "fire1": Vector2( 4324.81, 769.69 ),
 "fire2": Vector2( 4517.14, 880 ),
-"id": 7,
+"id": 8,
 "pos": Vector2( 4405.84, 987 ),
 "type": 2
 }, {
@@ -35,7 +35,7 @@ dic = [ {
 "finish": false,
 "fire1": Vector2( 5375.56, 313 ),
 "fire2": Vector2( 5226.06, 179 ),
-"id": 8,
+"id": 9,
 "pos": Vector2( 5287.46, 326 ),
 "type": 2
 }, {
@@ -43,7 +43,7 @@ dic = [ {
 "finish": false,
 "fire1": Vector2( 5046.31, -812 ),
 "fire2": Vector2( 4976.46, -949 ),
-"id": 9,
+"id": 10,
 "pos": Vector2( 4931.88, -776.284 ),
 "type": 2
 } ]

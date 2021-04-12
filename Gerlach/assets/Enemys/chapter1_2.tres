@@ -10,4 +10,7 @@ dic = [ {
 "id": 4,
 "texture": ExtResource( 2 ),
 "type": 2
+}, {
+"id": 5,
+"type": 2
 } ]

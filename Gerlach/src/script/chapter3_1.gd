@@ -27,5 +27,6 @@ func lable(value:String):
 
 func _on_chapter3_2_body_entered(body):
 	if body.get_name() == "player":
+		$"/root/MissionInventory"._save_player.position = Vector2(977.103,-274.977)
 		$"/root/Scene".scene(4)
 	pass # Replace with function body.

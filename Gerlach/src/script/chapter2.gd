@@ -43,7 +43,6 @@ func finished():
 		if not $"/root/MissionInventory"._save_mission.save[id]:
 			_Enemy += 1
 	if _Enemy <= 0:
-		print("chapter2_dialogbox2")
 		lable("chapter2_dialogbox2")
 		var Headman = load("res://src/scene/Enemy/Headman.tscn").instance()
 		Headman._dialogbox = "chapter2_dialogbox3"
@@ -51,6 +50,8 @@ func finished():
 		add_child(Headman)
 		$wall/blocked.queue_free()
 		$"/root/Global".chapter2_dialogbox2 = true
+	print(_Enemy)
+
 
 func _on_chapter3_1_body_entered(body):
 	if body.get_name() == "player": #&& area:
@@ -72,7 +73,6 @@ func lable(value:String):
 		$dialogbox.position.y = $player.position.y + 120
 		print($dialogbox.position)
 		$dialogbox._dialogbox(true)
-
 
 func _on_Timer_timeout():
 	area = true

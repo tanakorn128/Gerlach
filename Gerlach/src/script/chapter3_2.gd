@@ -7,6 +7,7 @@ onready var chapter = $"/root/MissionInventory"
 export (bool) var test
 
 func _ready():
+	$"/root/MissionInventory"._save_player.chapter = 4
 	if test && not $"/root/Global".test:
 		$"/root/Global".player_pos = Vector2(977.103,-274.977)
 		$"/root/Global".test = true

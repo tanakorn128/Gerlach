@@ -32,5 +32,8 @@ var _Exam:int
 var chapter6_2:bool = false
 
 
+########mission#########
+var chapter1_monster:bool = false
+
 ############ Dialogbox ###################
 var chapter2_dialogbox2:bool = false

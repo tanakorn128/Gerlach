@@ -97,7 +97,6 @@ extents = Vector2( 308.065, 238.872 )
 
 [node name="chapter2" type="Node2D"]
 script = ExtResource( 8 )
-test = true
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -117,7 +116,7 @@ tile_data = PoolIntArray( -3145649, 0, 0, -3145647, 0, 0, -3145645, 0, 0, -31456
 position = Vector2( 635.898, 84.035 )
 
 [node name="Camera2D" parent="player" index="1"]
-limit_left = -20
+limit_left = 0
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 2 )
@@ -206,7 +205,13 @@ tile_data = PoolIntArray( -13368996, 0, 0, -13368995, 0, 0, -13368991, 0, 0, -13
 tile_set = ExtResource( 15 )
 cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( -3735478, 0, 0, -3735477, 0, 0, -3735476, 0, 0, -3735475, 0, 0, -3735474, 0, 0, -3735473, 0, 0, -3735472, 0, 0, -3735471, 0, 0, -3735470, 0, 0, -3735469, 0, 0, -3735468, 0, 0, -131070, 0, 0, -65534, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 262146, 0, 0 )
+tile_data = PoolIntArray( -3735477, 0, 0, -3735476, 0, 0, -3735475, 0, 0, -3735474, 0, 0, -3735473, 0, 0, -3735472, 0, 0, -3735471, 0, 0, -3735470, 0, 0, -3735469, 0, 0, -3735468, 0, 0, -3735467, 0, 0, -3735466, 0, 0 )
+
+[node name="blocked2" type="TileMap" parent="wall"]
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 0, 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0 )
 
 [node name="postbox" type="Area2D" parent="."]
 
