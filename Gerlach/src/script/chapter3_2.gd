@@ -12,18 +12,14 @@ func _ready():
 		$"/root/Global".test = true
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
-	$"/root/Global"._Exam = 3
+	$"/root/Global"._Exam = 2
 	$"/root/Global".scene = 4
 	lable("chapter3_2_dialogbox1")
 	$postbox1/Timer.start()
-
+	finished()
+	
 func _process(delta):
 	$"/root/MissionInventory"._save_player.position = $player.position
-	update()
-
-func update():
-	#dialogbox2()
-	pass
 
 func lable(value:String):
 	$"/root/Global"._dialogbox = value
@@ -33,42 +29,39 @@ func lable(value:String):
 		$dialogbox.position.x = $player.position.x -660
 		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)
+	if value == "chapter3_2_dialogbox2":
+		$wall/blocked.queue_free()
+	return $dialogbox._dialogbox(true)
 
 func _on_chapter4_1_body_entered(body):
 	if body.get_name() == "player":
 		$"/root/Scene".scene(5)
 	pass # Replace with function body.
 
-func _stop():
-	_Enemys = chapter.all_chapter[3].dic.size()
-	for i in _Enemys:
-		if chapter.chapters(4,i,"finish"):
-			_Enemys -= 1
-	if _Enemys <= 0:
+func finished():
+	var Enemy_index:int = 3
+	var _Enemy:int
+	var count = chapter.all_chapter[Enemy_index].dic.size()
+	var id 
+	for i in count:
+		id = chapter.chapters(Enemy_index+1,i,"id")
+		if not $"/root/MissionInventory"._save_mission.save[id]:
+			_Enemy += 1
+	if _Enemy <= 0:
+		lable("chapter3_2_dialogbox2")
 		soldier()
-		$stop.queue_free()
 		
-	
+		
 func soldier():
 	var soldier = load("res://src/scene/Enemy/soldier1.tscn").instance()
 	soldier.position = Vector2(3346.72,-1516.434)
 	soldier._dialogbox = "chapter3_2_dialogbox3"
 	add_child(soldier)
 
-func dialogbox2():
-	_Enemys = chapter.all_chapter[3].dic.size()
-	for i in _Enemys:
-		if chapter.chapters(4,i,"finish"):
-			_Enemys -= 1
-	if _Enemys <= 0 && not _dialogbox2:
-		lable("chapter3_2_dialogbox2")
-		_dialogbox2 = true
-
 
 func _on_postbox1_body_entered(body):
 	if body.get_name() == "player" && area:
 		$"/root/Global".scene = 4
-		Events.emit_signal("postbox")
 		get_tree().change_scene("res://src/scene/postbox.tscn")
 	pass # Replace with function body.
 
