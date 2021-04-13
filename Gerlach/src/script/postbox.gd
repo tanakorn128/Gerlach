@@ -13,6 +13,7 @@ func _ready():
 
 
 func _on_back_button_down():
+	print($"/root/Global".scene)
 	$click.play()
 	$"/root/Scene".scene($"/root/Global".scene)
 	queue_free()

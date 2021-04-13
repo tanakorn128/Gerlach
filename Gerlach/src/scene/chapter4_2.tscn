@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter1/stop.tres" type="TileSet" id=14]
 [ext_resource path="res://assets/tileset-wesley.png" type="Texture" id=15]
-[ext_resource path="res://icon.png" type="Texture" id=16]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter4_2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://assets/chapter/chapter4/bridge.tres" type="TileSet" id=19]
@@ -55,7 +54,7 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 333.299, 294.709 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 38.7839, 55.3444 )
 
 [node name="chapter4_2" type="Node2D"]
@@ -186,7 +185,7 @@ tile_data = PoolIntArray( -2621216, 0, 0 )
 scale = Vector2( 0.166667, 0.166667 )
 tile_set = ExtResource( 14 )
 format = 1
-tile_data = PoolIntArray( 1376293, 0, 0, 1376294, 0, 0, 1376295, 0, 0, 1376296, 0, 0 )
+tile_data = PoolIntArray( -3735499, 0, 0, -3735498, 0, 0, -3735497, 0, 0, -3735496, 0, 0, -3735495, 0, 0, -3735494, 0, 0, -3735493, 0, 0, -3735492, 0, 0, -3735491, 0, 0, -3735490, 0, 0, -3735489, 0, 0, -3735488, 0, 0, -3735487, 0, 0, 1376293, 0, 0, 1376294, 0, 0, 1376295, 0, 0, 1376296, 0, 0 )
 
 [node name="chapter5_1" type="Area2D" parent="."]
 position = Vector2( 3.42694, 112.788 )
@@ -201,10 +200,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="icon" type="Sprite" parent="."]
-position = Vector2( 3218.19, -2278.22 )
-texture = ExtResource( 16 )
-
 [node name="dialogbox" parent="." instance=ExtResource( 17 )]
 visible = false
 
@@ -214,8 +209,11 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
 position = Vector2( 2727.47, -416.42 )
-shape = SubResource( 5 )
-[connection signal="body_entered" from="chapter5_1" to="." method="_on_chapter5_2_body_entered"]
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="postbox"]
+[connection signal="body_entered" from="chapter5_1" to="." method="_on_chapter5_1_body_entered"]
 [connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
+[connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="player"]

@@ -34,6 +34,8 @@ var chapter6_2:bool = false
 
 ########mission#########
 var chapter1_monster:bool = false
+var chapter4_2_soldier1:bool = false
+var chapter4_2_soldier2:bool = false
 
 ############ Dialogbox ###################
 var chapter2_dialogbox2:bool = false

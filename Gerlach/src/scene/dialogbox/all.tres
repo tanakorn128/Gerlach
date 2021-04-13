@@ -15,7 +15,7 @@
 [ext_resource path="res://src/scene/dialogbox/chapter5_1_1/Dialogbox2.tres" type="Resource" id=13]
 [ext_resource path="res://src/scene/dialogbox/chapter4_2/Dialogbox1.tres" type="Resource" id=14]
 [ext_resource path="res://src/scene/dialogbox/chapter4_1/Dialogbox1.tres" type="Resource" id=15]
-[ext_resource path="res://src/scene/dialogbox/chapter4_2/Dialogbox3.tres" type="Resource" id=16]
+[ext_resource path="res://src/scene/dialogbox/chapter4_2/soldier1.tres" type="Resource" id=16]
 [ext_resource path="res://src/scene/dialogbox/chapter4_2/Dialogbox2.tres" type="Resource" id=17]
 [ext_resource path="res://src/scene/dialogbox/chapter5_2/Dialogbox1.tres" type="Resource" id=18]
 [ext_resource path="res://src/scene/dialogbox/chapter5_1_1/Dialogbox1.tres" type="Resource" id=19]
@@ -54,7 +54,7 @@ all = {
 "chapter4_1_dialogbox1": ExtResource( 15 ),
 "chapter4_2_dialogbox1": ExtResource( 14 ),
 "chapter4_2_dialogbox2": ExtResource( 17 ),
-"chapter4_2_dialogbox3": ExtResource( 16 ),
+"chapter4_2_soldier1": ExtResource( 16 ),
 "chapter4_2_soldier2": ExtResource( 20 ),
 "chapter5_2_dialogbox1": ExtResource( 18 ),
 "chapter5_2_soldier": ExtResource( 13 ),

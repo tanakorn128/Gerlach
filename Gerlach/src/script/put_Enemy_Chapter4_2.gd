@@ -1,21 +1,24 @@
 extends Node2D
-var count:int
+var Enemy_index:int = 4
+onready var chapter = $"/root/MissionInventory"
+var id
 var inst
-onready var chapter4_2 = $"/root/MissionInventory"
-var soldier1:bool
-func _ready():
-	count = chapter4_2.all_chapter[5].dic.size()
-	
-	putenemy()
 
-func putenemy():
-	
+func _ready():
+	soldier()
+
+func soldier():
+	var count = chapter.all_chapter[Enemy_index].dic.size()
 	for i in count:
-		if not chapter4_2.chapters(2,i,"finish"):
-			inst = load("res://src/scene/Enemy/soldier2.tscn").instance()
-			inst.position = chapter4_2.chapters(6,i,"pos")
-			inst.type_enemy = chapter4_2.chapters(6,i,"type")
-			inst.number_index = i
-			inst._scene = 5
-			inst._dialogbox = "chapter4_2_dialogbox2"
+		if not $"/root/MissionInventory"._save_mission.save[22]  && not $"/root/MissionInventory"._save_dialogbox.save[23]:
+			inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
+			inst.position = chapter.chapters(Enemy_index+1,0,"pos")
+			inst._dialogbox = "chapter4_2_soldier1"
+			inst.text = "ทหารคนที่ 1"
 			add_child(inst)
+		if $"/root/MissionInventory"._save_dialogbox.save[22] && not $"/root/MissionInventory"._save_dialogbox.save[23]:
+			inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
+			inst.position = chapter.chapters(Enemy_index+1,1,"pos")
+			inst._dialogbox = "chapter4_2_soldier2"
+			add_child(inst)
+	

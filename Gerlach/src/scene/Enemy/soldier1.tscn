@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/script/soldier1.gd" type="Script" id=1]
 [ext_resource path="res://assets/npc/2.png" type="Texture" id=2]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/font/Overview.tres" type="DynamicFont" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16.9027, 25.7013 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 218.197
 
 [node name="soldier1" type="Node2D"]
 script = ExtResource( 1 )
@@ -25,4 +29,25 @@ shape = SubResource( 1 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 3 )]
 visible = false
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -91.2387
+margin_top = -133.717
+margin_right = 98.7613
+margin_bottom = -53.7168
+custom_fonts/font = ExtResource( 4 )
+text = "ทหาร"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area_label" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_label"]
+shape = SubResource( 2 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area_label" to="." method="_on_label_body_entered"]
+[connection signal="body_exited" from="Area_label" to="." method="_on_Area_label_body_exited"]
