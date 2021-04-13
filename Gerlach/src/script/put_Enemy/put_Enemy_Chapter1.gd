@@ -44,9 +44,7 @@ func monster():
 				ins.number_index = id
 				$"/root/Global".number_enemy = Enemy_index2
 				ins.type_enemy=chapter1_1.chapters(Enemy_index2+1,i,"type")
-				print("i4 = ",i)
 			elif id == 5:
-				print("i5 = ",i)
 				ins = load("res://src/scene/Enemy/Monster1.tscn").instance()
 				fire1 = load("res://src/scene/animation/fire .tscn").instance()
 				fire2 = load("res://src/scene/animation/fire .tscn").instance()
@@ -56,7 +54,6 @@ func monster():
 				ins.number_index = id
 				$"/root/Global".number_enemy = Enemy_index2
 				ins.type_enemy=chapter1_1.chapters(Enemy_index2+1,i,"type")
-			print("ID = ",id)
 			add_child(ins)
 			add_child(fire1)
 			add_child(fire2)

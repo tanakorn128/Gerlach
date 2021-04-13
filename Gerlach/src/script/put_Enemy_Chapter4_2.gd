@@ -20,5 +20,6 @@ func soldier():
 			inst = load("res://src/scene/Enemy/soldier1.tscn").instance()
 			inst.position = chapter.chapters(Enemy_index+1,1,"pos")
 			inst._dialogbox = "chapter4_2_soldier2"
+			inst.text = "ทหารคนที่ 2"
 			add_child(inst)
 	

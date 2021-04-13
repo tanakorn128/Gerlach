@@ -4,6 +4,10 @@ var number_index:int
 var type_enemy:int
 var _dialogbox:String
 var text:String = "หทาร"
+var pos:Vector2
+
+
+
 func lable(value:String):
 	$"/root/Global"._dialogbox = value
 	if $dialogbox._dialogbox(true):
@@ -11,7 +15,7 @@ func lable(value:String):
 		$dialogbox.position.x = -get_viewport_rect().size.x/2
 		$dialogbox.position.y = -get_viewport_rect().size.y/13
 		$dialogbox._dialogbox(true)
-	$Label.hide()
+	
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "player":

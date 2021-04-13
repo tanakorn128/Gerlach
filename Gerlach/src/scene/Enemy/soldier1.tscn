@@ -28,10 +28,8 @@ scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 3 )]
-visible = false
 
 [node name="Label" type="Label" parent="."]
-visible = false
 margin_left = -91.2387
 margin_top = -133.717
 margin_right = 98.7613

@@ -47,6 +47,7 @@ func finished():
 		var Headman = load("res://src/scene/Enemy/Headman.tscn").instance()
 		Headman._dialogbox = "chapter2_dialogbox3"
 		Headman.position = Vector2(2956.713,-19.957)
+		Headman.text = "หัวหน้าหมู่บ้าน"
 		add_child(Headman)
 		$wall/blocked.queue_free()
 		$"/root/Global".chapter2_dialogbox2 = true
@@ -71,7 +72,6 @@ func lable(value:String):
 		$dialogbox.show()
 		$dialogbox.position.x = $player.position.x -660
 		$dialogbox.position.y = $player.position.y + 120
-		print($dialogbox.position)
 		$dialogbox._dialogbox(true)
 
 func _on_Timer_timeout():
