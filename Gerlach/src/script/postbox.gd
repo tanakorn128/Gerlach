@@ -3,6 +3,7 @@ var count:int
 onready var chapter = $"/root/MissionInventory"
 var Enemy_index:int = 0 #in array
 var id
+
 func _ready():
 	$GridContainer/Label1.text = "กำจัดศัตรูที่ซ่อนอยู่"
 	var audio = $click.stream as AudioStreamOGGVorbis

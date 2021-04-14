@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 31
+dialogbox = [ "ภารกิจ : หาทางลับที่ตัดผ่านภูเขาเพื่ออ้อมไปโจมตีปีศาจจากด้านหลัง", "ภารกิจ : (TIP เดินลงไปทางตอนใต้ของป้อมปราการ)" ]
+finish = false
