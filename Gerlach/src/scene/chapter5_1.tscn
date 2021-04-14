@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/script/chapter5_1.gd" type="Script" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
+[ext_resource path="res://assets/chapter/chapter1/stop.tres" type="TileSet" id=15]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter6_1.tscn" type="PackedScene" id=17]
 
@@ -29,6 +30,7 @@ extents = Vector2( 35.5891, 58.1985 )
 
 [node name="chapter5_1" type="Node2D"]
 script = ExtResource( 12 )
+test = true
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -135,16 +137,23 @@ cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -2490217, 1, 0 )
 
+[node name="blocked" type="TileMap" parent="wall"]
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -2555784, 0, 0, -2490248, 0, 0, -2424712, 0, 0, -2359176, 0, 0, -2293640, 0, 0, -2228104, 0, 0, -2162568, 0, 0, -2097032, 0, 0, -2031496, 0, 0, -1965960, 0, 0, -1900424, 0, 0, -1834888, 0, 0, -1769352, 0, 0, -1703816, 0, 0, -1638280, 0, 0, -1572744, 0, 0, -1507208, 0, 0, -1441672, 0, 0, -1376136, 0, 0, -1310600, 0, 0, -1245064, 0, 0, -1179528, 0, 0, -1113992, 0, 0, -1048456, 0, 0, -982920, 0, 0, -917384, 0, 0, -393202, 0, 0, -327666, 0, 0, -262130, 0, 0, -196594, 0, 0, -131058, 0, 0 )
+
 [node name="dialogbox" parent="." instance=ExtResource( 16 )]
 visible = false
 
-[node name="put_Enemy_Chapter6_1" parent="." instance=ExtResource( 17 )]
+[node name="put_Enemy_Chapter5_1" parent="." instance=ExtResource( 17 )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 3478.58
-margin_top = -1461.16
-margin_right = 3674.58
-margin_bottom = -1241.16
+visible = false
+margin_left = 3447.36
+margin_top = -1477.55
+margin_right = 3643.36
+margin_bottom = -1257.55
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -160,7 +169,10 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
 position = Vector2( 1760.61, -391.271 )
 shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="postbox"]
 [connection signal="body_entered" from="Chapter5_2 " to="." method="_on_Chapter5_2__body_entered"]
 [connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
+[connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="player"]

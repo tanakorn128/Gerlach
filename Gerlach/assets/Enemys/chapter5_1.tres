@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/script/Enemy.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+dic = [ {
+"id": 18,
+"pos": Vector2( 4456.42, -915.094 ),
+"type": 2
+}, {
+"id": 19,
+"pos": Vector2( 2348.35, -1042.09 ),
+"type": 2
+}, {
+"id": 20,
+"pos": Vector2( 2449.94, -1664.35 ),
+"type": 2
+}, {
+"id": 21,
+"pos": Vector2( 3135.7, -1651.65 ),
+"type": 2
+}, {
+"id": 22,
+"pos": Vector2( 3783.36, -1613.55 ),
+"type": 2
+} ]

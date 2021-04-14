@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 25
+dialogbox = [ "เกอราช : ปีศาจหรอ เก่งขึ้นอีกแล้วนะเนี่ย", "เกอราช : เอาหล่ะไปคุยกับทหารก่อน", "ภารกิจ : พูดคุยกับทหารในป้อมปราการ" ]
+finish = false

@@ -2,5 +2,5 @@
 
 [ext_resource path="res://src/script/put_Enemy_Chapter6_1.gd" type="Script" id=1]
 
-[node name="put_Enemy_Chapter6_1" type="Node2D"]
+[node name="put_Enemy_Chapter5_1" type="Node2D"]
 script = ExtResource( 1 )
