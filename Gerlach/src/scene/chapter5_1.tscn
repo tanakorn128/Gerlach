@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -22,15 +22,17 @@
 
 [sub_resource type="TileSet" id=2]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 464.995, 970.74 )
-
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 35.5891, 58.1985 )
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 443.39, 140.619 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 239.645, 517.923 )
+
 [node name="chapter5_1" type="Node2D"]
 script = ExtResource( 12 )
-test = true
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -143,6 +145,12 @@ cell_size = Vector2( 8, 8 )
 format = 1
 tile_data = PoolIntArray( -2555784, 0, 0, -2490248, 0, 0, -2424712, 0, 0, -2359176, 0, 0, -2293640, 0, 0, -2228104, 0, 0, -2162568, 0, 0, -2097032, 0, 0, -2031496, 0, 0, -1965960, 0, 0, -1900424, 0, 0, -1834888, 0, 0, -1769352, 0, 0, -1703816, 0, 0, -1638280, 0, 0, -1572744, 0, 0, -1507208, 0, 0, -1441672, 0, 0, -1376136, 0, 0, -1310600, 0, 0, -1245064, 0, 0, -1179528, 0, 0, -1113992, 0, 0, -1048456, 0, 0, -982920, 0, 0, -917384, 0, 0, -393202, 0, 0, -327666, 0, 0, -262130, 0, 0, -196594, 0, 0, -131058, 0, 0 )
 
+[node name="blocked4_2" type="TileMap" parent="wall"]
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 2097167, 0, 0, 2097168, 0, 0, 2097169, 0, 0, 2097170, 0, 0, 2097171, 0, 0, 2097172, 0, 0, 2097173, 0, 0, 2097174, 0, 0, 2097175, 0, 0, 2097176, 0, 0, 2097177, 0, 0 )
+
 [node name="dialogbox" parent="." instance=ExtResource( 16 )]
 visible = false
 
@@ -158,12 +166,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Chapter5_2 " type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chapter5_2 "]
-position = Vector2( 6251.21, -966.467 )
-shape = SubResource( 3 )
-
 [node name="postbox" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
@@ -171,8 +173,21 @@ position = Vector2( 1760.61, -391.271 )
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="postbox"]
-[connection signal="body_entered" from="Chapter5_2 " to="." method="_on_Chapter5_2__body_entered"]
+
+[node name="Chapter4_2_2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chapter4_2_2"]
+position = Vector2( 918.37, 1676.56 )
+shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 6479.16, -1241.96 )
+shape = SubResource( 6 )
 [connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 [connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Chapter4_2_2" to="." method="_on_Chapter4_2_2_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="player"]

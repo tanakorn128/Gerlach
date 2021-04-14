@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 [ext_resource path="res://src/script/chapter5_2.gd" type="Script" id=15]
+[ext_resource path="res://assets/chapter/chapter1/stop.tres" type="TileSet" id=16]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -22,9 +23,6 @@
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 317.897, 432.378 )
-
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 34.4814, 58.646 )
 
 [node name="chapter5_2" type="Node2D"]
 script = ExtResource( 15 )
@@ -114,13 +112,24 @@ format = 1
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 2, 2 )
 format = 1
-tile_data = PoolIntArray( -8715942, 0, 0 )
 
 [node name="lable" type="TileMap" parent="wall"]
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -8715936, 1, 0 )
+
+[node name="blocked2" type="TileMap" parent="wall"]
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -2293653, 0, 0, -2228117, 0, 0, -2162581, 0, 0, -2097045, 0, 0, -2031509, 0, 0, -1965973, 0, 0, -1900437, 0, 0, -1834901, 0, 0, -1769365, 0, 0, -1703829, 0, 0, -1638293, 0, 0, -1572757, 0, 0, -1507221, 0, 0, -1441685, 0, 0, -1376149, 0, 0 )
+
+[node name="blocked" type="TileMap" parent="wall"]
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -2490352, 0, 0, -2424816, 0, 0, -2359280, 0, 0, -2293744, 0, 0, -2228208, 0, 0, -2162672, 0, 0, -2097136, 0, 0, -2031600, 0, 0, -1966064, 0, 0, -1900528, 0, 0, -1834992, 0, 0, -1769456, 0, 0, -1703920, 0, 0, -1638384, 0, 0, -1572848, 0, 0, -1507312, 0, 0, -1441776, 0, 0, -1376240, 0, 0, -1310704, 0, 0, -1245168, 0, 0 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 12 )]
 visible = false
@@ -132,12 +141,15 @@ position = Vector2( -3454.05, 903.43 )
 position = Vector2( 3893.38, -2305.98 )
 shape = SubResource( 3 )
 
-[node name="postbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
-position = Vector2( 4195.54, -1521.55 )
-shape = SubResource( 4 )
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 2151.6
+margin_top = -1603.65
+margin_right = 2353.6
+margin_bottom = -1383.65
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="5_1_1" to="." method="_on_5_1_1_body_entered"]
-[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 
 [editable path="player"]

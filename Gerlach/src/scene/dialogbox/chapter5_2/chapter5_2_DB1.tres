@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource( 1 )
-dialogbox = [ "chapter5_2 หาหัวหน้าทหารเก่า ที่ Chapter 5.3 ", "chapter3_1 ป้ายบอกทาง 1 xxx" ]
+id = 27
+dialogbox = [ "ภารกิจ : พูดคุยกับทหารในสนามรบ" ]
 finish = false

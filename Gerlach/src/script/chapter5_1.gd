@@ -17,12 +17,6 @@ func _ready():
 func _process(delta):
 	$"/root/MissionInventory"._save_player.position = $player.position
 
-func _on_Chapter5_2__body_entered(body):
-	if body.get_name() == "player":
-		$"/root/Scene".scene(8)
-	pass # Replace with function body.
-
-
 func _on_postbox_body_entered(body):
 	$"/root/Global".scene = 7
 	if body.get_name() == "player" && area:
@@ -61,3 +55,17 @@ func lable(value:String):
 		$dialogbox.position.x = $player.position.x -660
 		$dialogbox.position.y = $player.position.y + 120
 		$dialogbox._dialogbox(true)
+
+
+func _on_Chapter4_2_2_body_entered(body):
+	if body.get_name() == "player" && $"/root/MissionInventory"._save_dialogbox.save[28]:
+		$"/root/MissionInventory"._save_player.position = Vector2(3738.11,-3881.7)
+		$"/root/Scene".scene(18)
+	pass # Replace with function body.
+
+
+func _on_Area2D_body_entered(body):
+	if body.get_name() == "player":
+		$"/root/MissionInventory"._save_player.position = Vector2(1347.59,-1307.02)
+		$"/root/Scene".scene(8)
+	pass # Replace with function body.
