@@ -22,13 +22,13 @@
 
 [sub_resource type="TileSet" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 35.5891, 58.1985 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 443.39, 140.619 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 239.645, 517.923 )
 
 [node name="chapter5_1" type="Node2D"]
@@ -170,7 +170,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
 position = Vector2( 1760.61, -391.271 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="postbox"]
 
@@ -178,13 +178,13 @@ shape = SubResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chapter4_2_2"]
 position = Vector2( 918.37, 1676.56 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 6479.16, -1241.96 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 [connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 [connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Chapter4_2_2" to="." method="_on_Chapter4_2_2_body_entered"]

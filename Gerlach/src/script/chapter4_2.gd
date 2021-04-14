@@ -58,5 +58,6 @@ func _on_Timer_timeout():
 
 func _on_chapter5_1_body_entered(body):
 	if body.get_name() == "player":
+		$"/root/MissionInventory"._save_player.position = Vector2(1003.25,1125.7)
 		$"/root/Scene".scene(7)
 	pass # Replace with function body.

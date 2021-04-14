@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://src/script/chapter5_1_1.gd" type="Script" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
+[ext_resource path="res://assets/chapter/chapter1/stop.tres" type="TileSet" id=15]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter6_1.tscn" type="PackedScene" id=17]
 
@@ -138,12 +139,19 @@ cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -2490217, 1, 0 )
 
+[node name="blocked" type="TileMap" parent="wall"]
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -2359176, 0, 0, -2293640, 0, 0, -2228104, 0, 0, -2162568, 0, 0, -2097032, 0, 0, -2031496, 0, 0, -1965960, 0, 0, -1900424, 0, 0, -1834888, 0, 0, -1769352, 0, 0, -1703816, 0, 0, -1638280, 0, 0, -1572744, 0, 0, -1572743, 0, 0, -1507208, 0, 0, -1507207, 0, 0, -1441672, 0, 0, -1441671, 0, 0, -1376136, 0, 0, -1310600, 0, 0, -1245064, 0, 0, -1179528, 0, 0, -1179527, 0, 0, -1113992, 0, 0, -1113991, 0, 0, -1048455, 0, 0 )
+
 [node name="dialogbox" parent="." instance=ExtResource( 16 )]
 visible = false
 
 [node name="put_Enemy_Chapter6_1" parent="." instance=ExtResource( 17 )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = 3478.58
 margin_top = -1461.16
 margin_right = 3674.58
@@ -164,6 +172,8 @@ shape = SubResource( 3 )
 position = Vector2( 1760.61, -391.271 )
 shape = SubResource( 4 )
 
+[node name="Timer" type="Timer" parent="postbox"]
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -171,6 +181,7 @@ position = Vector2( 968.713, 1627.98 )
 shape = SubResource( 5 )
 [connection signal="body_entered" from="Chapter5_2 " to="." method="_on_Chapter6_2__body_entered"]
 [connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
+[connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 
 [editable path="player"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=43 format=2]
+[gd_resource type="Resource" load_steps=44 format=2]
 
 [ext_resource path="res://src/scene/dialogbox/all_dialogbox.gd" type="Script" id=1]
 [ext_resource path="res://src/scene/dialogbox/chapter1/2.tres" type="Resource" id=2]
@@ -35,6 +35,7 @@
 [ext_resource path="res://src/scene/dialogbox/chapter5_1/chapter5_1_DB2.tres" type="Resource" id=33]
 [ext_resource path="res://src/scene/dialogbox/chapter5_1/chapter5_1_DB3.tres" type="Resource" id=34]
 [ext_resource path="res://src/scene/dialogbox/chapter5_2/chapter5_2_DB2.tres" type="Resource" id=35]
+[ext_resource path="res://src/scene/dialogbox/chapter4.2.2/chapter4_2_2_DB1.tres" type="Resource" id=36]
 [ext_resource path="res://src/scene/dialogbox/chapter2/Dialogbox2.tres" type="Resource" id=44]
 [ext_resource path="res://src/scene/dialogbox/chapter2/Dialogbox1.tres" type="Resource" id=45]
 [ext_resource path="res://src/scene/dialogbox/chapter2/Dialogbox3.tres" type="Resource" id=46]
@@ -56,6 +57,7 @@ all = {
 "chapter3_2_dialogbox2": ExtResource( 10 ),
 "chapter3_2_dialogbox3": ExtResource( 11 ),
 "chapter4_1_dialogbox1": ExtResource( 15 ),
+"chapter4_2_2_DB1": ExtResource( 36 ),
 "chapter4_2_dialogbox1": ExtResource( 14 ),
 "chapter4_2_dialogbox2": ExtResource( 17 ),
 "chapter4_2_soldier1": ExtResource( 16 ),

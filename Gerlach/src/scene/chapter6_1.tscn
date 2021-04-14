@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -15,11 +15,14 @@
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=13]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/chapter/chapter2/water.tres" type="TileSet" id=15]
+[ext_resource path="res://assets/chapter/chapter1/stop.tres" type="TileSet" id=16]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 530.736, 307.806 )
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 530.736, 307.806 )
+
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 543.32, 541.217 )
 
 [node name="chapter6_1" type="Node2D"]
@@ -96,8 +99,20 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -4980699, 0, 0, -4784091, 0, 0, -4587483, 0, 0, -4390875, 0, 0, -4128731, 0, 0, -3997659, 0, 0, -3801051, 0, 0, -3604443, 0, 0, -3473371, 0, 0 )
 
+[node name="blocked" type="TileMap" parent="wall"]
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -7602204, 0, 0, -7602203, 0, 0, -7602202, 0, 0, -7602201, 0, 0, -7602200, 0, 0, -7602199, 0, 0, -7602198, 0, 0, -7602197, 0, 0, -7602196, 0, 0, -7602195, 0, 0, -7602194, 0, 0, -7602193, 0, 0, -7602192, 0, 0, -7602191, 0, 0, -7602190, 0, 0, -7602189, 0, 0, -7602188, 0, 0, -7602187, 0, 0, -7536667, 0, 0, -7536666, 0, 0, -7536665, 0, 0, -7536664, 0, 0, -7536663, 0, 0, -7536662, 0, 0, -7536661, 0, 0, -7536660, 0, 0, -7536659, 0, 0, -7536658, 0, 0, -7536657, 0, 0, -7536656, 0, 0, -6881311, 0, 0, -6881310, 0, 0, -6881309, 0, 0, -6881308, 0, 0, -6881307, 0, 0, -6881306, 0, 0, -6881305, 0, 0, -6881304, 0, 0, -6881303, 0, 0, -6881302, 0, 0, -6881301, 0, 0, -6881300, 0, 0, -6881299, 0, 0, -6881298, 0, 0, -6881297, 0, 0, -6881296, 0, 0, -6881295, 0, 0, -6881294, 0, 0, -6881293, 0, 0, -6881292, 0, 0, -6881291, 0, 0, -6881290, 0, 0, -6881289, 0, 0, -6881288, 0, 0, -6881287, 0, 0, -6881286, 0, 0 )
+
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( -850.795, -2421.43 )
+
+[node name="Camera2D" parent="player" index="1"]
+limit_bottom = 326
+
+[node name="AnimationTreePlayer" parent="player" index="5"]
+parameters/StateMachine/playback = SubResource( 1 )
 
 [node name="Tree" type="TileMap" parent="."]
 position = Vector2( 0, 5500 )
@@ -111,7 +126,7 @@ tile_data = PoolIntArray( -18350198, 0, 0, -16056430, 3, 0, -16056423, 3, 0, -16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene7_2"]
 position = Vector2( -962.703, -3101.17 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 14 )]
 
@@ -119,6 +134,8 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 3328.04, 886.998 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 [connection signal="body_entered" from="Scene7_2" to="." method="_on_Scene7_2_body_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[editable path="player"]

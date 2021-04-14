@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -55,9 +55,6 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 333.299, 294.709 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 38.7839, 55.3444 )
-
 [node name="chapter4_2_2" type="Node2D"]
 position = Vector2( 130.167, 25.3984 )
 script = ExtResource( 11 )
@@ -91,7 +88,7 @@ format = 1
 tile_data = PoolIntArray( -589730, 2, 0, 720990, 3, 0, 1245278, 3, 0, 1704030, 2, 0, 1769566, 3, 0, 3014750, 3, 0, 3539038, 3, 0, 4063326, 0, 0 )
 
 [node name="player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 3738.11, -3881.7 )
+position = Vector2( 3730.11, -3467.36 )
 
 [node name="Camera2D" parent="player" index="1"]
 limit_left = -601
@@ -180,13 +177,18 @@ tile_data = PoolIntArray( -1572851, 3, 0, -1572834, 3, 0, -1572817, 3, 0, -15728
 tile_set = ExtResource( 7 )
 cell_size = Vector2( 2, 2 )
 format = 1
-tile_data = PoolIntArray( -2621216, 0, 0 )
 
 [node name="blocked" type="TileMap" parent="wall"]
 scale = Vector2( 0.166667, 0.166667 )
 tile_set = ExtResource( 14 )
 format = 1
 tile_data = PoolIntArray( 1376293, 0, 0, 1376294, 0, 0, 1376295, 0, 0, 1376296, 0, 0 )
+
+[node name="blocked2" type="TileMap" parent="wall"]
+tile_set = ExtResource( 14 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( 1572910, 0, 0, 1572911, 0, 0, 1572912, 0, 0, 1572913, 0, 0, 1572914, 0, 0, 1572915, 0, 0, 1572916, 0, 0, 1572917, 0, 0, 1572918, 0, 0, 1572919, 0, 0, 1572920, 0, 0, 1572921, 0, 0 )
 
 [node name="chapter6_1" type="Area2D" parent="."]
 position = Vector2( 3.42694, 112.788 )
@@ -203,13 +205,6 @@ texture = ExtResource( 16 )
 visible = false
 
 [node name="put_Enemy_Chapter4_2" parent="." instance=ExtResource( 18 )]
-
-[node name="postbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
-position = Vector2( 2727.47, -416.42 )
-shape = SubResource( 4 )
 [connection signal="body_entered" from="chapter6_1" to="." method="_on_chapter6_1_body_entered"]
-[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
 
 [editable path="player"]
