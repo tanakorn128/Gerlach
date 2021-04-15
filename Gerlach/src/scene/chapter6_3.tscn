@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/chapter/chapter7/middle_mountain.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter7/BlackGround4.tres" type="TileSet" id=2]
@@ -7,13 +7,17 @@
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=5]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=7]
-[ext_resource path="res://src/script/chapter7_3.gd" type="Script" id=8]
+[ext_resource path="res://src/script/chapter6_3.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 215.534, 369.468 )
+extents = Vector2( 133.058, 262.639 )
 
-[node name="chapter7" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32.4209, 47.8221 )
+
+[node name="chapter6_3" type="Node2D"]
 script = ExtResource( 8 )
+test = true
 
 [node name="BlackGround4" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -63,40 +67,64 @@ visible = false
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 6110.58, 1720.08 )
+position = Vector2( 3539.23, 5110.79 )
 shape = SubResource( 1 )
 
-[node name="Area2D2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( 8287.72, 3991.06 )
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1869.23, 5845.31 )
 shape = SubResource( 1 )
 
-[node name="Area2D3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-position = Vector2( 3497.53, 5211.56 )
+[node name="test" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -8602.25, -363.583 )
 shape = SubResource( 1 )
 
-[node name="Area2D4" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
-position = Vector2( -1915.66, 5783.24 )
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 2917.36, -2362.1 )
 shape = SubResource( 1 )
 
-[node name="Area2D5" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
-position = Vector2( 2861.54, -2334.41 )
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 6167.89, 1758.88 )
 shape = SubResource( 1 )
 
-[node name="Area2D6" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
-position = Vector2( 10739.1, -709.266 )
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 8311.89, 3942.88 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 10741, -569.554 )
+shape = SubResource( 1 )
+
+[node name="postbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
+position = Vector2( -9664.92, -484.614 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="postbox"]
+position = Vector2( -2058.24, 5766.19 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 3306.53, 4942.91 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 5945.11, 1663.21 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 8069.55, 3765.52 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 10502.2, -684.536 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 2657.89, -2566.99 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="postbox"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
-[connection signal="body_entered" from="Area2D3" to="." method="_on_Area2D3_body_entered"]
-[connection signal="body_entered" from="Area2D4" to="." method="_on_Area2D4_body_entered"]
-[connection signal="body_entered" from="Area2D5" to="." method="_on_Area2D5_body_entered"]
+[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
+[connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 33
+dialogbox = [ "เกอราช : ออกมาได้สักที ", "เกอราช : เป็นเขาวงกตที่ปวดหัวจริงๆเลย", "เกอราช : อ้อมมาด้านหลังสำเร็จสินะ ", "เกอราช : เราต้องเดินทางไปที่สนามรบจากด้านหลังสินะ เอาหล่ะ", "ภารกิจ : เดินขึ้นไปยังด้านหลังของสนามรบ", "ภารกิจ : (TIP เดินขึ้นไปทางเหนือเรื่อยๆ)" ]
+finish = false

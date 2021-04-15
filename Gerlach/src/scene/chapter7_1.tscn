@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Post box.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -118,6 +118,9 @@ points = PoolVector2Array( 64, 48, 0, 48, 0, 0, 64, 0 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 150.216, 205.075 )
 
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 36.3735, 53.3281 )
+
 [node name="chapter7_1" type="Node2D"]
 position = Vector2( -237.841, 361.519 )
 script = ExtResource( 8 )
@@ -141,7 +144,6 @@ position = Vector2( 1358.47, 2512.1 )
 
 [node name="Camera2D" parent="player" index="1"]
 limit_left = -603
-limit_top = -2674
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
 parameters/StateMachine/playback = SubResource( 2 )
@@ -256,7 +258,17 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="7_2"]
 position = Vector2( 718.325, -3968.27 )
 shape = SubResource( 7 )
+
+[node name="postbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 3113.4, 2320.26 )
+shape = SubResource( 8 )
+
+[node name="Timer" type="Timer" parent="postbox"]
 [connection signal="body_entered" from="7_2" to="." method="_on_7_2_body_entered"]
+[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
+[connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="player"]
 

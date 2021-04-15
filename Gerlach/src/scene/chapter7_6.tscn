@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -11,11 +11,12 @@
 [ext_resource path="res://assets/chapter/chapter1/Tree.tres" type="TileSet" id=9]
 [ext_resource path="res://src/scene/player.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/chapter/chapter3/mountain.tres" type="TileSet" id=11]
-[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter14.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/scene/put_Enemy/put_Enemy_Chapter7_6.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/script/chapter7_6.gd" type="Script" id=16]
+[ext_resource path="res://assets/chapter/chapter1/stop.tres" type="TileSet" id=17]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -24,8 +25,12 @@
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 381.96, 482.907 )
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 21.8208, 51.8281 )
+
 [node name="chapter7_6" type="Node2D"]
 script = ExtResource( 16 )
+test = true
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -45,6 +50,7 @@ position = Vector2( 5095.26, -1338.48 )
 
 [node name="Camera2D" parent="player" index="1"]
 limit_top = -2390
+limit_right = 5826
 limit_bottom = -320
 
 [node name="AnimationTreePlayer" parent="player" index="5"]
@@ -124,17 +130,27 @@ cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -8715936, 1, 0 )
 
-[node name="put_Enemy_Chapter13" parent="." instance=ExtResource( 12 )]
+[node name="blocked" type="TileMap" parent="wall"]
+tile_set = ExtResource( 17 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -2293746, 0, 0, -2228210, 0, 0, -2162674, 0, 0, -2097138, 0, 0, -2031602, 0, 0, -1966066, 0, 0, -1900530, 0, 0, -1834994, 0, 0, -1769458, 0, 0, -1703922, 0, 0, -1638386, 0, 0, -1572850, 0, 0, -1507314, 0, 0, -1441778, 0, 0, -1376242, 0, 0, -1310706, 0, 0 )
+
+[node name="blocked2" type="TileMap" parent="wall"]
+tile_set = ExtResource( 17 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -2424713, 0, 0, -2359177, 0, 0, -2293641, 0, 0, -2228105, 0, 0, -2162569, 0, 0, -2097033, 0, 0, -2031497, 0, 0, -1965961, 0, 0, -1900425, 0, 0, -1834889, 0, 0, -1769353, 0, 0, -1703817, 0, 0, -1638367, 0, 0, -1638281, 0, 0, -1572745, 0, 0, -1507209, 0, 0, -1441673, 0, 0, -1376137, 0, 0 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 15 )]
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
-margin_left = 2721.23
-margin_top = -764.577
-margin_right = 2939.23
-margin_bottom = -572.577
+margin_left = 2985.15
+margin_top = -1966.29
+margin_right = 3203.15
+margin_bottom = -1774.29
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -144,6 +160,18 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 286.938, -1419.59 )
 shape = SubResource( 3 )
+
+[node name="postbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postbox"]
+position = Vector2( 4194.3, -1520.21 )
+shape = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="postbox"]
+
+[node name="put_Enemy_Chapter7_6" parent="." instance=ExtResource( 12 )]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="postbox" to="." method="_on_postbox_body_entered"]
+[connection signal="timeout" from="postbox/Timer" to="." method="_on_Timer_timeout"]
 
 [editable path="player"]
