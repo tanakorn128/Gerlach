@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/chapter/chapter1/Timber.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/chapter/chapter1/Fence.tres" type="TileSet" id=2]
@@ -15,8 +15,9 @@
 [ext_resource path="res://assets/chapter/chapter6/fence2.tres" type="TileSet" id=13]
 [ext_resource path="res://assets/chapter/chapter3/fence2.tres" type="TileSet" id=14]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/chapter/chapter1/stop.tres" type="TileSet" id=16]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=5]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [sub_resource type="TileSet" id=2]
 
@@ -59,8 +60,11 @@ tile_data = PoolIntArray( -6619014, 1, 0, -6356851, 1, 0, -6160283, 1, 0, -60947
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 6978.74, -1434.73 )
 
+[node name="Camera2D" parent="player" index="1"]
+limit_left = 1595
+
 [node name="AnimationTreePlayer" parent="player" index="5"]
-parameters/StateMachine/playback = SubResource( 5 )
+parameters/StateMachine/playback = SubResource( 1 )
 
 [node name="wall" type="TileMap" parent="."]
 scale = Vector2( 6, 6 )
@@ -140,6 +144,12 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 2, 2 )
 format = 1
 tile_data = PoolIntArray( -8846821, 1, 0 )
+
+[node name="blocked" type="TileMap" parent="wall"]
+tile_set = ExtResource( 16 )
+cell_size = Vector2( 8, 8 )
+format = 1
+tile_data = PoolIntArray( -2293728, 0, 0, -2228194, 0, 0, -2228192, 0, 0, -2162658, 0, 0, -2162656, 0, 0, -2097122, 0, 0, -2097120, 0, 0, -2031586, 0, 0, -2031584, 0, 0, -1966050, 0, 0, -1966048, 0, 0, -1900514, 0, 0, -1900512, 0, 0, -1834978, 0, 0, -1834976, 0, 0, -1769442, 0, 0, -1769440, 0, 0, -1703906, 0, 0, -1703904, 0, 0, -1638370, 0, 0, -1638368, 0, 0, -1572834, 0, 0, -1572832, 0, 0, -1507298, 0, 0, -1507296, 0, 0, -1441760, 0, 0 )
 
 [node name="dialogbox" parent="." instance=ExtResource( 15 )]
 visible = false

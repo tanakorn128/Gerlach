@@ -16,6 +16,7 @@ func _ready():
 	$"/root/Global".scene = 2
 	lable("chapter2_dialogbox1")
 	$postbox/Timer.start()
+	_mission()
 	finished()
 func _process(delta):
 	$"/root/MissionInventory"._save_player.position = $player.position
@@ -78,3 +79,9 @@ func _on_Timer_timeout():
 	area = true
 	$postbox/Timer.stop()
 	pass # Replace with function body.
+
+
+func _mission():
+	var arr = $"/root/Global"._mission
+	arr.clear()
+	arr.append("ภารกิจ : กำจัดปีศาจภายในหมู่บ้านทั้งหมด 5 ตัว ")

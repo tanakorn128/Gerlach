@@ -295,6 +295,7 @@ __meta__ = {
 "_edit_vertical_guides_": [ 7212.93 ]
 }
 game_save = ExtResource( 20 )
+test = true
 
 [node name="Background" type="TileMap" parent="."]
 position = Vector2( 107.914, 188.8 )

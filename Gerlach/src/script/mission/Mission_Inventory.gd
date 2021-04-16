@@ -4,6 +4,7 @@ var _save_mission #= load("user://mission/mission.tres")
 var _dialogbox = load("res://src/scene/dialogbox/all.tres")
 var _save_dialogbox #= load("user://dialogbox/dialogbox.tres")
 var _save_player
+var _save_exam
 #---------------------------------------------------------------------
 #Type
 onready var type_angle = load("res://src/scene/EnemyType/angle.tscn")
@@ -26,6 +27,7 @@ func _ready():
 	_save_dialogbox = load("user://dialogbox/dialogbox.tres")
 	_save_mission = load("user://mission/mission.tres")
 	_save_player = load("user://player/player.tres")
+	_save_exam =  load("user://exam/exam.tres")
 	$"/root/Global".player_pos = _save_player.position
 
 func set_value(Chapter:int,index:int,value:String,Vchange):
@@ -46,4 +48,15 @@ func loadresorce():
 	if not dir.dir_exists("user://player"):
 		dir.make_dir_recursive("user://player")
 		ResourceSaver.save("user://player/player.tres",load("res://assets/player/player.tres"))
+	if not dir.dir_exists("user://exam"):
+		dir.make_dir_recursive("user://exam")
+		ResourceSaver.save("user://exam/exam.tres",load("res://src/save/exam.tres"))
 
+func _exam():
+	var dic:Dictionary = {
+		"question": "question",
+		"answer": "answer",
+		"status": false
+	} 
+	_save_exam.chapter1.append(1)
+	ResourceSaver.save("user://exam/exam.tres",_save_exam)

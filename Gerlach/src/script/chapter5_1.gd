@@ -12,6 +12,7 @@ func _ready():
 	$"/root/MissionInventory"._save_player.chapter = 7
 	$postbox/Timer.start()
 	lable("chapter5_1_DB1")
+	_mission()
 	finished()
 
 func _process(delta):
@@ -69,3 +70,8 @@ func _on_Area2D_body_entered(body):
 		$"/root/MissionInventory"._save_player.position = Vector2(1347.59,-1307.02)
 		$"/root/Scene".scene(8)
 	pass # Replace with function body.
+
+func _mission():
+	var arr = $"/root/Global"._mission
+	arr.clear()
+	arr.append("ภารกิจ : กำจัดปีศาจภายในป้อมปราการ ทั้ง 5 ตัว")

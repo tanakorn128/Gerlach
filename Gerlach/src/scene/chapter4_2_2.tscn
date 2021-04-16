@@ -89,6 +89,7 @@ tile_data = PoolIntArray( -589730, 2, 0, 720990, 3, 0, 1245278, 3, 0, 1704030, 2
 
 [node name="player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 3730.11, -3467.36 )
+walk = false
 
 [node name="Camera2D" parent="player" index="1"]
 limit_left = -601

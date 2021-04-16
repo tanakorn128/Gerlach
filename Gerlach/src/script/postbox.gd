@@ -36,7 +36,7 @@ func _Enemy(enemy:int):
 		if not $"/root/MissionInventory"._save_mission.save[id]:
 			Enemy_index += 1
 	$ItemList.add_item(str("- ศัตรูที่เหลือ ",Enemy_index,"ตัว"),null,true)
-
+	_mission()
 
 
 func _on_save_button_down():
@@ -53,4 +53,15 @@ func _on_save_button_down():
 		$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
 	else:
 		$GridContainer/Label1.text = str("Error",Error_dialogbox," Error",Error_mission)
+	pass # Replace with function body.
+
+func _mission():
+	var arr = $"/root/Global"._mission
+	var count = arr.size()
+	for i in count:
+		$ItemList.add_item(arr[i],null,true)
+
+
+func _on_profile_button_down():
+	get_tree().change_scene("res://src/scene/profile.tscn")
 	pass # Replace with function body.

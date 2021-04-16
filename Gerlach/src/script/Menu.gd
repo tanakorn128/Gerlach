@@ -68,3 +68,26 @@ func _image(num:int):
 	image.append(load("res://assets/Game_Start/18.png")) #8
 	return image[num]
 
+func _exam():
+	var dic:Dictionary = {
+		"question": " ",
+		"answer": " ",
+		"status": false
+	} 
+	$"/root/MissionInventory"._save_exam.chapter1.clear()
+	$"/root/MissionInventory"._save_exam.chapter2.clear()
+	$"/root/MissionInventory"._save_exam.chapter3.clear()
+	$"/root/MissionInventory"._save_exam.chapter4.clear()
+	$"/root/MissionInventory"._save_exam.chapter5.clear()
+	$"/root/MissionInventory"._save_exam.chapter6.clear()
+	$"/root/MissionInventory"._save_exam.chapter7.clear()
+	$"/root/MissionInventory"._save_exam.chapter8.clear()
+	$"/root/MissionInventory"._save_exam.chapter1.append(dic)
+	$"/root/MissionInventory"._save_exam.chapter2.append(dic)
+	$"/root/MissionInventory"._save_exam.chapter3.append(dic)
+	$"/root/MissionInventory"._save_exam.chapter4.append(dic)
+	$"/root/MissionInventory"._save_exam.chapter5.append(dic)
+	$"/root/MissionInventory"._save_exam.chapter6.append(dic)
+	$"/root/MissionInventory"._save_exam.chapter7.append(dic)
+	$"/root/MissionInventory"._save_exam.chapter8.append(dic)
+	ResourceSaver.save("user://exam/exam.tres",$"/root/MissionInventory"._save_exam)

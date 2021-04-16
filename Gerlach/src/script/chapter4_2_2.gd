@@ -14,6 +14,7 @@ func _process(delta):
 
 func _on_chapter6_1_body_entered(body):
 	if body.get_name() == "player":
+		$"/root/MissionInventory"._save_player.position = Vector2(-850.795,-2421.43)
 		$"/root/Scene".scene(9)
 	pass # Replace with function body.
 

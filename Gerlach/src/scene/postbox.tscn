@@ -52,11 +52,11 @@ __meta__ = {
 }
 
 [node name="post" type="TextureRect" parent="."]
-margin_left = 459.0
-margin_top = 105.0
-margin_right = 564.0
-margin_bottom = 205.0
-rect_scale = Vector2( 8, 6 )
+margin_left = 378.91
+margin_top = 107.67
+margin_right = 483.91
+margin_bottom = 207.67
+rect_scale = Vector2( 9.5, 6 )
 texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -89,6 +89,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="profile" type="Button" parent="."]
+margin_left = 111.314
+margin_top = 264.0
+margin_right = 330.314
+margin_bottom = 340.0
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
+text = "โปรไฟล์"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="back" type="Button" parent="."]
 margin_left = 111.314
 margin_top = 584.0
@@ -105,10 +120,10 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="."]
-margin_left = 510.0
+margin_left = 433.0
 margin_top = 160.0
-margin_right = 550.0
-margin_bottom = 200.0
+margin_right = 1111.0
+margin_bottom = 220.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -123,13 +138,14 @@ align = 1
 valign = 1
 
 [node name="ItemList" type="ItemList" parent="."]
-margin_left = 515.0
-margin_top = 232.0
-margin_right = 1204.0
-margin_bottom = 662.0
+margin_left = 433.0
+margin_top = 221.0
+margin_right = 1277.0
+margin_bottom = 658.0
 custom_styles/bg = SubResource( 9 )
 custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+max_text_lines = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -141,4 +157,5 @@ autoplay = true
 [node name="click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
 [connection signal="button_down" from="save" to="." method="_on_save_button_down"]
+[connection signal="button_down" from="profile" to="." method="_on_profile_button_down"]
 [connection signal="button_down" from="back" to="." method="_on_back_button_down"]

@@ -6,8 +6,9 @@ var number_index:int
 var enemy:String
 var test:bool = false
 var _dialogbox:String
-
 var Enemy_pos:Vector2
+var _mission:Array
+var chapter:String
 #-----------------------------------------------------------------------
 #Allchapter
 var player_pos:Vector2 = Vector2(721.7,850.025)

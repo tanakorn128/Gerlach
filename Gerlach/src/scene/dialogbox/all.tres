@@ -29,8 +29,8 @@
 [ext_resource path="res://src/scene/dialogbox/chapter7_1/chapter7_1_DB1.tres" type="Resource" id=27]
 [ext_resource path="res://src/scene/dialogbox/chapter7_2/Dialogbox1.tres" type="Resource" id=28]
 [ext_resource path="res://src/scene/dialogbox/chapter7_3/Dialogbox1.tres" type="Resource" id=29]
-[ext_resource path="res://src/scene/dialogbox/chapter8/Dialogbox1.tres" type="Resource" id=30]
-[ext_resource path="res://src/scene/dialogbox/chapter8/Dialogbox2.tres" type="Resource" id=31]
+[ext_resource path="res://src/scene/dialogbox/chapter8/chapter8_DB2.tres" type="Resource" id=30]
+[ext_resource path="res://src/scene/dialogbox/chapter8/chapter8_DB1.tres" type="Resource" id=31]
 [ext_resource path="res://src/scene/dialogbox/chapter5_1/chapter5_1_DB1.tres" type="Resource" id=32]
 [ext_resource path="res://src/scene/dialogbox/chapter5_1/chapter5_1_DB2.tres" type="Resource" id=33]
 [ext_resource path="res://src/scene/dialogbox/chapter5_1/chapter5_1_DB3.tres" type="Resource" id=34]
@@ -79,8 +79,8 @@ all = {
 "chapter7_3_dialogbox1": ExtResource( 29 ),
 "chapter7_6_DB1": ExtResource( 25 ),
 "chapter7_6_DB2": ExtResource( 26 ),
-"chapter8_dialogbox1": ExtResource( 30 ),
-"chapter8_dialogbox2": ExtResource( 31 ),
+"chapter8_DB1": ExtResource( 31 ),
+"chapter8_DB2": ExtResource( 30 ),
 "prechapter1": ExtResource( 8 ),
 "startchapter1": ExtResource( 2 ),
 "ป้ายบอกทาง 1": ExtResource( 6 ),

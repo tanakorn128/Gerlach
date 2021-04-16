@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=2]
-
-[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
-
-[resource]
-script = ExtResource( 1 )
-id = 0
-dialogbox = [ "เกอราช : ออกมาได้สักที ", "เกอราช : เป็นเขาวงกตที่ปวดหัวจริงๆเลย", "เกอราช : นั้นมัน หมู่บ้านที่โดนพวกปีศาจยึดไป ", "เกอราช : มายึดหมู่บ้านคืนจากปีศาจกันเถอะ", "ภารกิจ : กำจัดปีศาจภายในหมู่บ้านทั้งหมด 5 ตัว ", "ภารกิจ : (TIP ปีศาจจะกระจัดการะจายอยู่ภายในหมู่บ้าน ตามบ้านต่างๆ) " ]
-finish = false

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/scene/dialogbox/dialogbox.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = 36
+dialogbox = [ "เกอราช : เอาหล่ะกำลังคนพร้อมสินะ", "เกอราช : ได้เวลาบุกแล้วสินะ", "เกอราช : สงครามนี้จะได้จบเสียที", "ภารกิจ : ทำการบุกเมืองหลวงปีศาจ กำจัดปีศาจทั้งหมดในเมืองหลวง" ]
+finish = false

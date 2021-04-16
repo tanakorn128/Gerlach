@@ -12,7 +12,7 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "player":
-		$"/root/MissionInventory"._save_player.position = Vector2(3738.11,-3881.7)
+		$"/root/MissionInventory"._save_player.position = Vector2(3730.11,-3467.36)
 		$"/root/Scene".scene(18)
 	pass # Replace with function body.
 

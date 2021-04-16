@@ -73,6 +73,11 @@ _global_script_classes=[ {
 "class": "save",
 "language": "GDScript",
 "path": "res://src/save/save.gd"
+}, {
+"base": "Resource",
+"class": "save_exam",
+"language": "GDScript",
+"path": "res://src/save/save_exam.gd"
 } ]
 _global_script_class_icons={
 "Enemy": "",
@@ -87,7 +92,8 @@ _global_script_class_icons={
 "mission": "",
 "mission_chappter1": "",
 "player": "",
-"save": ""
+"save": "",
+"save_exam": ""
 }
 
 [application]

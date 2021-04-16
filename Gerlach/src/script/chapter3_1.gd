@@ -4,7 +4,7 @@ const HUDPOSX = 600
 var area:bool = false
 func _ready():
 	lable("chapter3_1_dialogbox1")
-	
+	_mission()
 	
 func _process(delta):
 	#$"/root/Global".player_pos.x = $player.position.x
@@ -30,3 +30,8 @@ func _on_chapter3_2_body_entered(body):
 		$"/root/MissionInventory"._save_player.position = Vector2(977.103,-274.977)
 		$"/root/Scene".scene(4)
 	pass # Replace with function body.
+
+func _mission():
+	var arr = $"/root/Global"._mission
+	arr.clear()
+	arr.append("ภารกิจ : เดินทางไปยังป้อมปราการ เพื่อตรวจสถานการณ์ที่เกิดขึ้น")

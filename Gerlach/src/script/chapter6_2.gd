@@ -8,6 +8,7 @@ func _ready():
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/MissionInventory"._save_player.chapter = 10
+	$"/root/Global".scene = 10
 	lable("chapter6_2_DB1")
 	$postbox/Timer.start()
 
@@ -32,7 +33,6 @@ func lable(value:String):
 func _on_postbox_body_entered(body):
 	if body.get_name() == "player" && area:
 		$"/root/Global".scene = 10
-		$"/root/Global".number_enemy = 1
 		Events.emit_signal("postbox")
 		get_tree().change_scene("res://src/scene/postbox.tscn")
 	pass # Replace with function body.

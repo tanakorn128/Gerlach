@@ -17,9 +17,11 @@ func _ready():
 	Events.connect("Enemy_pos",self,"monster1")
 	$"/root/Global".scene = 1
 	$"/root/Global"._dialogbox = "startchapter1"
+	$"/root/Global".chapter = "chapter1"
 	_dialogbox()
 	$postbox2/Timer.start()
 	momster()
+	_mission()
 func _process(delta):
 	$"/root/MissionInventory"._save_player.position = $player.position
 
@@ -148,3 +150,8 @@ var clear1 = false
 func _on_checkmission_body_entered(body):
 	
 	pass # Replace with function body.
+
+func _mission():
+	var arr = $"/root/Global"._mission
+	arr.clear()
+	arr.append("ภารกิจ : ตัดต้นไม้ขนาดใหญ่ 4 ต้น")

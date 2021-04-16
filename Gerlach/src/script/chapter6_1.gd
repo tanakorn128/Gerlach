@@ -7,8 +7,13 @@ func _ready():
 		$"/root/Global".test = true
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
+	$"/root/Global".scene = 9
 	lable("chapter6_1_DB1")
 	
+
+func _process(delta):
+	$"/root/MissionInventory"._save_player.position = $player.position
+
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "player":
 		$"/root/MissionInventory"._save_player.position = Vector2(4436.206,-2809.88)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://src/save/save_exam.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+chapter1 = [  ]
+chapter2 = [  ]
+chapter3 = [  ]
+chapter4 = [  ]
+chapter5 = [  ]
+chapter6 = [  ]
+chapter7 = [  ]
+chapter8 = [  ]

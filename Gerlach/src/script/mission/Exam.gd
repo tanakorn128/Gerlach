@@ -10,7 +10,7 @@ export (int) var Time
 var playerhp
 var check_button:bool = false
 var a:Array
-
+var question:String
 func _ready():
 	$"/root/Global".playerwalk = false
 	#ข้อสอบ
@@ -83,12 +83,14 @@ func _answer(correct,answer): #ตรวจคำตอบ
 		$player.skill()
 		#Answer()
 		import_exam()
+		_exam(question,answer,true,$"/root/Global".chapter)
 		return true
 	else:#ตอบผิด
 		attack("enemy")
 		hp_player(-20)
 		$AudioWrong.playing = true
 		Answer()
+		_exam(question,answer,false,$"/root/Global".chapter)
 		#import_exam()
 		return false
 
@@ -105,6 +107,7 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	A = str("คำตอบ ",importexam[rng].Correct)
 	$TextureProgress.value = Time
 	print(A)
+	question = importexam[rng].Question
 
 
 
@@ -198,3 +201,27 @@ func _on_Timer_answer_timeout():
 	$TextureProgress.hide()
 	$answer/Timer_answer.stop()
 	pass # Replace with function body.
+
+func _exam(question:String,answer:String,status:bool,chapter:String):
+	var dic:Dictionary = {
+		"question": question,
+		"answer": answer,
+		"status": status
+	} 
+	if chapter == "chapter1":
+		$"/root/MissionInventory"._save_exam.chapter1.append(dic)
+	if chapter == "chapter2":
+		$"/root/MissionInventory"._save_exam.chapter2.append(dic)
+	if chapter == "chapter3":
+		$"/root/MissionInventory"._save_exam.chapter3.append(dic)
+	if chapter == "chapter4":
+		$"/root/MissionInventory"._save_exam.chapter4.append(dic)
+	if chapter == "chapter5":
+		$"/root/MissionInventory"._save_exam.chapter5.append(dic)
+	if chapter == "chapter6":
+		$"/root/MissionInventory"._save_exam.chapter6.append(dic)
+	if chapter == "chapter7":
+		$"/root/MissionInventory"._save_exam.chapter7.append(dic)
+	if chapter == "chapter8":
+		$"/root/MissionInventory"._save_exam.chapter8.append(dic)
+	ResourceSaver.save("user://exam/exam.tres",$"/root/MissionInventory"._save_exam)

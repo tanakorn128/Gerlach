@@ -68,7 +68,6 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/guide_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-select_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -83,4 +82,16 @@ text = "กลับ"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="back" type="Button" parent="."]
+margin_left = 49.0
+margin_top = 635.615
+margin_right = 219.0
+margin_bottom = 701.615
+custom_fonts/font = SubResource( 5 )
+text = "กลับ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_down" from="Button" to="." method="_on_Button_button_down"]
+[connection signal="button_down" from="back" to="." method="_on_back_button_down"]

@@ -23,6 +23,7 @@ func _ready():
 	$"/root/Global"._Exam = 2
 	lable("chapter4_2_dialogbox1")
 	$postbox/Timer.start()
+	_mission()
 	finished()
 func _process(delta):
 	$"/root/MissionInventory"._save_player.position = $player.position
@@ -61,3 +62,9 @@ func _on_chapter5_1_body_entered(body):
 		$"/root/MissionInventory"._save_player.position = Vector2(1003.25,1125.7)
 		$"/root/Scene".scene(7)
 	pass # Replace with function body.
+
+func _mission():
+	var arr = $"/root/Global"._mission
+	arr.clear()
+	arr.append("ภารกิจ : เดินทางไปยังเมืองหลวง")
+	arr.append("แล้วพูดคุยกับหัวหน้าทหารคนที่ 1")

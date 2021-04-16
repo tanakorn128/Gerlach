@@ -1,0 +1,549 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/script/Overview_Control.gd" type="Script" id=1]
+[ext_resource path="res://src/script/Overview_GridContainer.gd" type="Script" id=2]
+[ext_resource path="res://src/script/Overview.gd" type="Script" id=3]
+[ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/font/Overview.tres" type="DynamicFont" id=5]
+[ext_resource path="res://src/scene/Answer.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/font/Kanit-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = SubResource( 1 )
+
+[node name="Overview" type="Node2D"]
+position = Vector2( 0, -18 )
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 2.0
+margin_right = 1329.0
+margin_bottom = 800.0
+color = Color( 0.631373, 0.52549, 0.207843, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 41.0
+margin_top = 77.0
+margin_right = 85.0
+margin_bottom = 134.0
+rect_scale = Vector2( 28.2798, 12.1746 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 90.825
+margin_right = 1254.0
+margin_bottom = 150.825
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter                             ทำถูก    		                      ทำผิด"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line" type="ColorRect" parent="."]
+margin_left = 49.0
+margin_top = 148.0
+margin_right = 1279.0
+margin_bottom = 157.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackGround" parent="Line" instance=ExtResource( 4 )]
+position = Vector2( -29, -124.455 )
+
+[node name="chapter" type="GridContainer" parent="."]
+margin_left = 100.0
+margin_top = 160.0
+margin_right = 278.0
+margin_bottom = 668.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="chapter 1" type="Label" parent="chapter"]
+margin_right = 178.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 1"
+
+[node name="chapter 2" type="Label" parent="chapter"]
+margin_top = 64.0
+margin_right = 178.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 2"
+
+[node name="chapter 3" type="Label" parent="chapter"]
+margin_top = 128.0
+margin_right = 178.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 3"
+
+[node name="chapter 4" type="Label" parent="chapter"]
+margin_top = 192.0
+margin_right = 178.0
+margin_bottom = 252.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 4"
+
+[node name="chapter 5" type="Label" parent="chapter"]
+margin_top = 256.0
+margin_right = 178.0
+margin_bottom = 316.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 5"
+
+[node name="chapter 6" type="Label" parent="chapter"]
+margin_top = 320.0
+margin_right = 178.0
+margin_bottom = 380.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 6"
+
+[node name="chapter 7" type="Label" parent="chapter"]
+margin_top = 384.0
+margin_right = 178.0
+margin_bottom = 444.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 7"
+
+[node name="chapter 8" type="Label" parent="chapter"]
+margin_top = 448.0
+margin_right = 178.0
+margin_bottom = 508.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "chapter 8"
+
+[node name="Correct" type="GridContainer" parent="."]
+margin_left = 670.0
+margin_top = 160.0
+margin_right = 847.0
+margin_bottom = 668.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="chapter 1" type="Label" parent="Correct"]
+margin_right = 74.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 2" type="Label" parent="Correct"]
+margin_top = 64.0
+margin_right = 74.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 3" type="Label" parent="Correct"]
+margin_top = 128.0
+margin_right = 74.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 4" type="Label" parent="Correct"]
+margin_top = 192.0
+margin_right = 74.0
+margin_bottom = 252.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 5" type="Label" parent="Correct"]
+margin_top = 256.0
+margin_right = 74.0
+margin_bottom = 316.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 6" type="Label" parent="Correct"]
+margin_top = 320.0
+margin_right = 74.0
+margin_bottom = 380.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 7" type="Label" parent="Correct"]
+margin_top = 384.0
+margin_right = 74.0
+margin_bottom = 444.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 8" type="Label" parent="Correct"]
+margin_top = 448.0
+margin_right = 74.0
+margin_bottom = 508.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.184314, 0.827451, 0.176471, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="Wrong" type="GridContainer" parent="."]
+margin_left = 1130.0
+margin_top = 160.0
+margin_right = 1307.0
+margin_bottom = 668.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="chapter 1" type="Label" parent="Wrong"]
+margin_right = 74.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 2" type="Label" parent="Wrong"]
+margin_top = 64.0
+margin_right = 74.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 3" type="Label" parent="Wrong"]
+margin_top = 128.0
+margin_right = 74.0
+margin_bottom = 188.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 4" type="Label" parent="Wrong"]
+margin_top = 192.0
+margin_right = 74.0
+margin_bottom = 252.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 5" type="Label" parent="Wrong"]
+margin_top = 256.0
+margin_right = 74.0
+margin_bottom = 316.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 6" type="Label" parent="Wrong"]
+margin_top = 320.0
+margin_right = 74.0
+margin_bottom = 380.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 7" type="Label" parent="Wrong"]
+margin_top = 384.0
+margin_right = 74.0
+margin_bottom = 444.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="chapter 8" type="Label" parent="Wrong"]
+margin_top = 448.0
+margin_right = 74.0
+margin_bottom = 508.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "1 ข้อ"
+align = 1
+
+[node name="reference" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter1Correct1" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 164.368
+margin_right = 750.0
+margin_bottom = 224.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter2Correct2" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 230.0
+margin_right = 750.0
+margin_bottom = 272.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter3Correct3" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 284.0
+margin_right = 750.0
+margin_bottom = 336.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter4Correct4" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 348.0
+margin_right = 750.0
+margin_bottom = 412.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter5Correct5" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 416.0
+margin_right = 750.0
+margin_bottom = 476.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter6Correct6" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 480.0
+margin_right = 750.0
+margin_bottom = 540.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter7Correct7" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 544.0
+margin_right = 750.0
+margin_bottom = 598.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter8Correct8" type="ReferenceRect" parent="reference"]
+margin_left = 670.0
+margin_top = 604.368
+margin_right = 750.0
+margin_bottom = 664.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter1Wrong1" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 164.368
+margin_right = 1210.0
+margin_bottom = 224.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter2Wrong2" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 221.368
+margin_right = 1210.0
+margin_bottom = 281.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter3Wrong3" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 284.368
+margin_right = 1210.0
+margin_bottom = 344.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter4Wrong4" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 347.368
+margin_right = 1210.0
+margin_bottom = 407.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter5Wrong5" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 409.368
+margin_right = 1210.0
+margin_bottom = 469.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter6Wrong6" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 472.368
+margin_right = 1210.0
+margin_bottom = 532.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter7Wrong7" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 535.368
+margin_right = 1210.0
+margin_bottom = 595.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapter8Wrong8" type="ReferenceRect" parent="reference"]
+margin_left = 1130.0
+margin_top = 600.368
+margin_right = 1210.0
+margin_bottom = 660.368
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dropdown" type="OptionButton" parent="Control"]
+margin_right = 414.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="head" type="ColorRect" parent="."]
+margin_left = 528.083
+margin_top = 23.5451
+margin_right = 797.083
+margin_bottom = 100.545
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="head_lable" type="Label" parent="head"]
+margin_left = 23.1815
+margin_top = 3.36359
+margin_right = 247.182
+margin_bottom = 63.3636
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "คะแนนของฉัน"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="."]
+margin_left = 49.0
+margin_top = 692.615
+margin_right = 219.0
+margin_bottom = 758.615
+custom_fonts/font = ExtResource( 5 )
+text = "กลับ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Answer" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="Label" parent="Answer/ColorRect" index="0"]
+visible = false
+
+[node name="Button" parent="Answer" index="2"]
+visible = false
+[connection signal="mouse_entered" from="reference/chapter1Correct1" to="." method="_on_chapter1_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter1Correct1" to="." method="_on_chapter1_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter2Correct2" to="." method="_on_chapter2Correct2_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter2Correct2" to="." method="_on_chapter2Correct2_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter3Correct3" to="." method="_on_chapter3Correct3_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter3Correct3" to="." method="_on_chapter3Correct3_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter4Correct4" to="." method="_on_chapter4Correct4_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter4Correct4" to="." method="_on_chapter4Correct4_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter5Correct5" to="." method="_on_chapter5Correct5_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter5Correct5" to="." method="_on_chapter5Correct5_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter6Correct6" to="." method="_on_chapter6Correct6_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter6Correct6" to="." method="_on_chapter6Correct6_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter7Correct7" to="." method="_on_chapter7Correct7_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter7Correct7" to="." method="_on_chapter7Correct7_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter8Correct8" to="." method="_on_chapter8Correct8_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter8Correct8" to="." method="_on_chapter8Correct8_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter1Wrong1" to="." method="_on_chapter10_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter1Wrong1" to="." method="_on_chapter10_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter2Wrong2" to="." method="_on_chapter2Wrong2_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter2Wrong2" to="." method="_on_chapter2Wrong2_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter3Wrong3" to="." method="_on_chapter3Wrong3_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter3Wrong3" to="." method="_on_chapter3Wrong3_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter4Wrong4" to="." method="_on_chapter4Wrong4_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter4Wrong4" to="." method="_on_chapter4Wrong4_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter5Wrong5" to="." method="_on_chapter5Wrong5_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter5Wrong5" to="." method="_on_chapter5Wrong5_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter6Wrong6" to="." method="_on_chapter6Wrong6_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter6Wrong6" to="." method="_on_chapter6Wrong6_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter7Wrong7" to="." method="_on_chapter7Wrong7_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter7Wrong7" to="." method="_on_chapter7Wrong7_mouse_exited"]
+[connection signal="mouse_entered" from="reference/chapter8Wrong8" to="." method="_on_chapter8Wrong8_mouse_entered"]
+[connection signal="mouse_exited" from="reference/chapter8Wrong8" to="." method="_on_chapter8Wrong8_mouse_exited"]
+[connection signal="button_down" from="back" to="." method="_on_Button_button_down"]
+
+[editable path="Answer"]
