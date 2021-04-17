@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/UI Pack RPG/Menu.tres" type="StyleBox" id=1]
-[ext_resource path="res://assets/Game_Start/world.png" type="Texture" id=2]
+[ext_resource path="res://assets/Game_Start/1.png" type="Texture" id=2]
 [ext_resource path="res://src/script/Menu.gd" type="Script" id=3]
 [ext_resource path="res://assets/audio/soundtrack/Celestial.ogg" type="AudioStream" id=4]
 [ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=5]
