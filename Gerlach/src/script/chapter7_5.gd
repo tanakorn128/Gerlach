@@ -7,6 +7,7 @@ func _ready():
 		$"/root/Global".test = true
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
+	$"/root/Global".chapter = "chapter7"
 
 func _on_7_6_body_entered(body):
 	if body.get_name() == "player":

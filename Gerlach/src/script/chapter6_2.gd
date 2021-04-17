@@ -9,6 +9,7 @@ func _ready():
 		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/MissionInventory"._save_player.chapter = 10
 	$"/root/Global".scene = 10
+	$"/root/Global".chapter = "chapter6"
 	lable("chapter6_2_DB1")
 	$postbox/Timer.start()
 

@@ -10,7 +10,8 @@ func _ready():
 		$player.position = $"/root/MissionInventory"._save_player.position
 	lable("chapter8_DB1")
 	$"/root/MissionInventory"._save_player.chapter = 17
-	$"/root/Global"._Exam = 2
+	$"/root/Global"._Exam = 3
+	$"/root/Global".chapter = "chapter8"
 	$put_Enemy_Chapter8.putenemy()
 	$postbox/Timer.start()
 func _process(delta):

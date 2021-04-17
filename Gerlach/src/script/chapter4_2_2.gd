@@ -4,6 +4,7 @@ var nextchapter:bool = false
 
 func _ready():
 	$"/root/Global".scene = 18
+	$"/root/Global".chapter = "chapter4"
 	$player.position = $"/root/MissionInventory"._save_player.position
 	solider()
 	

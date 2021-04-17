@@ -512,6 +512,9 @@ visible = false
 
 [node name="Button" parent="Answer" index="2"]
 visible = false
+
+[node name="back" parent="Answer" index="3"]
+visible = true
 [connection signal="mouse_entered" from="reference/chapter1Correct1" to="." method="_on_chapter1_mouse_entered"]
 [connection signal="mouse_exited" from="reference/chapter1Correct1" to="." method="_on_chapter1_mouse_exited"]
 [connection signal="mouse_entered" from="reference/chapter2Correct2" to="." method="_on_chapter2Correct2_mouse_entered"]

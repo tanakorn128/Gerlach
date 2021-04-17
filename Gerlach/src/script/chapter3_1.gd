@@ -4,6 +4,7 @@ const HUDPOSX = 600
 var area:bool = false
 func _ready():
 	lable("chapter3_1_dialogbox1")
+	$"/root/Global".chapter = "chapter3"
 	_mission()
 	
 func _process(delta):

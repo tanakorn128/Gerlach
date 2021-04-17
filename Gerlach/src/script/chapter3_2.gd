@@ -13,8 +13,9 @@ func _ready():
 		$"/root/Global".test = true
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
-	$"/root/Global"._Exam = 2
+	$"/root/Global"._Exam = 3
 	$"/root/Global".scene = 4
+	$"/root/Global".chapter = "chapter3"
 	lable("chapter3_2_dialogbox1")
 	$postbox1/Timer.start()
 	_mission()

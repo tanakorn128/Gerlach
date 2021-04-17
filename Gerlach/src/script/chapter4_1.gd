@@ -1,6 +1,7 @@
 extends Node2D
 func _ready():
 	$"/root/Global"._Exam = 2
+	$"/root/Global".chapter = "chapter4"
 	lable("chapter4_1_dialogbox1")
 	pass
 

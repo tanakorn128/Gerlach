@@ -11,6 +11,7 @@ var playerhp
 var check_button:bool = false
 var a:Array
 var question:String
+var answer:String
 func _ready():
 	$"/root/Global".playerwalk = false
 	#ข้อสอบ
@@ -82,15 +83,15 @@ func _answer(correct,answer): #ตรวจคำตอบ
 		$AudioCorrect.playing = true
 		$player.skill()
 		#Answer()
+		_exam(question,correct,true,$"/root/Global".chapter)
 		import_exam()
-		_exam(question,answer,true,$"/root/Global".chapter)
 		return true
 	else:#ตอบผิด
 		attack("enemy")
 		hp_player(-20)
 		$AudioWrong.playing = true
 		Answer()
-		_exam(question,answer,false,$"/root/Global".chapter)
+		_exam(question,correct,false,$"/root/Global".chapter)
 		#import_exam()
 		return false
 
@@ -224,4 +225,4 @@ func _exam(question:String,answer:String,status:bool,chapter:String):
 		$"/root/MissionInventory"._save_exam.chapter7.append(dic)
 	if chapter == "chapter8":
 		$"/root/MissionInventory"._save_exam.chapter8.append(dic)
-	ResourceSaver.save("user://exam/exam.tres",$"/root/MissionInventory"._save_exam)
+	#ResourceSaver.save("user://exam/exam.tres",$"/root/MissionInventory"._save_exam)

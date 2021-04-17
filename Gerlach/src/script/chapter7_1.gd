@@ -10,6 +10,7 @@ func _ready():
 		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/MissionInventory"._save_player.chapter = 21
 	lable("chapter7_1_DB1")
+	$"/root/Global".chapter = "chapter7"
 	$postbox/Timer.start()
 
 func _process(delta):

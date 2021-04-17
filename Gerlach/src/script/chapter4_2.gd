@@ -20,7 +20,8 @@ func _ready():
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/Global".scene = 6
-	$"/root/Global"._Exam = 2
+	$"/root/Global"._Exam = 1
+	$"/root/Global".chapter = "chapter4"
 	lable("chapter4_2_dialogbox1")
 	$postbox/Timer.start()
 	_mission()

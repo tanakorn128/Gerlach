@@ -8,6 +8,7 @@ func _ready():
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/Global".scene = 9
+	$"/root/Global".chapter = "chapter6"
 	lable("chapter6_1_DB1")
 	
 

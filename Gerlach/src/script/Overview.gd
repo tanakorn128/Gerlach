@@ -74,47 +74,42 @@ func score():
 		else:
 			score_Correct[1] += 1
 	
-	for i in exam.chapter2.size():
-		if exam.chapter2[i].status == false:
+	for i in exam.chapter3.size():
+		if exam.chapter3[i].status == false:
 			score_Wrong[2] += 1
 		else:
 			score_Correct[2] += 1
 	
-	for i in exam.chapter3.size():
-		if exam.chapter3[i].status == false:
+	for i in exam.chapter4.size():
+		if exam.chapter4[i].status == false:
 			score_Wrong[3] += 1
 		else:
 			score_Correct[3] += 1
 	
-	for i in exam.chapter4.size():
-		if exam.chapter4[i].status == false:
+	for i in exam.chapter5.size():
+		if exam.chapter5[i].status == false:
 			score_Wrong[4] += 1
 		else:
 			score_Correct[4] += 1
 	
-	for i in exam.chapter5.size():
-		if exam.chapter5[i].status == false:
+	for i in exam.chapter6.size():
+		if exam.chapter6[i].status == false:
 			score_Wrong[5] += 1
 		else:
 			score_Correct[5] += 1
 	
-	for i in exam.chapter6.size():
-		if exam.chapter6[i].status == false:
+	for i in exam.chapter7.size():
+		if exam.chapter7[i].status == false:
 			score_Wrong[6] += 1
 		else:
 			score_Correct[6] += 1
 			
-	for i in exam.chapter7.size():
-		if exam.chapter7[i].status == false:
+	for i in exam.chapter8.size():
+		if exam.chapter8[i].status == false:
 			score_Wrong[7] += 1
 		else:
 			score_Correct[7] += 1
-	
-	for i in exam.chapter8.size():
-		if exam.chapter8[i].status == false:
-			score_Wrong[8] += 1
-		else:
-			score_Correct[8] += 1
+
 	show_score()
 
 func _answer_Correct(_chapter,_status:bool):
@@ -131,6 +126,97 @@ func _answer_Correct(_chapter,_status:bool):
 				if exam.chapter1[i].status == false:
 					$"/root/Global".question.append(exam.chapter1[i].question)
 					$"/root/Global".correct.append(exam.chapter1[i].answer)
+					$"/root/Global".Ans.append(str(i))
+	if _chapter == "chapter2":
+		if _status:
+			for i in exam.chapter2.size():
+				if exam.chapter2[i].status == true:
+					$"/root/Global".question.append(exam.chapter2[i].question)
+					$"/root/Global".correct.append(exam.chapter2[i].answer)
+					$"/root/Global".Ans.append(str(i))
+		elif not _status:
+			for i in exam.chapter2.size():
+				if exam.chapter2[i].status == false:
+					$"/root/Global".question.append(exam.chapter2[i].question)
+					$"/root/Global".correct.append(exam.chapter2[i].answer)
+					$"/root/Global".Ans.append(str(i))
+	if _chapter == "chapter3":
+		if _status:
+			for i in exam.chapter3.size():
+				if exam.chapter3[i].status == true:
+					$"/root/Global".question.append(exam.chapter3[i].question)
+					$"/root/Global".correct.append(exam.chapter3[i].answer)
+					$"/root/Global".Ans.append(str(i))
+		elif not _status:
+			for i in exam.chapter3.size():
+				if exam.chapter3[i].status == false:
+					$"/root/Global".question.append(exam.chapter3[i].question)
+					$"/root/Global".correct.append(exam.chapter3[i].answer)
+					$"/root/Global".Ans.append(str(i))
+	if _chapter == "chapter4":
+		if _status:
+			for i in exam.chapter4.size():
+				if exam.chapter4[i].status == true:
+					$"/root/Global".question.append(exam.chapter4[i].question)
+					$"/root/Global".correct.append(exam.chapter4[i].answer)
+					$"/root/Global".Ans.append(str(i))
+		elif not _status:
+			for i in exam.chapter4.size():
+				if exam.chapter4[i].status == false:
+					$"/root/Global".question.append(exam.chapter4[i].question)
+					$"/root/Global".correct.append(exam.chapter4[i].answer)
+					$"/root/Global".Ans.append(str(i))
+	if _chapter == "chapter5":
+		if _status:
+			for i in exam.chapter5.size():
+				if exam.chapter5[i].status == true:
+					$"/root/Global".question.append(exam.chapter5[i].question)
+					$"/root/Global".correct.append(exam.chapter5[i].answer)
+					$"/root/Global".Ans.append(str(i))
+		elif not _status:
+			for i in exam.chapter5.size():
+				if exam.chapter5[i].status == false:
+					$"/root/Global".question.append(exam.chapter5[i].question)
+					$"/root/Global".correct.append(exam.chapter5[i].answer)
+					$"/root/Global".Ans.append(str(i))
+	if _chapter == "chapter6":
+		if _status:
+			for i in exam.chapter6.size():
+				if exam.chapter6[i].status == true:
+					$"/root/Global".question.append(exam.chapter6[i].question)
+					$"/root/Global".correct.append(exam.chapter6[i].answer)
+					$"/root/Global".Ans.append(str(i))
+		elif not _status:
+			for i in exam.chapter6.size():
+				if exam.chapter6[i].status == false:
+					$"/root/Global".question.append(exam.chapter6[i].question)
+					$"/root/Global".correct.append(exam.chapter6[i].answer)
+					$"/root/Global".Ans.append(str(i))
+	if _chapter == "chapter7":
+		if _status:
+			for i in exam.chapter7.size():
+				if exam.chapter7[i].status == true:
+					$"/root/Global".question.append(exam.chapter7[i].question)
+					$"/root/Global".correct.append(exam.chapter7[i].answer)
+					$"/root/Global".Ans.append(str(i))
+		elif not _status:
+			for i in exam.chapter7.size():
+				if exam.chapter7[i].status == false:
+					$"/root/Global".question.append(exam.chapter7[i].question)
+					$"/root/Global".correct.append(exam.chapter7[i].answer)
+					$"/root/Global".Ans.append(str(i))
+	if _chapter == "chapter8":
+		if _status:
+			for i in exam.chapter8.size():
+				if exam.chapter8[i].status == true:
+					$"/root/Global".question.append(exam.chapter8[i].question)
+					$"/root/Global".correct.append(exam.chapter8[i].answer)
+					$"/root/Global".Ans.append(str(i))
+		elif not _status:
+			for i in exam.chapter8.size():
+				if exam.chapter8[i].status == false:
+					$"/root/Global".question.append(exam.chapter8[i].question)
+					$"/root/Global".correct.append(exam.chapter8[i].answer)
 					$"/root/Global".Ans.append(str(i))
 	if not _show:
 		$Answer._ready()

@@ -42,7 +42,6 @@ extents = Vector2( 364.743, 281.009 )
 
 [node name="chapter7_5" type="Node2D"]
 script = ExtResource( 11 )
-test = true
 
 [node name="Background" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )

@@ -8,6 +8,7 @@ func _ready():
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
 	lable("chapter6_3_DB1")
+	$"/root/Global".chapter = "chapter6"
 	$postbox/Timer.start()
 	$"/root/MissionInventory"._save_player.chapter = 11
 

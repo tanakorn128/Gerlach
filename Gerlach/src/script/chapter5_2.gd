@@ -10,6 +10,7 @@ func _ready():
 		$player.position = $"/root/MissionInventory"._save_player.position
 	lable("chapter5_2_DB1")
 	$"/root/Global".scene = 8
+	$"/root/Global".chapter = "chapter5"
 	solder()
 	
 

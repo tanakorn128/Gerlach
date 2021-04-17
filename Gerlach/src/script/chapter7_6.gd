@@ -10,7 +10,8 @@ func _ready():
 		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/MissionInventory"._save_player.chapter = 16
 	$postbox/Timer.start()
-	$"/root/Global"._Exam = 2
+	$"/root/Global".chapter = "chapter7"
+	$"/root/Global"._Exam = 1
 
 func _process(delta):
 	$"/root/MissionInventory"._save_player.position = $player.position

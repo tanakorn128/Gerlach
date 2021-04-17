@@ -35,7 +35,7 @@ func _Enemy(enemy:int):
 		id = chapter.chapters(enemy+1,i,"id")
 		if not $"/root/MissionInventory"._save_mission.save[id]:
 			Enemy_index += 1
-	$ItemList.add_item(str("- ศัตรูที่เหลือ ",Enemy_index,"ตัว"),null,true)
+	$ItemList.add_item(str("- ศัตรูที่เหลือ ",Enemy_index),null,true)
 	_mission()
 
 
@@ -48,6 +48,7 @@ func _on_save_button_down():
 	var Error_dialogbox:int = ResourceSaver.save("user://dialogbox/dialogbox.tres",$"/root/MissionInventory"._save_dialogbox)
 	var Error_mission:int = ResourceSaver.save("user://mission/mission.tres",$"/root/MissionInventory"._save_mission)
 	ResourceSaver.save("user://player/player.tres",$"/root/MissionInventory"._save_player)
+	ResourceSaver.save("user://exam/exam.tres",$"/root/MissionInventory"._save_exam)
 	
 	if Error_dialogbox == 0 && Error_mission == 0:
 		$GridContainer/Label1.text = "บันทึกเกมสำเร็จ"
