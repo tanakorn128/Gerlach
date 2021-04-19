@@ -375,11 +375,7 @@ visible = false
 [node name="next_chapter" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="next_chapter"]
-position = Vector2( -2329.67, 2345.76 )
-shape = SubResource( 16 )
-
-[node name="test" type="CollisionShape2D" parent="next_chapter"]
-position = Vector2( -566.723, 3651.02 )
+position = Vector2( -2153.73, 2338.56 )
 shape = SubResource( 16 )
 
 [node name="postbox2" type="Area2D" parent="."]

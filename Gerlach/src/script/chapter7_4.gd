@@ -9,6 +9,7 @@ func _ready():
 	else:
 		$player.position = $"/root/MissionInventory"._save_player.position
 	$"/root/Global".chapter = "chapter7"
+	$"/root/MissionInventory"._save_player.chapter = 14
 	$postbox2/Timer.start()
 
 func _process(delta):

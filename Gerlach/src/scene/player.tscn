@@ -251,10 +251,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("player:frame")
@@ -319,7 +319,7 @@ tracks/1/path = NodePath("skill:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -333,10 +333,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -359,12 +359,12 @@ tracks/1/path = NodePath("footstep:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("player:frame")
@@ -416,10 +416,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.1 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("player:frame")
@@ -626,7 +626,7 @@ nodes/run/node = SubResource( 45 )
 nodes/run/position = Vector2( -460, 140 )
 nodes/walk/node = SubResource( 51 )
 nodes/walk/position = Vector2( -640, 0 )
-node_connections = [ "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "output", 0, "Transition", "TimeScale 2", 0, "attacks_Blend2", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale 3", 0, "StateMachine", "TimeScale", 0, "run" ]
+node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "TimeScale 2", 0, "attacks_Blend2", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "TimeScale 3", 0, "StateMachine", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale", 0, "run" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=53]
 
@@ -649,7 +649,7 @@ __meta__ = {
 }
 
 [node name="skill" type="Sprite" parent="."]
-position = Vector2( -288.674, 12 )
+position = Vector2( -9.98871, 16 )
 rotation = -0.544543
 scale = Vector2( 0.2, 0.2 )
 

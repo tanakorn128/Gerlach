@@ -7,6 +7,7 @@ func _ready():
 
 func _on_chapter4_2_body_entered(body):
 	if body.get_name() == "player":
+		$"/root/MissionInventory"._save_player.position = Vector2(2503.74,807.724)
 		$"/root/Scene".scene(6)
 	pass # Replace with function body.
 

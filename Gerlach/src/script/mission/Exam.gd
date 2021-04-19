@@ -37,24 +37,28 @@ func _ready():
 func _on_answer1_button_down():
 	if not check_button:
 		_answer($answer1/Label.text,correct)
+	$answer1.disabled = true
 	pass # Replace with function body.
 
 
 func _on_answer2_button_down():
 	if not check_button:
 		_answer($answer2/Label.text,correct)
+	$answer2.disabled = true
 	pass # Replace with function body.
 
 
 func _on_answer3_button_down():
 	if not check_button:
 		_answer($answer3/Label.text,correct)
+	$answer3.disabled = true
 	pass # Replace with function body.
 
 
 func _on_answer4_button_down():
 	if not check_button:
 		_answer($answer4/Label.text,correct)
+	$answer4.disabled = true
 	pass # Replace with function body.
 
 func random_exam(): #สุ่มตัวเลข
@@ -84,7 +88,7 @@ func _answer(correct,answer): #ตรวจคำตอบ
 		$player.skill()
 		#Answer()
 		_exam(question,correct,true,$"/root/Global".chapter)
-		import_exam()
+		$Timer2.start()
 		return true
 	else:#ตอบผิด
 		attack("enemy")
@@ -93,6 +97,7 @@ func _answer(correct,answer): #ตรวจคำตอบ
 		Answer()
 		_exam(question,correct,false,$"/root/Global".chapter)
 		#import_exam()
+
 		return false
 
 
@@ -109,7 +114,7 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	$TextureProgress.value = Time
 	print(A)
 	question = importexam[rng].Question
-
+	
 
 
 func finish(value:String,hp:int): #player or Enemy
@@ -191,6 +196,10 @@ func _on_Button_button_down():
 	$answer.hide()
 	$TextureProgress.show()
 	exam($"/root/Global"._Exam)
+	$answer1.disabled = false
+	$answer2.disabled = false
+	$answer3.disabled = false
+	$answer4.disabled = false
 	import_exam()
 	pass # Replace with function body.
 
@@ -226,3 +235,13 @@ func _exam(question:String,answer:String,status:bool,chapter:String):
 	if chapter == "chapter8":
 		$"/root/MissionInventory"._save_exam.chapter8.append(dic)
 	#ResourceSaver.save("user://exam/exam.tres",$"/root/MissionInventory"._save_exam)
+
+
+func _on_Timer2_timeout():
+	$answer1.disabled = false
+	$answer2.disabled = false
+	$answer3.disabled = false
+	$answer4.disabled = false
+	import_exam()
+	$Timer2.stop()
+	pass # Replace with function body.

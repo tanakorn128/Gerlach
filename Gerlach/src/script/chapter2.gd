@@ -53,7 +53,6 @@ func finished():
 		add_child(Headman)
 		$wall/blocked.queue_free()
 		$"/root/Global".chapter2_dialogbox2 = true
-	print(_Enemy)
 
 
 func _on_chapter3_1_body_entered(body):

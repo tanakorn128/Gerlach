@@ -349,6 +349,8 @@ color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer2" type="Timer" parent="."]
 [connection signal="button_down" from="answer1" to="." method="_on_answer1_button_down"]
 [connection signal="mouse_entered" from="answer1" to="." method="_on_answer1_mouse_entered"]
 [connection signal="button_down" from="answer2" to="." method="_on_answer2_button_down"]
@@ -360,5 +362,6 @@ __meta__ = {
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="button_down" from="answer/Button" to="." method="_on_Button_button_down"]
 [connection signal="timeout" from="answer/Timer_answer" to="." method="_on_Timer_answer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 
 [editable path="player"]
