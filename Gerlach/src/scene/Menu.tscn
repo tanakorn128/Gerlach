@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/UI Pack RPG/Menu.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/Game_Start/1.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://src/scene/background.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/scene/dialogbox/dialogbox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scene/dialogbox/chapter1/1. Game_Start.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI Pack RPG/buttonLong_brown2.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxTexture" id=7]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 190, 44 )
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/font/EightBitDragon-anqx.ttf"
@@ -14,6 +19,10 @@ font_path = "res://assets/font/EightBitDragon-anqx.ttf"
 [sub_resource type="DynamicFont" id=2]
 size = 35
 font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 8 )
+region_rect = Rect2( 0, 0, 190, 44 )
 
 [sub_resource type="DynamicFontData" id=3]
 font_path = "res://assets/font/Kanit-Regular.ttf"
@@ -70,6 +79,7 @@ margin_left = 518.711
 margin_top = 390.137
 margin_right = 821.711
 margin_bottom = 475.137
+custom_styles/hover = SubResource( 7 )
 custom_styles/normal = ExtResource( 1 )
 custom_fonts/font = SubResource( 2 )
 text = "START"
@@ -82,6 +92,7 @@ margin_left = 518.711
 margin_top = 508.137
 margin_right = 821.711
 margin_bottom = 593.137
+custom_styles/hover = SubResource( 8 )
 custom_styles/normal = ExtResource( 1 )
 custom_fonts/font = SubResource( 2 )
 text = "EXIT GAME"

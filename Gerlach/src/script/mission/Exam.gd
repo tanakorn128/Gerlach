@@ -112,7 +112,7 @@ func import_exam(): # เลือก Chapter ของข้อสอบ
 	Q = str("คำถาม ",importexam[rng].Question)
 	A = str("คำตอบ ",importexam[rng].Correct)
 	$TextureProgress.value = Time
-	print(A)
+	#print(A)
 	question = importexam[rng].Question
 	
 
@@ -132,11 +132,12 @@ func finish(value:String,hp:int): #player or Enemy
 
 
 func _on_Timer_timeout():#จับเวลา
-	if $TextureProgress.value > 0:
-		$TextureProgress.value -= 1
+	if $TextureProgress.value < 60:
+		$TextureProgress.value += 1
 	else:
 		$TextureProgress.value = Time
 		hp_player(-20)
+		print($TextureProgress.value)
 		import_exam()
 	pass # Replace with function body.
 

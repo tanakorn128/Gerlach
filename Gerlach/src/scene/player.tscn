@@ -626,7 +626,7 @@ nodes/run/node = SubResource( 45 )
 nodes/run/position = Vector2( -460, 140 )
 nodes/walk/node = SubResource( 51 )
 nodes/walk/position = Vector2( -640, 0 )
-node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "TimeScale 2", 0, "attacks_Blend2", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "TimeScale 3", 0, "StateMachine", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2", "TimeScale", 0, "run" ]
+node_connections = [ "output", 0, "Transition", "Transition", 0, "Blend2", "Transition", 1, "walk", "Transition", 2, "TimeScale", "attacks_Blend2", 0, "attacks", "attacks_Blend2", 1, "TimeScale 3", "TimeScale 2", 0, "attacks_Blend2", "TimeScale", 0, "run", "TimeScale 3", 0, "StateMachine", "Blend2", 0, "attacks_walk", "Blend2", 1, "TimeScale 2" ]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=53]
 
@@ -649,7 +649,7 @@ __meta__ = {
 }
 
 [node name="skill" type="Sprite" parent="."]
-position = Vector2( -9.98871, 16 )
+position = Vector2( -299.629, 21.0397 )
 rotation = -0.544543
 scale = Vector2( 0.2, 0.2 )
 
