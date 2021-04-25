@@ -137,7 +137,6 @@ func _on_Timer_timeout():#จับเวลา
 	else:
 		$TextureProgress.value = Time
 		hp_player(-20)
-		print($TextureProgress.value)
 		import_exam()
 	pass # Replace with function body.
 
